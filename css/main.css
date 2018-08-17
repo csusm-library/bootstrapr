@@ -220,7 +220,8 @@ margin: 0 2rem 0 0;
    cursor:pointer;
 }
 
-#bootstrapr-nav i {
+#bootstrapr-nav i,
+.panel-footer i {
    margin-right: 1rem !important;
    font-weight: 300;
 }
