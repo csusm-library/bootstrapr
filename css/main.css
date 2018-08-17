@@ -57,6 +57,10 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
       color: white !important;
    }
 
+   #jumbotronic {
+      font-size: 3.6rem;
+   }
+
    .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
       background-color: gray;
    }
@@ -131,6 +135,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    color: #FFFFFF;
    background-color: transparent;
    border-color: #FFFFFF;
+   font-weight: 600;
 }
 
 .btn-light:hover {
@@ -215,6 +220,10 @@ margin: 0 2rem 0 0;
    cursor:pointer;
 }
 
+#bootstrapr-nav i {
+   margin-right: 1rem !important;
+   font-weight: 300;
+}
 
 /* Special classes  -------------------------------------------- */
 

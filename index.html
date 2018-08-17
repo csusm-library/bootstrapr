@@ -56,7 +56,7 @@
    <div class='jumbotron push-down-jumbotron'>
 
       <div class="container">
-         <h1 class="jumbotronic">Bootstrap.r</h1>
+         <h1 id="jumbotronic">Bootstrap.r</h1>
          <h3 class="text-center" style=' text-shadow: 1px 1px gray; color:#FFFFFF'>Build Bootstrap Quicklier</h3>
          <p class='push-down-2 text-center'><a class='btn btn-lg btn-light scroll-link' href='#interface-elements' target='_blank' role='button'><i class="fa fa-fw fa-arrow-circle-o-down" aria-hidden="true"></i> Interface Elements</a></p>
       </div>
@@ -215,7 +215,7 @@ $( document ).ready(function() {
             </div>
          </div>
 
-         <div class='col-sm-6'>
+         <!-- <div class='col-sm-6'>
             <div class='example panel panel-default tool-cards' data-link="example-containers.html">
                <div class='panel-body flex'>
 
@@ -223,14 +223,14 @@ $( document ).ready(function() {
                </div>
                <div class='panel-footer'>Example Container</div>
             </div>
-         </div>
+         </div> -->
 
-         <div class='col-sm-6'>
+         <!-- <div class='col-sm-6'>
             <div class='example panel panel-default tool-cards' data-link="google-docs.html">
                <div class='panel-body flex'>Lorem ipsum dolor sic amet.</div>
                <div class='panel-footer'>Google Docs</div>
             </div>
-         </div>
+         </div> -->
 
          <div class='col-sm-6'>
             <div class='example panel panel-default tool-cards' data-link="images.html">
@@ -352,8 +352,31 @@ $( document ).ready(function() {
 
          <div class='col-sm-6'>
             <div class='example panel panel-default tool-cards' data-link="text.html">
-               <div class='panel-body flex'>Lorem ipsum dolor sic amet.</div>
-               <div class='panel-footer'>Text</div>
+               <div class='panel-body flex'>
+
+                  <table class='table table-striped'>
+                     <tbody>
+                        <tr>
+                           <td>Keyboard Keys</td>
+                           <td><kbd>CTRL</kbd> + <kbd>Z</kbd></td>
+                        </tr>
+                        <tr>
+                           <td>Linethrough</td>
+                           <td>This and <del>not that</del></td>
+                        </tr>
+                        <tr>
+                           <td>Superscript</td>
+                           <td>2<sup>3</sup> = 8</td>
+                        </tr>
+                        <tr>
+                           <td>Subscript</td>
+                           <td>Water, a.k.a. H<sub>2</sub>O</td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+               </div>
+               <div class='panel-footer'>Text Styles</div>
             </div>
          </div>
 
