@@ -35,12 +35,32 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    -webkit-font-smoothing: antialiased;
 }
 
+#brand-logo {
+   margin-top: -1.1rem;
+}
+
 .navbar-inverse {
    background: #323744;
    padding: 2rem;
    color: #474e5f;
    border-radius: 0px;
    margin-bottom: 0px;
+}
+
+.navbar-collapse {
+   border: 0px !important;
+   box-shadow: none !important;
+}
+
+@media (max-width: 767px) {
+   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
+      color: white !important;
+   }
+
+   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
+      background-color: gray;
+   }
+
 }
 
 .example {
@@ -62,6 +82,12 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
     font-weight: 500;
 }
 
+.jumbotron {
+   height: 450px;
+   background: linear-gradient( rgba(0, 134, 230, .1), rgba(0, 134, 230, .1)), url('../img/background-jumbotron.jpg');
+   background-size: cover;
+}
+
 .jumbotron h1 {
    color: #FFFFFF;
    /* text-shadow: 1px 1px gray; */
@@ -79,6 +105,11 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    border-bottom: none;
 }
 
+.dropdown-menu {
+   border-top: 0px;
+   margin-right:-1px;
+}
+
 .push-down-1 {
    margin-top: 1rem;
 }
@@ -91,10 +122,20 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    margin-top: 3rem;
 }
 
-.btn-light {
+.push-down-jumbotron {
+   margin-top: 7.2rem;
+}
+
+.btn-light,
+.btn-light:focus {
    color: #FFFFFF;
    background-color: transparent;
    border-color: #FFFFFF;
+}
+
+.btn-light:hover {
+    color: black;
+    background-color: white;
 }
 
 .fa-fr {
@@ -157,10 +198,13 @@ margin: 0 2rem 0 0;
 
 .tool-cards > .panel-body {
    height: 250px;
+   overflow: hidden;
+}
+
+.flex {
    display: flex;
    justify-content: center;
    align-items: center;
-   overflow: hidden;
 }
 
 .tooltip {
@@ -171,50 +215,6 @@ margin: 0 2rem 0 0;
    cursor:pointer;
 }
 
-/* Sidenav Code ------------------------------------------------------------*/
-.sidenav {
-    height: 100%;
-    width: 0;
-    position: fixed;
-    z-index: 1;
-    top: 0;
-    left: 0;
-    background-color: #111;
-    overflow-x: hidden;
-    transition: 0.5s;
-    padding-top: 60px;
-}
-
-.sidenav a {
-    padding: 8px 8px 8px 32px;
-    text-decoration: none;
-    font-size: 25px;
-    color: #818181;
-    display: block;
-    transition: 0.3s;
-}
-
-.sidenav a:hover {
-    color: #f1f1f1;
-}
-
-.sidenav .closebtn {
-    position: absolute;
-    top: 0;
-    right: 25px;
-    font-size: 36px;
-    margin-left: 50px;
-}
-
-#main {
-    transition: margin-left .5s;
-    padding: 16px;
-}
-
-@media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
-}
 
 /* Special classes  -------------------------------------------- */
 
