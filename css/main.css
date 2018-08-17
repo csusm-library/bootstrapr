@@ -14,11 +14,13 @@ html, body {
 
 body {
   line-height: 1.4rem; /* 30px / 20px = 1.5 */
-  background: #fafafa;
+  /* background: #fafafa; */
+  background: ghostwhite;
 }
 
 h1, h2, h3, h4, h5, h6 {
    font-family: "Open Sans", sans-serif;
+   color: #474e5f;
 }
 
 h1 { font-size: 2.5rem }
@@ -88,7 +90,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 
 .jumbotron {
    height: 450px;
-   background: linear-gradient( rgba(0, 134, 230, .1), rgba(0, 134, 230, .1)), url('../img/background-jumbotron.jpg');
+   background: linear-gradient( rgba(0, 134, 230, .3), rgba(0, 134, 230, .3)), url('../img/background-jumbotron.jpg');
    background-size: cover;
 }
 
@@ -160,7 +162,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 }
 
 #photo-attribution {
-margin: 0 2rem 0 0;
+margin: 0 2rem -2rem 0 !important;
 }
 
 #page-footer {
