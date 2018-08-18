@@ -38,24 +38,9 @@ $(document).ready(function() {
    }
 
    $("#topper").on("click", function(){
-      $("body").animate({scrollTop: 0}, 400);
+      $("html").animate({scrollTop: 0}, 400);
    });
 
 
 });
 // document ready closes
-
-// Sidenav opens
-   function openNav() {
-       document.getElementById("mySidenav").style.width = "300px";
-       document.getElementById("main").style.marginLeft = "300px";
-   }
-
-// Sidenav closes
-   function closeNav() {
-       document.getElementById("mySidenav").style.width = "0";
-       document.getElementById("main").style.marginLeft= "0";
-   }
-
-   // Resets prettyprint after DOM loads
-   $('#sidenav-button').on("click", openNav);

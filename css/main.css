@@ -42,12 +42,24 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    margin-top: -1.1rem;
 }
 
+.button-box {
+   margin-bottom: 5rem;
+}
+
 .navbar-inverse {
    background: #323744;
    padding: 2rem;
    color: #474e5f;
    border-radius: 0px;
    margin-bottom: 0px;
+}
+
+.add-100 {
+   margin-top: 150px;
+}
+
+.clearfix {
+   clear: both;
 }
 
 .navbar-collapse {
@@ -69,6 +81,8 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    }
 
 }
+
+
 
 .example {
     padding-top: 2rem;
@@ -101,6 +115,11 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    text-align: center;
    font-size: 7em;
 }
+
+.main-content a {
+   font-weight:700;
+}
+
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:link,
@@ -250,15 +269,13 @@ margin: 0 2rem -2rem 0 !important;
    color: #FFFFFF;
 }
 
-pre {
-   font-family: "Menlo", "Monaco", "Consolas", monospace;
+.well {
+   background: #fafafa !important;
 }
 
 pre.prettyprint {
-   background: ghostwhite !important;
-}
-
-pre.prettyprint {
+   font-family: "Menlo", "Monaco", "Consolas", monospace !important;
+   background: #fafafa !important;
    border: none !important;
    padding: 10px !important;
    font-size: 15px;
@@ -306,4 +323,30 @@ ol.linenums li:before{
 #topper:hover {
     background-color: #3f4455;
     opacity: .8;
+}
+
+/* example boxes */
+.example {
+    position: relative;
+    margin: 15px 0 0;
+    padding: 50px 20px 12px 20px;
+    background-color: #fff;
+    border-radius: 4px 4px 0 0;
+    border: 1px solid #ddd;
+    z-index: 2;
+}
+
+.example:after {
+    content: "Example";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    font-size: 15px;
+    font-weight: bold;
+    background-color: #474E5F; /* #dff0d8  002b5b */
+    color: #FFFFFF !important; /*#3c763d */
+    padding:6px;
+    border-radius: 4px 0 4px 0;
+    font-weight: 400;
 }
