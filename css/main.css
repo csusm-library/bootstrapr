@@ -85,7 +85,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
     color: #474E5F !important; /*#3c763d */
     padding:6px;
     border-radius: 4px 0 4px 0;
-    font-weight: 500;
+    font-weight: 700;
 }
 
 .jumbotron {
@@ -180,6 +180,10 @@ margin: 0 2rem -2rem 0 !important;
    color: #939fbe;
    text-decoration: none;
    cursor: pointer;
+}
+
+.modal-body {
+   padding: 2.5rem;
 }
 
 .tool-cards{
