@@ -10,6 +10,7 @@ html, body {
    font-weight: 400;
    margin: 0;
    padding: 0;
+   color: black;
 }
 
 body {
@@ -222,6 +223,10 @@ margin: 0 2rem -2rem 0 !important;
    font-size: 1rem;
 }
 
+.inline {
+   display: inline;
+}
+
 #sidenav-button {
    cursor:pointer;
 }
@@ -230,6 +235,10 @@ margin: 0 2rem -2rem 0 !important;
 .panel-footer i {
    margin-right: 1rem !important;
    font-weight: 300;
+}
+
+.dropdown-menu > .active > a {
+   background-color: #474e5f !important;
 }
 
 /* Special classes  -------------------------------------------- */
@@ -274,4 +283,27 @@ ol.linenums li:before{
     margin-left:-4em;
     text-align:right;
     width:3em;
+}
+
+/* Back to top button */
+
+#topper {
+    display: none;
+    position: fixed;
+    bottom: 200px;
+    right: 0px;
+    z-index: 99;
+    border: none;
+    outline: none;
+    background-color: #474e5f;
+    color: white;
+    padding: 8px 4px 10px 4px;
+    border-radius: 10px 0 0 10px;
+    cursor: pointer;
+    font-size: 1rem;
+}
+
+#topper:hover {
+    background-color: #3f4455;
+    opacity: .8;
 }
