@@ -44,6 +44,10 @@
    <!-- Main local stylesheet -->
    <link rel="stylesheet" href="css/main.css">
 
+   <!-- Prettify theme -->
+   <link rel="stylesheet" href="css/prettify-theme.css">
+
+
 </head>
 
 <body id="top">
@@ -53,16 +57,23 @@
 
    <div class="container main-content">
 
-   <div class="row add-100">
-      <div class="col-sm-12">
-         <p class="pull-right">
-            <a href="https://getbootstrap.com/docs/3.3/" target="_blank"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 Docs</a>
-         </p>
+      <div class="row add-100">
+         <div class="col-sm-8">
+            <ol class="breadcrumb">
+               <li><a href="index.html">Home</a></li>
+               <li class="active">Tables</li>
+            </ol>
+         </div>
+         <!-- col-sm-8 -->
+         <div class="col-sm-4">
+            <p class="pull-right">
+               <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+ Boostrap 3.3.7 <small id="docs-link">| tables</small></a>
+            </p>
+         </div>
+         <!-- col-sm-4-->
       </div>
-      <!-- col-sm-12 -->
-   </div>
-   <!-- .row -->
+      <!-- .row -->
 
       <div class="row">
          <div class="col-sm-12">
@@ -165,7 +176,7 @@
 
             <div class="example" id="simple-example-table">
 
-               <table class='table table-striped'>
+               <table class="table table-striped">
                   <thead>
                      <tr>
                         <th>content</th>
@@ -195,7 +206,7 @@
                                  <i class="fa fa-clipboard" aria-hidden="true"></i>
                                  </button>
 
-<pre class="prettyprint" id="simple-table-code">
+               <pre class="prettyprint" id="simple-table-code">
 &lt;table class='table table-striped'&gt;
    &lt;thead&gt;
       &lt;tr&gt;
@@ -221,6 +232,44 @@
 
             </div>
             <!-- .well -->
+
+
+            <h4 id="notes">Notes</h4>
+
+
+            <p>Accent Your Data With Colors! Change the background color of any table row (or table data) element by adding the following classes:</p>
+
+            <table class='table'>
+               <thead></thead>
+               <tbody>
+                  <tr class="active">
+                     <td>grey</td>
+                     <td><code>.active</code></td>
+                     <td>&lt;tr class="active"&gt;content&lt;tr&gt;</td>
+                  </tr>
+                  <tr class="info">
+                     <td>blue</td>
+                     <td><code>.info</code> </td>
+                     <td>&lt;tr class="info"&gt;content&lt;tr&gt;</td>
+                  </tr>
+                  <tr class="success">
+                     <td>green</td>
+                     <td><code>.success</code></td>
+                     <td>&lt;tr class="success"&gt;content&lt;tr&gt;</td>
+                  </tr>
+                  <tr class="warning">
+                     <td>yellow</td>
+                     <td><code>.warning</code></td>
+                     <td>&lt;tr class="warning"&gt;content&lt;tr&gt;</td>
+                  </tr>
+                  <tr class="danger">
+                     <td>red</td>
+                     <td><code>.danger</code></td>
+                     <td>&lt;tr class="danger"&gt;content&lt;tr&gt;</td>
+                  </tr>
+               </tbody>
+            </table>
+
 
 
          </div>
@@ -349,7 +398,7 @@
                tableClassOpen += " numbered-steps";
             }
 
-            if ( $('#variableWidths').is(':checked') && $('#checkboxHeader').is(':not(:checked)') ) {
+            if ($('#variableWidths').is(':checked') && $('#checkboxHeader').is(':not(:checked)')) {
                for (i = 0; i < numCols; i++) {
                   tdsVariable += tdVariable;
                }
@@ -357,11 +406,11 @@
 
             // columns
             for (i = 0; i < numCols; i++) {
-                  tds += td;
+               tds += td;
             }
 
             // Make sure that the header row appearing isn't at the expense of an already extant row
-            if ($('#checkboxHeader').is(':not(:checked)') && $('#variableWidths').is(':checked') ) {
+            if ($('#checkboxHeader').is(':not(:checked)') && $('#variableWidths').is(':checked')) {
                numRows = numRows - 1;
             }
 
@@ -405,51 +454,50 @@
 
          // check the traditional icons checkbox
          $("#checkboxBordered").click(function() {
-               $('#checkboxNoBordered').prop("checked", false); //empty the input value
-               $('#someBordered').prop("checked", false); //empty the input value
+            $('#checkboxNoBordered').prop("checked", false); //empty the input value
+            $('#someBordered').prop("checked", false); //empty the input value
          });
 
          $("#checkboxNoBordered").click(function() {
-               $('#checkboxBordered').prop("checked", false); //empty the input value
-               $('#someBordered').prop("checked", false); //empty the input value
+            $('#checkboxBordered').prop("checked", false); //empty the input value
+            $('#someBordered').prop("checked", false); //empty the input value
          });
 
          $("#someBordered").click(function() {
-               $('#checkboxBordered').prop("checked", false); //empty the input value
-               $('#checkboxNoBordered').prop("checked", false); //empty the input value
+            $('#checkboxBordered').prop("checked", false); //empty the input value
+            $('#checkboxNoBordered').prop("checked", false); //empty the input value
          });
 
          $("#checkboxSteps").click(function() {
-               if ($('#variableWidths').is(':not(:checked')) {
-                  $('#variableWidths').prop("checked", true);
-                  $('#checkboxHeader').prop("checked", false);
-               }
-               $('#checkboxStriped').prop("checked", false); //unset striped
+            if ($('#variableWidths').is(':not(:checked')) {
+               $('#variableWidths').prop("checked", true);
+               $('#checkboxHeader').prop("checked", false);
+            }
+            $('#checkboxStriped').prop("checked", false); //unset striped
          });
 
          $("#checkboxHeader").click(function() {
-                  $('#checkboxSteps').prop("checked", false);
+            $('#checkboxSteps').prop("checked", false);
 
          });
 
          $("#checkboxSteps").click(function() {
-                  $('#checkboxHeader').prop("checked", false);
+            $('#checkboxHeader').prop("checked", false);
 
          });
 
          $("#variableWidths").click(function() {
-               if ($('#checkboxSteps').is(':checked')) {
-                  $('#variableWidths').prop("checked", true);
-                  $('#checkboxHeader').prop("checked", false);
-               }
+            if ($('#checkboxSteps').is(':checked')) {
+               $('#variableWidths').prop("checked", true);
+               $('#checkboxHeader').prop("checked", false);
+            }
 
          });
 
       });
 
-         // clipboard button
+      // clipboard button
       new Clipboard('.btn');
-
    </script>
 
 </body>

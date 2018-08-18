@@ -7,7 +7,6 @@
 html, body {
    font-family: "Open Sans", sans-serif;
    font-size: 1rem;
-   font-weight: 400;
    margin: 0;
    padding: 0;
    color: black;
@@ -24,6 +23,10 @@ h1, h2, h3, h4, h5, h6 {
    color: #474e5f;
 }
 
+#notes {
+   margin-top: 3rem;
+}
+
 h1 { font-size: 2.5rem }
 h2 { font-size: 2rem }
 h3 { font-size: 1.75rem }
@@ -32,10 +35,17 @@ h5 { font-size: 1.25rem }
 h6 { font-size: 1rem }
 
 p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
-   font-weight: 400;
    font-size: 1rem;
    vertical-align: baseline;
    -webkit-font-smoothing: antialiased;
+}
+
+p {
+   margin-bottom: 1rem;
+}
+
+.breadcrumb {
+   background: transparent;
 }
 
 #brand-logo {
@@ -181,6 +191,14 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    color: aliceblue !important;
 }
 
+.grey {
+   color: gray;
+}
+
+#docs-link {
+   text-transform: uppercase;
+}
+
 #photo-attribution {
 margin: 0 2rem -2rem 0 !important;
 }
@@ -189,6 +207,7 @@ margin: 0 2rem -2rem 0 !important;
    background: #323744;
    padding: 2rem;
    color: #474e5f;
+   margin-top: 4rem;
 }
 
 #page-footer p,
