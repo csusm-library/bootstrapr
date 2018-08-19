@@ -47,7 +47,6 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
-
 </head>
 
 <body id="top">
@@ -87,6 +86,8 @@
 
       <div class="row">
          <div class="col-sm-3">
+
+
 
             <form>
                <div class="form-group">
@@ -164,8 +165,8 @@
             </form>
 
             <div class="push-down-2 button-box">
-               <button type="button" class="btn btn-default" id="clearTable">Reset</button>
-               <button type="button" class="btn btn-primary" id="displayTable">Build</button>
+               <button type="button" class="btn btn-default" id="clearTable"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="displayTable"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
             </div>
 
          </div>
@@ -202,11 +203,19 @@
 
             <div class="well">
 
-               <button class="btn btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-table-code" data-toggle="tooltip" data-placement="bottom" title="copy HTML">
-                                 <i class="fa fa-clipboard" aria-hidden="true"></i>
-                                 </button>
+                  <!-- Copier-->
+                  <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="copy HTML"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
 
-               <pre class="prettyprint" id="simple-table-code">
+                  <!-- Beautifier -->
+                  <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+                  </button>
+
+                  <!-- Update Example Panel-->
+                  <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i> Update Preview</button>
+
+   <hr class="well-separator">
+
+<pre class="prettyprint" id="simple-code" contenteditable="true">
 &lt;table class='table table-striped'&gt;
    &lt;thead&gt;
       &lt;tr&gt;
@@ -233,8 +242,7 @@
             </div>
             <!-- .well -->
 
-
-            <h4 id="notes">Notes</h4>
+            <h4 class="sub-header">Notes</h4>
 
 
             <p>Accent Your Data With Colors! Change the background color of any table row (or table data) element by adding the following classes:</p>
@@ -270,6 +278,47 @@
                </tbody>
             </table>
 
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+
+            <p>Custom CSS is required for the steps column.</p>
+
+<div class="well" id="custom-css-code">
+   <!-- Copier-->
+   <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="copy HTML"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+   <hr class="well-separator">
+
+
+<pre class="prettyprint" contenteditable="true">
+/* Set styles for the Steps column */
+.numbered-steps tr td:first-of-type {
+   padding: 3px;
+   text-align: center;
+   vertical-align: middle;
+   font-weight: 600;
+   background: aliceblue;
+   width: 1.5rem;
+   color: #666666;
+   font-size: 1.2rem;
+}
+
+/* Set the font color to gray */
+.gray {
+   color: gray;
+}
+
+/* Remove all borders from table */
+table.table-borderless tr,
+table.table-borderless th,
+table.table-borderless td {
+   border: none;
+}
+</pre>
+
+</div>
+<!-- .well -->
 
 
          </div>
@@ -330,15 +379,15 @@
          // Add active class to navmenu selection
          $("li#tables").addClass("active");
 
-         $("#brand-name").html("<h2 class='inline white'>Bootstrap.r</h2>")
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
          // Reset prettyprint (bug)
          $('pre').removeClass('prettyprinted');
          prettyPrint();
 
          // Prepopulate the inputs
-         $('#numRows').val("2");
-         $('#numCols').val("3");
+         // $('#numRows').val("2");
+         // $('#numCols').val("3");
 
          // ------- Display the table --------------------------
          $('#displayTable').click(function() {
@@ -437,7 +486,7 @@
             var bsTable = tableOpen + tableClassOpen + tableClassClose + theaderOpen + thFinal + theaderClose + tr + tableClose;
 
             $("#simple-example-table").html(bsTable);
-            $('#simple-table-code').text(bsTable);
+            $('#simple-code').text(bsTable);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
@@ -493,6 +542,12 @@
             }
 
          });
+
+      $("#update-preview").on("click", function () {
+         var modifiedCode = $('#simple-code').text();
+         $("#simple-example-table").html(modifiedCode);
+      });
+
 
       });
 

@@ -2,6 +2,7 @@
 
 * {
   box-sizing: border-box;
+  outline: 0 !important;
 }
 
 html, body {
@@ -23,7 +24,7 @@ h1, h2, h3, h4, h5, h6 {
    color: #474e5f;
 }
 
-#notes {
+.sub-header {
    margin-top: 3rem;
 }
 
@@ -42,6 +43,36 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 
 p {
    margin-bottom: 1rem;
+}
+
+/* Sets the size of the tabs for the beautify code function  */
+pre {
+    -moz-tab-size : 3;
+      -o-tab-size : 3;
+         tab-size : 3;
+}
+
+.well button {
+   margin: 0 .5rem !important;
+}
+
+.well-separator {
+   clear: both;
+   padding-top: 1rem !important;
+   border-bottom: .5px dashed gray;
+   border-top: none;
+   border-left: none;
+   border-right: none;
+}
+
+.brand-link {
+   font-size: inherit;
+   color: white;
+}
+
+.brand-link:hover {
+   text-decoration: none;
+   color: #939fbe;
 }
 
 .breadcrumb {
@@ -92,7 +123,19 @@ p {
 
 }
 
+.btn-code-well {
+   background: #566277;
+   color: white;
+}
 
+.btn-code-well:link,
+.btn-code-well:visited,
+.btn-code-well:hover,
+.btn-code-well:active,
+.btn-code-well:focus {
+   background: #474e5f;
+   color: white;
+}
 
 .example {
     padding-top: 2rem;
@@ -191,7 +234,7 @@ p {
    color: aliceblue !important;
 }
 
-.grey {
+.gray {
    color: gray;
 }
 
@@ -247,7 +290,7 @@ margin: 0 2rem -2rem 0 !important;
 }
 
 .tool-cards > .panel-body {
-   height: 250px;
+   height: 325px;
    overflow: hidden;
 }
 
@@ -281,6 +324,25 @@ margin: 0 2rem -2rem 0 !important;
 
 /* Special classes  -------------------------------------------- */
 
+/* Remove all borders from table */
+table.table-borderless tr,
+table.table-borderless th,
+table.table-borderless td {
+   border: none;
+}
+
+ /* Formats the table with steps  */
+table.numbered-steps tr td:first-of-type {
+   padding: 3px;
+   text-align: center;
+   vertical-align: middle;
+   font-weight: 600;
+   background: #fafafa;
+   width: 1.2rem;
+   color: #666666;
+   font-size: 1.2rem
+}
+
 .short-round {
    display: flex;
    justify-content: center;
@@ -289,10 +351,10 @@ margin: 0 2rem -2rem 0 !important;
 }
 
 .well {
-   background: #fafafa !important;
+   background: #323744 !important;
 }
 
-pre.prettyprint {
+.prettyprint {
    font-family: "Menlo", "Monaco", "Consolas", monospace !important;
    background: #fafafa !important;
    border: none !important;
@@ -347,7 +409,7 @@ ol.linenums li:before{
 /* example boxes */
 .example {
     position: relative;
-    margin: 15px 0 0;
+    margin: 15px 0 -2px 0;
     padding: 50px 20px 12px 20px;
     background-color: #fff;
     border-radius: 4px 4px 0 0;
@@ -356,7 +418,7 @@ ol.linenums li:before{
 }
 
 .example:after {
-    content: "Example";
+    content: "Preview";
     position: absolute;
     top: 0;
     left: 0;
