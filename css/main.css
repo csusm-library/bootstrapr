@@ -79,6 +79,10 @@ pre {
    background: transparent;
 }
 
+.icon-selector {
+   margin-top: 1.3rem !important;
+}
+
 #brand-logo {
    margin-top: -1.1rem;
 }
@@ -205,6 +209,19 @@ pre {
    margin-top: 7.2rem;
 }
 
+.indent-right-1 {
+   margin-left: 1rem;
+}
+
+.indent-right-2 {
+   margin-left: 2rem;
+}
+
+.indent-right-3 {
+   margin-left: 3rem;
+}
+
+
 .btn-light,
 .btn-light:focus {
    color: #FFFFFF;
@@ -236,6 +253,11 @@ pre {
 
 .gray {
    color: gray;
+}
+
+.descriptor {
+   color: gray;
+   font-variant: small-caps !important;
 }
 
 #docs-link {
@@ -287,6 +309,7 @@ margin: 0 2rem -2rem 0 !important;
    display: flex;
    justify-content: center;
    align-items: center;
+   color: #474e5f;
 }
 
 .tool-cards > .panel-body {
@@ -305,7 +328,7 @@ margin: 0 2rem -2rem 0 !important;
 }
 
 .inline {
-   display: inline;
+   display: inline !important;
 }
 
 #sidenav-button {
@@ -324,11 +347,19 @@ margin: 0 2rem -2rem 0 !important;
 
 /* Special classes  -------------------------------------------- */
 
+
+.alert-default {
+   background: #e2e3e5;
+   border-color: #d6d8db;
+   color: #383d41;
+}
+
+
 /* Remove all borders from table */
 table.table-borderless tr,
 table.table-borderless th,
 table.table-borderless td {
-   border: none;
+   border: none !important;
 }
 
  /* Formats the table with steps  */
@@ -430,4 +461,19 @@ ol.linenums li:before{
     padding:6px;
     border-radius: 4px 0 4px 0;
     font-weight: 400;
+}
+
+/* step icons --currently unused */
+.step-icons {
+   background: #474e5f;
+   display: flex;
+   justify-content: center;
+   align-items: center;
+   color: #FFFFFF;
+   font-size: 20px;
+   height: 44px;
+   width: 44px;
+   padding: 8px;
+   border-radius: 50px;
+   margin-bottom: 4rem;
 }

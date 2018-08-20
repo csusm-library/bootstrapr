@@ -87,8 +87,6 @@
       <div class="row">
          <div class="col-sm-3">
 
-
-
             <form>
                <div class="form-group">
                   <label for="exampleInputEmail1"># Rows</label>
@@ -144,7 +142,7 @@
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="someBordered"> Some Borders<br/><small style="opacity:.6">(recommended)</small>
+                  <input type="checkbox" id="someBordered"> Some Borders<br/><small class="descriptor">recommended</small>
                   </label>
                </div>
 
@@ -158,7 +156,7 @@
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxSteps"> Steps Column<br/><small style="opacity:.6">(requires variable width)</small>
+                  <input type="checkbox" id="checkboxSteps"> Steps Column<br/><small class="descriptor">requires variable width</small>
                   </label>
                </div>
 
@@ -170,7 +168,7 @@
             </div>
 
          </div>
-         <!-- .col-sm-4 -->
+         <!-- .col-sm-3 -->
 
 
          <div class="col-sm-9">
@@ -203,17 +201,17 @@
 
             <div class="well">
 
-                  <!-- Copier-->
-                  <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="copy HTML"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
 
-                  <!-- Beautifier -->
-                  <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
                   </button>
 
-                  <!-- Update Example Panel-->
-                  <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i> Update Preview</button>
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i> Update Preview</button>
 
-   <hr class="well-separator">
+               <hr class="well-separator">
 
 <pre class="prettyprint" id="simple-code" contenteditable="true">
 &lt;table class='table table-striped'&gt;
@@ -282,16 +280,16 @@
             <h4 class="sub-header">Custom CSS</h4>
 
 
-            <p>Custom CSS is required for the steps column.</p>
+            <p>Custom CSS is required for the steps column and for removing borders from tables.</p>
 
-<div class="well" id="custom-css-code">
-   <!-- Copier-->
-   <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="copy HTML"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
 
-   <hr class="well-separator">
+               <hr class="well-separator">
 
 
-<pre class="prettyprint" contenteditable="true">
+               <pre class="prettyprint" contenteditable="true" id="custom-css-code">
 /* Set styles for the Steps column */
 .numbered-steps tr td:first-of-type {
    padding: 3px;
@@ -313,12 +311,12 @@
 table.table-borderless tr,
 table.table-borderless th,
 table.table-borderless td {
-   border: none;
+   border: none !important;
 }
 </pre>
 
-</div>
-<!-- .well -->
+            </div>
+            <!-- .well -->
 
 
          </div>
@@ -332,7 +330,7 @@ table.table-borderless td {
 
 
    </div>
-   <!-- .container-fluid -->
+   <!-- .container -->
 
 
    <!-- Navbar include -->
@@ -433,7 +431,7 @@ table.table-borderless td {
             }
 
             if ($('#checkboxNoBordered').is(':checked')) {
-               tableClassOpen += " table-unbound";
+               tableClassOpen += " table-borderless";
             }
 
             if ($('#checkboxCondensed').is(':checked')) {
@@ -499,8 +497,6 @@ table.table-borderless td {
 
          $('#someBordered').prop("checked", true);
 
-
-
          // check the traditional icons checkbox
          $("#checkboxBordered").click(function() {
             $('#checkboxNoBordered').prop("checked", false); //empty the input value
@@ -543,10 +539,10 @@ table.table-borderless td {
 
          });
 
-      $("#update-preview").on("click", function () {
-         var modifiedCode = $('#simple-code').text();
-         $("#simple-example-table").html(modifiedCode);
-      });
+         $("#update-preview").on("click", function() {
+            var modifiedCode = $('#simple-code').text();
+            $("#simple-example-table").html(modifiedCode);
+         });
 
 
       });

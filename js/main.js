@@ -17,8 +17,6 @@ $(document).ready(function() {
    $('pre').removeClass('prettyprinted');
    prettyPrint();
 
-   // Back-to-top button
-
    // When the user scrolls down 20px from the top of the document, show the button
    window.onscroll = function() {
       scrollFunction()
@@ -99,7 +97,6 @@ $(document).ready(function() {
       prettyPrint();
 
    });
-
 
 });
 // document ready closes
