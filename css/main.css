@@ -481,3 +481,7 @@ ol.linenums li:before{
 #web-fonts-tables .tab-pane {
    padding: 1.5rem;
 }
+
+.spacey {
+   margin-right: .5rem;
+}

@@ -100,8 +100,8 @@
                         .addClass('form-horizontal')
                         .attr('id', 'page-rows-form')
                         .append($('<label/>')
-                            .addClass('pull-left control-label')
-                            .text('Entries per Page:')
+                            .addClass('pull-left control-label spacey')
+                            .text('Entries per Page: ')
                         )
                         .append(
                             $('<div/>')
@@ -132,13 +132,6 @@
                                    $('<option>', {
                                         value: 50,
                                         text: 50
-                                   })
-
-                                )
-                                .append(
-                                   $('<option>', {
-                                        value: 75,
-                                        text: 75
                                    })
 
                                 )

@@ -77,15 +77,89 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Labels</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Labels pop! They add meaning contextually, and are best when used sparingly.</p>
          </div>
       </div>
+      <!-- .row -->
 
       <hr>
 
-   <h4>Heading</h4>
-   <p>Content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ut eius velit. Atque praesentium hic odit, quo maxime quae dolor ab voluptate totam earum non excepturi officia temporibus delectus ut.</p>
+      <div class="row">
+         <div class="col-sm-3">
 
+            <form>
+
+               <div class="form-group">
+                  <label for="label-text">Label Text</label>
+                  <input type="text" class="form-control" id="label-text" placeholder="Library Only">
+               </div>
+
+               <div class="form-group">
+                  <label for="label-color">Color</label>
+                  <select class="form-control" id="label-color">
+                        <option value=" label-default" selected="selected">Default (grey)</option>
+                        <option value=" label-primary">Primary (standard blue)</option>
+                        <option value=" label-info">Information (light blue)</option>
+                        <option value=" label-success">Success (green)</option>
+                        <option value=" label-warning">Warning (yellow)</option>
+                        <option value=" label-danger">Danger (red)</option>
+                     </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="label-size">Size</label>
+                  <select class="form-control" id="label-size">
+                        <option value="big-sized" selected="selected">Big</option>
+                        <option value="normal-sized" selected="selected">Normal</option>
+                        <option value="small-sized">Small</option>
+                     </select>
+               </div>
+
+            </form>
+
+            <div style="margin-top: 30px;">
+               <button type="button" class="btn btn-default" id="clearLabel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="displayLabel"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Build</button>
+            </div>
+
+         </div>
+         <!-- col-sm-3 -->
+
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <p>Advertising Red Books <span class='label label-warning'>Library Only</span></p>
+
+               <p>Ad$pender Online <span class='label label-success'>Best Bet</span></p>
+
+            </div>
+
+            <div class="well" contenteditable="true">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+                  </button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Preview</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint" id="simple-code">
+&lt;p&gt;Advertising Red Books&lt;span class='label label-warning'&gt;Library Only&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Ad$pender Online&lt;span class='label label-success'&gt;Best Bet&lt;/span&gt;&lt;/p&gt;
+</pre>
+
+            </div>
+            <!-- example closes -->
+
+         </div>
+         <!-- .col-sm-9 -->
+
+      </div>
 
 
 
@@ -122,6 +196,9 @@
       w3IncludeHTML();
    </script>
 
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
    <script>
       $(document).ready(function() {
 
@@ -130,13 +207,52 @@
             $('[data-toggle="tooltip"]').tooltip()
          })
 
+         // reset the forms
+         $('#clearLabel').click(function() {
+            location.reload(true);
+         });
+
+         $('#displayLabel').click(function() {
+
+            var labelColor = $('#label-color').val();
+            var labelSize = $('#label-size').val();
+            var labelText = $('#label-text').val();
+
+            var labelCore = "<span class='label" + labelColor + "'>" + labelText + "</span>";
+            var bsLabel = '';
+
+            if (labelSize == "normal-sized") {
+               bsLabel = labelCore;
+            } else if (labelSize == "small-sized") {
+               bsLabel = "<small>" + labelCore + "</small>";
+            } else {
+               bsLabel = "<span style='font-size:1.3rem'>" + labelCore + "</span>";
+            }
+
+            // write the table
+            $("#simple-example").html(bsLabel);
+            $('#simple-code').text(bsLabel);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
          // Add active class to navmenu selection
          $("li#labels").addClass("active");
 
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+
+         // clipboard button
+         new Clipboard('.btn');
+
       });
+
+
+
    </script>
 
 </body>
+
 </html>

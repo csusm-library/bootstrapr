@@ -89,6 +89,7 @@ $(document).ready(function() {
       return parse(html.replace(/(\r\n|\n|\r)/gm, " ").replace(/ +(?= )/g, ''));
    };
 
+   // Prettify / Beautify / indent the code
    $('#beautify').click(function() {
       var beautify = formatFactory($('#simple-code').text());
       $('#simple-code').text(beautify);
@@ -96,6 +97,12 @@ $(document).ready(function() {
       $('pre').removeClass('prettyprinted');
       prettyPrint();
 
+   });
+
+   // Update the preview window after changes to the code well
+   $("#update-preview").on("click", function() {
+      var modifiedCode = $('#simple-code').text();
+      $("#simple-example").html(modifiedCode);
    });
 
 });

@@ -173,7 +173,7 @@
 
          <div class="col-sm-9">
 
-            <div class="example" id="simple-example-table">
+            <div class="example" id="simple-example">
 
                <table class="table table-striped">
                   <thead>
@@ -538,10 +538,10 @@ table.table-borderless td {
             }
 
          });
-
+         // Update the preview window after changes to the code well
          $("#update-preview").on("click", function() {
             var modifiedCode = $('#simple-code').text();
-            $("#simple-example-table").html(modifiedCode);
+            $("#simple-example").html(modifiedCode);
          });
 
 

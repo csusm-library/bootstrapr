@@ -156,7 +156,7 @@
 
          <div class="col-sm-9">
 
-            <div class="example" id="simple-example-alert">
+            <div class="example" id="simple-example">
 
                <div class="alert alert-warning" role="alert">
 	               <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong>Lorem Ipsum Dolor</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, nobis porro est optio unde ut dolorem atque dolor dolorum veritatis corporis neque illum voluptatum velit expedita eaque aliquid, similique.</p>
@@ -1283,7 +1283,7 @@
             // Write the table
             var bsAlert = alertOpening + alertClosing;
 
-            $("#simple-example-alert").html(bsAlert);
+            $("#simple-example").html(bsAlert);
             $('#simple-code').text(bsAlert);
 
             $('pre').removeClass('prettyprinted');
@@ -1295,7 +1295,7 @@
 
          $("#update-preview").on("click", function() {
             var modifiedCode = $('#simple-code').text();
-            $("#simple-example-alert").html(modifiedCode);
+            $("#simple-example").html(modifiedCode);
          });
 
          // Select the icon from the modal
