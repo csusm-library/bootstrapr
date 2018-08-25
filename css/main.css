@@ -341,8 +341,10 @@ margin: 0 2rem -2rem 0 !important;
    font-weight: 300;
 }
 
-.dropdown-menu > .active > a {
+.dropdown-menu > .active > a,
+.dropdown-menu > .active > a small {
    background-color: #474e5f !important;
+   color: aliceblue;
 }
 
 /* Special classes  -------------------------------------------- */
@@ -484,4 +486,12 @@ ol.linenums li:before{
 
 .spacey {
    margin-right: .5rem;
+}
+
+.table-hover>tbody>tr:hover {
+   background-color: aliceblue;
+}
+
+.icon-grid td {
+   text-align: center;
 }
