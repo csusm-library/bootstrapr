@@ -48,10 +48,14 @@
    <link rel="stylesheet" href="css/prettify-theme.css">
 
    <style>
-
       /* Override the margin on prettyprint */
+
       pre.prettyprint {
          margin: 0 !important;
+      }
+
+      h5 {
+         margin-top: 3rem;
       }
    </style>
 
@@ -87,8 +91,9 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Web Fonts</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit.</p>
-            <p>Icons take the size and color of the containing element. However, you may specify an alternate size, orientation, horizontal spacing and even add a spin to your icons with the <a href="text.html">specialty classes</a>.</p>
+            <p class="lead">Used sparingly, icons help users to more quickly make meaning of buttons and other interface elements.</p>
+            <p>Bootstrap 3 has its own set of Glyphicon icons. Bootstrap also pairs well with Font Awesome icons (4.7.0). Icons take the size and color of the containing element. However, you may specify an alternate size, orientation, horizontal spacing
+               and even add a spin to your icons with the <a href="text.html">specialty classes</a>.</p>
          </div>
       </div>
 
@@ -990,7 +995,186 @@
                      </tbody>
                   </table>
 
+                  <hr>
 
+                  <h5>Spacing Classes</h5>
+                  <p>These classes add horizontal spacing around Font Awesome icons.</p>
+
+                  <table class='table'>
+                     <thead>
+                        <tr>
+                           <th style='width:20%;'>Example</th>
+                           <th style='width:30%;'>CSS Class</th>
+                           <th style='width:50%;'>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><i class="fa fa-gear" aria-hidden="true"></i>Text Label</td>
+                           <td> -- </td>
+                           <td>Normal—no spacing</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-gear fa-fw" aria-hidden="true"></i>Text Label</td>
+                           <td><code>fa-fw</code></td>
+                           <td>Fixed-width spacing</td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <hr>
+
+                  <h5>Rotation Classes</h5>
+                  <p>These classes may be added to rotate Font Awesome icons.</p>
+
+                  <table class='table'>
+                     <thead>
+                        <tr>
+                           <th style='width:20%;'>Example</th>
+                           <th style='width:30%;'>CSS Class</th>
+                           <th style='width:50%;'>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><i class="fa fa-key" aria-hidden="true"></i></td>
+                           <td> -- </td>
+                           <td>Normal—no rotation</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-key fa-rotate-90" aria-hidden="true"></i></td>
+                           <td><code>fa-rotate-90</code></td>
+                           <td>Rotate icon 90&deg;</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-key fa-rotate-180" aria-hidden="true"></i></td>
+                           <td><code>fa-rotate-180</code></td>
+                           <td>Rotate icon 180&deg;</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-key fa-rotate-270" aria-hidden="true"></i></td>
+                           <td><code>fa-rotate-270</code></td>
+                           <td>Rotate icon 270&deg;</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-key fa-flip-horizontal" aria-hidden="true"></i></td>
+                           <td><code>fa-flip-horizontal</code></td>
+                           <td>Flip the icon horizontally</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-key fa-flip-vertical" aria-hidden="true"></i></td>
+                           <td><code>fa-flip-vertical</code></td>
+                           <td>Flip the icon vertically</td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <hr>
+
+                  <h5>Size Classes</h5>
+                  <p>You may specify an alternate size with the following classes.</p>
+
+                  <table class='table table-striped table-condensed'>
+                     <thead>
+                        <tr>
+                           <th style='width:20%;'>Example</th>
+                           <th style='width:30%;'>CSS Class</th>
+                           <th style='width:50%;'>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><i class="fa fa-camera-retro" aria-hidden="true"></i></td>
+                           <td> -- </td>
+                           <td>Standard sized</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-camera-retro fa-lg" aria-hidden="true"></i></td>
+                           <td><code>fa-lg</code></td>
+                           <td>Large-sized</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-camera-retro fa-2x" aria-hidden="true"></i></td>
+                           <td><code>fa-2x</code></td>
+                           <td>Double-sized</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-camera-retro fa-3x" aria-hidden="true"></i></td>
+                           <td><code>fa-3x</code></td>
+                           <td>Triple-sized</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-camera-retro fa-4x" aria-hidden="true"></i></td>
+                           <td><code>fa-4x</code></td>
+                           <td>Quadruple-sized</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-camera-retro fa-5x" aria-hidden="true"></i></td>
+                           <td><code>fa-5x</code></td>
+                           <td>Quintuple-sized</td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                     <hr>
+
+                  <h5>Spin Classes</h5>
+                  <p>These classes may be added to spin certain Font Awesome icons.</p>
+
+                  <div class="alert alert-warning">
+                  <p>Some browsers don't support this effect (e.g., IE8, IE9), or <a href="https://github.com/FortAwesome/Font-Awesome/issues/671" target="_blank">have issues rendering animated icons</a>. We recommend using this technique sparingly, if at all.</p>
+                  </div>
+
+                  <table class='table table-striped table-condensed'>
+                     <thead>
+                        <tr>
+                           <th style='width:20%;'>Example</th>
+                           <th style='width:30%;'>CSS Class</th>
+                           <th style='width:50%;'>Description</th>
+                        </tr>
+                     </thead>
+                     <tbody>
+                        <tr>
+                           <td><i class="fa fa-spinner fa-spin fa-fw"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-spin</code></td>
+                           <td>Smooth spin on a standard <code>fa-spinner</code> icon</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-spinner fa-pulse fa-fw"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-pulse</code></td>
+                           <td>Stepwise spin on a standard <code>fa-spinner</code> icon</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-refresh fa-spin fa-lg fa-fw"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-spin</code></td>
+                           <td>Smooth spin on a large <code>fa-refresh</code> icon</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-cog fa-spin fa-lg fa-fw"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-spin</code></td>
+                           <td>Smooth spin on a large <code>fa-cog</code> icon</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-compass fa-spin fa-lg fa-fw" aria-hidden="true"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-spin</code></td>
+                           <td>Smooth spin on a large <code>fa-compass</code> icon</td>
+                        </tr>
+                        <tr>
+                           <td><i class="fa fa-plane fa-spin fa-lg fa-fw"></i>
+                           <span class="sr-only">Loading...</span></td>
+                           <td><code>fa-spin</code></td>
+                           <td>Smooth spin on a large <code>fa-plane</code> icon <sup style="color:red;font-weight: 700">*</sup>
+                           </td>
+                        </tr>
+                     </tbody>
+                  </table>
+
+                  <p><sup style="color:red;font-weight: 700">*</sup> Obviously not all icons look amazing when spinning...</em></p>
 
                </div>
                <!-- tabpanel #fontawesome -->
@@ -1002,11 +1186,10 @@
 
                </div>
                <!-- tabpanel #bootstrap -->
+
             </div>
 
          </div>
-
-
 
 
 
@@ -1039,8 +1222,8 @@
    <script src="js/main.js"></script>
 
    <!-- Bootstrap Table -->
-      <script type="text/javascript" src="js/jquery.sortelements.js"></script>
-      <script type="text/javascript" src="js/jquery.bdt.js"></script>
+   <script type="text/javascript" src="js/jquery.sortelements.js"></script>
+   <script type="text/javascript" src="js/jquery.bdt.js"></script>
 
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
