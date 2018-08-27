@@ -112,6 +112,14 @@
                   </div>
                </div>
 
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                              <input type="checkbox" id="plus-icon"> Add Plus Icon
+                           </label>
+                  </div>
+               </div>
+
             </form>
 
             <div class="push-down-2 button-box">
@@ -203,6 +211,36 @@
             <h4 class="sub-header">Notes</h4>
             <p>Keep Panel Sets Unique. While you may place as many sets of collapsible panels on a page as you like, do not simply cut and paste the same set again and again. Make sure to generate each new panel set anew, ensuring the random number assigned
                to each panel set stays unique and does not conlflict with the other panel sets on the page.</p>
+
+
+               <h4 class="sub-header">Custom CSS</h4>
+
+               <p>Custom CSS is required for the light blue plus symbols on the panels.</p>
+
+               <div class="well">
+                  <!-- Copier-->
+                  <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+                  <hr class="well-separator">
+
+
+<pre class="prettyprint" id="custom-css-code">
+/* plus glyph for enabling collapsible panels */
+.panel-heading .accordion-toggle:before {
+   font-family: FontAwesome;
+   content: "\f068";
+   float: right;
+   color: lightsteelblue;
+}
+
+.panel-heading .accordion-toggle.collapsed:before {
+   content: "\f067";
+   color: lightsteelblue;
+}
+</pre>
+
+               </div>
+               <!-- .well -->
 
 
          </div>
@@ -1160,10 +1198,13 @@
          })
 
          // Add active class to navmenu selection
-         $("#collapsible-panels").addClass("active");
+         $("#accordions").addClass("active");
 
          // 1st Panel Open checked by default
          $('#first-open').prop('checked', true);
+
+         // 1st Panel Open checked by default
+         $('#plus-icon').prop('checked', true);
 
 
          // Add the brand name to the navbar on all sub-pages
@@ -1185,17 +1226,25 @@
             var panelIcon = $('#panel-icon').val();
             var allPanels = '';
             var startOpen = '';
+            var plusIcon = '';
 
             for (i = 0; i < numPanels; i++) {
                rando = ~~(Math.random() * 10000000);
 
+               if ( $('#plus-icon').is(":checked") ) {
+                  plusIcon = " class='accordion-toggle collapsed' ";
+               } else {
+                  plusIcon = '';
+               }
+
                if (i == 0 && $('#first-open').is(":checked")) {
                   startOpen = ' in';
+                  plusIcon = " class='accordion-toggle' ";
                } else {
                   startOpen = '';
                }
 
-               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse' data-parent='#accordion" +
+               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusIcon + " data-parent='#accordion" +
                   accordionRando + "' href='#collapse" + rando + "' aria-expanded='true' aria-controls='collapse" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse" + rando +
                   "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
 

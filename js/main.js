@@ -105,5 +105,6 @@ $(document).ready(function() {
       $("#simple-example").html(modifiedCode);
    });
 
+
 });
 // document ready closes
