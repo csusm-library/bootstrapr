@@ -90,7 +90,7 @@ $(document).ready(function() {
    };
 
    // Prettify / Beautify / indent the code
-   $('#beautify').click(function() {
+   $("#beautify").on("click", function() {
       var beautify = formatFactory($('#simple-code').text());
       $('#simple-code').text(beautify);
 
