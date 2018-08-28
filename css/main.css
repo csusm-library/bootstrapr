@@ -35,6 +35,10 @@ h4 { font-size: 1.5rem }
 h5 { font-size: 1.25rem }
 h6 { font-size: 1rem }
 
+h1, h2, h3, h4, h5, h6 {
+   font-weight: bold !important;
+}
+
 p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    font-size: 1rem;
    vertical-align: baseline;
@@ -207,19 +211,24 @@ pre {
 }
 
 .push-down-1 {
-   margin-top: 1rem;
+   margin-top: 1rem !important;
 }
 
 .push-down-2 {
-   margin-top: 2rem;
+   margin-top: 2rem !important;
 }
 
 .push-down-3 {
-   margin-top: 3rem;
+   margin-top: 3rem !important;
 }
 
 .push-down-jumbotron {
    margin-top: 7.2rem;
+}
+
+/* Zero left and right borderson list items inside panels */
+.panel-body .list-group-item {
+    border: 1px 0 solid #ddd;
 }
 
 .indent-right-1 {

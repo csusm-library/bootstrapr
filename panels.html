@@ -60,14 +60,14 @@
          <div class="col-sm-6">
             <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
-               <li class="active">Cards</li>
+               <li class="active">Panels</li>
             </ol>
          </div>
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/components/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| cards</small></a>
+ Boostrap 3.3.7 <small id="docs-link">| panels</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -76,8 +76,9 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <h1>Cards</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <h1>Panels</h1>
+            <p class="lead">Panels help chunk and emphasize information clearly.</p>
+            <p>Panels are typically used in multiples or paired with other elements. Use panels to strong effect by placing them inside multiple columns.</p>
          </div>
       </div>
 
@@ -90,41 +91,60 @@
 
                <label for="card-num-columns"># Columns</label>
                <select class="form-control" id="card-num-columns" style="width: 75px">
-                               <option value="0">None</option>
-                               <option value="2">2</option>
-                               <option value="3">3</option>
-                               <option value="4">4</option>
-                               <option value="6">6</option>
-                               </select>
+                   <option value="0">1</option>
+                   <option value="2">2</option>
+                   <option value="3">3</option>
+                   <option value="4">4</option>
+                   <option value="6">6</option>
+               </select>
 
                <label for="panel-accent" style="margin-top: 15px">Accent Color</label>
                <select class="form-control" id="panel-accent">
-                               <option value=" panel-default" selected="selected">Default &mdash; grey</option>
-                               <option value=" panel-primary">Primary &mdash; blue</option>
-                               <option value=" panel-info">Info &mdash; light blue</option>
-                               <option value=" panel-success">Success &mdash; green</option>
-                               <option value=" panel-warning">Warning &mdash; yellow</option>
-                               <option value=" panel-danger">Danger &mdash; red</option>
-                        </select>
+                   <option value=" panel-default" selected="selected">Default &mdash; grey</option>
+                   <option value=" panel-primary">Primary &mdash; blue</option>
+                   <option value=" panel-info">Info &mdash; light blue</option>
+                   <option value=" panel-success">Success &mdash; green</option>
+                   <option value=" panel-warning">Warning &mdash; yellow</option>
+                   <option value=" panel-danger">Danger &mdash; red</option>
+               </select>
 
-               <div class="checkbox" style="margin-top: 15px;">
+               <div class="checkbox push-down-1">
                   <label>
                    <input type="checkbox" id="panel-header"> Header
                    </label>
                </div>
 
-               <div class="checkbox" style="margin-top: 15px;">
+               <div class="checkbox push-down-1">
                   <label>
                     <input type="checkbox" id="panel-footer"> Footer
                     </label>
                </div>
 
+               <div class="checkbox push-down-1">
+                  <label>
+                    <input type="checkbox" id="embedded-list"> Embedded List
+                    </label>
+               </div>
+
+               <div class="form-group hidden push-down-1" id="hide-show-list-num">
+                  <label for="exampleInputEmail1"># List Items</label>
+                  <input type="text" class="form-control" id="number-list-items" placeholder="" style="width:75px;">
+               </div>
+
+               <div class="checkbox push-down-1 hidden" id="hyperlink-hide-show">
+                  <label>
+                <input type="checkbox" id="has-links"> Hyperlinks
+                </label>
+               </div>
+
             </form>
 
-            <div style="margin-top:30px;">
+
+            <div class="push-down-3">
                <button type="button" class="btn btn-default" id="clear-cards"><i class="fa fa-fw fa-refresh"></i> Reset</button>
                <button type="button" class="btn btn-primary" id="display-cards"><i class="fa fa-fw fa-gears"></i> Build</button>
             </div>
+
 
 
          </div>
@@ -136,7 +156,7 @@
                <div class='panel panel-default'>
                   <div class='panel-heading'>
                      <h5 class='panel-title'>Panel Title</h5></div>
-                  <div class='panel-body'>Lorem ipsum dolor sic amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</div>
+                  <div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>
                   <div class='panel-footer'>Footer content</div>
                </div>
             </div>
@@ -163,7 +183,7 @@
       &lt;/h5&gt;
    &lt;/div&gt;
    &lt;div class='panel-body'&gt;
-      Lorem ipsum dolor sic amet.
+      Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?
    &lt;/div&gt;
    &lt;div class='panel-footer'&gt;
       Footer content
@@ -173,6 +193,33 @@
 
             </div>
             <!-- well closes -->
+
+            <h4 class="sub-header">Notes</h4>
+
+            <p>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code>               but will override its size property.</p>
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+
+            <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading styles.
+               For example, see below:</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+/* Bold Headers */
+h1, h2, h3, h4, h5, h6 {
+   font-weight: bold !important;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
 
          </div>
          <!-- col-sm-9 -->
@@ -208,6 +255,8 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
+
 
    <!-- clipboard.js include -->
    <script src="js/clipboard.min.js"></script>
@@ -248,15 +297,40 @@
             $("#simple-example").html(modifiedCode);
          });
 
+         $("#list-type").on('change', function() {
+
+            if ($("#list-type").val() == 'special-icon') {
+               $('#special-list-icon').removeClass('hidden');
+            } else {
+               $('#special-list-icon').addClass('hidden');
+            }
+         });
 
          $('#display-cards').click(function() {
 
-            var panelAccent = $('#panel-accent').val();
-            var panelFooter = '';
-            var panelHeader = '';
-            var closingDiv = "</div>";
-            var cardNumColumns = $('#card-num-columns').val();
-            var cardColumnWrapper = '';
+               var panelAccent = $('#panel-accent').val();
+               var panelFooter = '';
+               var panelHeader = '';
+               var closingDiv = "</div>";
+               var cardNumColumns = $('#card-num-columns').val();
+               var cardColumnWrapper = '';
+               var numberListItems = $("#number-list-items").val();
+               var listItemDiv = '';
+               var fullList = '';
+               var listOpen = "<ul class='list-group'>";
+               var listClose = "</ul>";
+
+               if ( $('#embedded-list').is(':checked') && $('#has-links').is(':checked') ) {
+                  for (i = 0; i < numberListItems; i++) {
+                     listItemDiv += "<li class='list-group-item'><a href='#'>List Item " + (i + 1) + "</a></li>";
+                  }
+               } else {
+                  for (i = 0; i < numberListItems; i++) {
+                     listItemDiv += "<li class='list-group-item'>List Item " + (i + 1) + "</li>";
+                  }
+               }
+
+               fullList = listOpen + listItemDiv + listClose;
 
             if ($('#panel-header').is(':checked')) {
                panelHeader = "<div class='panel-heading'><h5 class='panel-title'>Panel Title</h5></div>";
@@ -271,7 +345,8 @@
             }
 
             var panelBegin = "<div class='panel" + panelAccent + "'>";
-            var panelBody = "<div class='panel-body'>Lorem ipsum dolor sic amet.</div>";
+            var panelBody = "<div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>" +
+               fullList;
 
             // Write the table
             var bsPanel = panelBegin + panelHeader + panelBody + panelFooter + closingDiv;
@@ -294,12 +369,25 @@
                   break;
             }
 
-            $("#simple-example").html(bsPanel);
-            $('#simple-code').text(bsPanel);
+            $("#simple-example").html(bsPanel); $('#simple-code').text(bsPanel);
 
-            $('pre').removeClass('prettyprinted');
-            prettyPrint();
+            $('pre').removeClass('prettyprinted'); prettyPrint();
 
+         });
+
+         $("#embedded-list").on('change', function() {
+
+            if ($('#embedded-list').is(':checked')) {
+               $('#hide-show-list-num').removeClass('hidden');
+               $('#hyperlink-hide-show').removeClass('hidden');
+            } else {
+               $('#hide-show-list-num').addClass('hidden');
+               $('#hyperlink-hide-show').addClass('hidden');
+               $('#number-list-items').val('');
+               // Set header to checked automatically
+               $('#has-links').prop("checked", false);
+
+            }
          });
 
       });
