@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
    // Clickable divs send you to the page with the data-link attribute assigned to an html page
-   $(document).delegate(".panel", "click", function() {
+   $(document).delegate("#interface-elements .panel", "click", function() {
       window.location = $(this).data("link");
    });
 

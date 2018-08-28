@@ -52,6 +52,19 @@ pre {
          tab-size : 3;
 }
 
+/* plus glyph for enabling collapsible panels */
+.panel-heading .accordion-toggle:before {
+   font-family: FontAwesome;
+   content: "\f068";
+   float: right;
+   color: lightsteelblue;
+}
+
+.panel-heading .accordion-toggle.collapsed:before {
+   content: "\f067";
+   color: lightsteelblue;
+}
+
 .well button {
    margin: 0 .5rem !important;
 }
@@ -494,17 +507,4 @@ ol.linenums li:before{
 
 .icon-grid td {
    text-align: center;
-}
-
-/* plus glyph for enabling collapsible panels */
-.panel-heading .accordion-toggle:before {
-   font-family: FontAwesome;
-   content: "\f068";
-   float: right;
-   color: lightsteelblue;
-}
-
-.panel-heading .accordion-toggle.collapsed:before {
-   content: "\f067";
-   color: lightsteelblue;
 }

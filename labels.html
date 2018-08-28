@@ -156,6 +156,32 @@
             </div>
             <!-- example closes -->
 
+            <h4 class="sub-header">Notes</h4>
+            <p>Bootstrap labels typically assume the size of their containing elements. You may add the custom CSS, below, for small </p>
+
+            <h4 class="sub-header">Custom CSS</h4>
+            <p>Use <code>&lt;span class="label-big"&gt;My Cool Label&lt;/span&gt;</code> or <code>&lt;span class="label-small"&gt;My Cool Label&lt;/span&gt;</code> when you wish to create bigger or smaller labels.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-css" id="custom-css-code">
+.label-big {
+   font-size: larger;
+}
+
+.label-small {
+   font-size: smaller;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
          </div>
          <!-- .col-sm-9 -->
 
@@ -189,6 +215,7 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>

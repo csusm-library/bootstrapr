@@ -90,14 +90,14 @@
 
             <form>
                <div class="form-group">
-                  <label for="num-panels">Number of Panels</label>
-                  <input type="text" class="form-control" id="num-panels">
+                  <label for="num-panels"># Panels</label>
+                  <input type="text" class="form-control" id="num-panels" style="width: 75px">
                </div>
 
                <label for="icon-html">Custom Icon (or Text)</label>
                <div class="input-group">
                   <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" id="panel-icon" >
+                  <input type="text" class="form-control" id="panel-icon">
                </div>
                <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></small>
                   </a>
@@ -135,35 +135,41 @@
 
             <div class="example" id="simple-example">
 
-               <div class='panel-group' id='accordion7282963' role='tablist' aria-multiselectable='true'>
-                  <div class='panel panel-default'>
-                     <div class='panel-heading' role='tab' id='heading7901065'>
-                        <h5 class='panel-title'><a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse7901065' aria-expanded='true' aria-controls='collapse7901065'>Panel 1</a></h5></div>
-                     <div id='collapse7901065' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading7901065'>
-                        <div class='panel-body'>Lorem ipsum dolor sic amet!</div>
+               <div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="true">
+                  <div class="panel panel-default">
+                     <div class="panel-heading" role="tab" id="heading8122873">
+                        <h5 class="panel-title">
+				<a role="button" data-toggle="collapse" class="accordion-toggle" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="true" aria-controls="collapse8122873">Panel 1</a>
+			</h5>
+                     </div>
+                     <div id="collapse8122873" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8122873">
+                        <div class="panel-body">Lorem ipsum dolor sic amet!</div>
                      </div>
                   </div>
-                  <div class='panel panel-default'>
-                     <div class='panel-heading' role='tab' id='heading1012203'>
-                        <h5 class='panel-title'><a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse1012203' aria-expanded='true' aria-controls='collapse1012203'>Panel 2</a></h5></div>
-                     <div id='collapse1012203' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading1012203'>
-                        <div class='panel-body'>Lorem ipsum dolor sic amet!</div>
+                  <div class="panel panel-default">
+                     <div class="panel-heading" role="tab" id="heading411391">
+                        <h5 class="panel-title">
+				<a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="true" aria-controls="collapse411391">Panel 2</a>
+			</h5>
+                     </div>
+                     <div id="collapse411391" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading411391">
+                        <div class="panel-body">Lorem ipsum dolor sic amet!</div>
                      </div>
                   </div>
-                  <div class='panel panel-default'>
-                     <div class='panel-heading' role='tab' id='heading2460567'>
-                        <h5 class='panel-title'><a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse2460567' aria-expanded='true' aria-controls='collapse2460567'>Panel 3</a></h5></div>
-                     <div id='collapse2460567' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading2460567'>
-                        <div class='panel-body'>Lorem ipsum dolor sic amet!</div>
+                  <div class="panel panel-default">
+                     <div class="panel-heading" role="tab" id="heading2183316">
+                        <h5 class="panel-title">
+				<a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="true" aria-controls="collapse2183316">Panel 3</a>
+			</h5>
+                     </div>
+                     <div id="collapse2183316" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2183316">
+                        <div class="panel-body">Lorem ipsum dolor sic amet!</div>
                      </div>
                   </div>
                </div>
-               <!-- panel group -->
 
             </div>
             <!-- example -->
-
-
 
             <div class="well">
 
@@ -179,30 +185,38 @@
                <hr class="well-separator">
 
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class='panel-group' id='accordion7282963' role='tablist' aria-multiselectable='true'&gt;
-   &lt;div class='panel panel-default'&gt;
-      &lt;div class='panel-heading' role='tab' id='heading7901065'&gt;
-         &lt;h5 class='panel-title'&gt;&lt;a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse7901065' aria-expanded='true' aria-controls='collapse7901065'&gt;Panel 1&lt;/a&gt;&lt;/h5&gt;&lt;/div&gt;
-      &lt;div id='collapse7901065' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading7901065'&gt;
-         &lt;div class='panel-body'&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class='panel panel-default'&gt;
-      &lt;div class='panel-heading' role='tab' id='heading1012203'&gt;
-         &lt;h5 class='panel-title'&gt;&lt;a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse1012203' aria-expanded='true' aria-controls='collapse1012203'&gt;Panel 2&lt;/a&gt;&lt;/h5&gt;&lt;/div&gt;
-      &lt;div id='collapse1012203' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading1012203'&gt;
-         &lt;div class='panel-body'&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class='panel panel-default'&gt;
-      &lt;div class='panel-heading' role='tab' id='heading2460567'&gt;
-         &lt;h5 class='panel-title'&gt;&lt;a role='button' data-toggle='collapse' data-parent='#accordion7282963' href='#collapse2460567' aria-expanded='true' aria-controls='collapse2460567'&gt;Panel 3&lt;/a&gt;&lt;/h5&gt;&lt;/div&gt;
-      &lt;div id='collapse2460567' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading2460567'&gt;
-         &lt;div class='panel-body'&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
+   &lt;div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="true"&gt;
+	&lt;div class="panel panel-default"&gt;
+		&lt;div class="panel-heading" role="tab" id="heading8122873"&gt;
+			&lt;h5 class="panel-title"&gt;
+				&lt;a role="button" data-toggle="collapse" class="accordion-toggle" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="true" aria-controls="collapse8122873"&gt;Panel 1&lt;/a&gt;
+			&lt;/h5&gt;
+		&lt;/div&gt;
+		&lt;div id="collapse8122873" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8122873"&gt;
+			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="panel panel-default"&gt;
+		&lt;div class="panel-heading" role="tab" id="heading411391"&gt;
+			&lt;h5 class="panel-title"&gt;
+				&lt;a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="true" aria-controls="collapse411391"&gt;Panel 2&lt;/a&gt;
+			&lt;/h5&gt;
+		&lt;/div&gt;
+		&lt;div id="collapse411391" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading411391"&gt;
+			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="panel panel-default"&gt;
+		&lt;div class="panel-heading" role="tab" id="heading2183316"&gt;
+			&lt;h5 class="panel-title"&gt;
+				&lt;a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="true" aria-controls="collapse2183316"&gt;Panel 3&lt;/a&gt;
+			&lt;/h5&gt;
+		&lt;/div&gt;
+		&lt;div id="collapse2183316" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2183316"&gt;
+			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
-&lt;!-- panel group --&gt;
 </pre>
 
             </div>
@@ -213,18 +227,18 @@
                to each panel set stays unique and does not conlflict with the other panel sets on the page.</p>
 
 
-               <h4 class="sub-header">Custom CSS</h4>
+            <h4 class="sub-header">Custom CSS</h4>
 
-               <p>Custom CSS is required for the light blue plus symbols on the panels.</p>
+            <p>Custom CSS is required for the light blue plus symbols on the panels.</p>
 
-               <div class="well">
-                  <!-- Copier-->
-                  <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
 
-                  <hr class="well-separator">
+               <hr class="well-separator">
 
 
-<pre class="prettyprint" id="custom-css-code">
+<pre class="prettyprint lang-css" id="custom-css-code">
 /* plus glyph for enabling collapsible panels */
 .panel-heading .accordion-toggle:before {
    font-family: FontAwesome;
@@ -239,8 +253,8 @@
 }
 </pre>
 
-               </div>
-               <!-- .well -->
+            </div>
+            <!-- .well -->
 
 
          </div>
@@ -274,6 +288,7 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- Bootstrap Table -->
    <script type="text/javascript" src="js/jquery.sortelements.js"></script>
@@ -1192,10 +1207,17 @@
          $('#bootstrap-table').bdt();
          $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
 
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
          // tooltips function
          $(function() {
             $('[data-toggle="tooltip"]').tooltip()
          })
+
+         $('#refresh-button').on("click", function() {
+            $('#panel-icon').val('');
+         });
 
          // Add active class to navmenu selection
          $("#accordions").addClass("active");
@@ -1205,10 +1227,6 @@
 
          // 1st Panel Open checked by default
          $('#plus-icon').prop('checked', true);
-
-
-         // Add the brand name to the navbar on all sub-pages
-         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
          // Reset button
          $('#clear-panel').on("click", function() {
@@ -1231,7 +1249,7 @@
             for (i = 0; i < numPanels; i++) {
                rando = ~~(Math.random() * 10000000);
 
-               if ( $('#plus-icon').is(":checked") ) {
+               if ($('#plus-icon').is(":checked")) {
                   plusIcon = " class='accordion-toggle collapsed' ";
                } else {
                   plusIcon = '';
@@ -1270,8 +1288,9 @@
             $('#icons-modal').modal('hide');
          });
 
-      });
 
+
+      });
 
       // clipboard button
       new Clipboard('.btn');
