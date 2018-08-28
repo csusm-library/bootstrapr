@@ -66,7 +66,7 @@
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/css/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+               <a href="https://getbootstrap.com/docs/3.3/components/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
  Boostrap 3.3.7 <small id="docs-link">| cards</small></a>
             </p>
          </div>
@@ -82,11 +82,103 @@
       </div>
 
       <hr>
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <label for="card-num-columns"># Columns</label>
+               <select class="form-control" id="card-num-columns" style="width: 75px">
+                               <option value="0">None</option>
+                               <option value="2">2</option>
+                               <option value="3">3</option>
+                               <option value="4">4</option>
+                               <option value="6">6</option>
+                               </select>
+
+               <label for="panel-accent" style="margin-top: 15px">Accent Color</label>
+               <select class="form-control" id="panel-accent">
+                               <option value=" panel-default" selected="selected">Default &mdash; grey</option>
+                               <option value=" panel-primary">Primary &mdash; blue</option>
+                               <option value=" panel-info">Info &mdash; light blue</option>
+                               <option value=" panel-success">Success &mdash; green</option>
+                               <option value=" panel-warning">Warning &mdash; yellow</option>
+                               <option value=" panel-danger">Danger &mdash; red</option>
+                        </select>
+
+               <div class="checkbox" style="margin-top: 15px;">
+                  <label>
+                   <input type="checkbox" id="panel-header"> Header
+                   </label>
+               </div>
+
+               <div class="checkbox" style="margin-top: 15px;">
+                  <label>
+                    <input type="checkbox" id="panel-footer"> Footer
+                    </label>
+               </div>
+
+            </form>
+
+            <div style="margin-top:30px;">
+               <button type="button" class="btn btn-default" id="clear-cards"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-cards"><i class="fa fa-fw fa-gears"></i> Build</button>
+            </div>
 
 
-   <h4>Heading</h4>
-   <p>Content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ut eius velit. Atque praesentium hic odit, quo maxime quae dolor ab voluptate totam earum non excepturi officia temporibus delectus ut.</p>
+         </div>
+         <!-- col-sm-3 -->
 
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+               <div class='panel panel-default'>
+                  <div class='panel-heading'>
+                     <h5 class='panel-title'>Panel Title</h5></div>
+                  <div class='panel-body'>Lorem ipsum dolor sic amet. Lorem ipsum dolor sit amet, consectetur adipisicing elit!</div>
+                  <div class='panel-footer'>Footer content</div>
+               </div>
+            </div>
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+                  </button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Preview</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class='panel panel-default'&gt;
+   &lt;div class='panel-heading'&gt;
+      &lt;h5 class='panel-title'&gt;
+         Panel Title
+      &lt;/h5&gt;
+   &lt;/div&gt;
+   &lt;div class='panel-body'&gt;
+      Lorem ipsum dolor sic amet.
+   &lt;/div&gt;
+   &lt;div class='panel-footer'&gt;
+      Footer content
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+         </div>
+         <!-- col-sm-9 -->
+
+      </div>
+      <!-- .row -->
 
 
 
@@ -117,6 +209,9 @@
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
 
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
@@ -137,8 +232,82 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         // Set header to checked automatically
+         $('#panel-header').prop("checked", true);
+
+         // Set footer to checked automatically
+         // $('#panel-footer').prop("checked", true);
+
+         $('#clear-cards').click(function() {
+            location.reload(true);
+         });
+
+         // Update the preview window after changes to the code well
+         $("#update-preview").on("click", function() {
+            var modifiedCode = $('#simple-code').text();
+            $("#simple-example").html(modifiedCode);
+         });
+
+
+         $('#display-cards').click(function() {
+
+            var panelAccent = $('#panel-accent').val();
+            var panelFooter = '';
+            var panelHeader = '';
+            var closingDiv = "</div>";
+            var cardNumColumns = $('#card-num-columns').val();
+            var cardColumnWrapper = '';
+
+            if ($('#panel-header').is(':checked')) {
+               panelHeader = "<div class='panel-heading'><h5 class='panel-title'>Panel Title</h5></div>";
+            } else {
+               panelHeader = '';
+            }
+
+            if ($('#panel-footer').is(':checked')) {
+               panelFooter += "<div class='panel-footer'>Footer content</div>";
+            } else {
+               panelFooter = '';
+            }
+
+            var panelBegin = "<div class='panel" + panelAccent + "'>";
+            var panelBody = "<div class='panel-body'>Lorem ipsum dolor sic amet.</div>";
+
+            // Write the table
+            var bsPanel = panelBegin + panelHeader + panelBody + panelFooter + closingDiv;
+
+            switch (cardNumColumns) {
+               case '0':
+                  break;
+               case '2':
+                  bsPanel = "<div class='row'><div class='col-sm-6'>" + bsPanel + "</div><div class='col-sm-6'>" + bsPanel + "</div></div>";
+                  break;
+               case '3':
+                  bsPanel = "<div class='row'><div class='col-sm-4'>" + bsPanel + "</div><div class='col-sm-4'>" + bsPanel + "</div><div class='col-sm-4'>" + bsPanel + "</div></div>";
+                  break;
+               case '4':
+                  bsPanel = "<div class='row'><div class='col-sm-3'>" + bsPanel + "</div><div class='col-sm-3'>" + bsPanel + "</div><div class='col-sm-3'>" + bsPanel + "</div><div class='col-sm-3'>" + bsPanel + "</div></div>";
+                  break;
+               case '6':
+                  bsPanel = "<div class='row'><div class='col-sm-2'>" + bsPanel + "</div><div class='col-sm-2'>" + bsPanel + "</div><div class='col-sm-2'>" + bsPanel + "</div><div class='col-sm-2'>" + bsPanel +
+                     "</div><div class='col-sm-2'>" + bsPanel + "</div><div class='col-sm-2'>" + bsPanel + "</div></div>";
+                  break;
+            }
+
+            $("#simple-example").html(bsPanel);
+            $('#simple-code').text(bsPanel);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
       });
+
+      // clipboard button
+      new Clipboard('.btn');
    </script>
 
 </body>
+
 </html>
