@@ -1,0 +1,361 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Metadata for the Webpage -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap.r</title>
+
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- Bootstrap CSS files-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- jQuery UI CSS (optional) -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <!-- Google web fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
+
+   <!-- Font Awesome Web Icons -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Main local stylesheet -->
+   <link rel="stylesheet" href="css/main.css">
+
+   <!-- Prettify theme -->
+   <link rel="stylesheet" href="css/prettify-theme.css">
+
+</head>
+
+<body id="top">
+
+   <!-- Navbar include -->
+   <div w3-include-html="navbar.html"></div>
+
+   <div class="container main-content">
+
+      <div class="row add-100">
+         <div class="col-sm-6">
+            <ol class="breadcrumb">
+               <li><a href="index.html">Home</a></li>
+               <li class="active">Blockquotes</li>
+            </ol>
+         </div>
+         <!-- col-sm-8 -->
+         <div class="col-sm-6">
+            <p class="pull-right">
+               <a href="https://getbootstrap.com/docs/3.3/css/#type-blockquotes" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+ Boostrap 3.3.7 <small id="docs-link">| Blockquotes</small></a>
+            </p>
+         </div>
+         <!-- col-sm-4-->
+      </div>
+      <!-- .row -->
+
+      <div class="row">
+         <div class="col-sm-12">
+            <h1>Blockquotes</h1>
+            <p class="lead">Blockquotes are brief, impactful textual excerpts.</p>
+            <p>Blockquotes are especially useful as epigraphs introducing content by highlighting its main ideas or themes.</p>
+         </div>
+      </div>
+
+      <hr>
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <div class="form-group">
+                  <label for="button-color">Alignment</label>
+                  <select class="form-control" id="alignment" style="margin-bottom: 15px;">
+                        <option id="align-left" value="blockquote" selected="selected">Left</option>
+                        <option id="align-right" value="blockquote-inverse">Right</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="blockquote-quote">Quote</label>
+                  <textarea id="quote" class="form-control" rows="12"></textarea>
+                  <span class="placeholder">Example | And when this happens...</span>
+
+               </div>
+            </form>
+
+            <div class="form-group">
+               <label for="blockquote-author">Author</label>
+               <input type="text" class="form-control" id="author">
+               <span class="placeholder">Example | Rev. Dr. Martin Luther King, Jr.</span>
+
+            </div>
+
+            <div class="form-group">
+               <label for="blockquote-source">Source</label>
+               <input type="text" class="form-control" id="source">
+               <span class="placeholder">Example | "I Have a Dream"</span>
+            </div>
+
+            <div class="form-group">
+               <div class="checkbox" style="margin-top: 20px;">
+                  <label>
+                         <input type="checkbox" id="is-italic"> Make Source Italic
+                     </label>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <div class="checkbox">
+                  <label>
+                         <input type="checkbox" id="is-link"> Make Source a Link
+                     </label>
+               </div>
+            </div>
+
+            <div class="form-group push-down-1 hidden" id="source-link-hidden">
+               <label for="blockquote-source">Source Link</label>
+               <input type="text" class="form-control" id="source-link">
+               <span class="placeholder">Example | http://www.link.com</span>
+            </div>
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-blockquote">Reset</button>
+               <button type="button" class="btn btn-primary" id="display-blockquote">Build</button>
+            </div>
+
+         </div>
+         <!-- c.ol-sm-3 -->
+
+
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <blockquote>
+                  <p>And when this happens, when we allow freedom to ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men,
+                     Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual: &ldquo;Free at last! Free at last! Thank God Almighty, we are free at last!&rdquo;</p>
+                  <footer>Rev. Martin Luther King, Jr., from <cite title="I have a Dream"><a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.html">&ldquo;I Have a Dream&rdquo;</a></cite></footer>
+               </blockquote>
+
+            </div>
+            <div class="well" contenteditable="true">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Preview</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-html" id="simple-code">
+&lt;blockquote&gt;
+	&lt;p&gt;And when this happens, when we allow freedom to ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men, Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual: “Free at last! Free at last! thank God Almighty, we are free at last!”&lt;/p&gt;
+	&lt;footer&gt;
+		Rev. Martin Luther King, Jr.
+		&lt;cite title="I have a Dream"&gt;
+			&lt;a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.html"&gt;"I Have a Dream"&lt;/a&gt;
+		&lt;/cite&gt;
+	&lt;/footer&gt;
+&lt;/blockquote&gt;
+</pre>
+
+            </div>
+            <!-- example closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+
+            <p>Custom CSS may be required for adding links to the <code>&lt;cite&gt;</code> element in order to keep the <code>&lt;a&gt;</code> element the same size as its containing element.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+/* Maintain the same size for the anchor element (link) as the cite element */
+cite a {
+   font-size: inherit;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
+         </div>
+         <!-- c.ol-sm-9 -->
+
+
+      </div>
+      <!-- .row -->
+
+
+
+
+
+   </div>
+   <!-- .container -->
+
+
+   <!-- Navbar include -->
+   <div w3-include-html="footer.html"></div>
+
+
+   <!-- Back-to-top button -->
+   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+   <!-- jQuery Javascript Library (required by Bootstrap) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <!-- jQuery UI Library (optional) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+   <!-- Bootstrap Library -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+   <!-- Main local script file -->
+   <script src="js/main.js"></script>
+
+   <!-- includes for Google's code highlighter 'prettyprint' -->
+   <link rel="stylesheet" type="text/css" href="css/prettify.css">
+   <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
+
+   <!-- html file include script | used for navbar -->
+   <script src="js/w3data.js"></script>
+   <script>
+      w3IncludeHTML();
+   </script>
+
+   <script>
+      $(document).ready(function() {
+
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
+
+         // Add active class to navmenu selection
+         $("li#blockquotes").addClass("active");
+
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+         // Reset form button
+         $('#clear-blockquote').click(function() {
+            location.reload(true);
+         });
+
+         // Update the preview window after changes to the code well
+         $("#update-preview").on("click", function() {
+            var modifiedCode = $('#simple-code').text();
+            $("#simple-example").html(modifiedCode);
+         });
+
+         // Hide and show if source is a link
+         $('#is-link').click(function() {
+            $('#source-link-hidden').toggleClass('hidden');
+            $('#source-link').val('');
+         });
+
+         $('#display-blockquote').click(function() {
+
+            var blockquoteQuote = $('#quote').val();
+            var blockquoteAuthor = $('#author').val();
+            var blockquoteSource = $('#source').val();
+            var sourceLink = $('#source-link').val();
+
+
+            if (blockquoteSource !== '' && blockquoteAuthor !== '') {
+               blockquoteAuthor += ", from ";
+            }
+
+            if (blockquoteAuthor == '') {
+
+            }
+
+            // escape the quotation marks in quote and source fields
+            blockquoteQuote = blockquoteQuote.replace(/\"/g,'&#34;');
+            blockquoteQuote = blockquoteQuote.replace(/\”/g,'&#34;');
+            blockquoteQuote = blockquoteQuote.replace(/\“/g,'&#34;');
+            blockquoteQuote = blockquoteQuote.replace(/\'/g,'&#39;');
+            blockquoteQuote = blockquoteQuote.replace(/\‘/g,'&#39;');
+            blockquoteQuote = blockquoteQuote.replace(/\’/g,'&#39;');
+
+            blockquoteSource = blockquoteSource.replace(/\"/g,'&#34;');
+            blockquoteSource = blockquoteSource.replace(/\”/g,'&#34;');
+            blockquoteSource = blockquoteSource.replace(/\“/g,'&#34;');
+            blockquoteSource = blockquoteSource.replace(/\'/g,'&#39;');
+            blockquoteSource = blockquoteSource.replace(/\‘/g,'&#39;');
+            blockquoteSource = blockquoteSource.replace(/\’/g,'&#39;');
+
+            var linkOpen = "<a href='" + sourceLink + "' target='_blank'>";
+            var linkClose = "</a>";
+
+            if (sourceLink == '') {
+               linkOpen = '';
+               linkClose = '';
+            }
+
+            var blockquoteCite = blockquoteSource;
+
+            if ($('#isItalics').is(':checked')) {
+               blockquoteSource = "<em>" + blockquoteSource + "</em>";
+            }
+
+            var bsBlockquote = "<blockquote><p>" + blockquoteQuote + "</p><footer>" + blockquoteAuthor + "<cite title='" + blockquoteCite + "'>" + linkOpen + blockquoteSource + linkClose + "</cite></footer></blockquote>";
+
+            // Write the image
+            $("#simple-example").html(bsBlockquote);
+            $('#simple-code').text(bsBlockquote);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         }); // displayBlockquote function
+
+
+      });
+
+      // clipboard button
+      new Clipboard('.btn');
+   </script>
+
+</body>
+
+</html>

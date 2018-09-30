@@ -5,9 +5,12 @@
   outline: 0 !important;
 }
 
+html {
+   font-size: 100%;
+}
+
 html, body {
    font-family: "Open Sans", sans-serif;
-   font-size: 1rem;
    margin: 0;
    padding: 0;
    color: black;
@@ -33,14 +36,18 @@ h2 { font-size: 2rem }
 h3 { font-size: 1.75rem }
 h4 { font-size: 1.5rem }
 h5 { font-size: 1.25rem }
-h6 { font-size: 1rem }
+h6 { font-size: 1.1rem }
 
 h1, h2, h3, h4, h5, h6 {
    font-weight: bold !important;
 }
 
-p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
+p {
    font-size: 1rem;
+
+}
+
+p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    vertical-align: baseline;
    -webkit-font-smoothing: antialiased;
 }
@@ -162,7 +169,7 @@ pre {
     padding-top: 2rem;
 }
 
-.example:after {
+/* .example:after {
     content: "Example";
     position: absolute;
     top: 0;
@@ -170,12 +177,12 @@ pre {
     padding: 2px 8px;
     font-size: 14px;
     font-weight: bold;
-    background-color: #f1f1f1; /* #474E5F #dff0d8  002b5b */
-    color: #474E5F !important; /*#3c763d */
+    background-color: #f1f1f1;
+    color: #474E5F !important;
     padding:6px;
     border-radius: 4px 0 4px 0;
     font-weight: 700;
-}
+} */
 
 .jumbotron {
    height: 450px;
@@ -280,6 +287,17 @@ pre {
 .descriptor {
    color: gray;
    font-variant: small-caps !important;
+}
+
+.bold {
+   font-weight: bold;
+}
+
+.placeholder {
+   color: gray;
+   font-size: 90%;
+   display: block;
+   padding-left: .5rem;
 }
 
 #docs-link {

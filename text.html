@@ -47,6 +47,15 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
+   <style>
+
+      td:first-of-type {
+         font-weight: bold;
+      }
+
+   </style>
+
+
 </head>
 
 <body id="top">
@@ -66,7 +75,7 @@
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/css/#text" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+               <a href="https://getbootstrap.com/docs/3.3/css/#type" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
    Boostrap 3.3.7 <small id="docs-link">| text</small></a>
             </p>
          </div>
@@ -86,7 +95,7 @@
 
       <h4>Special Text Formats</h4>
 
-               <table style="margin-top: 30px;" class='table table-bordered'>
+               <table style="margin-top: 30px;" class='table'>
                   <thead></thead>
                   <tbody>
                      <tr>
@@ -222,9 +231,6 @@
    <!-- Bootstrap Library -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-   <!-- Main local script file -->
-   <script src="js/main.js"></script>
-
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
@@ -234,6 +240,12 @@
    <script>
       w3IncludeHTML();
    </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+   <!-- Main local script file -->
+   <script src="js/main.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -248,6 +260,9 @@
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+         // clipboard button
+         new Clipboard('.btn');
 
       });
    </script>

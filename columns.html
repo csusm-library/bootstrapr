@@ -47,6 +47,22 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
+   <style>
+
+   #colForm, #col-list-examples {
+      margin-bottom: 30px;
+   }
+
+   #colForm label {
+      margin-bottom: 15px;
+   }
+
+   #colForm input {
+      margin-right: 10px;
+   }
+   
+   </style>
+
 </head>
 
 <body id="top">
@@ -83,7 +99,80 @@
 
       <hr>
 
-      start here...
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <ul class='nav nav-pills  nav-justified' role='tablist'>
+               <li role='presentation' class='active'><a href='#common' aria-controls='home' role='tab' data-toggle='tab'>Common</a></li>
+               <li role='presentation' class=''><a href='#custom' aria-controls='home' role='tab' data-toggle='tab'>Custom</a></li>
+            </ul>
+            <div class='tab-content push-down-2'>
+               <div role='tabpanel' class='tab-pane active' id='common'>
+
+
+                  <form id="colForm">
+
+                            <label>
+                               <input type="radio" name="cols" value="100" id="100"> 1 column <small>(100)</small>
+                            </label>
+                            <label>
+                               <input type="radio" name="cols" value="25-75" id="25-75"> 2 columns <small>(25/75)</small>
+                            </label>
+                            <br/>
+                            <label>
+                               <input type="radio" name="cols" value="75-25" id="75-25"> 2 columns <small>(75/25)</small>
+                            </label>
+                            <br/>
+                            <label>
+                               <input type="radio" name="cols" value="40-60" id="40-60"> 2 columns <small>(40/60)</small>
+                            </label>
+                            <br/>
+                            <label>
+                               <input type="radio" name="cols" value="60-40" id="60-40"> 2 columns <small>(60/40)</small>
+                            </label>
+                            <br/>
+                            <label>
+                               <input type="radio" name="cols" value="50-50" id="50-50"> 2 columns <small>(50/50)</small>
+                            </label>
+                            <br/>
+                            <label>
+                               <input type="radio" name="cols" value="33-33-33" id="33-33-33"> 3 columns
+                            </label>
+                            <label>
+                               <input type="radio" name="cols" value="25-25-25-25" id="25-25-25-25"> 4 columns
+                            </label>
+                            <label>
+                               <input type="radio" name="cols" value="20-20-20-20-20" id="20-20-20-20-20"> 5 columns
+                            </label>
+                            <label>
+                               <input type="radio" name="cols" value="16-16-16-16-16-16" id="16-16-16-16-16-16"> 6 columns
+                            </label>
+                            <label>
+                               <input type="radio" name="cols" value="8-8-8-8-8-8-8-8-8-8-8-8" id="8-8-8-8-8-8-8-8-8-8-8-8"> 12 columns
+                            </label>
+
+                         </form>
+
+
+               </div>
+               <div role='tabpanel' class='tab-pane ' id='custom'>Custom here</div>
+            </div>
+
+
+         </div>
+         <div class="col-sm-9">
+
+         </div>
+
+
+      </div>
+
+
+
+
+
+
 
 
    </div>
@@ -137,4 +226,5 @@
    </script>
 
 </body>
+
 </html>
