@@ -77,7 +77,8 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Labels</h1>
-            <p class="lead">Labels pop! Whe not overused, they add meaning contextually.</p>
+            <p class="lead">Labels pop! When not overused, they add meaning contextually.</p>
+            <p></p>
          </div>
       </div>
       <!-- .row -->
@@ -129,9 +130,9 @@
 
             <div class="example" id="simple-example">
 
-               <p>Advertising Red Books <span class='label label-warning'>Library Only</span></p>
-
-               <p>Ad$pender Online <span class='label label-success'>Best Bet</span></p>
+               <p><span class='label label-warning label-large'>Big</span></p>
+               <p><span class='label label-info'>Normal</span></p>
+               <p><span class='label label-success label-small'>Small</span></p>
 
             </div>
 
@@ -150,17 +151,16 @@
                <hr class="well-separator">
 
 <pre class="prettyprint" id="simple-code">
-&lt;p&gt;Advertising Red Books&lt;span class='label label-warning'&gt;Library Only&lt;/span&gt;&lt;/p&gt;&lt;p&gt;Ad$pender Online&lt;span class='label label-success'&gt;Best Bet&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class='label label-warning label-large'&gt;Big&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class='label label-info'&gt;Normal&lt;/span&gt;&lt;/p&gt;
+&lt;p&gt;&lt;span class='label label-success label-small'&gt;Small&lt;/span&gt;&lt;/p&gt;
 </pre>
 
             </div>
             <!-- example closes -->
 
-            <h4 class="sub-header">Notes</h4>
-            <p>Bootstrap labels typically assume the size of their containing elements. You may add the custom CSS, below, for small </p>
-
             <h4 class="sub-header">Custom CSS</h4>
-            <p>Use <code>&lt;span class="label-big"&gt;My Cool Label&lt;/span&gt;</code> or <code>&lt;span class="label-small"&gt;My Cool Label&lt;/span&gt;</code> when you wish to create bigger or smaller labels.</p>
+            <p>Bootstrap labels typically assume the size of their containing elements. You may need to add custom CSS of <code>.label-large"</code> or <code>.label-small</code> if you wish to allow bigger or smaller labels.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -170,12 +170,12 @@
 
 
 <pre class="prettyprint lang-css" id="custom-css-code">
-.label-big {
-   font-size: larger;
+.label-large {
+   font-size: large;
 }
 
 .label-small {
-   font-size: smaller;
+   font-size: x-small;
 }
 </pre>
 
@@ -244,17 +244,20 @@
             var labelColor = $('#label-color').val();
             var labelSize = $('#label-size').val();
             var labelText = $('#label-text').val();
-
-            var labelCore = "<span class='label" + labelColor + "'>" + labelText + "</span>";
-            var bsLabel = '';
+            var smallSized = '';
+            var largeSized = '';
+            var realSize  = '';
 
             if (labelSize == "normal-sized") {
-               bsLabel = labelCore;
+               var realSize = '';
             } else if (labelSize == "small-sized") {
-               bsLabel = "<small>" + labelCore + "</small>";
+               realSize = 'label-small';
             } else {
-               bsLabel = "<span style='font-size:1.3rem'>" + labelCore + "</span>";
+               realSize = "label-large";
             }
+
+            var labelCore = "<span class='" + realSize + " label" + labelColor + "'>" + labelText + "</span>";
+            var bsLabel = '';
 
             // write the table
             $("#simple-example").html(bsLabel);

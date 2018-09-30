@@ -293,6 +293,18 @@ pre {
    font-weight: bold;
 }
 
+.no-italics {
+   font-style: normal;
+}
+
+.label-large {
+   font-size: 105%;
+}
+
+.label-small {
+   font-size: x-small;
+}
+
 .placeholder {
    color: gray;
    font-size: 90%;

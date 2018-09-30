@@ -116,21 +116,21 @@
             <div class="form-group">
                <label for="blockquote-source">Source</label>
                <input type="text" class="form-control" id="source">
-               <span class="placeholder">Example | "I Have a Dream"</span>
-            </div>
-
-            <div class="form-group">
-               <div class="checkbox" style="margin-top: 20px;">
-                  <label>
-                         <input type="checkbox" id="is-italic"> Make Source Italic
-                     </label>
-               </div>
+               <span class="placeholder">Example | I Have a Dream</span>
             </div>
 
             <div class="form-group">
                <div class="checkbox">
                   <label>
                          <input type="checkbox" id="is-link"> Make Source a Link
+                     </label>
+               </div>
+            </div>
+
+            <div class="form-group">
+               <div class="checkbox" style="margin-top: 20px;">
+                  <label>
+                         <input type="checkbox" id="no-italics"> Make source NOT italics
                      </label>
                </div>
             </div>
@@ -159,7 +159,7 @@
                <blockquote>
                   <p>And when this happens, when we allow freedom to ring, when we let it ring from every village and every hamlet, from every state and every city, we will be able to speed up that day when all of God's children, black men and white men,
                      Jews and Gentiles, Protestants and Catholics, will be able to join hands and sing in the words of the old Negro spiritual: &ldquo;Free at last! Free at last! Thank God Almighty, we are free at last!&rdquo;</p>
-                  <footer>Rev. Martin Luther King, Jr., from <cite title="I have a Dream"><a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.html">&ldquo;I Have a Dream&rdquo;</a></cite></footer>
+                  <footer>Rev. Martin Luther King, Jr., from <cite title="I have a Dream"><a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.html">I Have a Dream</a></cite></footer>
                </blockquote>
 
             </div>
@@ -195,7 +195,7 @@
             <h4 class="sub-header">Custom CSS</h4>
 
 
-            <p>Custom CSS may be required for adding links to the <code>&lt;cite&gt;</code> element in order to keep the <code>&lt;a&gt;</code> element the same size as its containing element.</p>
+            <p>Custom CSS may be required to de-italicize the <code>&lt;cite&gt;</code> element, and for adding links to the <code>&lt;cite&gt;</code> element in order to keep the <code>&lt;a&gt;</code> element the same size as the <code>&lt;cite&gt;</code> element (its containing element).</p>
 
             <div class="well">
                <!-- Copier-->
@@ -208,6 +208,11 @@
 /* Maintain the same size for the anchor element (link) as the cite element */
 cite a {
    font-size: inherit;
+}
+
+/* De-italicize the cite element */
+.no-italics {
+   font-style: normal;
 }
 </pre>
 
@@ -333,12 +338,14 @@ cite a {
             }
 
             var blockquoteCite = blockquoteSource;
+            var noItalics = '';
 
-            if ($('#isItalics').is(':checked')) {
-               blockquoteSource = "<em>" + blockquoteSource + "</em>";
+            if ($('#no-italics').is(':checked')) {
+               alert(noItalics);
+               noItalics = " class='no-italics'";
             }
 
-            var bsBlockquote = "<blockquote><p>" + blockquoteQuote + "</p><footer>" + blockquoteAuthor + "<cite title='" + blockquoteCite + "'>" + linkOpen + blockquoteSource + linkClose + "</cite></footer></blockquote>";
+            var bsBlockquote = "<blockquote><p>" + blockquoteQuote + "</p><footer>" + blockquoteAuthor + "<cite" + noItalics + " title='" + blockquoteCite + "'>" + linkOpen + blockquoteSource + linkClose + "</cite></footer></blockquote>";
 
             // Write the image
             $("#simple-example").html(bsBlockquote);
