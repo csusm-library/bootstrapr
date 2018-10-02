@@ -93,8 +93,8 @@
                <div class="form-group">
                   <label for="button-color">Alignment</label>
                   <select class="form-control" id="alignment" style="margin-bottom: 15px;">
-                        <option id="align-left" value="blockquote" selected="selected">Left</option>
-                        <option id="align-right" value="blockquote-inverse">Right</option>
+                        <option value="" selected="selected">Left</option>
+                        <option value="blockquote-reverse">Right</option>
                   </select>
                </div>
 
@@ -304,7 +304,7 @@ cite a {
             var blockquoteAuthor = $('#author').val();
             var blockquoteSource = $('#source').val();
             var sourceLink = $('#source-link').val();
-
+            var blockquoteAlignment = " class='" + $('#alignment').val() + "'";
 
             if (blockquoteSource !== '' && blockquoteAuthor !== '') {
                blockquoteAuthor += ", from ";
@@ -341,11 +341,10 @@ cite a {
             var noItalics = '';
 
             if ($('#no-italics').is(':checked')) {
-               alert(noItalics);
                noItalics = " class='no-italics'";
             }
 
-            var bsBlockquote = "<blockquote><p>" + blockquoteQuote + "</p><footer>" + blockquoteAuthor + "<cite" + noItalics + " title='" + blockquoteCite + "'>" + linkOpen + blockquoteSource + linkClose + "</cite></footer></blockquote>";
+            var bsBlockquote = "<blockquote" + blockquoteAlignment + "><p>" + blockquoteQuote + "</p><footer>" + blockquoteAuthor + "<cite" + noItalics + " title='" + blockquoteCite + "'>" + linkOpen + blockquoteSource + linkClose + "</cite></footer></blockquote>";
 
             // Write the image
             $("#simple-example").html(bsBlockquote);

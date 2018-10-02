@@ -78,7 +78,7 @@
          <div class="col-sm-12">
             <h1>Labels</h1>
             <p class="lead">Labels pop! When not overused, they add meaning contextually.</p>
-            <p></p>
+            <p>Use labels to supplement standard text and foreground important information.</p>
          </div>
       </div>
       <!-- .row -->
@@ -110,15 +110,15 @@
                <div class="form-group">
                   <label for="label-size">Size</label>
                   <select class="form-control" id="label-size">
-                        <option value="big-sized" selected="selected">Big</option>
+                        <option value="large-sized">Big</option>
                         <option value="normal-sized" selected="selected">Normal</option>
                         <option value="small-sized">Small</option>
-                     </select>
+                  </select>
                </div>
 
             </form>
 
-            <div style="margin-top: 30px;">
+            <div class="push-down-3">
                <button type="button" class="btn btn-default" id="clearLabel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
                <button type="button" class="btn btn-primary" id="displayLabel"><i class="fa fa-cogs fa-fw" aria-hidden="true"></i> Build</button>
             </div>
@@ -175,7 +175,7 @@
 }
 
 .label-small {
-   font-size: x-small;
+   font-size: xx-small;
 }
 </pre>
 
@@ -249,15 +249,14 @@
             var realSize  = '';
 
             if (labelSize == "normal-sized") {
-               var realSize = '';
+               var realSize = "";
             } else if (labelSize == "small-sized") {
-               realSize = 'label-small';
+               realSize = " label-small";
             } else {
-               realSize = "label-large";
+               realSize = " label-large";
             }
 
-            var labelCore = "<span class='" + realSize + " label" + labelColor + "'>" + labelText + "</span>";
-            var bsLabel = '';
+            var bsLabel = "<span class='label" + realSize + labelColor + "'>" + labelText + "</span>";
 
             // write the table
             $("#simple-example").html(bsLabel);
