@@ -49,7 +49,7 @@
 
    <style>
 
-   #colForm, #col-list-examples {
+      /* #colForm, #col-list-examples {
       margin-bottom: 30px;
    }
 
@@ -59,6 +59,22 @@
 
    #colForm input {
       margin-right: 10px;
+   } */
+
+   /* Adds a dotted border to the divs for clarity */
+   #simple-example > div > div {
+      border: 1px dotted #999999;
+   }
+
+   /* adds spacing to the radion buttons */
+   input[type="radio"] {
+      margin-right: 1rem;
+      margin-bottom: 1rem;
+   }
+
+   #simple-example > div > div {
+      margin-bottom: .5rem;
+      padding: .5rem;
    }
 
    </style>
@@ -93,7 +109,8 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Columns</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Use columns to structure your page content.</p>
+            <p>These column layouts are among the most common. Stack them atop each other to structure your page. Make sure to Place columns in rows and ensure that columns add up to the 12 column total.</p>
          </div>
       </div>
 
@@ -103,77 +120,138 @@
 
          <div class="col-sm-3">
 
-            <ul class='nav nav-pills  nav-justified' role='tablist'>
-               <li role='presentation' class='active'><a href='#common' aria-controls='home' role='tab' data-toggle='tab'>Common</a></li>
-               <li role='presentation' class=''><a href='#custom' aria-controls='home' role='tab' data-toggle='tab'>Custom</a></li>
-            </ul>
-            <div class='tab-content push-down-2'>
-               <div role='tabpanel' class='tab-pane active' id='common'>
+            <form id="colForm">
+               <label>
+                  <input type="radio" name="cols" value="100" id="100"> 1 column <small class="descriptor">| 100</small>
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="cols" value="25-75" id="25-75"> 2 columns <small class="descriptor">| 25 / 75</small>
+               </label>
+               <br/>
+               <label>
+                  <input type="radio" name="cols" value="75-25" id="75-25"> 2 columns <small class="descriptor">| 75 / 25</small>
+               </label>
+               <br/>
+               <label>
+                  <input type="radio" name="cols" value="40-60" id="40-60"> 2 columns <small class="descriptor">| 40 / 60</small>
+               </label>
+               <br/>
+               <label>
+                  <input type="radio" name="cols" value="60-40" id="60-40"> 2 columns <small class="descriptor">| 60 / 40</small>
+               </label>
+               <br/>
+               <label>
+                  <input type="radio" name="cols" value="50-50" id="50-50"> 2 columns <small class="descriptor">| 50 / 50</small>
+               </label>
+               <br/>
+               <label>
+                  <input type="radio" name="cols" value="threeColumns" id="threeColumns"> 3 columns
+                  <span class="descriptor">| equal widths</span>
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="cols" value="fourColumns" id="fourColumns"> 4 columns
+                  <span class="descriptor">| equal widths</span>
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="cols" value="fiveColumns" id="fiveColumns"> 5 columns
+                  <span class="descriptor">| equal widths</span>
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="cols" value="sixColumns" id="sixColumns"> 6 columns
+                  <span class="descriptor">| equal widths</span>
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="cols" value="twelveColumns" id="twelveColumns"> 12 columns
+                  <span class="descriptor">| equal widths</span>
+               </label>
 
+            </form>
 
-                  <form id="colForm">
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-columns"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-columns"><i class="fa fa-fw fa-gears"></i> Build</button>
+            </div>
 
-                            <label>
-                               <input type="radio" name="cols" value="100" id="100"> 1 column <small>(100)</small>
-                            </label>
-                            <label>
-                               <input type="radio" name="cols" value="25-75" id="25-75"> 2 columns <small>(25/75)</small>
-                            </label>
-                            <br/>
-                            <label>
-                               <input type="radio" name="cols" value="75-25" id="75-25"> 2 columns <small>(75/25)</small>
-                            </label>
-                            <br/>
-                            <label>
-                               <input type="radio" name="cols" value="40-60" id="40-60"> 2 columns <small>(40/60)</small>
-                            </label>
-                            <br/>
-                            <label>
-                               <input type="radio" name="cols" value="60-40" id="60-40"> 2 columns <small>(60/40)</small>
-                            </label>
-                            <br/>
-                            <label>
-                               <input type="radio" name="cols" value="50-50" id="50-50"> 2 columns <small>(50/50)</small>
-                            </label>
-                            <br/>
-                            <label>
-                               <input type="radio" name="cols" value="33-33-33" id="33-33-33"> 3 columns
-                            </label>
-                            <label>
-                               <input type="radio" name="cols" value="25-25-25-25" id="25-25-25-25"> 4 columns
-                            </label>
-                            <label>
-                               <input type="radio" name="cols" value="20-20-20-20-20" id="20-20-20-20-20"> 5 columns
-                            </label>
-                            <label>
-                               <input type="radio" name="cols" value="16-16-16-16-16-16" id="16-16-16-16-16-16"> 6 columns
-                            </label>
-                            <label>
-                               <input type="radio" name="cols" value="8-8-8-8-8-8-8-8-8-8-8-8" id="8-8-8-8-8-8-8-8-8-8-8-8"> 12 columns
-                            </label>
+         </div>
+         <!-- .col-sm-3 -->
 
-                         </form>
+         <div class="col-sm-9">
 
+            <div class="example" id="simple-example">
 
+               <div class="row">
+                  <div class="col-sm-4">content (4 cols)</div>
+                  <div class="col-sm-4">content (4 cols)</div>
+                  <div class="col-sm-4">content (4 cols)</div>
+                  <div class="col-sm-8">content (8 cols)</div>
+                  <div class="col-sm-4">content (4 cols)</div>
                </div>
-               <div role='tabpanel' class='tab-pane ' id='custom'>Custom here</div>
+
+               <div class="row">
+                  <div class="col-sm-9">content (9 cols)</div>
+                  <div class="col-sm-3">content (3 cols)</div>
+               </div>
+
+               <div class="row">
+                  <div class="col-sm-6">content (6 cols)</div>
+                  <div class="col-sm-6">content (6 cols)</div>
+               </div>
+
+            </div>
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+                  </button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Preview</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="row"&gt;
+   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
+   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
+   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
+   &lt;div class="col-sm-8"&gt;content (8 cols)&lt;/div&gt;
+   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+   &lt;div class="col-sm-9"&gt;content (9 cols)&lt;/div&gt;
+   &lt;div class="col-sm-3"&gt;content (3 cols)&lt;/div&gt;
+&lt;/div&gt;
+&lt;div class="row"&gt;
+   &lt;div class="col-sm-6"&gt;content (6 cols)&lt;/div&gt;
+   &lt;div class="col-sm-6"&gt;content (6 cols)&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+
+
+            <h4 class="sub-header">Notes</h4>
+            <div class="alert alert-info" role="alert">
+               <p><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i> Columns have no borders by default. The dotted lines above are to help visually display the column structure.</p>
             </div>
 
 
          </div>
-         <div class="col-sm-9">
-
-         </div>
-
+         <!-- .col-sm-9 -->
 
       </div>
-
-
-
-
-
-
-
+         <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -181,7 +259,6 @@
 
    <!-- Navbar include -->
    <div w3-include-html="footer.html"></div>
-
 
    <!-- Back-to-top button -->
    <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
@@ -201,12 +278,16 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
       w3IncludeHTML();
    </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -221,6 +302,84 @@
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+
+         // ------- Display the Columns --------------------------
+         $('#display-columns').click(function() {
+
+            var bsTable = '';
+            var colsFinal = $('input[name=cols]:checked').val();
+
+            var oneColumn = "<div class='row'><div class='col-sm-12'>content</div></div>";
+            var twentyFive = "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-9'>content</div></div>";
+            var seventyFive = "<div class='row'><div class='col-sm-9'>content</div><div class='col-sm-3'>content</div></div>";
+            var forty = "<div class='row'><div class='col-sm-5'>content</div><div class='col-sm-7'>content</div></div>";
+            var sixty = "<div class='row'><div class='col-sm-7'>content</div><div class='col-sm-5'>content</div></div>";
+            var fifty = "<div class='row'><div class='col-sm-6'>content</div><div class='col-sm-6'>content</div></div>";
+            var threeColumns = "<div class='row'><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div></div>";
+            var fourColumns = "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div></div>";
+            var fiveColumns =
+               "<div class='row'><div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+            var sixColumns =
+               "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+            var twelveColumns =
+               "<div class='row'><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div></div>";
+
+            switch (colsFinal) {
+               case '100':
+                  bsTable = oneColumn;
+                  break;
+               case '25-75':
+                  bsTable = twentyFive;
+                  break;
+               case '75-25':
+                  bsTable = seventyFive;
+                  break;
+               case '40-60':
+                  bsTable = forty;
+                  break;
+               case '60-40':
+                  bsTable = sixty;
+                  break;
+               case '50-50':
+                  bsTable = fifty;
+                  break;
+               case 'threeColumns':
+                  bsTable = threeColumns;
+                  break;
+               case 'fourColumns':
+                  bsTable = fourColumns;
+                  break;
+               case 'fiveColumns':
+                  bsTable = fiveColumns;
+                  break;
+               case 'sixColumns':
+                  bsTable = sixColumns;
+                  break;
+               case 'twelveColumns':
+                  bsTable = twelveColumns;
+                  break;
+            }
+
+            // Write the table
+
+            $("#simple-example").html(bsTable);
+            $('#simple-code').text(bsTable);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+
+         });
+
+         // ------- Reset the parameters  --------------------------
+         $('#clear-columns').click(function() {
+            location.reload(true);
+         });
+
+
+         // clipboard button
+         new Clipboard('.btn');
 
       });
    </script>

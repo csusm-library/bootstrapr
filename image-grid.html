@@ -47,15 +47,6 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
-   <style>
-
-      td button:last-of-type {
-      margin-top: .25rem;
-   }
-
-   </style>
-
-
 </head>
 
 <body id="top">
@@ -69,14 +60,14 @@
          <div class="col-sm-6">
             <ol class="breadcrumb hidden">
                <li><a href="index.html">Home</a></li>
-               <li class="active">Alerts</li>
+               <li class="active">Image Grid</li>
             </ol>
          </div>
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/components/#alerts" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-                  Boostrap 3.3.7 <small id="docs-link">| alerts</small></a>
+               <a href="https://getbootstrap.com/docs/3.3/css/#images" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| images</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -85,10 +76,9 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <h1>Alerts</h1>
-            <p class="lead">Alerts and notes are useful to make information pop.</p>
-            <p>Use alerts to foreground important information, indicating success, offering warnings, declaring prohibition, and elevating specific links.</p>
-
+            <h1>Image Grid</h1>
+            <p class="lead">Image grids juxtapose multiple images for comparison/contrast, creating a catalogue effect.</p>
+            <p>Descriptive captions&mdash;either with the standard camera (<i class="fa fa-fw fa-camera-retro"></i>) icon or without&mdash;may be used to give credit to authors or otherwise add metadata about each image.</p>
          </div>
       </div>
 
@@ -99,72 +89,73 @@
          <div class="col-sm-3">
 
             <form>
-               <div class="form-group">
-                  <label for="alert-text">Title <small class="descriptor">optional</small></label>
-                  <input type="text" class="form-control" id="alert-title">
-               </div>
 
                <div class="form-group">
-                  <label for="alert-text">Text</label>
-                  <input type="text" class="form-control" id="alert-text">
-               </div>
-
-               <div class="form-group">
-                  <label for="button-color">Color</label>
-                  <select class="form-control" id="alert-color" style="margin-bottom: 15px;">
-                     <option id="option-default" value=" alert-default">Default &mdash; light grey</option>
-                     <option id="option-lt-blue" value=" alert-info" selected="selected">Information &mdash; blue</option>
-                     <option id="option-red" value=" alert-danger">Danger &mdash; red</option>
-                     <option id="option-yellow" value=" alert-warning">Warning &mdash; yellow</option>
-                     <option id="option-green" value=" alert-success">Success &mdash; green</option>
+                  <label for="images-per-row"># Images Per Row</label><br>
+                  <select class="form-control input-number" id="images-per-row">
+                     <option value="2">2</option>
+                     <option value="3" selected="selected">3</option>
+                     <option value="4">4</option>
+                     <option value="6">6</option>
                   </select>
                </div>
 
-               <div style="margin-top: 30px;" class="checkbox">
-                  <label>
-                     <input type="checkbox" id="standard-icons"> Use Default Icons
-                  </label>
-               </div>
-
-               <div style="margin-top: 30px;" class="checkbox">
-                  <label>
-                     <input type="checkbox" id="close-button"> Close Button
-                  </label>
-               </div>
-
-
-               <label style="margin-top: 20px;" for="icon-html">Custom Icon (or Text)</label>
                <div class="input-group">
-                  <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" id="alert-icon">
+                  <label for="num-rows"># Rows</label><br>
+                  <input type="text" class="form-control input-number" id="num-rows">
                </div>
 
-               <p class="text-left" style="margin-left: 8px;">
-                  <a data-toggle="modal" data-target="#icons-modal" target="_blank">
-                     <small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
+               <div class="form-group push-down-2">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="grid-image-is-link"> Make Images Links
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="new-window"> Open Links in New Tab
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="grid-image-caption"> Add captions
+                     </label>
+                  </div>
+               </div>
+
+               <div id="icon-show-hide" class="hidden push-down-2">
+                  <label for="button-url">Icon <span class="descriptor">| optional</span></label>
+                  <div class="input-group">
+                     <span class="input-group-addon" id="refresh-icon-choice"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                     <input type="text" class="form-control" id="image-grid-icon">
+                  </div>
+                  <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a> | <a id="add-icon"><small>Default ( <i class="fa fa-camera-retro" aria-hidden="true"></i> )</small></a></p>
+               </div>
 
             </form>
 
-            <div class="push-down-2 button-box">
-               <button type="button" class="btn btn-default" id="clearAlert"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="alertButton"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-image-grid"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-image-grid"><i class="fa fa-fw fa-gears"></i> Build</button>
             </div>
 
-
          </div>
-         <!-- .col-sm-3 -->
-
          <div class="col-sm-9">
 
             <div class="example" id="simple-example">
 
-               <div class="alert alert-warning" role="alert">
-                  <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong>Lorem Ipsum Dolor</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                     Necessitatibus, nobis porro est optio unde ut dolorem atque dolor dolorum veritatis corporis neque illum voluptatum velit expedita eaque aliquid, similique.</p>
-               </div>
+               <div class="row image-grid"><div class="col-xs-6 col-sm-4 col-md-4"><div class="panel panel-default"><div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div><div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div></div></div><div class="col-xs-6 col-sm-4 col-md-4"><div class="panel panel-default"><div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div><div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div></div></div><div class="col-xs-6 col-sm-4 col-md-4"><div class="panel panel-default"><div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div><div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div></div></div></div>
 
             </div>
-            <div class="well">
+            <!-- .simple-example -->
+
+            <div class="well" contenteditable="true">
 
                <!-- Copier-->
                <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
@@ -180,24 +171,55 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class="alert alert-warning" role="alert"&gt;
-	&lt;p&gt;
-		&lt;i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"&gt;&lt;/i&gt;
-		&lt;a class="close" data-dismiss="alert" aria-label="close"&gt;×&lt;/a&gt;
-		&lt;strong&gt;Lorem Ipsum Dolor&lt;/strong&gt;
-		&lt;br&gt;
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, nobis porro est optio unde ut dolorem atque dolor dolorum veritatis corporis neque illum voluptatum velit expedita eaque aliquid, similique.
-	&lt;/p&gt;
+<pre class="prettyprint" id="simple-code">
+&lt;div class="row image-grid"&gt;
+	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+		&lt;div class="panel panel-default"&gt;
+			&lt;div class="panel-body"&gt;
+				&lt;a href="" target="_blank"&gt;
+					&lt;img alt="" class="img-responsive center-block" src="http://placehold.it/250x250"&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class="panel-footer"&gt;
+				&lt;i class="fa fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
+				Image caption
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+		&lt;div class="panel panel-default"&gt;
+			&lt;div class="panel-body"&gt;
+				&lt;a href="" target="_blank"&gt;
+					&lt;img alt="" class="img-responsive center-block" src="http://placehold.it/250x250"&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class="panel-footer"&gt;
+				&lt;i class="fa fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
+				Image caption
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+		&lt;div class="panel panel-default"&gt;
+			&lt;div class="panel-body"&gt;
+				&lt;a href="" target="_blank"&gt;
+					&lt;img alt="" class="img-responsive center-block" src="http://placehold.it/250x250"&gt;
+				&lt;/a&gt;
+			&lt;/div&gt;
+			&lt;div class="panel-footer"&gt;
+				&lt;i class="fa fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
+				Image caption
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 </pre>
 
             </div>
             <!-- example closes -->
 
-            <h4 class="sub-header push-down-3">Custom CSS</h4>
-
-            <p>Custom CSS is required for the default (grey) alert, which is borrowed from Bootstrap 4.</p>
+            <h4 class="sub-header">Custom CSS</h4>
+            <p>You may wish to set a bottom margin to the images with the following CSS.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -207,28 +229,25 @@
                <hr class="well-separator">
 
 
-               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
-.alert-default {
-   background: #e2e3e5;
-   border-color: #d6d8db;
-   color: #383d41;
+<pre class="prettyprint lang-css" id="custom-css-code">
+/* Adds margin bottom to the images NOT IN panels */
+.image-grid img {
+   margin-bottom: 1rem;
 }
 </pre>
 
             </div>
             <!-- .well -->
 
-
-
          </div>
-         <!-- .col-sm-9 -->
+
 
       </div>
-      <!-- .row -->
+
 
 
    </div>
-   <!-- .container -->
+   <!-- .container-fluid -->
 
 
    <!-- Navbar include -->
@@ -249,6 +268,7 @@
    <!-- Main local script file -->
    <script src="js/main.js"></script>
 
+
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
@@ -259,10 +279,6 @@
    <script>
       w3IncludeHTML();
    </script>
-
-   <!-- Bootstrap Table -->
-   <script type="text/javascript" src="js/jquery.sortelements.js"></script>
-   <script type="text/javascript" src="js/jquery.bdt.js"></script>
 
    <!-- clipboard.js include -->
    <script src="js/clipboard.min.js"></script>
@@ -1596,135 +1612,156 @@
    </div>
    <!-- .modal -->
 
+   <!-- Bootstrap Table -->
+   <script type="text/javascript" src="js/jquery.sortelements.js"></script>
+   <script type="text/javascript" src="js/jquery.bdt.js"></script>
+
+
    <script>
       $(document).ready(function() {
+
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
 
          // The searchable bootstrap table
          $('#bootstrap-table').bdt();
          $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
 
-         // tooltips function
-         $('[data-toggle="tooltip"]').tooltip();
-
          // Add active class to navmenu selection
-         $("li#alerts").addClass("active");
+         $("li#image-grid").addClass("active");
 
-         // Add brand name Bootstrapper to right of logo
+         // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
-         // Reset button
-         $('#clearAlert').on("click", function() {
-            location.reload(true);
+         // add the default icon (camera-retro) into the input field
+         $('#add-icon').click(function() {
+            $('#image-grid-icon').val('<i class="fa fa-camera-retro" aria-hidden="true"></i>');
          });
 
-         // check the box by default
-         $('#standard-icons').prop('checked', true);
+         // Show or hide the caption box
+         $("#grid-image-caption").on('change', function() {
 
-         // close button added by default
-         $('#close-button').prop('checked', true);
-
-         // check the traditional icons checkbox
-         $("#standard-icons").click(function() {
-            if (!$(this).is(":not(:checked)")) { //checks if the checkbox/this is selected or not
-               $("#alert-icon").val(""); //empty the input value
-            }
-         });
-
-         // uncheck the standard icons when text entered into this field
-
-         $('#alert-icon').on('input', function(e) {
-            $('#standard-icons').prop("checked", false);
-         });
-
-         $('#refresh-button').click(function() {
-            $('#alert-icon').val('');
-         });
-
-         $('#alertButton').on("click", function() {
-
-            var closeIcon = "<a class='close' data-dismiss='alert' aria-label='close'>×</a>"
-            var alertIcon = $('#alert-icon').val();
-            // adds fa-fw class
-            var alertIconSpaced = alertIcon.replace('" aria-hidden="true"></i>', '" aria-hidden="true"></i>');
-
-            var alertColorChoice = $('#alert-color').val();
-            var alertIconAssignation = '';
-            var checked = $('#standard-icons').prop('checked');
-            var customIzed = $("#alert-icon").val().length > 0;
-            var alertText = $('#alert-text').val();
-            var alertTitle = $('#alert-title').val();
-
-
-            if ($("#close-button").is(":not(:checked)")) {
-               closeIcon = ""; // empty the close icon string
+            if ($('#grid-image-caption').is(':checked')) {
+               $('#icon-show-hide').removeClass('hidden');
             } else {
-               closeIcon = "<a class='close' data-dismiss='alert' aria-label='close'>×</a>";
+               $('#image-grid-icon').val('');
+               $('#icon-show-hide').addClass('hidden');
+            }
+         });
+
+
+
+
+         // Display the image grid button
+         $('#display-image-grid').click(function() {
+
+            var numRows = $('#num-rows').val();
+            var imagesPerRow = $('#images-per-row').val();
+            var placeholderSize = '';
+            var colSize = '';
+            var gridOpen = '<div class="row image-grid">';
+            var imageRowOpen = '<div class="row">';
+            var divClose = '</div>';
+            var gridImageCaption = $('#grid-image-caption').val();
+            var linkOpen = '';
+            var linkClose = '';
+            var windowStatus = "_self";
+
+            var panelOpen = '';
+            var panelBodyOpen = '';
+            var panelBodyClose = '';
+            var panelFooterOpen = '';
+            var panelFooterClose = '';
+            var panelClose = '';
+            var gridImageCaption = '';
+            var imageRows = '';
+            var captionContent = '';
+            var imageGridIcon = $('#image-grid-icon').val();
+
+
+            if ($('#grid-image-caption').is(':checked')) {
+
+               panelOpen = '<div class="panel panel-default">';
+               panelBodyOpen = '<div class="panel-body">';
+               panelBodyClose = '</div>';
+               panelFooterOpen = '<div class="panel-footer">';
+               panelFooterClose = '</div>';
+               panelClose = '</div>';
+               captionContent = "Image caption";
             }
 
-            if ($('#alert-title').val() !== '') {
-               alertTitle = "<strong>" + $('#alert-title').val() + "</strong><br/>";
+            if ($('#grid-image-is-link').is(':checked') && $('#new-window').is(':checked')) {
+               windowStatus = "_blank";
+            } else {
+               windowStatus = "_self";
             }
 
-            switch (alertColorChoice) {
-               case ' alert-default':
-                  if (checked) {
-                     alertIconAssignation = "<i class='fa fa-info-circle fa-fw' aria-hidden='true'></i>";
-                  } else if (customIzed) {
-                     alertIconAssignation = alertIconSpaced;
-                  }
+            // set to link
+            linkOpen = '<a href="" target="' + windowStatus + '">';
+            linkClose = '</a>';
+
+            if ($('#grid-image-caption').is(':not(:checked)')) {
+               $('#image-grid-icon').val('');
+            }
+
+            switch (imagesPerRow) {
+               case '2':
+                  placeholderSize = '500';
+                  colSize = 'col-xs-6 col-sm-6 col-md-6';
                   break;
-               case ' alert-info':
-                  if (checked) {
-                     alertIconAssignation = "<i class='fa fa-info-circle fa-fw' aria-hidden='true'></i>";
-                  } else if (customIzed) {
-                     alertIconAssignation = alertIconSpaced;
-                  }
+               case '3':
+                  placeholderSize = '250';
+                  colSize = 'col-xs-6 col-sm-4 col-md-4';
                   break;
-               case ' alert-danger':
-                  if (checked) {
-                     alertIconAssignation = "<i class='fa fa-times-circle fa-fw' aria-hidden='true'></i>";
-                  } else if (customIzed) {
-                     alertIconAssignation = alertIconSpaced;
-                  }
+               case '4':
+                  placeholderSize = '200';
+                  colSize = 'col-xs-6 col-sm-3 col-md-3';
                   break;
-               case ' alert-warning':
-                  if (checked) {
-                     alertIconAssignation = "<i class='fa fa-exclamation-triangle fa-fw' aria-hidden='true'></i>";
-                  } else if (customIzed) {
-                     alertIconAssignation = alertIconSpaced;
-                  }
-                  break;
-               case ' alert-success':
-                  if (checked) {
-                     alertIconAssignation = "<i class='fa fa-star fa-fw' aria-hidden='true'></i>";
-                  } else if (customIzed) {
-                     alertIconAssignation = alertIconSpaced;
-                  }
+               case '6':
+                  placeholderSize = '125';
+                  colSize = 'col-xs-4 col-sm-4 col-md-2 ';
                   break;
             }
 
-            var alertOpening = "<div class='alert" + alertColorChoice + "' role='alert'><p>";
-            var alertClosing = alertIconAssignation + closeIcon + alertTitle + alertText + "</p></div>";
+            var gridImage = '<div class="' + colSize + '">' + panelOpen + panelBodyOpen + linkOpen + '<img alt="" class="img-responsive center-block" src="http://placehold.it/' + placeholderSize + 'x' + placeholderSize + '" />' +
+               linkClose + panelBodyClose + panelFooterOpen + imageGridIcon + captionContent + panelFooterClose + panelClose + divClose;
+            var gridRow = '';
 
-            // Write the table
-            var bsAlert = alertOpening + alertClosing;
+            for (z = 0; z < numRows; z++) {
+               for (i = 0; i < imagesPerRow; i++) {
+                  gridRow += gridImage;
+               }
+               imageRows += imageRowOpen + gridRow + divClose;
+            }
 
-            $("#simple-example").html(bsAlert);
-            $('#simple-code').text(bsAlert);
+            var bsImageGrid = gridOpen + gridRow + divClose;
+
+            // Write the image
+            $("#simple-example").html(bsImageGrid);
+            $('#simple-code').text(bsImageGrid);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
 
-            alertIconAssignation = '';
+         });
 
+
+         // Reset the form
+         $('#clear-image-grid').click(function() {
+            location.reload(true);
+         });
+
+         $('#refresh-icon-choice').click(function() {
+            $('#image-grid-icon').val("");
          });
 
          // Select the icon from the modal
          var iconValue = "";
          $('.icon-selector').on('click', function() {
-            $('#standard-icons').prop('checked', false);
             iconValue = $(this).data("well-target");
-            $("#alert-icon").val(iconValue);
+            $("#image-grid-icon").val(iconValue);
             iconValue = "";
             $('#icons-modal').modal('hide');
          });
@@ -1733,7 +1770,6 @@
          new Clipboard('.btn');
 
       });
-      // document.ready
    </script>
 
 </body>
