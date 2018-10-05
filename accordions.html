@@ -82,7 +82,7 @@
          </div>
       </div>
 
-      <hr>
+      <hr class="divider">
 
       <div class="row">
 
@@ -115,7 +115,7 @@
                <div class="form-group">
                   <div class="checkbox">
                      <label>
-                              <input type="checkbox" id="plus-icon"> Add Plus Icon
+                              <input type="checkbox" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
                            </label>
                   </div>
                </div>
@@ -222,11 +222,6 @@
             </div>
             <!-- well closes -->
 
-            <h4 class="sub-header">Notes</h4>
-            <p>Keep Panel Sets Unique. While you may place as many sets of collapsible panels on a page as you like, do not simply cut and paste the same set again and again. Make sure to generate each new panel set anew, ensuring the random number assigned
-               to each panel set stays unique and does not conlflict with the other panel sets on the page.</p>
-
-
             <h4 class="sub-header">Custom CSS</h4>
 
             <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
@@ -239,7 +234,7 @@
 
 
 <pre class="prettyprint lang-css" id="custom-css-code">
-/* plus glyph for enabling collapsible panels */
+/* Adds 'plus' glyph for enabling collapsible panels */
 .panel-heading .accordion-toggle:before {
    font-family: FontAwesome;
    content: "\f068";
@@ -251,11 +246,21 @@
    content: "\f067";
    color: lightsteelblue;
 }
+
+/* sets the link to the size of the entire panel title */
+.panel-title > a {
+   display: block;
+}
 </pre>
 
             </div>
             <!-- .well -->
 
+            <h4 class="sub-header">Notes</h4>
+            <div class="alert alert-warning" role="alert">
+               <p><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i><strong> Keep Accordion Sets Unique</strong><br>While you may place multiple accordion sets on a page, <strong>do not</strong> simply cut and paste the same set again and
+                  again. Make sure to generate each new accordion set anew, ensuring the random number assigned to each set stays unique and does not conlflict with the other sets on the page.</p>
+            </div>
 
          </div>
          <!-- col-sm-9 -->
@@ -1252,12 +1257,12 @@
                if ($('#plus-icon').is(":checked")) {
                   plusIcon = " class='accordion-toggle collapsed' ";
                } else {
-                  plusIcon = '';
+                  plusIcon = " class='' ";
                }
 
                if (i == 0 && $('#first-open').is(":checked")) {
                   startOpen = ' in';
-                  plusIcon = " class='accordion-toggle' ";
+                  // plusIcon = " class='accordion-toggle' ";
                } else {
                   startOpen = '';
                }
@@ -1287,8 +1292,6 @@
             iconValue = "";
             $('#icons-modal').modal('hide');
          });
-
-
 
       });
 

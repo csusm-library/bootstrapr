@@ -67,6 +67,12 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    border-bottom: 6px solid #406885;
 }
 
+hr.divider {
+   border-bottom: 2px dashed lightgray !important;
+   border-top: none;
+   margin-bottom: 2rem !important;
+}
+
 /* Sets the size of the tabs for the beautify code function  */
 pre {
     -moz-tab-size : 3;
@@ -85,6 +91,11 @@ pre {
 .panel-heading .accordion-toggle.collapsed:before {
    content: "\f067";
    color: lightsteelblue;
+}
+
+/* sets the link to the size of the entire panel title */
+.panel-title > a {
+   display: block;
 }
 
 .well button {
@@ -132,6 +143,11 @@ pre {
 
 .add-100 {
    margin-top: 150px;
+}
+
+/* Limits the width of smaller numeric inputs */
+.input-number {
+   width: 100px !important;
 }
 
 .clearfix {
@@ -260,7 +276,6 @@ pre {
 .indent-right-3 {
    margin-left: 3rem;
 }
-
 
 .btn-light,
 .btn-light:focus {

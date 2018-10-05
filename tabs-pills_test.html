@@ -79,10 +79,18 @@
             <h1>Tabs &amp; Pills</h1>
             <p class="lead">Use tabs and pills to conceal-and-reveal closely related content.</p>
             <p>Tabs should be limited in number and each tab should have a short, simple title.</p>
+            <div class="alert alert-info">
+               <p><i class="fa fa-fw fa-exclamation-circle" aria-hidden="true"></i><strong> Disabling a Tab</strong><br>Disable a tab by 1) adding the <code>.disabled</code> class and 2) removing the <code>data-toggle='tab'</code> declaration on the <code>&lt;li&gt;</code> element</p>
+            </div>
+            <div class="alert alert-warning" role="alert">
+                  <p><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i><strong> Keep Tab Sets Unique</strong><br>While you may place multiple tab sets on a page, <strong>do not</strong> simply cut and paste the same set again and again. Make sure to generate each new tab set anew, ensuring the random number assigned to each tab set stays unique and does not conlflict with the other tab sets on the page.</p>
+               </div>
+
          </div>
       </div>
 
-      <hr>
+      <hr class="divider">
+
 
       <div class="row">
          <div class="col-sm-3">
@@ -98,45 +106,52 @@
                </div>
 
                <div class="form-group">
-                  <label id="tabs-or-pills" for="numTabs"># Tabs</label>
-                  <input type="text" class="form-control" id="numTabs" placeholder="" name="numTabs" style="width:100px;">
+                  <label id="simple-tabs-or-pills" for="numTabs"># Simple Tabs</label>
+                  <input type="text" class="form-control input-number" id="numTabs" placeholder="" name="numTabs">
                </div>
 
-                  <label for="list-type">Horizontal or Vertical</label>
                   <div class="form-group">
-                     <select class="form-control" id="horizontalVertical">
-                            <option value="" selected>Horizontal</option>
-                            <option value="nav-stacked" id="option-vertical" disabled>Vertical</option>
-                     </select>
-                  </div>
+                     <label id="dropdown-tabs-or-pills" for="numDropdowns"># Dropdown Tabs</label>
+                     <input type="text" class="form-control input-number" id="numDropdowns" placeholder="" name="numDropDowns">
+               </div>
 
-                  <label for="list-type" id="alignment-control-label">Alignment</label>
-                  <div id="alignment-control" class="form-group">
-                     <select class="form-control" id="alignment">
+                     <label for="list-type">Horizontal or Vertical</label>
+                     <div class="form-group">
+                        <select class="form-control" id="horizontalVertical">
+                         <option value="" selected>Horizontal</option>
+                         <option value="nav-stacked" id="option-vertical" disabled>Vertical</option>
+                     </select>
+                     </div>
+
+                     <label for="list-type" id="alignment-control-label">Alignment</label>
+                     <div id="alignment-control" class="form-group">
+                        <select class="form-control" id="alignment">
                          <option value="" selected>Left</option>
                          <option value="nav-justified">Justified</option>
                      </select>
-                  </div>
-
-                  <div class="form-group push-down-2" id="fadeInControl">
-                     <div class="checkbox">
-                        <label>
-                     <input type="checkbox" id="fade-in"> Tabs fade in
-                     </label>
                      </div>
-                  </div>
 
-                  <div class="form-group hidden push-down-2" id="columnControl">
-                     <div class="checkbox">
-                        <label>
-                           <input type="checkbox" id="twoColumns"> 2 Columns
+                     <div class="form-group push-down-2" id="fadeInControl">
+                        <div class="checkbox">
+                           <label>
+                        <input type="checkbox" id="fade-in"> Tabs fade in
                         </label>
+                        </div>
                      </div>
-                  </div>
+
+                     <div class="form-group hidden push-down-2" id="columnControl">
+                        <div class="checkbox">
+                           <label>
+                        <input type="checkbox" id="twoColumns"> 2 Columns
+                        </label>
+                        </div>
+                     </div>
+
+
 
             </form>
 
-            <div class="push-down-2">
+            <div class="push-down-3">
                <button type="button" class="btn btn-default" id="clearTabs">Reset</button>
                <button type="button" class="btn btn-primary" id="displayTabs">Build</button>
             </div>
@@ -201,10 +216,22 @@
 
    &lt;!-- Tab panes: This is the content bit --&gt;
    &lt;div class="tab-content"&gt;
-      &lt;div role="tabpanel" class="tab-pane active" id="tab1"&gt;&lt;h6&gt;TAB ONE content&lt;/h6&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sed eligendi laborum quaerat dolorum officia deleniti dolor eos explicabo. Blanditiis voluptates officiis nesciunt vero laborum minima nihil iusto cumque nam?&lt;/p&gt;&lt;/div&gt;
-      &lt;div role="tabpanel" class="tab-pane" id="tab2"&gt;&lt;h6&gt;TAB TWO content&lt;/h6&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero consequatur iste nam cumque, voluptatibus dicta ducimus officiis aliquam qui atque, quis fugiat ullam ad a. Aliquid sit sed perspiciatis minima.&lt;/p&gt;&lt;/div&gt;
-      &lt;div role="tabpanel" class="tab-pane" id="tab3"&gt;&lt;h6&gt;TAB THREE content&lt;/h6&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, optio aliquam velit eius facilis sed repudiandae, nostrum repellat nihil, sit nobis culpa vitae! Quos praesentium sed itaque iste, animi vero?&lt;/p&gt;&lt;/div&gt;
-      &lt;div role="tabpanel" class="tab-pane" id="tab4"&gt;&lt;h6&gt;TAB FOUR content&lt;/h6&gt;&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, nihil nemo voluptatem quisquam ullam consequatur quas aliquam temporibus similique provident architecto itaque ea porro a, cum ipsam, harum commodi perspiciatis!&lt;/p&gt;&lt;/div&gt;
+      &lt;div role="tabpanel" class="tab-pane active" id="tab1"&gt;
+         &lt;h6&gt;TAB ONE content&lt;/h6&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sed eligendi laborum quaerat dolorum officia deleniti dolor eos explicabo. Blanditiis voluptates officiis nesciunt vero laborum minima nihil iusto cumque nam?&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div role="tabpanel" class="tab-pane" id="tab2"&gt;
+         &lt;h6&gt;TAB TWO content&lt;/h6&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero consequatur iste nam cumque, voluptatibus dicta ducimus officiis aliquam qui atque, quis fugiat ullam ad a. Aliquid sit sed perspiciatis minima.&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div role="tabpanel" class="tab-pane" id="tab3"&gt;
+         &lt;h6&gt;TAB THREE content&lt;/h6&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, optio aliquam velit eius facilis sed repudiandae, nostrum repellat nihil, sit nobis culpa vitae! Quos praesentium sed itaque iste, animi vero?&lt;/p&gt;
+      &lt;/div&gt;
+      &lt;div role="tabpanel" class="tab-pane" id="tab4"&gt;
+         &lt;h6&gt;TAB FOUR content&lt;/h6&gt;
+         &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, nihil nemo voluptatem quisquam ullam consequatur quas aliquam temporibus similique provident architecto itaque ea porro a, cum ipsam, harum commodi perspiciatis!&lt;/p&gt;
+      &lt;/div&gt;
    &lt;/div&gt;
 </pre>
 
@@ -212,7 +239,7 @@
             <!-- example closes -->
 
             <h4 class="sub-header">Custom CSS</h4>
-            <p>To add padding to the tab panels, you may wish to specify padding for the <code>.tab-pane</code> class.</p>
+            <p>To add padding to the tab panels, you may need to specify padding for the <code>.tab-pane</code> class.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -230,18 +257,6 @@
 
             </div>
             <!-- .well -->
-
-            <h4 class="sub-header">Notes</h4>
-            <div class="alert alert-info">
-               <p><i class="fa fa-fw fa-exclamation-circle" aria-hidden="true"></i><strong> Disabling a Tab</strong><br>Disable a tab by 1) adding the <code>.disabled</code> class and 2) removing the <code>data-toggle='tab'</code> declaration on the
-                  <code>&lt;li&gt;</code> element</p>
-            </div>
-            <div class="alert alert-warning" role="alert">
-               <p><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i><strong> Keep Tab Sets Unique</strong><br>While you may place multiple tab sets on a page, <strong>do not</strong> simply cut and paste the same set again and
-                  again. Make sure to generate each new tab set anew, ensuring the random number assigned to each tab set stays unique and does not conlflict with the other tab sets on the page.</p>
-            </div>
-
-
 
          </div>
 
@@ -394,53 +409,32 @@
             location.reload(true);
          });
 
-         $('#twoColumns').on('change', function() {
-
-               if ($('#twoColumns').is(":checked")) {
-                  $("#horizontalVertical").val("nav-stacked");
-                  $("#alignment").val("");
-               } else {
-                  $("#horizontalVertical").val("");
-               }
-         });
-
-         $('#horizontalVertical').on('change', function() {
-
-               if ($('#horizontalVertical').val() == "") {
-                  $("#twoColumns").prop('checked', false);
-               } else {
-                  $("#twoColumns").prop('checked', true);
-               }
-         });
-
-         $('#alignment').on('change', function() {
-
-               if ($('#alignment').val() == "nav-justified") {
-                  $("#twoColumns").prop('checked', false);
-               }
-         });
 
          $('#tabPill').on('change', function() {
 
             switch ($('#tabPill').val()) {
                case 'nav-tabs':
-                  $('#tabs-or-pills').html('# Simple Tabs');
+                  $('#simple-tabs-or-pills').html('# Simple Tabs');
+                  $('#dropdown-tabs-or-pills').html('# Dropdown Tabs');
                   $('#option-vertical').attr("disabled", "disabled");
                   $('#horizontalVertical').attr("selected", "selected");
                   $('#columnControl').addClass("hidden");
+                  $('#fadeInControl').removeClass("hidden");
+
                   break;
                case 'nav-pills':
-                  $('#tabs-or-pills').html('# Pills');
+                  $('#simple-tabs-or-pills').html('# Pills');
+                  $('#dropdown-tabs-or-pills').html('# Pills');
                   $('#option-vertical').removeAttr("disabled");
                   $('#horizontalVertical').attr("selected", "selected");
                   $('#columnControl').removeClass("hidden");
+                  $('#fadeInControl').addClass("hidden");
                   break;
             }
          });
 
          // clipboard button
          new Clipboard('.btn');
-
 
       });
    </script>
