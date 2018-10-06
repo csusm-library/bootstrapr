@@ -64,11 +64,11 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 }
 
 .homepage hr {
-   border-bottom: 6px solid #406885;
+   border-bottom: 8px double #406885;
 }
 
 hr.divider {
-   border-bottom: 2px dashed lightgray !important;
+   border-bottom: 5px double #406885 !important;
    border-top: none;
    margin-bottom: 2rem !important;
 }
@@ -110,7 +110,7 @@ pre {
 .well-separator {
    clear: both;
    padding-top: 1rem !important;
-   border-bottom: .5px dashed gray;
+   border-bottom: 1px dashed gray;
    border-top: none;
    border-left: none;
    border-right: none;

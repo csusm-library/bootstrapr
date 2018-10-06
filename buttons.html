@@ -67,7 +67,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#buttons" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| Buttons</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| Buttons</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -77,11 +77,154 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Buttons</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Buttons foreground important features, functions or calls to action.</p>
+            <p>Buttons are set to open in a new window by default. If using multiple buttons on your page, make sure that all the buttons are the same size.</p>
          </div>
       </div>
 
       <hr class="divider">
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+               <div class="form-group">
+                  <label for="button-url">URL</label>
+                  <input type="text" class="form-control" id="button-url">
+                  <span class="placeholder">Example | http://www.url.com</span>
+               </div>
+
+               <div class="form-group">
+                  <label for="button-text">Button Text</label>
+                  <input type="text" class="form-control" id="button-text">
+                  <span class="placeholder">Example | Submit</span>
+               </div>
+
+               <div class="form-group">
+                  <label for="button-size">Button Size</label>
+                  <select class="form-control" id="button-size">
+                     <option value=" btn-lg">Large</option>
+                     <option value="" selected="selected">Normal</option>
+                     <option value=" btn-sm">Small</option>
+                     <option value=" btn-xs">Extra-small</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="button-color">Button Color</label>
+                  <select class="form-control" id="button-color">
+                     <option id="option-default" value=" btn-default">Default &mdash; transparent</option>
+                     <option id="option-dim" value=" btn-dim">Dim &mdash; grey</option>
+                     <option id="option-primary" value=" btn-primary" selected="selected">Primary &mdash; standard blue</option>
+                     <option id="option-lt-blue" value=" btn-info">Information &mdash; light blue</option>
+                     <option id="option-green" value=" btn-success">Success &mdash; green</option>
+                     <option id="option-yellow" value=" btn-warning">Warning &mdash; yellow</option>
+                     <option id="option-red" value=" btn-danger">Danger &mdash; red</option>
+                  </select>
+               </div>
+
+
+               <div class="form-group">
+                  <label for="alignment">Alignment</label>
+                  <select class="form-control" id="button-alignment">
+                     <option value="text-left">Left</option>
+                     <option value="text-center" selected="selected">Center</option>
+                     <option value="text-right">Right</option>
+                  </select>
+               </div>
+
+               <label for="button-size">Open In</label>
+               <select class="form-control" id="open-in">
+                  <option value="target='_blank'" selected="selected">New window</option>
+                  <option value="target='_self'">Same window</option>
+               </select>
+
+               <label for="icon-html" class="push-down-1">Custom Icon (or Text) <small class="descriptor">optional</small></label>
+               <div class="input-group">
+                  <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="button-icon">
+               </div>
+
+               <p class="text-left" style="margin-left: 8px;">
+                  <a data-toggle="modal" data-target="#icons-modal" target="_blank">
+                     <small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
+
+            </form>
+
+            <div class="push-down-2 button-box">
+               <button type="button" class="btn btn-default" id="clear-button"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+
+
+         </div>
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <p class='text-center'><a role='button' class='btn btn-lg btn-primary' href='http://hp.com' target='_blank'><i class="fa fa-fw fa-calendar-plus-o" aria-hidden="true"></i> Set Appointment</a> <a role='button' class='btn btn-lg btn-default'
+                     href='http://hp.com' target='_blank'><i class="fa fa-fw fa-refresh" aria-hidden="true"></i> Clear</a></p>
+
+            </div>
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+               </button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;p class='text-center'&gt;
+   &lt;a role='button' class='btn btn-lg btn-primary' href='http://hp.com' target='_blank'&gt;&lt;i class="fa fa-fw fa-calendar-plus-o" aria-hidden="true"&gt;&lt;/i&gt; Set Appointment&lt;/a&gt;
+   &lt;a role='button' class='btn btn-lg btn-default' href='http://hp.com' target='_blank'&gt;&lt;i class="fa fa-fw fa-refresh" aria-hidden="true"&gt;&lt;/i&gt; Clear&lt;/a&gt;
+&lt;/p&gt;
+</pre>
+
+            </div>
+            <!-- example closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+            <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia illo aut quas earum quasi, doloribus, harum perferendis eligendi deserunt fugiat, repellendus at suscipit voluptas autem. Hic consequuntur pariatur nihil esse.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+
+</pre>
+
+            </div>
+            <!-- .well -->
+
+            <!-- Notes -->
+            <h4 class="sub-header">Notes</h4>
+
+            <div class="alert alert-warning">
+               <p><strong><i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"></i> Alternate Button Colors<br></strong>Alternate button colors should only be used to signal an alternate mood. For example, a yellow button might sound a
+                  note of caution, whereas a red button might signify probibition or danger.</p>
+            </div>
+         </div>
+
+
+      </div>
+
+
 
    </div>
    <!-- .container -->
@@ -110,6 +253,9 @@
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
 
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
@@ -130,8 +276,52 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         // Reset form button
+         $('#clear-button').click(function() {
+            location.reload(true);
+         });
+
+         // Reset form button
+         $('#refresh-button').click(function() {
+            $("#button-icon").val("");
+         });
+
+         // Build the Button
+         $('#display-button').click(function() {
+
+
+            //var buttonIcon = '';
+            var buttonText = $('#button-text').val();
+            var buttonUrl = $('#button-url').val();
+            var buttonColor = $('#button-color').val();
+            var buttonSize = $('#button-size').val();
+            var buttonAlignment = $('#button-alignment').val();
+            var buttonIcon = $('#button-icon').val();
+            var buttonOpenIn = $('#open-in').val();
+            var spacer = "";
+            var setIcon = '';
+
+            if ($('#hasIcon').is(':checked')) {
+               setIcon = buttonIcon;
+            }
+
+            // Write the button
+            var bsButton = "<p class='" + buttonAlignment + "'>" + "<a role='button' class='btn" + buttonSize + buttonColor + "' href='" + buttonUrl + "' " + buttonOpenIn + ">" + buttonIcon + buttonText + "</a></p>";
+
+            $("#simple-example").html(bsButton);
+            $('#simple-code').text(bsButton);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // clipboard button
+         new Clipboard('.btn');
+
       });
    </script>
 
 </body>
+
 </html>
