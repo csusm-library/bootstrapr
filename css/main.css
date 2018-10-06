@@ -18,8 +18,7 @@ html, body {
 
 body {
   line-height: 1.4rem; /* 30px / 20px = 1.5 */
-  /* background: #fafafa; */
-  background: ghostwhite;
+  background: #fbfbfb;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -554,8 +553,8 @@ ol.linenums li:before{
     padding: 2px 8px;
     font-size: 15px;
     font-weight: bold;
-    background-color: #474E5F; /* #dff0d8  002b5b */
-    color: #FFFFFF !important; /*#3c763d */
+    background-color: #474E5F;
+    color: #FFFFFF !important;
     padding:6px;
     border-radius: 4px 0 4px 0;
     font-weight: 400;

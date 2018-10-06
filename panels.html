@@ -110,6 +110,14 @@
 
                <div class="checkbox push-down-1">
                   <label>
+                  <input type="checkbox" id="add-example"> Example
+                  </label>
+               </div>
+
+               <hr>
+
+               <div class="checkbox push-down-1">
+                  <label>
                    <input type="checkbox" id="panel-header"> Header
                    </label>
                </div>
@@ -128,7 +136,7 @@
 
                <div class="form-group hidden push-down-1" id="hide-show-list-num">
                   <label for="exampleInputEmail1"># List Items</label>
-                  <input type="text" class="form-control" id="number-list-items"  style="width:75px;">
+                  <input type="text" class="form-control input-number" id="number-list-items">
                </div>
 
                <div class="checkbox push-down-1 hidden" id="hyperlink-hide-show">
@@ -196,13 +204,15 @@
 
             <h4 class="sub-header">Notes</h4>
 
-            <p>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code>               but will override its size property.</p>
+            <div class="alert alert-info">
+            <p><i class="fa fa-fw fa-exclamation-circle"></i> <strong>Panel Title</strong><br>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
+            </div>
 
             <h4 class="sub-header">Custom CSS</h4>
 
 
-            <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading styles.
-               For example, see below:</p>
+            <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading styles.</p>
+            <p>The 'example' panel requires additional CSS.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -211,10 +221,35 @@
                <hr class="well-separator">
 
 
-               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Bold Headers */
 h1, h2, h3, h4, h5, h6 {
    font-weight: bold !important;
+}
+
+.example {
+    position: relative;
+    margin: 15px 0 -2px 0;
+    padding: 50px 20px 12px 20px;
+    background-color: #fff;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+    z-index: 10;
+}
+
+.example:after {
+    content: "Example";
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding: 2px 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    background-color: #ececec;
+    color: #000000 !important;
+    padding: 6px;
+    border-radius: 4px 0 4px 0;
+    font-weight: 400;
 }
 </pre>
 
@@ -270,6 +305,9 @@ h1, h2, h3, h4, h5, h6 {
    <script>
       $(document).ready(function() {
 
+         // The content for the example label
+         var addExample = "";
+
          // tooltips function
          $(function() {
             $('[data-toggle="tooltip"]').tooltip()
@@ -303,6 +341,48 @@ h1, h2, h3, h4, h5, h6 {
                $('#special-list-icon').removeClass('hidden');
             } else {
                $('#special-list-icon').addClass('hidden');
+            }
+         });
+
+         // Show or hide the caption box
+         $("#add-example").on('change', function() {
+
+            if ($('#add-example').is(':checked')) {
+               // Uncheck the other boxes and write null to # list items
+               $('#panel-footer').prop("checked", false);
+               $('#panel-header').prop("checked", false);
+               $('#embedded-list').prop("checked", false);
+               $('#has-links').prop("checked", false);
+               $('#number-list-items').val("");
+               // Hide List Items and Hyperlinks checkbox
+               $('#hide-show-list-num').addClass('hidden');
+               $('#hyperlink-hide-show').addClass('hidden');
+               // Add the example label top Left
+               addExample = " example";
+            }
+         });
+
+         $("#panel-footer").on('change', function() {
+
+            if ($('#panel-footer').is(':checked')) {
+               $('#add-example').prop("checked", false);
+               addExample = "";
+            }
+         });
+
+         $("#panel-header").on('change', function() {
+
+            if ($('#panel-header').is(':checked')) {
+               $('#add-example').prop("checked", false);
+               addExample = "";
+            }
+         });
+
+         $("#embedded-list").on('change', function() {
+
+            if ($('#embedded-list').is(':checked')) {
+               $('#add-example').prop("checked", false);
+               addExample = "";
             }
          });
 
@@ -344,7 +424,7 @@ h1, h2, h3, h4, h5, h6 {
                panelFooter = '';
             }
 
-            var panelBegin = "<div class='panel" + panelAccent + "'>";
+            var panelBegin = "<div class='panel" + panelAccent + addExample + "'>";
             var panelBody = "<div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>" +
                fullList;
 
@@ -369,9 +449,11 @@ h1, h2, h3, h4, h5, h6 {
                   break;
             }
 
-            $("#simple-example").html(bsPanel); $('#simple-code').text(bsPanel);
+            $("#simple-example").html(bsPanel);
+            $('#simple-code').text(bsPanel);
 
-            $('pre').removeClass('prettyprinted'); prettyPrint();
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
 
          });
 
