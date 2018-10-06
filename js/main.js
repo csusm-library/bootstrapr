@@ -103,6 +103,9 @@ $(document).ready(function() {
    $("#update-preview").on("click", function() {
       var modifiedCode = $('#simple-code').text();
       $("#simple-example").html(modifiedCode);
+
+      $('pre').removeClass('prettyprinted');
+      prettyPrint();
    });
 
 

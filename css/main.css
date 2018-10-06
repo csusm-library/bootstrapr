@@ -461,10 +461,15 @@ table.numbered-steps tr td:first-of-type {
    text-align: center;
    vertical-align: middle;
    font-weight: 600;
-   background: #fafafa;
-   width: 1.2rem;
+   background: aliceblue;
+   width: 1.5rem;
    color: #666666;
-   font-size: 1.2rem
+   font-size: 1.5rem;
+}
+
+/* Disables the background for alternating line numbers for the prettyprint for code wells */
+ol.linenums li {
+   background: transparent !important;
 }
 
 .short-round {

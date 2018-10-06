@@ -67,7 +67,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#code" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-   Boostrap 3.3.7 <small id="docs-link">| code wells</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| code wells</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -77,17 +77,146 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Code Wells</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Code wells display computer language in a highly readable format.</p>
+            <p>Code Wells are rendered with the <code>&lt;pre&gt;</code> element. Google's Prettify package is used to color-code the output. Unlike other HTML elements, the <code>&lt;pre&gt;</code> element preserves all spacing exactly as you type
+               it.</p>
+
+
          </div>
       </div>
 
       <hr class="divider">
 
-   <h4>Heading</h4>
-   <p>Content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ut eius velit. Atque praesentium hic odit, quo maxime quae dolor ab voluptate totam earum non excepturi officia temporibus delectus ut.</p>
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <div class="form-group">
+                  <label for="list-type">Language Type</label>
+                  <select class="form-control" id="language-type">
+                     <option value="" selected="selected">Auto</option>
+                     <option value="" disabled="disabled">----------------------------------</option>
+                     <option value=" lang-css">CSS</option>
+                     <option value=" lang-html">HTML</option>
+                     <option value=" lang-js">Javascript</option>
+                     <option value="" disabled="disabled">----------------------------------</option>
+                     <option value=" lang-bsh">Bash</option>
+                     <option value=" lang-c">C</option>
+                     <option value=" lang-cpp">C++</option>
+                     <option value=" lang-java">Java</option>
+                     <option value=" lang-py">Python</option>
+                     <option value=" lang-perl">Perl</option>
+                     <option value=" lang-rb">Ruby</option>
+                     <option value=" lang-xml">XML</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="blockquote-quote">Code Snippet</label>
+                  <textarea id="code-snippet" class="form-control" rows="20"></textarea>
+               </div>
+
+               <div class="checkbox">
+                  <label>
+                     <input type="checkbox" id="line-numbers"> Line Numbers
+                  </label>
+               </div>
 
 
 
+            </form>
+
+            <div class="push-down-2 button-box">
+               <button type="button" class="btn btn-default" id="clear-code"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-code"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+         </div>
+         <!-- .col-sm-3 -->
+
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+<pre class="prettyprint">
+// This is a javascript comment
+$( document ).ready(function() {
+   $('.navfeatures').addClass('active');
+   $('.navcodewells').addClass('active');
+});
+</pre>
+
+            </div>
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button class="btn btn-code-well pull-left disabled" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Already Prettified"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+               </button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;pre class='prettyprint'&gt;
+// This is a javascript comment
+$( document ).ready(function() {
+   $('.navfeatures').addClass('active');
+   $('.navcodewells').addClass('active');
+});
+&lt;/pre&gt;
+</pre>
+
+            </div>
+            <!-- example closes -->
+
+
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>Custom CSS is required if you wish to disable the alternating backgrounds on numbered lines. Alternating backgrounds are fine on lighter backgrounds but generally look poor on darker backgrounds.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+/* Disables the background for alternating line numbers */
+ol.linenums li {
+   background: transparent !important;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
+
+            <h4 class="sub-header">Notes</h4>
+            
+            <div class='alert alert-info' role='alert'>
+               <p><i class="fa fa-fw fa-code" aria-hidden="true"></i><a class='close' data-dismiss='alert' aria-label='close'>×</a><strong>Theme Colors</strong><br />There are many color themes available for syntax highlighting. I have used Google's
+                  dark theme <a href="https://github.com/google/code-prettify/blob/master/styles/sunburst.css">sunburst.css</a>.</p>
+            </div>
+
+
+         </div>
+         <!-- .col-sm-9 -->
+
+      </div>
+      <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -115,12 +244,17 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
+
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
       w3IncludeHTML();
    </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -130,14 +264,52 @@
             $('[data-toggle="tooltip"]').tooltip()
          })
 
+         var lineNumbers = "";
+
          // Add active class to navmenu selection
          $("li#code-wells").addClass("active");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         $('#display-code').click(function() {
+
+            if ($('#line-numbers').is(':checked')) {
+               lineNumbers = " linenums";
+            } else {
+               lineNumbers = "";
+            }
+
+            var langType = $("#language-type").val();
+
+            var theCode = $('#code-snippet').val();
+            theCode = theCode.replace(/[>]/g, '&gt;');
+            theCode = theCode.replace(/[<]/g, '&lt;');
+
+            var theNewCode = "<pre class='prettyprint" + lineNumbers + langType + "'>" + "\n" + theCode + "\n" + "</pre>";
+
+            $('#get-entities').val(theNewCode);
+
+            $("#simple-example").html(theNewCode);
+            $('#simple-code').text(theNewCode);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+
+         });
+
+         $('#clear-code').click(function() {
+            location.reload(true);
+         });
+
+
+         // clipboard button
+         new Clipboard('.btn');
+
       });
    </script>
 
 </body>
+
 </html>
