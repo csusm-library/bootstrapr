@@ -92,7 +92,7 @@ pre {
    color: lightsteelblue;
 }
 
-/* sets the link to the size of the entire panel title */
+/* sets the link to the width of the entire panel title */
 .panel-title > a {
    display: block;
 }
@@ -268,6 +268,11 @@ pre {
    margin-top: 7.2rem;
 }
 
+/* Add bottom margin to the description lists */
+dd {
+   margin-bottom: 1rem;
+}
+
 /* Zero left and right borderson list items inside panels */
 .panel-body .list-group-item {
     border: 1px 0 solid #ddd;
@@ -286,7 +291,13 @@ pre {
 }
 
 .line-height-150 {
-   line-height: 2;   
+   line-height: 2;
+}
+
+/* Set the anchor element to display: block */
+.list-group li a {
+   display: block;
+   height: 100%;
 }
 
 /* adds spacing to the radion buttons */

@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <html lang="en">
 
@@ -96,7 +95,7 @@
                <div class="form-group">
                   <label for="numberOfColumns"># Columns</label>
                   <select class="form-control input-number" id="number-columns">
-                     <option value="1" selected="selected">None</option>
+                     <option value="none" selected="selected">None</option>
                      <option id="two-col" value="2">2</option>
                      <option id="three-col" value="3">3</option>
                      <option id="four-col" value="4">4</option>
@@ -121,7 +120,7 @@
 
 
                <div class="checkbox push-down-1" id="show-hide-has-hyperlinks">
-               <hr>
+                  <hr>
                   <label>
                      <input type="checkbox" id="has-hyperlinks"> Hyperlinks
                   </label>
@@ -151,7 +150,7 @@
                   </label>
                </div>
 
-               <div class="form-group push-down-1"  id="show-hide-bullets-numbers">
+               <div class="form-group push-down-1" id="show-hide-bullets-numbers">
                   <hr>
                   <label>
                      <input type="radio" name="ol-ul" value="ul" id="bullets" checked="checked"> Bullets
@@ -176,10 +175,24 @@
 
                <!-- List group controls -->
 
+               <div class="checkbox push-down-1 hidden" id="show-hide-extended-content">
+                  <hr>
+                  <label>
+                     <input type="checkbox" id="extended-content"> Extended Content
+                  </label>
+               </div>
+
                <div class="checkbox push-down-1 hidden" id="show-hide-badges">
                   <hr>
                   <label>
                      <input type="checkbox" id="has-badge"> Badges
+                  </label>
+               </div>
+
+               <div class="checkbox push-down-1 hidden" id="show-hide-make-buttons">
+                  <hr>
+                  <label>
+                     <input type="checkbox" id="make-buttons"> Make Buttons
                   </label>
                </div>
 
@@ -199,32 +212,13 @@
 
             <div class="example" id="simple-example">
 
-               <div class='row'>
-                  <div class='col-md-4'>
-                     <ul class='list-group'>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 1</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 2</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 3</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 4</a></li>
-                     </ul>
-                  </div>
-                  <div class='col-md-4'>
-                     <ul class='list-group'>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 5</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 6</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 7</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 8</a></li>
-                     </ul>
-                  </div>
-                  <div class='col-md-4'>
-                     <ul class='list-group'>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 9</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 10</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 11</a></li>
-                        <li class='list-group-item'><a href='' target='_blank'>Item 12</a></li>
-                     </ul>
-                  </div>
-               </div>
+               <ul class="">
+                  <li>List Item</li>
+                  <li>List Item</li>
+                  <li>List Item</li>
+                  <li>List Item</li>
+                  <li>List Item</li>
+               </ul>
 
             </div>
             <!-- example -->
@@ -245,32 +239,13 @@
                <hr class="well-separator">
 
                <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class='row'&gt;
-   &lt;div class='col-md-4'&gt;
-      &lt;ul class='list-group'&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 4&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-   &lt;/div&gt;
-   &lt;div class='col-md-4'&gt;
-      &lt;ul class='list-group'&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 5&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 6&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 7&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 8&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-   &lt;/div&gt;
-   &lt;div class='col-md-4'&gt;
-      &lt;ul class='list-group'&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 9&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 10&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 11&lt;/a&gt;&lt;/li&gt;
-         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 12&lt;/a&gt;&lt;/li&gt;
-      &lt;/ul&gt;
-   &lt;/div&gt;
-&lt;/div&gt;
+&lt;ul&gt;
+	&lt;li&gt;List Item&lt;/li&gt;
+	&lt;li&gt;List Item&lt;/li&gt;
+	&lt;li&gt;List Item&lt;/li&gt;
+	&lt;li&gt;List Item&lt;/li&gt;
+	&lt;li&gt;List Item&lt;/li&gt;
+&lt;/ul&gt;
 </pre>
 
             </div>
@@ -278,7 +253,10 @@
 
             <h4 class="sub-header">Custom CSS</h4>
 
-            <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
+            <p>For <strong>Description Lists</strong>, you may wish to add some margin-bottom to each description pair.</p>
+
+            <p>For <strong>List Groups</strong>, you may wish to set the <code>&lt;a&gt;</code> element to <code>display: block</code> so that users may activate the link from anywhere inside the list element.</p>
+            <p>You may add the <code>.active</code> class to any <code>&lt;li&gt;</code> or <code>&lt;button&gt;</code> tag to highlight an active row.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -289,32 +267,30 @@
 
 
                <pre class="prettyprint lang-css" id="custom-css-code">
-/* Adds 'plus' glyph for enabling collapsible panels */
-.panel-heading .accordion-toggle:before {
-font-family: FontAwesome;
-content: "\f068";
-float: right;
-color: lightsteelblue;
+/* Add bottom margin to the description lists */
+dd {
+   margin-bottom: 1rem;
 }
 
-.panel-heading .accordion-toggle.collapsed:before {
-content: "\f067";
-color: lightsteelblue;
-}
-
-/* sets the link to the size of the entire panel title */
-.panel-title > a {
-display: block;
+/* Set the anchor element to display block */
+.list-group li a {
+   display: block;
 }
 </pre>
 
             </div>
             <!-- .well -->
 
+
             <h4 class="sub-header">Notes</h4>
-            <div class="alert alert-warning" role="alert">
-               <p></p>
-            </div>
+
+            <p>You may add color to <strong>List Group</strong> items by adding the following classes.</p>
+            <ul class="list-group">
+               <li class="list-group-item list-group-item-info">Add class &nbsp;<code>.list-group-item-info</code> to individual <code>&lt;li&gt;</code> elements.</li>
+               <li class="list-group-item list-group-item-success">Add class &nbsp;<code>.list-group-item-success</code> to individual <code>&lt;li&gt;</code> elements.</li>
+               <li class="list-group-item list-group-item-warning">Add class &nbsp;<code>.list-group-item-warning</code> to individual <code>&lt;li&gt;</code> elements.</li>
+               <li class="list-group-item list-group-item-danger">Add class &nbsp;<code>.list-group-item-danger</code> to individual <code>&lt;li&gt;</code> elements.</li>
+            </ul>
 
 
          </div>
@@ -388,12 +364,18 @@ display: block;
                $("#show-hide-is-unstyled").removeClass("hidden");
                $("#show-hide-is-inline").removeClass("hidden");
                $("#show-hide-has-hyperlinks").removeClass("hidden");
-
+               $("#show-hide-make-buttons").addClass("hidden");
 
                $("#two-col").removeAttr("disabled", "disabled");
                $("#three-col").removeAttr("disabled", "disabled");
                $("#four-col").removeAttr("disabled", "disabled");
                $("#six-col").removeAttr("disabled", "disabled");
+
+               $("#has-hyperlinks").prop("checked", false);
+               $("#new-window").prop("checked", false);
+               $("#show-hide-is-inline").prop("checked", false);
+               $("#is-inline").prop("checked", false);
+               $("#make-buttons").prop("checked", false);
 
             } else if ($("#list-type").val() == "description") {
                $("#show-hide-horizontal-vertical").removeClass("hidden");
@@ -403,17 +385,19 @@ display: block;
                $("#show-hide-has-hyperlinks").addClass("hidden");
                $("#show-hide-new-window").addClass("hidden");
                $("#show-hide-is-inline").addClass("hidden");
+               $("#show-hide-make-buttons").addClass("hidden");
 
                $("#two-col").attr("disabled", "disabled");
                $("#three-col").attr("disabled", "disabled");
                $("#four-col").attr("disabled", "disabled");
                $("#six-col").attr("disabled", "disabled");
 
-               $("#number-columns").val("1");
+               $("#number-columns").val("none");
                $("#has-hyperlinks").prop("checked", false);
                $("#new-window").prop("checked", false);
                $("#show-hide-is-inline").prop("checked", false);
                $("#is-inline").prop("checked", false);
+               $("#make-buttons").prop("checked", false);
 
 
             } else {
@@ -424,6 +408,7 @@ display: block;
                $("#show-hide-has-hyperlinks").removeClass("hidden");
                $("#show-hide-new-window").addClass("hidden");
                $("#show-hide-is-inline").addClass("hidden");
+               $("#show-hide-make-buttons").removeClass("hidden");
 
                $("#two-col").removeAttr("disabled", "disabled");
                $("#three-col").removeAttr("disabled", "disabled");
@@ -434,6 +419,7 @@ display: block;
                $("#new-window").prop("checked", false);
                $("#show-hide-is-inline").prop("checked", false);
                $("#is-inline").prop("checked", false);
+               $("#make-buttons").prop("checked", false);
 
             }
 
@@ -443,6 +429,7 @@ display: block;
 
             if ($("#has-hyperlinks").is(":checked")) {
                $("#show-hide-new-window").removeClass("hidden");
+               $("#make-buttons").prop("checked", false);
             } else {
                $("#show-hide-new-window").addClass("hidden");
                $("#new-window").prop("checked", false);
@@ -488,149 +475,204 @@ display: block;
             }
          });
 
+         $("#make-buttons").on('change', function() {
+
+            if ($("#make-buttons").is(":checked")) {
+               $("#has-hyperlinks").prop("checked", false);
+               $("#new-window").prop("checked", false);
+               $("#show-hide-new-window").addClass("hidden");
+            }
+         });
+
          $('#display-lists').click(function() {
 
-               var listType = $("#list-type").val();
-               var itemCount = $("#item-count").val();
-               var hasHyperlinks = $("#has-hyperlinks").val();
-               var hasBadges = $("#has-badges").val();
-               var inline = $("#is-inline").val();
-               var listItem = "";
-               var listItems = "";
-               var closingColumn = "</div>";
-               var closingRow = "</div>";
-               var isUnstyled = "";
-               var windowStatus = "target='_self'";
-               var standardListItem = "";
-               var standardListItems = "";
-               var groupListItems = "";
-               var openingRow = "";
-               var badge = "";
-               // var badge = "<span class='badge'>99</span>";
+            var listType = $("#list-type").val();
+            var itemCount = $("#item-count").val();
+            var hasHyperlinks = $("#has-hyperlinks").val();
+            var hasBadges = $("#has-badges").val();
+            var inline = $("#is-inline").val();
+            var listItem = "";
+            var listItems = "";
+            var closingColumn = "</div>";
+            var closingRow = "</div>";
+            var isUnstyled = "";
+            var windowStatus = "target='_self'";
+            var standardListItem = "";
+            var standardListItems = "";
+            var groupListItem = "";
+            var groupListItems = "";
+            var openingGroupContainer = "";
+            var closingGroupContainer = "";
+            openingRow = "<div class='row'>";
 
-               var descriptionListItems = "";
-               var horizontal = "";
+            var badge = "";
+            var numberColumns = $("#number-columns").val();
+            var finalOutput = "";
 
-               var outputList = "";
+            var descriptionListItems = "";
+            var horizontal = "";
 
-               if ($('#is-unstyled').is(':checked')) {
-                  isUnstyled = " list-unstyled";
-               } else {
-                  isUnstyled = "";
-               }
+            var outputList = "";
 
-               if ($('#has-badge').is(':checked')) {
-                  badge = "<span class='badge'>99</span>";
-               } else {
-                  badge = "";
-               }
+            if ($('#is-unstyled').is(':checked')) {
+               isUnstyled = " list-unstyled";
+            } else {
+               isUnstyled = "";
+            }
 
-               if ($('#is-inline').is(':checked')) {
-                  isUnstyled = "";
-                  inline = "list-inline";
-               } else {
-                  inline = "";
-               }
+            if ($('#has-badge').is(':checked')) {
+               badge = "<span class='badge'>99</span>";
+            } else {
+               badge = "";
+            }
 
-               if ($('#horizontal').is(':checked')) {
-                  horizontal = "dl-horizontal";
-               } else {
-                  horizontal = "";
-               }
+            if ($('#is-inline').is(':checked')) {
+               isUnstyled = "";
+               inline = "list-inline";
+            } else {
+               inline = "";
+            }
 
-               if ($('#new-window').is(':checked')) {
-                  windowStatus = "target='_blank'";
-               }
+            if ($('#horizontal').is(':checked')) {
+               horizontal = "dl-horizontal";
+            } else {
+               horizontal = "";
+            }
 
-               if ($('#has-hyperlinks').is(':checked')) {
-                  openingLink = "<a href='' " + windowStatus + ">";
-                  closingLink = "</a>"
-               } else {
-                  openingLink = "";
-                  closingLink = ""
-               }
+            if ($('#new-window').is(':checked')) {
+               windowStatus = "target='_blank'";
+            }
 
-               var numberColumns = $("#number-columns").val();
-               var openingDiv = "";
+            if ($('#has-hyperlinks').is(':checked')) {
+               openingLink = "<a href='' " + windowStatus + ">";
+               closingLink = "</a>"
+            } else {
+               openingLink = "";
+               closingLink = ""
+            }
+
+            var openingList = "<ul class='" + listType + isUnstyled + inline + "'>";
+            var closingList = "</ul>";
+            var closingDiv = "</div>";
+
+            if ($('#numbers').is(':checked')) {
+               openingList = "<ol class='" + listType + isUnstyled + inline + "'>";
+               closingList = "</ol>";
+            }
+
+            standardListItem = "<li>" + openingLink + "List Item Content</li>" + closingLink;
+
+            if ($("#make-buttons").is(":checked")) {
+               groupListItem = "<button type='button' class='list-group-item'>" + badge + "List Item</button>";
+               openingGroupContainer = "<div class='list-group'>";
+               closingGroupContainer = "</div>";
+            } else {
+               groupListItem = "<li class='list-group-item'>" + badge + openingLink + "List Item</li>" + closingLink;
+               openingGroupContainer = "<ul class='list-group'>";
+               closingGroupContainer = "</ul>";
+
+            }
+
+            for (let i = 0; i < itemCount; i++) {
+               standardListItems += standardListItem;
+               descriptionListItems += "<dt>Description Title</dt><dd>Description content</dd>";
+               groupListItems += groupListItem;
+            }
+
+
+            // Final concatenation -------------------------------------------
+
+            var simpleList = openingList + standardListItems + closingList;
+
+            var descriptionList = "<dl class='" + horizontal + "'>" + descriptionListItems + "</dl>";
+
+            var groupList = openingGroupContainer + groupListItems + closingGroupContainer;
+
+
+            // Choose the list type
+            if ($("#list-type").val() == "") {
+               outputList = simpleList;
+            } else if ($("#list-type").val() == "description") {
+               outputList = descriptionList;
+            } else {
+               outputList = groupList;
+            }
+
+            if (numberColumns !== "none") {
 
                switch (numberColumns) {
-                  case 'none':
-                     openingDiv = "";
-                     openingRow = "";
-                     closingRow = "";
-                     closingColumn = "";
-                     break;
 
                   case '2':
                      openingDiv = "<div class='col-sm-6'>";
-                     openingRow = "<div class='row'>";
+
+                     for (i = 0; i < numberColumns; i++) {
+                        finalOutput += openingDiv + outputList + closingDiv;
+                     }
+
+                     finalOutput = "<div class='row'>" + finalOutput + "</div>";
+                     outputList = finalOutput;
+
                      break;
 
                   case '3':
                      openingDiv = "<div class='col-sm-4'>";
-                     openingRow = "<div class='row'>";
+
+                     for (i = 0; i < numberColumns; i++) {
+                        finalOutput += openingDiv + outputList + closingDiv;
+                     }
+
+                     finalOutput = "<div class='row'>" + finalOutput + "</div>";
+                     outputList = finalOutput;
+
                      break;
 
                   case '4':
                      openingDiv = "<div class='col-sm-3'>";
-                     openingRow = "<div class='row'>";
+
+                     for (i = 0; i < numberColumns; i++) {
+                        finalOutput += openingDiv + outputList + closingDiv;
+                     }
+
+                     finalOutput = "<div class='row'>" + finalOutput + "</div>";
+                     outputList = finalOutput;
+
                      break;
 
                   case '5':
                      openingDiv = "<div class='col-sm-2 col-sm-offset-1'>";
-                     openingRow = "<div class='row'>";
+
+                     for (i = 0; i < numberColumns; i++) {
+                        finalOutput += openingDiv + outputList + closingDiv;
+                     }
+
+                     finalOutput = "<div class='row'>" + finalOutput + "</div>";
+                     outputList = finalOutput;
+
                      break;
 
                   case '6':
                      openingDiv = "<div class='col-sm-2'>";
-                     openingRow = "<div class='row'>";
+
+                     for (i = 0; i < numberColumns; i++) {
+                        finalOutput += openingDiv + outputList + closingDiv;
+                     }
+
+                     finalOutput = "<div class='row'>" + finalOutput + "</div>";
+                     outputList = finalOutput;
+
                      break;
                }
 
-               var openingList = "<ul class='" + listType + isUnstyled + inline + "'>";
-               var closingList = "</ul>";
-               var closingDiv = "</div>";
-
-               if ($('#numbers').is(':checked')) {
-                  openingList = "<ol class='" + listType + isUnstyled + inline + "'>";
-                  closingList = "</ol>";
-               }
-
-               standardListItem = "<li>" + openingLink + "List Item</li>" + closingLink;
-
-               var groupListItem = "<li class='list-group-item'>" + badge + openingLink + "List Item</li>" + closingLink;
-
-               for (let i = 0; i < itemCount; i++) {
-                  standardListItems += standardListItem;
-                  descriptionListItems += "<dt>Content</dt><dd>Content</dd>";
-                  groupListItems += groupListItem;
-               }
+            }
 
 
-               // Final concatenation -------------------------------------------
+            $("#simple-example").html(outputList);
+            $('#simple-code').text(outputList);
 
-               var simpleList = openingRow + openingDiv + openingList + standardListItems + closingList + closingColumn + closingRow;
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
 
-               var descriptionList = "<dl class='" + horizontal + "'>" + descriptionListItems + "</dl>";
-
-               var groupList = openingRow + openingDiv + "<ul class='list-group'>" + groupListItems + closingList + closingColumn + closingRow;
-
-
-               if ($("#list-type").val() == "") {
-                  outputList = simpleList;
-               } else if ($("#list-type").val() == "description") {
-                  outputList = descriptionList;
-               } else {
-                  outputList = groupList;
-               }
-
-               $("#simple-example").html(outputList);
-               $('#simple-code').text(outputList);
-
-               $('pre').removeClass('prettyprinted');
-               prettyPrint();
-
-            });
+         });
 
 
 
