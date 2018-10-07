@@ -1,3 +1,4 @@
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -478,6 +479,12 @@ display: block;
 
             if ($("#is-inline").is(":checked")) {
                $("#is-unstyled").prop("checked", false);
+               $("#show-hide-bullets-numbers").addClass("hidden");
+               $("#bullets").prop("checked", false);
+               $("#numbers").prop("checked", false);
+            } else {
+               $("#show-hide-bullets-numbers").removeClass("hidden");
+               $("#bullets").prop("checked", true);
             }
          });
 
