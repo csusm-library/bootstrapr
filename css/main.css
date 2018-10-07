@@ -285,6 +285,10 @@ pre {
    margin-left: 3rem;
 }
 
+.line-height-150 {
+   line-height: 2;   
+}
+
 /* adds spacing to the radion buttons */
 input[type="radio"] {
    margin-right: .6rem;

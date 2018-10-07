@@ -95,7 +95,7 @@
                <div class="form-group">
                   <label for="numberOfColumns"># Columns</label>
                   <select class="form-control input-number" id="number-columns">
-                     <option value="1" selected="selected">1</option>
+                     <option value="1" selected="selected">None</option>
                      <option id="two-col" value="2">2</option>
                      <option id="three-col" value="3">3</option>
                      <option id="four-col" value="4">4</option>
@@ -143,6 +143,13 @@
                   </label>
                </div>
 
+               <div class="checkbox push-down-1" id="show-hide-is-inline">
+                  <hr>
+                  <label>
+                     <input type="checkbox" id="is-inline"> Inline
+                  </label>
+               </div>
+
                <div class="form-group push-down-1"  id="show-hide-bullets-numbers">
                   <hr>
                   <label>
@@ -171,7 +178,7 @@
                <div class="checkbox push-down-1 hidden" id="show-hide-badges">
                   <hr>
                   <label>
-                     <input type="checkbox" id="has-badges"> Badges
+                     <input type="checkbox" id="has-badge"> Badges
                   </label>
                </div>
 
@@ -378,6 +385,7 @@ display: block;
                $("#show-hide-badges").addClass("hidden");
                $("#show-hide-bullets-numbers").removeClass("hidden");
                $("#show-hide-is-unstyled").removeClass("hidden");
+               $("#show-hide-is-inline").removeClass("hidden");
                $("#show-hide-has-hyperlinks").removeClass("hidden");
 
 
@@ -393,6 +401,7 @@ display: block;
                $("#show-hide-is-unstyled").addClass("hidden");
                $("#show-hide-has-hyperlinks").addClass("hidden");
                $("#show-hide-new-window").addClass("hidden");
+               $("#show-hide-is-inline").addClass("hidden");
 
                $("#two-col").attr("disabled", "disabled");
                $("#three-col").attr("disabled", "disabled");
@@ -402,6 +411,9 @@ display: block;
                $("#number-columns").val("1");
                $("#has-hyperlinks").prop("checked", false);
                $("#new-window").prop("checked", false);
+               $("#show-hide-is-inline").prop("checked", false);
+               $("#is-inline").prop("checked", false);
+
 
             } else {
                $("#show-hide-horizontal-vertical").addClass("hidden");
@@ -410,11 +422,18 @@ display: block;
                $("#show-hide-is-unstyled").addClass("hidden");
                $("#show-hide-has-hyperlinks").removeClass("hidden");
                $("#show-hide-new-window").addClass("hidden");
+               $("#show-hide-is-inline").addClass("hidden");
 
                $("#two-col").removeAttr("disabled", "disabled");
                $("#three-col").removeAttr("disabled", "disabled");
                $("#four-col").removeAttr("disabled", "disabled");
                $("#six-col").removeAttr("disabled", "disabled");
+
+               $("#has-hyperlinks").prop("checked", false);
+               $("#new-window").prop("checked", false);
+               $("#show-hide-is-inline").prop("checked", false);
+               $("#is-inline").prop("checked", false);
+
             }
 
          });
@@ -435,6 +454,7 @@ display: block;
             if ($("#is-unstyled").is(":checked")) {
                $("#bullets").prop("checked", false);
                $("#numbers").prop("checked", false);
+               $("#is-inline").prop("checked", false);
             } else {
                $("#bullets").prop("checked", true);
             }
@@ -454,12 +474,20 @@ display: block;
             }
          });
 
+         $("#is-inline").on('change', function() {
+
+            if ($("#is-inline").is(":checked")) {
+               $("#is-unstyled").prop("checked", false);
+            }
+         });
+
          $('#display-lists').click(function() {
 
                var listType = $("#list-type").val();
                var itemCount = $("#item-count").val();
                var hasHyperlinks = $("#has-hyperlinks").val();
                var hasBadges = $("#has-badges").val();
+               var inline = $("#is-inline").val();
                var listItem = "";
                var listItems = "";
                var closingColumn = "</div>";
@@ -468,6 +496,10 @@ display: block;
                var windowStatus = "target='_self'";
                var standardListItem = "";
                var standardListItems = "";
+               var groupListItems = "";
+               var openingRow = "";
+               var badge = "";
+               // var badge = "<span class='badge'>99</span>";
 
                var descriptionListItems = "";
                var horizontal = "";
@@ -478,6 +510,19 @@ display: block;
                   isUnstyled = " list-unstyled";
                } else {
                   isUnstyled = "";
+               }
+
+               if ($('#has-badge').is(':checked')) {
+                  badge = "<span class='badge'>99</span>";
+               } else {
+                  badge = "";
+               }
+
+               if ($('#is-inline').is(':checked')) {
+                  isUnstyled = "";
+                  inline = "list-inline";
+               } else {
+                  inline = "";
                }
 
                if ($('#horizontal').is(':checked')) {
@@ -502,7 +547,7 @@ display: block;
                var openingDiv = "";
 
                switch (numberColumns) {
-                  case '1':
+                  case 'none':
                      openingDiv = "";
                      openingRow = "";
                      closingRow = "";
@@ -535,21 +580,25 @@ display: block;
                      break;
                }
 
-               var openingList = "<ul class='" + listType + isUnstyled + "'>";
+               var openingList = "<ul class='" + listType + isUnstyled + inline + "'>";
                var closingList = "</ul>";
                var closingDiv = "</div>";
 
                if ($('#numbers').is(':checked')) {
-                  openingList = "<ol class='" + listType + isUnstyled + "'>";
+                  openingList = "<ol class='" + listType + isUnstyled + inline + "'>";
                   closingList = "</ol>";
                }
 
                standardListItem = "<li>" + openingLink + "List Item</li>" + closingLink;
 
+               var groupListItem = "<li class='list-group-item'>" + badge + openingLink + "List Item</li>" + closingLink;
+
                for (let i = 0; i < itemCount; i++) {
                   standardListItems += standardListItem;
                   descriptionListItems += "<dt>Content</dt><dd>Content</dd>";
+                  groupListItems += groupListItem;
                }
+
 
                // Final concatenation -------------------------------------------
 
@@ -557,7 +606,7 @@ display: block;
 
                var descriptionList = "<dl class='" + horizontal + "'>" + descriptionListItems + "</dl>";
 
-               // var groupList = openingRow + openingDiv + openingList + groupListItems + closingList + closingColumn + closingRow;
+               var groupList = openingRow + openingDiv + "<ul class='list-group'>" + groupListItems + closingList + closingColumn + closingRow;
 
 
                if ($("#list-type").val() == "") {
@@ -565,7 +614,7 @@ display: block;
                } else if ($("#list-type").val() == "description") {
                   outputList = descriptionList;
                } else {
-                  // outputList = groupList;
+                  outputList = groupList;
                }
 
                $("#simple-example").html(outputList);
