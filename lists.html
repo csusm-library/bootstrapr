@@ -67,7 +67,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#list" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| lists</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| lists</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -77,18 +77,242 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Lists</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Use lists to organize groups of similar data.</p>
          </div>
       </div>
 
       <hr class="divider">
 
 
-   <h4>Heading</h4>
-   <p>Content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ut eius velit. Atque praesentium hic odit, quo maxime quae dolor ab voluptate totam earum non excepturi officia temporibus delectus ut.</p>
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <!-- All controls: always visible -->
+
+               <div class="form-group">
+                  <label for="numberOfColumns"># Columns</label>
+                  <select class="form-control input-number" id="number-columns">
+                     <option value="1" selected="selected">1</option>
+                     <option id="two-col" value="2">2</option>
+                     <option id="three-col" value="3">3</option>
+                     <option id="four-col" value="4">4</option>
+                     <option id="six-col" value="6">6</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="list-type">List Type</label>
+                  <select class="form-control" id="list-type">
+                     <option value="" selected='selected'>Standard List</option>
+                     <option value="description">Description List</option>
+                     <option value="group">List Group</option>
+                  </select>
+               </div>
+
+               <div class="form-group">
+                  <label for="simple-list-count"># List Items</label>
+                  <input type="text" class="form-control input-number" id="item-count" name="media-num">
+               </div>
 
 
 
+               <div class="checkbox push-down-1" id="show-hide-has-hyperlinks">
+               <hr>
+                  <label>
+                     <input type="checkbox" id="has-hyperlinks"> Hyperlinks
+                  </label>
+               </div>
+
+               <div class="form-group hidden" id="show-hide-new-window">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="new-window"> Open Links in New Tab
+                     </label>
+                  </div>
+               </div>
+
+               <!-- standard controls -->
+
+               <div class="checkbox push-down-1" id="show-hide-is-unstyled">
+                  <hr>
+                  <label>
+                     <input type="checkbox" id="is-unstyled"> Unstyled
+                  </label>
+               </div>
+
+               <div class="form-group push-down-1"  id="show-hide-bullets-numbers">
+                  <hr>
+                  <label>
+                     <input type="radio" name="ol-ul" value="ul" id="bullets" checked="checked"> Bullets
+                  </label>
+                  <br>
+                  <label>
+                     <input type="radio" name="ol-ul" value="ol" id="numbers"> Numbers
+                  </label>
+               </div>
+
+               <!-- definintion controls -->
+               <div class="form-group push-down-1 hidden" id="show-hide-horizontal-vertical">
+                  <label>
+                     <input type="radio" name="dl" value="dl-horizontal" checked="checked" id="horizontal"> Horizontal
+                  </label>
+                  <br>
+                  <label>
+                     <input type="radio" name="dl" value="" id="vertical"> Vertical
+                  </label>
+               </div>
+
+
+               <!-- List group controls -->
+
+               <div class="checkbox push-down-1 hidden" id="show-hide-badges">
+                  <hr>
+                  <label>
+                     <input type="checkbox" id="has-badges"> Badges
+                  </label>
+               </div>
+
+
+
+               <div class="push-down-3">
+                  <button type="button" class="btn btn-default" id="clear-lists"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+                  <button type="button" class="btn btn-primary" id="display-lists"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               </div>
+
+
+
+            </form>
+
+         </div>
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <div class='row'>
+                  <div class='col-md-4'>
+                     <ul class='list-group'>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 1</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 2</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 3</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 4</a></li>
+                     </ul>
+                  </div>
+                  <div class='col-md-4'>
+                     <ul class='list-group'>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 5</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 6</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 7</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 8</a></li>
+                     </ul>
+                  </div>
+                  <div class='col-md-4'>
+                     <ul class='list-group'>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 9</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 10</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 11</a></li>
+                        <li class='list-group-item'><a href='' target='_blank'>Item 12</a></li>
+                     </ul>
+                  </div>
+               </div>
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class='row'&gt;
+   &lt;div class='col-md-4'&gt;
+      &lt;ul class='list-group'&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 1&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 2&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 3&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 4&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class='col-md-4'&gt;
+      &lt;ul class='list-group'&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 5&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 6&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 7&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 8&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+   &lt;div class='col-md-4'&gt;
+      &lt;ul class='list-group'&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 9&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 10&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 11&lt;/a&gt;&lt;/li&gt;
+         &lt;li class='list-group-item'&gt;&lt;a href='' target='_blank'&gt;Item 12&lt;/a&gt;&lt;/li&gt;
+      &lt;/ul&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+               <pre class="prettyprint lang-css" id="custom-css-code">
+/* Adds 'plus' glyph for enabling collapsible panels */
+.panel-heading .accordion-toggle:before {
+font-family: FontAwesome;
+content: "\f068";
+float: right;
+color: lightsteelblue;
+}
+
+.panel-heading .accordion-toggle.collapsed:before {
+content: "\f067";
+color: lightsteelblue;
+}
+
+/* sets the link to the size of the entire panel title */
+.panel-title > a {
+display: block;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
+            <h4 class="sub-header">Notes</h4>
+            <div class="alert alert-warning" role="alert">
+               <p></p>
+            </div>
+
+
+         </div>
+         <!-- .col-sm-9 -->
+      </div>
+      <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -116,12 +340,16 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
       w3IncludeHTML();
    </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -131,14 +359,231 @@
             $('[data-toggle="tooltip"]').tooltip()
          })
 
+         // Reset button
+         $('#clear-lists').on("click", function() {
+            location.reload(true);
+         });
+
          // Add active class to navmenu selection
          $("li#lists").addClass("active");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         // Hide the non-relevant controls
+         $("#list-type").on('change', function() {
+
+            if ($("#list-type").val() == "") {
+               $("#show-hide-horizontal-vertical").addClass("hidden");
+               $("#show-hide-badges").addClass("hidden");
+               $("#show-hide-bullets-numbers").removeClass("hidden");
+               $("#show-hide-is-unstyled").removeClass("hidden");
+               $("#show-hide-has-hyperlinks").removeClass("hidden");
+
+
+               $("#two-col").removeAttr("disabled", "disabled");
+               $("#three-col").removeAttr("disabled", "disabled");
+               $("#four-col").removeAttr("disabled", "disabled");
+               $("#six-col").removeAttr("disabled", "disabled");
+
+            } else if ($("#list-type").val() == "description") {
+               $("#show-hide-horizontal-vertical").removeClass("hidden");
+               $("#show-hide-badges").addClass("hidden");
+               $("#show-hide-bullets-numbers").addClass("hidden");
+               $("#show-hide-is-unstyled").addClass("hidden");
+               $("#show-hide-has-hyperlinks").addClass("hidden");
+               $("#show-hide-new-window").addClass("hidden");
+
+               $("#two-col").attr("disabled", "disabled");
+               $("#three-col").attr("disabled", "disabled");
+               $("#four-col").attr("disabled", "disabled");
+               $("#six-col").attr("disabled", "disabled");
+
+               $("#number-columns").val("1");
+               $("#has-hyperlinks").prop("checked", false);
+               $("#new-window").prop("checked", false);
+
+            } else {
+               $("#show-hide-horizontal-vertical").addClass("hidden");
+               $("#show-hide-badges").removeClass("hidden");
+               $("#show-hide-bullets-numbers").addClass("hidden");
+               $("#show-hide-is-unstyled").addClass("hidden");
+               $("#show-hide-has-hyperlinks").removeClass("hidden");
+               $("#show-hide-new-window").addClass("hidden");
+
+               $("#two-col").removeAttr("disabled", "disabled");
+               $("#three-col").removeAttr("disabled", "disabled");
+               $("#four-col").removeAttr("disabled", "disabled");
+               $("#six-col").removeAttr("disabled", "disabled");
+            }
+
+         });
+
+         $("#has-hyperlinks").on('change', function() {
+
+            if ($("#has-hyperlinks").is(":checked")) {
+               $("#show-hide-new-window").removeClass("hidden");
+            } else {
+               $("#show-hide-new-window").addClass("hidden");
+               $("#new-window").prop("checked", false);
+            }
+
+         });
+
+         $("#is-unstyled").on('change', function() {
+
+            if ($("#is-unstyled").is(":checked")) {
+               $("#bullets").prop("checked", false);
+               $("#numbers").prop("checked", false);
+            } else {
+               $("#bullets").prop("checked", true);
+            }
+         });
+
+         $("#bullets").on('change', function() {
+
+            if ($("#bullets").is(":checked")) {
+               $("#is-unstyled").prop("checked", false);
+            }
+         });
+
+         $("#numbers").on('change', function() {
+
+            if ($("#numbers").is(":checked")) {
+               $("#is-unstyled").prop("checked", false);
+            }
+         });
+
+         $('#display-lists').click(function() {
+
+               var listType = $("#list-type").val();
+               var itemCount = $("#item-count").val();
+               var hasHyperlinks = $("#has-hyperlinks").val();
+               var hasBadges = $("#has-badges").val();
+               var listItem = "";
+               var listItems = "";
+               var closingColumn = "</div>";
+               var closingRow = "</div>";
+               var isUnstyled = "";
+               var windowStatus = "target='_self'";
+               var standardListItem = "";
+               var standardListItems = "";
+
+               var descriptionListItems = "";
+               var horizontal = "";
+
+               var outputList = "";
+
+               if ($('#is-unstyled').is(':checked')) {
+                  isUnstyled = " list-unstyled";
+               } else {
+                  isUnstyled = "";
+               }
+
+               if ($('#horizontal').is(':checked')) {
+                  horizontal = "dl-horizontal";
+               } else {
+                  horizontal = "";
+               }
+
+               if ($('#new-window').is(':checked')) {
+                  windowStatus = "target='_blank'";
+               }
+
+               if ($('#has-hyperlinks').is(':checked')) {
+                  openingLink = "<a href='' " + windowStatus + ">";
+                  closingLink = "</a>"
+               } else {
+                  openingLink = "";
+                  closingLink = ""
+               }
+
+               var numberColumns = $("#number-columns").val();
+               var openingDiv = "";
+
+               switch (numberColumns) {
+                  case '1':
+                     openingDiv = "";
+                     openingRow = "";
+                     closingRow = "";
+                     closingColumn = "";
+                     break;
+
+                  case '2':
+                     openingDiv = "<div class='col-sm-6'>";
+                     openingRow = "<div class='row'>";
+                     break;
+
+                  case '3':
+                     openingDiv = "<div class='col-sm-4'>";
+                     openingRow = "<div class='row'>";
+                     break;
+
+                  case '4':
+                     openingDiv = "<div class='col-sm-3'>";
+                     openingRow = "<div class='row'>";
+                     break;
+
+                  case '5':
+                     openingDiv = "<div class='col-sm-2 col-sm-offset-1'>";
+                     openingRow = "<div class='row'>";
+                     break;
+
+                  case '6':
+                     openingDiv = "<div class='col-sm-2'>";
+                     openingRow = "<div class='row'>";
+                     break;
+               }
+
+               var openingList = "<ul class='" + listType + isUnstyled + "'>";
+               var closingList = "</ul>";
+               var closingDiv = "</div>";
+
+               if ($('#numbers').is(':checked')) {
+                  openingList = "<ol class='" + listType + isUnstyled + "'>";
+                  closingList = "</ol>";
+               }
+
+               standardListItem = "<li>" + openingLink + "List Item</li>" + closingLink;
+
+               for (let i = 0; i < itemCount; i++) {
+                  standardListItems += standardListItem;
+                  descriptionListItems += "<dt>Content</dt><dd>Content</dd>";
+               }
+
+               // Final concatenation -------------------------------------------
+
+               var simpleList = openingRow + openingDiv + openingList + standardListItems + closingList + closingColumn + closingRow;
+
+               var descriptionList = "<dl class='" + horizontal + "'>" + descriptionListItems + "</dl>";
+
+               // var groupList = openingRow + openingDiv + openingList + groupListItems + closingList + closingColumn + closingRow;
+
+
+               if ($("#list-type").val() == "") {
+                  outputList = simpleList;
+               } else if ($("#list-type").val() == "description") {
+                  outputList = descriptionList;
+               } else {
+                  // outputList = groupList;
+               }
+
+               $("#simple-example").html(outputList);
+               $('#simple-code').text(outputList);
+
+               $('pre').removeClass('prettyprinted');
+               prettyPrint();
+
+            });
+
+
+
+         // clipboard button
+         new Clipboard('.btn');
+
       });
    </script>
 
 </body>
+
 </html>

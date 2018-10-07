@@ -228,6 +228,10 @@ pre {
    font-weight:700;
 }
 
+#auto-colors {
+   cursor: pointer;
+   padding-left: .5rem;
+}
 
 .navbar-inverse .navbar-nav > .active > a,
 .navbar-inverse .navbar-nav > .active > a:link,
@@ -279,6 +283,12 @@ pre {
 
 .indent-right-3 {
    margin-left: 3rem;
+}
+
+/* adds spacing to the radion buttons */
+input[type="radio"] {
+   margin-right: .6rem;
+   margin-bottom: .6rem;
 }
 
 .btn-light,
