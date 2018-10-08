@@ -445,6 +445,7 @@ dd {
                $("#is-inline").prop("checked", false);
             } else {
                $("#bullets").prop("checked", true);
+
             }
          });
 
@@ -469,6 +470,8 @@ dd {
                $("#show-hide-bullets-numbers").addClass("hidden");
                $("#bullets").prop("checked", false);
                $("#numbers").prop("checked", false);
+               $("#number-columns").val("none");
+
             } else {
                $("#show-hide-bullets-numbers").removeClass("hidden");
                $("#bullets").prop("checked", true);
@@ -662,9 +665,7 @@ dd {
 
                      break;
                }
-
             }
-
 
             $("#simple-example").html(outputList);
             $('#simple-code').text(outputList);
@@ -674,12 +675,12 @@ dd {
 
          });
 
-
-
-         // clipboard button
-         new Clipboard('.btn');
-
       });
+
+      // clipboard button
+      new Clipboard('.btn');
+
+
    </script>
 
 </body>

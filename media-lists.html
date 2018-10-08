@@ -60,14 +60,14 @@
          <div class="col-sm-6">
             <ol class="breadcrumb hidden">
                <li><a href="index.html">Home</a></li>
-               <li class="active">Icons</li>
+               <li class="active">Media List</li>
             </ol>
          </div>
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/css/#icons" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| icons</small></a>
+               <a href="https://getbootstrap.com/docs/3.3/components/#media" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| Media Object</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -77,14 +77,172 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Media Lists</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Use media lists to organize groups of similar data.</p>
+            <p>Media lists pair images, links, and short descriptions. They are also well-suited to pages with several subpages, where they cam serve as a strongly visual table of contents.</p>
          </div>
       </div>
 
       <hr class="divider">
 
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <div class="form-group">
+                  <label>Image Size <span class="descriptor"> | (width x height)</span></label>
+                  <div class="input-group">
+                     <input id="image-width" type="text" class="form-control">
+                     <span class="input-group-addon">x</span>
+                     <input id="image-height" type="text" class="form-control">
+                  </div>
+                  <span class="placeholder">Example | 100 x 100</span>
+               </div>
+
+               <div class="form-group push-down-1">
+                  <label for="media-num"># List Items</label>
+                  <input type="text" class="form-control input-number" id="num-items" name="media-num">
+               </div>
+
+               <div class="form-group">
+                  <label for="button-size">Open In</label>
+                  <select class="form-control" id="open-in">
+                     <option value="blank" selected="selected">New window</option>
+                     <option value="self">Same window</option>
+                  </select>
+               </div>
 
 
+               <div class="form-group push-down-2">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="image-border"> Image Border
+                     </label>
+                  </div>
+               </div>
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-media-images"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-media-list"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+         </div>
+         <!-- .col-sm-3 -->
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <div class="media">
+                  <div class="media-left">
+                     <a href="">
+                        <img class="media-object" src="http://www.placehold.it/100x100" alt="">
+                     </a>
+                  </div>
+                  <div class="media-body">
+                     <h5 class="media-heading">Media heading</h5>
+                     <p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores
+                        animi.</p>
+                  </div>
+               </div>
+
+               <div class="media">
+                  <div class="media-left">
+                     <a href="">
+                        <img class="media-object" src="http://www.placehold.it/100x100" alt="">
+                     </a>
+                  </div>
+                  <div class="media-body">
+                     <h5 class="media-heading">Media heading</h5>
+                     <p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores
+                        animi.</p>
+                  </div>
+               </div>
+
+               <div class="media">
+                  <div class="media-left">
+                     <a href="">
+                        <img class="media-object" src="http://www.placehold.it/100x100" alt="">
+                     </a>
+                  </div>
+                  <div class="media-body">
+                     <h5 class="media-heading">Media heading</h5>
+                     <p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores
+                        animi.</p>
+                  </div>
+               </div>
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="media"&gt;
+   &lt;div class="media-left"&gt;
+      &lt;a href=""&gt;
+         &lt;img class="media-object" src="http://www.placehold.it/100x100" alt=""&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="media-body"&gt;
+      &lt;h5 class="media-heading"&gt;Media heading&lt;/h5&gt;
+      &lt;p&gt;Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores animi.&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="media"&gt;
+   &lt;div class="media-left"&gt;
+      &lt;a href=""&gt;
+         &lt;img class="media-object" src="http://www.placehold.it/100x100" alt=""&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="media-body"&gt;
+      &lt;h5 class="media-heading"&gt;Media heading&lt;/h5&gt;
+      &lt;p&gt;Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores animi.&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+
+&lt;div class="media"&gt;
+   &lt;div class="media-left"&gt;
+      &lt;a href=""&gt;
+         &lt;img class="media-object" src="http://www.placehold.it/100x100" alt=""&gt;
+      &lt;/a&gt;
+   &lt;/div&gt;
+   &lt;div class="media-body"&gt;
+      &lt;h5 class="media-heading"&gt;Media heading&lt;/h5&gt;
+      &lt;p&gt;Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Adipisci earum reiciendis soluta repellat iste cumque, a, labore aperiam voluptatibus ullam placeat rerum harum quos id quidem eum, quas dolores animi.&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Notes</h4>
+
+            <p>Images in media lists may be aligned to top, middle, or bottom, on the left. They may also be aligned to the left. See the <a href="https://getbootstrap.com/docs/3.3/components/#media" target="_blank">Bootstrap documentation</a> for
+               more information.</p>
+
+         </div>
+         <!-- .col-sm-9 -->
+
+      </div>
+      <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -112,12 +270,16 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
    <script>
       w3IncludeHTML();
    </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -133,8 +295,52 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         $("#display-media-list").on("click", function() {
+
+            if ($("#image-border").is(":checked")) {
+               var thumbnail = "class='thumbnail'";
+            } else {
+               thumbnail = "";
+            }
+
+            var mediaDiv = "<div class='media'>";
+            var imageWidth = $("#image-width").val();
+            var imageHeight = $("#image-height").val();
+            var openIn = $("#open-in").val();
+            var numItems = $("#num-items").val();
+            var image = "<a href='' target='_" + openIn + "'><img " + thumbnail + " src='http://www.placehold.it/" + imageWidth + "x" + imageHeight + "'></a>";
+            var mediaAlignmentDiv = "<div class='media-left'>";
+            var mediaBodyDiv = "<div class='media-body'>";
+            var mediaHeading = "<h5 class='media-heading'><a href='' target='_" + openIn + "'>Media Heading</a></h5>";
+            var mediaContent = "<p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laudantium tempora, officiis repellat minima.</p>";
+            var closingDiv = "</div>";
+            var listItems = "";
+
+
+
+            for (i = 0; i < numItems; i++) {
+               listItems += mediaDiv + mediaAlignmentDiv + image + closingDiv + mediaBodyDiv + mediaHeading + mediaContent + closingDiv + closingDiv;
+            }
+
+            $("#simple-example").html(listItems);
+            $('#simple-code').text(listItems);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // Reset button
+         $('#clear-media-images').on("click", function() {
+            location.reload(true);
+         });
+
       });
+
+      // clipboard button
+      new Clipboard('.btn');
    </script>
 
 </body>
+
 </html>
