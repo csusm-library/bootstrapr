@@ -47,6 +47,18 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
+   <!-- Color picker CSS (https://itsjavi.com/bootstrap-colorpicker/) -->
+   <link href="css/bootstrap-colorpicker.min.css" rel="stylesheet">
+
+   <style>
+
+   /* Adds a top margin to the jumbotron button for better readability */
+   .jumbotron .btn {
+      margin-top: 1.5rem;
+   }
+
+   </style>
+
 </head>
 
 <body id="top">
@@ -67,7 +79,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#jumbotron" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| jumbotrons</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| jumbotrons</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -77,17 +89,273 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Jumbotrons</h1>
-            <p class="lead">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sint eveniet, tenetur inventore quidem odio ducimus repudiandae impedit fugiat fuga non excepturi illum libero aut quae unde quo aliquid obcaecati, voluptates.</p>
+            <p class="lead">Jumbotrons create a prominent visual introductory focus to a page.</p>
+            <p>Jumbotrons are an introductory/titling feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and the aesthetic dimension approaches distraction for the user.</p>
+            <p>You may choose an image background or a colored background. The default background color is grey. You should aim for an image roughly <strong>1000px wide x 300px tall</strong>. Expect some image cropping, depending on device size and
+               orientation.</p>
          </div>
       </div>
 
       <hr class="divider">
 
+      <div class="row">
 
-   <h4>Heading</h4>
-   <p>Content here. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vitae ut eius velit. Atque praesentium hic odit, quo maxime quae dolor ab voluptate totam earum non excepturi officia temporibus delectus ut.</p>
+         <div class="col-sm-3">
+
+            <form>
+
+               <div class="form-group">
+                  <label>Jumbotron Width</label>
+                  <select class="form-control" id="jumbo-width">
+                     <option value="regular-size" selected="selected">Regular Width</option>
+                     <option value="full-size">Full Width</option>
+                  </select>
+               </div>
+               <p class="alert alert-warning hidden" id="full-size-warning">You must place full-width Jumbotrons <strong>outside</strong> the main <code>.container</code> div.</p>
 
 
+               <div class="form-group">
+                  <hr>
+                  <label style="margin-top:0em;" for="button-size">Background</label>
+                  <select class="form-control" id="jumbotron-background">
+                     <option selected="selected" value="image">Image</option>
+                     <option value="hex">Custom Hex Color </option>
+                     <option value="" disabled="disabled">- - - - - - - - - - - - - -</option>
+                     <option value="default">Default &mdash; light grey</option>
+                     <option value="blue">Primary &mdash; blue</option>
+                     <option value="info">Info &mdash; light blue</option>
+                     <option value="success">Success &mdash; green</option>
+                     <option value="warning">Warning &mdash; yellow</option>
+                     <option value="danger">Danger &mdash; red</option>
+                  </select>
+               </div>
+
+               <div class="form-group" id="image-selection-div">
+                  <label for="image-url">Image URL</label>
+                  <div class="input-group">
+                     <span class="input-group-addon" id="refresh-button1"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                     <input type="text" class="form-control" id="image-url" placeholder="http://url.com">
+                  </div>
+               </div>
+
+               <div class="hidden" id="background-color-hex-input">
+                  <label for="button-text">Hex Color <a id="color-codes-popover" tabindex="5" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Use named colors too!</h5><hr><p>Modern browsers support 140 named colors. You may type either hex values or named colors into this field.</p><p><a href='https://htmlcolorcodes.com/color-names/' target='_blank'><i class='fa fa-external-link-square fa-fw' aria-hidden='true'></i> View HTML Color Codes</a></p>"
+                        data-original-title="" title="">
+                        <i class="fa fa-info-circle" aria-hidden="true"></i>
+                     </a></label>
+                  <div id="cp3" class="input-group colorpicker-component" id="background-color-hex-input">
+                     <input id="hex-color" type="text" placeholder="#000000" value="#000000" class="form-control">
+                     <span class="input-group-addon"><i></i></span>
+                  </div>
+               </div>
+
+               <hr>
+
+               <div class="form-group">
+                  <label for="button-text">Jumbotron Title</label>
+                  <input type="text" class="form-control" id="jumbotron-title">
+                  <span class="placeholder">Example | Africana Studies</span>
+               </div>
+
+               <div class="form-group">
+                  <label for="button-text">Jumbotron Subtitle</label>
+                  <input type="text" class="form-control" id="jumbotron-subtitle">
+                  <span class="placeholder">Example | The problematics of...</span>
+
+               </div>
+
+               <div class="form-group">
+                  <label>Titles Color</label>
+                  <div id="cp2" class="input-group colorpicker-component">
+                     <input id="color-picker" type="text" value="#000000" class="form-control">
+                     <span class="input-group-addon"><i></i></span>
+                  </div>
+                  <p style="padding-left: 8px;">
+                     <a id="select-black"><small>Black</small></a> | <a id="select-white"><small>White</small></a></p>
+               </div>
+
+               <!-- checkbox here -->
+               <div class="form-group">
+                  <div class="checkbox" style="margin-top: 20px;">
+                     <label>
+                        <input type="checkbox" id="text-shadow"> Text Shadow
+                     </label>
+                  </div>
+               </div>
+
+               <hr>
+
+               <div class="form-group">
+                  <label for="panel-accent">Button Color</label>
+                  <select class="form-control" id="button-color">
+                     <option value="no button" selected="selected">No Button</option>
+                     <option value=" btn-secondary-dark">Transparent &mdash; black</option>
+                     <option value=" btn-secondary-light">Transparent &mdash; white</option>
+                     <option value=" btn-primary">Primary &mdash; blue</option>
+                     <option value=" btn-info">Info &mdash; light blue</option>
+                     <option value=" btn-success">Success &mdash; green</option>
+                     <option value=" btn-warning">Warning &mdash; yellow</option>
+                     <option value=" btn-danger">Danger &mdash; red</option>
+                  </select>
+               </div>
+
+               <div class="form-group hidden" id="button-title-group">
+                  <label for="button-title">Button Title</label>
+                  <input type="text" class="form-control" id="button-title" placeholder="Learn More">
+               </div>
+
+               <div class="form-group hidden" id="button-alignment-div">
+                  <label style="margin-top:0em;" for="button-size">Button Alignment</label>
+                  <select class="form-control" id="button-alignment">
+                     <option selected="selected" value="text-left">Left</option>
+                     <option value="text-center">Center</option>
+                     <option value="text-right">Right</option>
+                  </select>
+               </div>
+
+               <label for="icon-html" id="optional-icon-hider">Custom Icon (or Text)</label>
+               <div class="input-group">
+                  <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="button-icon">
+               </div>
+               <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
+
+               <div class="form-group hidden" id="button-url-group">
+                  <label for="button-url">Button URL</label>
+                  <div class="input-group">
+                     <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                     <input type="text" class="form-control" id="button-url" placeholder="http://url.com">
+                  </div>
+               </div>
+
+            </form>
+
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-jumbotron"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-jumbotron"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+
+         </div>
+         <!-- .col-sm-3 -->
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+
+               <div class="jumbotron" style="background-size: cover; background-image: url(&quot;https://libapps.s3.amazonaws.com/accounts/38465/images/Africana-mini.jpg&quot;);">
+                  <h1 style="color:#FFFFFF;text-shadow: 1px 1px gray;" class="jumbotronic">Africana Studies</h1>
+                  <h6 style=" text-shadow: 1px 1px gray; color:#FFFFFF">The Problematics of Race, Class and Gender</h6>
+                  <p class="text-left">
+                     <a class="btn btn-danger btn-lg" href="" target="_blank" role="button">
+                        <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i>
+                        Course Page
+                     </a>
+                  </p>
+               </div>
+
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="jumbotron" style="background-size: cover; background-image: url(&quot;https://libapps.s3.amazonaws.com/accounts/38465/images/Africana-mini.jpg&quot;);"&gt;
+   &lt;h1 style="color:#FFFFFF;text-shadow: 1px 1px gray;" class="jumbotronic"&gt;Africana Studies&lt;/h1&gt;
+   &lt;h6 style=" text-shadow: 1px 1px gray; color:#FFFFFF"&gt;The Problematics of Race, Class and Gender&lt;/h6&gt;
+   &lt;p class="text-left"&gt;
+      &lt;a class="btn btn-danger btn-lg" href="" target="_blank" role="button"&gt;
+         &lt;i class="fa fa-fw fa-graduation-cap" aria-hidden="true"&gt;&lt;/i&gt;
+         Course Page
+      &lt;/a&gt;
+   &lt;/p&gt;
+&lt;/div&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>You may wish to add the <code>.text-shadow</code> class to add contrast to the heading and parapgraph elements. You may also with to add some top margin to the button with the <code>.margin-top</code> class.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-css" id="custom-css-code">
+/* Adds text shadow to make the text inside the jumbotron pop */
+.jumbotron p,
+.jumbotron h1 {
+   text-shadow: 2px 2px 1px black;
+}
+
+/* Adds a top margin to the jumbotron button for better readability */
+.jumbotron .btn {
+   margin-top: 1.5rem;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
+
+            <h4 class="sub-header">Notes</h4>
+
+            <p>Many sites offer royalty-free and attribution-free images, such as:</p>
+
+            <ul class="list-unstyled push-down-1">
+               <li>
+                  <a href="https://www.google.com/imghp?hl=en&tab=wi" target="_blank">Google Images</a>
+               </li>
+               <li>
+                  <a href="http://www.lifeofpix.com/" target="_blank">Life of Pix</a>
+               </li>
+               <li>
+                  <a href="https://magdeleine.co/browse/" target="_blank">Magdeleine</a>
+               </li>
+               <li>
+                  <a href="https://www.pexels.com/" target="_blank">Pexels</a>
+               </li>
+               <li>
+                  <a href="https://pixabay.com/" target="_blank">Pixabay</a>
+               </li>
+               <li>
+                  <a href="http://publicdomainarchive.com/" target="_blank">Public Domain Archive</a>
+               </li>
+               <li>
+                  <a href="http://realisticshots.com/" target="_blank">Realistic Shots</a>
+               </li>
+               <li>
+                  <a href="https://unsplash.com/" target="_blank">Unsplash</a>
+               </li>
+            </ul>
+
+
+         </div>
+         <!-- .col-sm-9 -->
+
+
+      </div>
 
 
    </div>
@@ -116,6 +384,7 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
@@ -123,13 +392,1378 @@
       w3IncludeHTML();
    </script>
 
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+   <!-- Font Awesome Icons Modal -->
+   <div class="modal fade" id="icons-modal" role="dialog">
+      <div class="modal-dialog modal-lg">
+
+         <!-- Modal content-->
+         <div class="modal-content">
+            <div class="modal-header">
+               <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times fa-lg fa-fw"></i></button>
+               <h3 class="modal-title push-down-1 indent-right-2">Select an Icon</h3>
+               <p class="text-right push-down-1" style="margin-bottom: 0"><a href="https://fontawesome.com/v4.7.0/icons/" target="_blank"><i class="fa fa-fw fa-flag"></i> All Font Awesome Icons <small>(4.7.0)</small></a></p>
+            </div>
+            <div class="modal-body">
+
+               <table class="table table-hover" id="bootstrap-table">
+                  <thead>
+                     <tr>
+                        <th style="width:12%;">Name</th>
+                        <th class="text-center" style="width:4%;">Icon</th>
+                        <th class="text-center" style="width:80%;">HTML</th>
+                        <th class="text-center" style="width:4%;" class="text-right">Actions</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>android, operating system</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-android" aria-hidden="true"></i></td>
+                        <td id="well1">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-android" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-android" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>apple, operating system</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-apple" aria-hidden="true"></i></td>
+                        <td id="well2">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-apple" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-apple" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>archive, box, folder</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-archive" aria-hidden="true"></i></td>
+                        <td id="well3">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-archive" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-archive" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>area chart, graph</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-area-chart" aria-hidden="true"></i></td>
+                        <td id="well4">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-area-chart" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-area-chart" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>arrow, circle, down</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down" aria-hidden="true"></i></td>
+                        <td id="well5">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-arrow-circle-o-down" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-arrow-circle-o-down" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>arrow, circle, left</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-arrow-circle-o-left" aria-hidden="true"></i></td>
+                        <td id="well6">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-arrow-circle-o-left" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-arrow-circle-o-left" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>arrow circle, right</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-arrow-circle-o-right" aria-hidden="true"></i></td>
+                        <td id="well7">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-arrow-circle-o-right" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-arrow-circle-o-right" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>arrow, circle, up</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-arrow-circle-o-up" aria-hidden="true"></i></td>
+                        <td id="well8">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-arrow-circle-o-up" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-arrow-circle-o-up" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>at, mark, whorl, snail</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-at" aria-hidden="true"></i></td>
+                        <td id="well9">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-at" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-at" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>balance, scale</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-balance-scale" aria-hidden="true"></i></td>
+                        <td id="well10">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-balance-scale" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-balance-scale" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bar, chart</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bar-chart" aria-hidden="true"></i></td>
+                        <td id="well11">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bar-chart" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bar-chart" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bell, alarm</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bell-o" aria-hidden="true"></i></td>
+                        <td id="well12">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bell-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bell-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bell, alarm</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bell-slash-o" aria-hidden="true"></i></td>
+                        <td id="well13">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bell-slash-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bell-slash-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>binoculars, search, find</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-binoculars" aria-hidden="true"></i></td>
+                        <td id="well14">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-binoculars" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-binoculars" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>book</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-book" aria-hidden="true"></i></td>
+                        <td id="well15">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-book" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-book" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bookmark</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bookmark" aria-hidden="true"></i></td>
+                        <td id="well16">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bookmark" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bookmark" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>briefcase, satchel, business</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-briefcase" aria-hidden="true"></i></td>
+                        <td id="well17">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-briefcase" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-briefcase" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bug, insect</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bug" aria-hidden="true"></i></td>
+                        <td id="well18">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bug" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bug" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>bullhorn, announce, feedback</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bullhorn" aria-hidden="true"></i></td>
+                        <td id="well19">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bullhorn" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bullhorn" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calculator</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calculator" aria-hidden="true"></i></td>
+                        <td id="well20">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calculator" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calculator" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calendar, reservation, appointment</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calendar" aria-hidden="true"></i></td>
+                        <td id="well21">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calendar" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calendar" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calendar, reservation, appointment</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calendar-minus-o" aria-hidden="true"></i></td>
+                        <td id="well22">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calendar-minus-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calendar-minus-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calendar, reservation, appointment</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calendar-o" aria-hidden="true"></i></td>
+                        <td id="well23">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calendar-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calendar-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calendar, reservation, appointment</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calendar-plus-o" aria-hidden="true"></i></td>
+                        <td id="well24">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calendar-plus-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calendar-plus-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>calendar, reservation, appointment</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-calendar-times-o" aria-hidden="true"></i></td>
+                        <td id="well25">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-calendar-times-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-calendar-times-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>camera, retro, photograph</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-camera-retro" aria-hidden="true"></i></td>
+                        <td id="well26">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cc, closed caption</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cc" aria-hidden="true"></i></td>
+                        <td id="well27">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cc" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cc" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>chat, speech bubble, talk, IM</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-commenting" aria-hidden="true"></i></td>
+                        <td id="well27a">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-commenting" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-commenting" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>link, broken, chain</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-chain-broken" aria-hidden="true"></i></td>
+                        <td id="well28">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-chain-broken" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-chain-broken" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>check</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-check" aria-hidden="true"></i></td>
+                        <td id="well30a">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-check" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-check" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>check, circle</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-check-circle-o" aria-hidden="true"></i></td>
+                        <td id="well29">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-check-circle-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-check-circle-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>check, square</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-check-square-o" aria-hidden="true"></i></td>
+                        <td id="well30">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-check-square-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-check-square-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>circle</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-circle" aria-hidden="true"></i></td>
+                        <td id="well31">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-circle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-circle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>clipboard, copy</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-clipboard" aria-hidden="true"></i></td>
+                        <td id="well32">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-clipboard" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-clipboard" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>clock, time, hour</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-clock-o" aria-hidden="true"></i></td>
+                        <td id="well33">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-clock-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-clock-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>clone, copy, duplicate</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-clone" aria-hidden="true"></i></td>
+                        <td id="well34">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-clone" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-clone" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cloud, web, net</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cloud" aria-hidden="true"></i></td>
+                        <td id="well35">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cloud" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cloud" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cloud, web, net, download</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cloud-download" aria-hidden="true"></i></td>
+                        <td id="well36">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cloud-download" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cloud-download" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cloud, web, net, upload</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cloud-upload" aria-hidden="true"></i></td>
+                        <td id="well37">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cloud-upload" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cloud-upload" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>code, program, brackets</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-code" aria-hidden="true"></i></td>
+                        <td id="well38">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-code" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-code" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cog, machinery, gear</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cog" aria-hidden="true"></i></td>
+                        <td id="well39">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cog" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cog" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>cogs, machinery, gears</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-cogs" aria-hidden="true"></i></td>
+                        <td id="well40">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-cogs" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-cogs" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>comment, speech, bubble</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-comment-o" aria-hidden="true"></i></td>
+                        <td id="well41">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-comment-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-comment-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>compass, navigate, bubble</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-compass" aria-hidden="true"></i></td>
+                        <td id="well41b">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-compass" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-compass" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>copyright</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-copyright" aria-hidden="true"></i></td>
+                        <td id="well42">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-copyright" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-copyright" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>creative commons, cc</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-creative-commons" aria-hidden="true"></i></td>
+                        <td id="well43">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-creative-commons" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-creative-commons" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>database</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-database" aria-hidden="true"></i></td>
+                        <td id="well44">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-database" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-database" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>envelope, email</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-envelope" aria-hidden="true"></i></td>
+                        <td id="well45">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-envelope" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>envelope, email</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-envelope-square" aria-hidden="true"></i></td>
+                        <td id="well49">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-envelope-square" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-envelope-square" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>envelope, email</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-envelope-o" aria-hidden="true"></i></td>
+                        <td id="well46">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-envelope-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-envelope-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>envelope, email, open</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-envelope-open" aria-hidden="true"></i></td>
+                        <td id="well47">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-envelope-open" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-envelope-open" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>envelope, email, open</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-envelope-open-o" aria-hidden="true"></i></td>
+                        <td id="well48">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-envelope-open-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-envelope-open-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>eraser</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-eraser" aria-hidden="true"></i></td>
+                        <td id="well50">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-eraser" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-eraser" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>exclamation, circle, alert</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-exclamation-circle" aria-hidden="true"></i></td>
+                        <td id="well51">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-exclamation-circle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-exclamation-circle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>exclamation, triangle, alert, caution, warning</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-exclamation-triangle" aria-hidden="true"></i></td>
+                        <td id="well52">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-exclamation-triangle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>external link</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-external-link" aria-hidden="true"></i></td>
+                        <td id="well53">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-external-link" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>external link</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-external-link-square" aria-hidden="true"></i></td>
+                        <td id="well54">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-external-link-square" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-external-link-square" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>eye, visible, see</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-eye" aria-hidden="true"></i></td>
+                        <td id="well55">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-eye" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-eye" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>eye, invisible, not see</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-eye-slash" aria-hidden="true"></i></td>
+                        <td id="well56">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-eye-slash" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-eye-slash" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>female, woman, chica, betty</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-female" aria-hidden="true"></i></td>
+                        <td id="well57">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-female" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-female" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, sound</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-audio-o" aria-hidden="true"></i></td>
+                        <td id="well60">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-audio-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-audio-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, code, program</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-code-o" aria-hidden="true"></i></td>
+                        <td id="well61">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-code-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, excel, spreadsheet, microsoft</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-excel-o" aria-hidden="true"></i></td>
+                        <td id="well62">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-excel-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-excel-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, image, picture</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-image-o" aria-hidden="true"></i></td>
+                        <td id="well63">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-image-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-image-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, text</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-o" aria-hidden="true"></i></td>
+                        <td id="well64">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, pdf, adobe</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-pdf-o" aria-hidden="true"></i></td>
+                        <td id="well65">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-pdf-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, powerpoint, presentation, microsoft</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-powerpoint-o" aria-hidden="true"></i></td>
+                        <td id="well66">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-powerpoint-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-powerpoint-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, text, plain</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-text-o" aria-hidden="true"></i></td>
+                        <td id="well68">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-text-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-text-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, video</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-video-o" aria-hidden="true"></i></td>
+                        <td id="well69">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-video-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-video-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>file, word, microsoft</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-file-word-o" aria-hidden="true"></i></td>
+                        <td id="well70">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-file-word-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-file-word-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>film, video, movie</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-film" aria-hidden="true"></i></td>
+                        <td id="well72">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-film" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-film" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>floppy, disk, save</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-floppy-o" aria-hidden="true"></i></td>
+                        <td id="well73">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-floppy-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-floppy-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>folder, open</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-folder-open" aria-hidden="true"></i></td>
+                        <td id="well75">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-folder-open" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-folder-open" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>gift, present</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-gift" aria-hidden="true"></i></td>
+                        <td id="well76">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-gift" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-gift" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>github, repo</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-github" aria-hidden="true"></i></td>
+                        <td id="well77">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-github" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-github" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>globe, world, link</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-globe" aria-hidden="true"></i></td>
+                        <td id="well78">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-globe" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-globe" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>headphones, sound, listen</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-headphones" aria-hidden="true"></i></td>
+                        <td id="well82">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-headphones" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-headphones" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>home, house</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-home" aria-hidden="true"></i></td>
+                        <td id="well83">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-home" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-home" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>id, card, profile, identity</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-id-card-o" aria-hidden="true"></i></td>
+                        <td id="well87">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-id-card-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-id-card-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>information, circle, alert</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-info-circle" aria-hidden="true"></i></td>
+                        <td id="well89">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-info-circle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-info-circle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>key, unlock</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-key" aria-hidden="true"></i></td>
+                        <td id="well91">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-key" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-key" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>keyboard, terminal</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-keyboard-o" aria-hidden="true"></i></td>
+                        <td id="well92">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-keyboard-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-keyboard-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>laptop, computer</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-laptop" aria-hidden="true"></i></td>
+                        <td id="well93">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-laptop" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-laptop" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>life preserver, life ring, buoy, help, assistance, FAQ</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-life-ring" aria-hidden="true"></i></td>
+                        <td id="well94">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-life-ring" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-life-ring" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>lightning Bolt, quick start, rapid, danger</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-bolt" aria-hidden="true"></i></td>
+                        <td id="well94a">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-bolt" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-bolt" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>line chart, graph</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-line-chart" aria-hidden="true"></i></td>
+                        <td id="well96">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-line-chart" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-line-chart" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>linux, operating system</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-linux" aria-hidden="true"></i></td>
+                        <td id="well97">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-linux" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-linux" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>list, bullet points</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-list" aria-hidden="true"></i></td>
+                        <td id="well98">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-list" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-list" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>list, bullet points</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-list-alt" aria-hidden="true"></i></td>
+                        <td id="well99">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-list-alt" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-list-alt" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>list, bullet points</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-list-ol" aria-hidden="true"></i></td>
+                        <td id="well100">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-list-ol" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-list-ol" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>list, unordered, bullet points</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-list-ul" aria-hidden="true"></i></td>
+                        <td id="well101">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-list-ul" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-list-ul" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>lock, security, login</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-lock" aria-hidden="true"></i></td>
+                        <td id="well102">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-lock" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-lock" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>male, man, dude, barney</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-male" aria-hidden="true"></i></td>
+                        <td id="well103">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-male" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-male" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>map, marker, location</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-map-marker" aria-hidden="true"></i></td>
+                        <td id="well104">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-map-marker" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-map-marker" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>mortarboard, graduation cap, student, faculty, academic</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-graduation-cap" aria-hidden="true"></i></td>
+                        <td id="well105">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-graduation-cap" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-graduation-cap" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>newspaper</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-newspaper-o" aria-hidden="true"></i></td>
+                        <td id="well106">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-newspaper-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-newspaper-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>paint brush, color</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-paint-brush" aria-hidden="true"></i></td>
+                        <td id="well107">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-paint-brush" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-paint-brush" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>paper plane, send, email</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-paper-plane" aria-hidden="true"></i></td>
+                        <td id="well108">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-paper-plane" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-paper-plane" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>paperclip, attachment, include</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-paperclip" aria-hidden="true"></i></td>
+                        <td id="well109">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-paperclip" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-paperclip" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>paragraph, return, text</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-paragraph" aria-hidden="true"></i></td>
+                        <td id="well110">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-paragraph" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-paragraph" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>pencil, write, edit</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-pencil" aria-hidden="true"></i></td>
+                        <td id="well111">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-pencil" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-pencil" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>pencil, write, edit</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-pencil-square-o" aria-hidden="true"></i></td>
+                        <td id="well113">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-pencil-square-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>telephone, phone, call, contact</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-phone" aria-hidden="true"></i></td>
+                        <td id="well114">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-phone" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-phone" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>phone, telephone, call, contact, square</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-phone-square" aria-hidden="true"></i></td>
+                        <td id="well115">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-phone-square" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-phone-square" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>picture, image</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-picture-o" aria-hidden="true"></i></td>
+                        <td id="well116">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-picture-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-picture-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>pie chart, graph</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-pie-chart" aria-hidden="true"></i></td>
+                        <td id="well117">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-pie-chart" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-pie-chart" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>print, printer</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-print" aria-hidden="true"></i></td>
+                        <td id="well119">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-print" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-print" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>question, mark, circle, opaque</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-question-circle" aria-hidden="true"></i></td>
+                        <td id="well119a">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-question-circle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-question-circle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>question, mark, circle, outline, clear, transparent</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-question-circle-o" aria-hidden="true"></i></td>
+                        <td id="well119b">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-question-circle-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-question-circle-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>question, mark</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-question" aria-hidden="true"></i></td>
+                        <td id="well119c">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-question" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-question" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>refresh, recycle</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-refresh" aria-hidden="true"></i></td>
+                        <td id="well122">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-refresh" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-refresh" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>rocket, speed, zoom, handbook</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-rocket" aria-hidden="true"></i></td>
+                        <td id="well123">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-rocket" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-rocket" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>rss, feed, atom</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-rss" aria-hidden="true"></i></td>
+                        <td id="well124">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-rss" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-rss" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>search, find, magnifying glass</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-search" aria-hidden="true"></i></td>
+                        <td id="well126">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-search" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-search" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>sitemap, organization, org chart, structure</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-sitemap" aria-hidden="true"></i></td>
+                        <td id="well129">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-sitemap" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-sitemap" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>star</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-star" aria-hidden="true"></i></td>
+                        <td id="well131">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-star" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-star" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>star, half</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-star-half" aria-hidden="true"></i></td>
+                        <td id="well132">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-star-half" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-star-half" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>yellow sticky note</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-sticky-note-o" aria-hidden="true"></i></td>
+                        <td id="well134">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-sticky-note-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-sticky-note-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>suitcase, business, files</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-suitcase" aria-hidden="true"></i></td>
+                        <td id="well136">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-suitcase" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-suitcase" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>table, grid, matrix</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-table" aria-hidden="true"></i></td>
+                        <td id="well137">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-table" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-table" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>tag, metadata, information, label</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-tag" aria-hidden="true"></i></td>
+                        <td id="well138">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-tag" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-tag" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>tags, matadata, information, label</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-tags" aria-hidden="true"></i></td>
+                        <td id="well139">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-tags" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-tags" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>thumb tack, reminder</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-thumb-tack" aria-hidden="true"></i></td>
+                        <td id="well140">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-thumb-tack" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-thumb-tack" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>thumb, thumbs up, approval, good</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-thumbs-up" aria-hidden="true"></i></td>
+                        <td id="well140a">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-thumbs-up" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-thumbs-up" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>thumb, thumbs down, disapproval, bad</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-thumbs-down" aria-hidden="true"></i></td>
+                        <td id="well140b">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-thumbs-down" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-thumbs-down" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>times, x, close, stop, danger</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-times" aria-hidden="true"></i></td>
+                        <td id="well141">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-times" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-times" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>times, x, close, stop, danger</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-times-circle" aria-hidden="true"></i></td>
+                        <td id="well142">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-times-circle" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-times-circle" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>trash, delete</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-trash" aria-hidden="true"></i></td>
+                        <td id="well145">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-trash" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-trash" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>trophy, prize, winner</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-trophy" aria-hidden="true"></i></td>
+                        <td id="well146">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-trophy" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-trophy" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>undo, back</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-undo" aria-hidden="true"></i></td>
+                        <td id="well147">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-undo" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-undo" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>university, library, academia</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-university" aria-hidden="true"></i></td>
+                        <td id="well148">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-university" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-university" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>unlock, login, open</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-unlock" aria-hidden="true"></i></td>
+                        <td id="well149">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-unlock" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-unlock" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>usd, dollar, currency, money, $</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-usd" aria-hidden="true"></i></td>
+                        <td id="well152">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-usd" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-usd" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>user, person, patron</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-user" aria-hidden="true"></i></td>
+                        <td id="well153">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-user" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-user" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>users, persons, people, patrons</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-user-circle-o" aria-hidden="true"></i></td>
+                        <td id="well155">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-user-circle-o" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-user-circle-o" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>users, persons, people, patrons</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-users" aria-hidden="true"></i></td>
+                        <td id="well157">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-users" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-users" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>video, camera, film</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-video-camera" aria-hidden="true"></i></td>
+                        <td id="well159">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-video-camera" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-video-camera" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>volume, up</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-volume-up" aria-hidden="true"></i></td>
+                        <td id="well162">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-volume-up" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-volume-up" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>wifi, wireless</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-wifi" aria-hidden="true"></i></td>
+                        <td id="well163">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-wifi" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-wifi" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>wikipedia</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-wikipedia-w" aria-hidden="true"></i></td>
+                        <td id="well164">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-wikipedia-w" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-wikipedia-w" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>windows</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-windows" aria-hidden="true"></i></td>
+                        <td id="well165">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-windows" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-windows" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>wordpress</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-wordpress" aria-hidden="true"></i></td>
+                        <td id="well166">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-wordpress" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-wordpress" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>wrench, tool, setting</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-wrench" aria-hidden="true"></i></td>
+                        <td id="well167">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-wrench" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-wrench" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                     <tr>
+                        <td>youtube, video</td>
+                        <td style="padding-top: 2rem !important"><i class="fa fa-fw fa-lg fa-youtube" aria-hidden="true"></i></td>
+                        <td id="well168">
+                           <pre class="prettyprint lang-html">&lt;i class="fa fa-fw fa-youtube" aria-hidden="true"&gt;&lt;/i&gt;</pre>
+                        </td>
+                        <td><button class='btn btn-code-well icon-selector' type='button' data-well-target='&lt;i class="fa fa-fw fa-youtube" aria-hidden="true"&gt;&lt;/i&gt;' data-toggle='tooltip' data-placement='bottom' title='Select This Icon'><i
+                                 class="fa fa-fw fa-arrow-left" aria-hidden="true"></i> Select</button></td>
+                     </tr>
+                  </tbody>
+               </table>
+
+            </div>
+         </div>
+
+      </div>
+   </div>
+   <!-- .modal -->
+
+   <!-- Bootstrap Table -->
+   <script type="text/javascript" src="js/jquery.sortelements.js"></script>
+   <script type="text/javascript" src="js/jquery.bdt.js"></script>
+
    <script>
       $(document).ready(function() {
 
+         // The searchable bootstrap table
+         $('#bootstrap-table').bdt();
+         $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
+
+         // clear the image url button
+         $('#refresh-button1').click(function() {
+            $('#image-url').val('');
+            $('#jumbotron-background').val('default');
+         });
+
+         // clear the button color
+         $('#refresh-button2').click(function() {
+            $('#button-url').val('');
+         });
+
+         // clear the icon
+         $('#refresh-button3').click(function() {
+            $('#button-icon').val('');
+         });
+
+         // Write black to the color field
+         $('#select-black').click(function() {
+            $('#color-picker').val("#000000")
+         });
+
+         // Write color to the color field
+         $('#select-white').click(function() {
+            $('#color-picker').val("#FFFFFF")
+         });
+
          // tooltips function
-         $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-         })
+         $('[data-toggle="tooltip"]').tooltip();
+
 
          // Add active class to navmenu selection
          $("li#jumbotrons").addClass("active");
@@ -137,8 +1771,181 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         $("#jumbo-width").on('change', function() {
+            if ($("#jumbo-width").val() == "regular-size") {
+               $("#full-size-warning").addClass("hidden");
+            } else {
+               $("#full-size-warning").removeClass("hidden");
+            }
+         });
+
+
+         $('#display-jumbotron').on("click", function() {
+
+            var imageURL = $('#image-url').val();
+            var jumbotronBackground = $('#jumbotron-background').val();
+            var jumbotronTitle = $('#jumbotron-title').val();
+            var jumbotronSubtitle = $('#jumbotron-subtitle').val();
+            var buttonURL = $('#button-url').val();
+            var buttonColor = $('#button-color').val();
+            var buttonTitle = $('#button-title').val();
+            var buttonIcon = $('#button-icon').val();
+            var textColor = $('#color-picker').val();
+            var setBackground = '';
+            var addImage = '';
+            var customColor = $('#hex-color').val();
+            var textShadow = '';
+            var buttonAlignment = $('#button-alignment').val();
+            var jumboButton = '';
+            var jumboWidth = $('#jumbo-width').val();
+            var containerOpen = "";
+            var containerClose = "";
+
+            if ($('#text-shadow').is(':checked')) {
+               textShadow = "text-shadow: 1px 1px gray;";
+            } else {
+               textShadow = "";
+            }
+
+            if (jumboWidth == "regular-size") {
+               containerOpen = "";
+               containerClose = "";
+            } else {
+               containerOpen = "<div class='container'>";
+               containerClose = "</div>";
+            }
+
+            switch (jumbotronBackground) {
+               // base lines
+               case 'none':
+                  setBackground = 'default';
+                  break;
+               case 'default':
+                  setBackground = '#eeeeee';
+                  break;
+               case 'hex':
+                  setBackground = customColor;
+                  break;
+
+                  // Bootstrap Colors
+               case 'info':
+                  setBackground = '#d9edf7';
+                  break;
+               case 'success':
+                  setBackground = '#dff0d8';
+                  break;
+               case 'warning':
+                  setBackground = '#fcf8e3';
+                  break;
+               case 'danger':
+                  setBackground = '#f2dede';
+                  break;
+               case 'blue':
+                  setBackground = '#2c76c8';
+                  break;
+            }
+
+            if (imageURL !== "") {
+               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
+            } else {
+               addImage = " style='background:" + setBackground + "'";
+            }
+
+            if (buttonColor == 'no button') {
+               jumboButton = "";
+            } else {
+               jumboButton = "<p class='" + buttonAlignment + "'><a class='btn" + buttonColor + "' href='" + buttonURL + "' target='_blank' role='button'>" + buttonIcon + " " + buttonTitle + "</a></p>";
+            }
+
+            var jumboOpening = "<div class='jumbotron'" + addImage + ">";
+            var jumboMiddle = "<h1 style='color:" + textColor + ";" + textShadow + "' class='jumbotronic'>" + jumbotronTitle + "</h1><h6 style=' " + textShadow + " color:" + textColor + "'>" + jumbotronSubtitle + "</h6>";
+            var jumboClosing = "</div>";
+
+            // Write the table
+            var bsJumbotron = jumboOpening + containerOpen + jumboMiddle + jumboButton + containerClose + jumboClosing;
+
+            $("#simple-example").html(bsJumbotron);
+            $('#simple-code').text(bsJumbotron);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // Clear the Jumbotron
+         $('#clear-jumbotron').click(function() {
+            location.reload(true);
+         });
+
+
+         // show background color input
+         $("#jumbotron-background").on('change', function() {
+            if ($('#jumbotron-background').val() == 'image') {
+               $("#image-selection-div").removeClass("hidden");
+               $('#background-color-hex-input').addClass('hidden');
+            } else if ($('#jumbotron-background').val() == 'hex') {
+               $("#image-selection-div").addClass("hidden");
+               $('#background-color-hex-input').removeClass('hidden');
+            } else {
+               $("#image-selection-div").addClass("hidden");
+               $('#background-color-hex-input').addClass('hidden');
+            }
+         });
+
+         $('#image-url').on('change', function() {
+
+            if ($('#image-url').val() !== '') {
+               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
+               $('#jumbotron-background').val('image');
+               $('#background-color-hex-input').addClass('hidden');
+            } else {
+               addImage = " style='background:" + setBackground + "'";
+            }
+         });
+
+         $('#button-color').on('change', function() {
+
+            if ($('#button-color').val() == 'no button') {
+               $('#button-title-group').addClass('hidden');
+               $('#button-url-group').addClass('hidden');
+               $('#button-alignment-div').addClass('hidden');
+               $('#optional-icon-hider').addClass('hidden');
+
+            } else {
+               $('#button-title-group').removeClass('hidden');
+               $('#button-url-group').removeClass('hidden');
+               $('#button-alignment-div').removeClass('hidden');
+               $('#optional-icon-hider').removeClass('hidden');
+            }
+         });
+
+         // Select the icon from the modal
+         var iconValue = "";
+         $('.icon-selector').on('click', function() {
+            iconValue = $(this).data("well-target");
+            $("#button-icon").val(iconValue);
+            iconValue = "";
+            $('#icons-modal').modal('hide');
+         });
+
+         // Color picker
+         $(function() {
+            $('#cp2').colorpicker();
+            $('#cp3').colorpicker();
+         });
+
+         // clipboard button
+         new Clipboard('.btn');
+
+         // Popovers for the information icons
+         $('[data-toggle="popover"]').popover("animation", "true");
+
       });
    </script>
 
+   <!-- Color picker js  (https://itsjavi.com/bootstrap-colorpicker/) -->
+   <script src="js/bootstrap-colorpicker.min.js"></script>
+
 </body>
+
 </html>

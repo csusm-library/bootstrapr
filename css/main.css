@@ -55,6 +55,7 @@ p {
 p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    vertical-align: baseline;
    -webkit-font-smoothing: antialiased;
+   font-size: 1rem;
 }
 
 .breadcrumb {
@@ -211,17 +212,25 @@ pre {
     font-weight: 700;
 } */
 
-.jumbotron {
+.jumbotron-homepage {
    height: 450px;
    background: linear-gradient( rgba(0, 134, 230, .3), rgba(0, 134, 230, .3)), url('../img/background-jumbotron.jpg');
    background-size: cover;
 }
 
-.jumbotron h1 {
+.jumbotron-homepage h1 {
    color: #FFFFFF;
    /* text-shadow: 1px 1px gray; */
    text-align: center;
    font-size: 7em;
+}
+
+.white {
+   color: white;
+}
+
+.black {
+   color: black;
 }
 
 .main-content a {
