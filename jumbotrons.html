@@ -213,7 +213,7 @@
                   </select>
                </div>
 
-               <label for="icon-html" id="optional-icon-hider">Custom Icon (or Text)</label>
+               <label for="icon-html" id="optional-icon-hider">Icon <span class="descriptor">| optional</span></label>
                <div class="input-group">
                   <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                   <input type="text" class="form-control" id="button-icon">
@@ -1938,7 +1938,7 @@
          new Clipboard('.btn');
 
          // Popovers for the information icons
-         $('[data-toggle="popover"]').popover("animation", "true");
+         $('[data-toggle="popover"]').popover({'container': 'body', "animation" : true});
 
       });
    </script>
