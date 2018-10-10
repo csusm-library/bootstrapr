@@ -78,7 +78,7 @@
          <div class="col-sm-12">
             <h1>Image</h1>
             <p class="lead">Images support and enhance the meaning of textual content on the page.</p>
-            <p>The first step in working with images is likely to upload your images to an image repository. Make sure to save you images at the appropriate resolution before uploading. all images are made responsive by adding those classes, etc.</p>
+            <p>The first step in working with images is likely to upload your images to an image repository. Make sure to save you images at the appropriate resolution before uploading. all images are made responsive by adding those classes, etc. You can also float images, etc.</p>
          </div>
       </div>
 
@@ -91,19 +91,29 @@
             <form>
 
                <div class="form-group">
-                  <label for="alignment">Alignment</label>
+                  <label for="alignment">Image Alignment</label>
                   <select class="form-control" id="image-alignment">
                      <option value="image-only" selected="selected">Image Only</option>
                      <option value="disabled" disabled="disabled">-------------------------------</option>
-                     <option value="left-most">Image (50%) ... Text (50%)</option>
-                     <option value="left-most">Text (50%) ... Image (50%)</option>
+                     <option value="image-left-50">Image (50%) ... Text (50%)</option>
+                     <option value="image-right-50">Text (50%) ... Image (50%)</option>
                      <option value="disabled" disabled="disabled">-------------------------------</option>
-                     <option value="right-most">Image (25%) ... Text (75%)</option>
-                     <option value="right-most">Text (75%) ... Image (25%)</option>
+                     <option value="image-left-25">Image (25%) ... Text (75%)</option>
+                     <option value="image-right-25">Text (75%) ... Image (25%)</option>
                   </select>
                </div>
 
-               <div class="form-group push-down-2">
+               <div class="form-group push-down-1">
+                  <label for="alignment">Image Shape</label>
+                  <select class="form-control" id="image-shape">
+                     <option value="none" selected="selected">Square</option>
+                     <option value="rounded">Rounded Square</option>
+                     <option value="thumbnail">Rounded Square with borders</option>
+                     <option value="circle">Circle</option>
+                  </select>
+               </div>
+
+               <div class="form-group push-down-1">
                   <label for="button-url">Image URL</label> | <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='target=_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='target=_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='target=_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='target=_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='target=_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='target=_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='target=_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='target=_blank'>LibGuides Image Library</a></li></ul>">
                      <small><i class="fa fa-search fa-fw" aria-hidden="true"></i> Find Image</a></small>
                   <div class="input-group">
@@ -115,7 +125,7 @@
 
                <div class="form-group push-down-1">
                   <label for="alt-text">Alt-text </label> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Alt-text</h5><hr><p>Alt-text describes your image for the visually impaired. This text does not show in the page but describe images which matter to the content on the page. For purely decorative images which add no meaning, leave this field blank.</p><p><a href='http://webaim.org/techniques/alttext/' target='_blank'><i class='fa fa-external-link fa-fw' aria-hidden='true'></i> Read more about alt-text</a></p>"><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a><input type="text" class="form-control" id="image-alt-text">
-                  <span class="placeholder">Example | Image of Lilya Brik (Rodchenko)</span>
+                  <span class="placeholder">Example | Image of Lilya Brik</span>
                </div>
 
                <div class="form-group">
@@ -127,7 +137,7 @@
                   <span class="placeholder">Example | Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)</span>
                </div>
 
-               <div id="icon-show-hide" class="push-down-1">
+               <div id="icon-show-hide" class="hidden push-down-1">
                   <label for="button-url">Icon <span class="descriptor">| optional</span></label>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-icon-choice"><i class="fa fa-refresh" aria-hidden="true"></i></span>
@@ -1595,14 +1605,123 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
+         $("#image-caption").on("change", function(){
+            if ($("#image-caption").val() !== "") {
+               $("#icon-show-hide").hide().removeClass("hidden").fadeIn();
+            } else {
+               $("#icon-show-hide").fadeOut();
+            }
+
+
+         });
+
 
          $("#display-image").on("click", function() {
 
+            var imageAlignment = $("#image-alignment").val();
+            var imageURL = $("#image-url").val();
+            var imageShape = $("#image-shape").val();
+            var imageAltText = $("#image-alt-text").val();
+            var imageCaption = $("#image-caption").val();
+            var imageIcon = $("#image-icon").val();
+            var leftContent = "";
+            var rightContent = "";
+            var shaped = "";
+            var panelOpen = "";
+            var panelClose = "";
+            var panelBodyOpen = "";
+            var panelBodyClose = "";
+            var panelFooterOpen = "";
+            var panelFooterClose = "";
+
+            var rowOpen = "<div class='row'>";
+            var rowClose = "</div>";
+            var leftDivOpen = "";
+            var rightDivOpen = "";
+            var divClose = "</div>";
+
+            var lorem = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p>"
+
+            switch (imageShape) {
+
+               case 'none':
+                  shaped = "";
+                 break;
+
+               case 'rounded':
+                  shaped = " img-rounded";
+                 break;
+
+               case 'thumbnail':
+                  shaped = " img-thumbnail";
+                 break;
+
+               case 'circle':
+                  shaped = " img-circle";
+                 break;
+            }
+
+            if (imageCaption !== "") {
+               panelOpen = "<div class='panel panel-default'>";
+               panelClose = "</div>";
+               panelBodyOpen = "<div class='panel-body'>";
+               panelBodyClose = "</div>";
+               panelFooterOpen = "<div class='panel-footer'>" + imageIcon + " " + imageCaption;
+               panelFooterClose = "</div>";
+            } else {
+               panelOpen = "";
+               panelClose = "";
+               panelBodyOpen = "";
+               panelBodyClose = "";
+               panelFooterOpen = "";
+               panelFooterClose = "";
+            }
+
+            var theImage = panelOpen + panelBodyOpen + "<img class='center-block img img-responsive" + shaped + "' src='" + imageURL + "' alt='" + imageAltText + "'>" + panelBodyClose + panelFooterOpen + panelFooterClose + panelClose;
+
+            switch (imageAlignment) {
+
+               case 'image-only':
+                  rowOpen = "";
+                  leftDivOpen = "";
+                  rightDivOpen = "";
+                  rowClose = "";
+                  divClose = "";
+                  leftContent = theImage;
+                 break;
+
+               case 'image-left-50':
+                  leftDivOpen = "<div class='col-sm-6'>";
+                  rightDivOpen = "<div class='col-sm-6'>";
+                  leftContent = theImage;
+                  rightContent = lorem;
+                 break;
+
+               case 'image-right-50':
+                  leftDivOpen = "<div class='col-sm-6'>";
+                  rightDivOpen = "<div class='col-sm-6'>";
+                  leftContent = lorem;
+                  rightContent = theImage;
+                 break;
+
+               case 'image-left-25':
+                  leftDivOpen = "<div class='col-sm-3'>";
+                  rightDivOpen = "<div class='col-sm-9'>";
+                  leftContent = theImage;
+                  rightContent = lorem;
+                 break;
+
+               case 'image-right-25':
+                  leftDivOpen = "<div class='col-sm-9'>";
+                  rightDivOpen = "<div class='col-sm-3'>";
+                  leftContent = lorem;
+                  rightContent = theImage;
+                 break;
+            }
 
 
 
-
-            var bsImage = "hello";
+            var bsImage = rowOpen + leftDivOpen + leftContent + divClose + rightDivOpen + rightContent + divClose + rowClose;
 
             $("#simple-example").html(bsImage);
             $('#simple-code').text(bsImage);

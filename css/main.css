@@ -461,7 +461,7 @@ margin: 0 2rem -2rem 0 !important;
 
 #bootstrapr-nav i,
 .panel-footer i {
-   margin-right: 1rem !important;
+   margin-right: .3rem !important;
    font-weight: 300;
 }
 
