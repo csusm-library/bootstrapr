@@ -90,7 +90,7 @@
          <div class="col-sm-12">
             <h1>Jumbotrons</h1>
             <p class="lead">Jumbotrons create a prominent visual introductory focus to a page.</p>
-            <p>Jumbotrons are an introductory/titling feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and the aesthetic dimension approaches distraction for the user.</p>
+            <p>Jumbotrons are an introductory feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and the aesthetic dimension approaches distraction for the user.</p>
             <p>You may choose an image background or a colored background. The default background color is grey. You should aim for an image roughly <strong>1000px wide x 300px tall</strong>. Expect some image cropping, depending on device size and
                orientation.</p>
          </div>
@@ -134,8 +134,9 @@
                   <label for="image-url">Image URL</label>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button1"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                     <input type="text" class="form-control" id="image-url" placeholder="http://url.com">
+                     <input type="text" class="form-control" id="image-url">
                   </div>
+                  <span class="placeholder">Example | http://web.com/image.png</span>
                </div>
 
                <div class="hidden" id="background-color-hex-input">
@@ -292,7 +293,7 @@
 
             <h4 class="sub-header">Custom CSS</h4>
 
-            <p>You may wish to add the <code>.text-shadow</code> class to add contrast to the heading and parapgraph elements. You may also with to add some top margin to the button with the <code>.margin-top</code> class.</p>
+            <p>You may wish to add the <code>.text-shadow</code> class to add contrast to the heading and parapgraph elements. You may also with to add some top margin to the button with the <code>.margin-top</code> class. You might use classes such as the <code>.btn-secondary-dark</code> and <code>.btn-secondary-light</code> to create transparent buttons.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -313,43 +314,23 @@
 .jumbotron .btn {
    margin-top: 1.5rem;
 }
+
+/* Transparent buttons */
+.btn-secondary-dark {
+    color: #000000;
+    background-color: transparent;
+    border-color: #000000;
+}
+
+.btn-secondary-light {
+   color: #FFFFFF;
+   background-color: transparent;
+   border-color: #FFFFFF;
+}
 </pre>
 
             </div>
             <!-- .well -->
-
-
-            <h4 class="sub-header">Notes</h4>
-
-            <p>Many sites offer royalty-free and attribution-free images, such as:</p>
-
-            <ul class="list-unstyled push-down-1">
-               <li>
-                  <a href="https://www.google.com/imghp?hl=en&tab=wi" target="_blank">Google Images</a>
-               </li>
-               <li>
-                  <a href="http://www.lifeofpix.com/" target="_blank">Life of Pix</a>
-               </li>
-               <li>
-                  <a href="https://magdeleine.co/browse/" target="_blank">Magdeleine</a>
-               </li>
-               <li>
-                  <a href="https://www.pexels.com/" target="_blank">Pexels</a>
-               </li>
-               <li>
-                  <a href="https://pixabay.com/" target="_blank">Pixabay</a>
-               </li>
-               <li>
-                  <a href="http://publicdomainarchive.com/" target="_blank">Public Domain Archive</a>
-               </li>
-               <li>
-                  <a href="http://realisticshots.com/" target="_blank">Realistic Shots</a>
-               </li>
-               <li>
-                  <a href="https://unsplash.com/" target="_blank">Unsplash</a>
-               </li>
-            </ul>
-
 
          </div>
          <!-- .col-sm-9 -->
@@ -1937,8 +1918,6 @@
          // clipboard button
          new Clipboard('.btn');
 
-         // Popovers for the information icons
-         $('[data-toggle="popover"]').popover({'container': 'body', "animation" : true});
 
       });
    </script>

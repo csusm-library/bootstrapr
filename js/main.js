@@ -108,6 +108,11 @@ $(document).ready(function() {
       prettyPrint();
    });
 
+   // Popovers for the information icons -- this allows multiple popovers per page
+   $('[data-toggle="popover"]').popover({
+      'container': 'body',
+      "animation": true
+   });
 
 });
 // document ready closes

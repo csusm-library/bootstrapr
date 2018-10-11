@@ -76,9 +76,9 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <h1>Image</h1>
+            <h1>Images</h1>
             <p class="lead">Images support and enhance the meaning of textual content on the page.</p>
-            <p>The first step in working with images is likely to upload your images to an image repository. Make sure to save you images at the appropriate resolution before uploading. all images are made responsive by adding those classes, etc. You can also float images, etc.</p>
+            <p>The first steps in working with images are to save your image at the appropriate resolution and size, and place them in an image repository. You may wish to add attribution through the use of a panel and caption.</p>
          </div>
       </div>
 
@@ -107,15 +107,15 @@
                   <label for="alignment">Image Shape</label>
                   <select class="form-control" id="image-shape">
                      <option value="none" selected="selected">Square</option>
-                     <option value="rounded">Rounded Square</option>
-                     <option value="thumbnail">Rounded Square with borders</option>
+                     <option value="rounded">Rounded square</option>
+                     <option value="thumbnail">Rounded square with borders</option>
                      <option value="circle">Circle</option>
                   </select>
                </div>
 
                <div class="form-group push-down-1">
                   <label for="button-url">Image URL</label> | <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='target=_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='target=_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='target=_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='target=_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='target=_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='target=_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='target=_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='target=_blank'>LibGuides Image Library</a></li></ul>">
-                     <small><i class="fa fa-search fa-fw" aria-hidden="true"></i> Find Image</a></small>
+                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small>Find Image</small></a>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-url">
@@ -162,6 +162,22 @@
 
             <div class="example" id="simple-example">
 
+               <div class="row">
+               	<div class="col-sm-6">
+               		<div class="panel panel-default">
+               			<div class="panel-body">
+               				<img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
+               			</div>
+               			<div class="panel-footer">
+               				<i class="fa fa-camera-retro" aria-hidden="true"></i>
+               				Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)
+               			</div>
+               		</div>
+               	</div>
+               	<div class="col-sm-6">
+               		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p>
+               	</div>
+               </div>
 
             </div>
             <!-- example -->
@@ -182,32 +198,38 @@
                <hr class="well-separator">
 
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-
+&lt;div class="row"&gt;
+	&lt;div class="col-sm-6"&gt;
+		&lt;div class="panel panel-default"&gt;
+			&lt;div class="panel-body"&gt;
+				&lt;img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik"&gt;
+			&lt;/div&gt;
+			&lt;div class="panel-footer"&gt;
+				&lt;i class="fa fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
+				Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="col-sm-6"&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!&lt;/p&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
             </div>
             <!-- well closes -->
 
-            <h4 class="sub-header">Custom CSS</h4>
+            <h4 class="sub-header">Notes</h4>
+            <p>The following notes apply:</p>
 
-            <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
-
-            <div class="well">
-               <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                     aria-hidden="true"></i> Copy</button>
-
-               <hr class="well-separator">
-
-
-<pre class="prettyprint lang-css" id="custom-css-code">
-</pre>
+            <div class="alert alert-info" role="alert">
+            	<p><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
+            		<a class="close" data-dismiss="alert" aria-label="close">×</a>
+            		<strong>Image Alignment</strong></p>
+            		<p>The <code>.center-block</code> class is added by default. This will center the image horizontally. To negate this effect, simply remove this class from the <code>&lt;img&gt;</code> element.</p>
+                  <p class="push-down-1">If you simply wish to float an image within a paragraph or other container, use the <code>.pull-left</code> and <code>.pull-right</code> classes.</p>
 
             </div>
-
-            <h4 class="sub-header">Notes</h4>
-            <p>some notes</p>
-
 
          </div>
          <!-- col-sm-9 -->
@@ -1605,14 +1627,12 @@
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
-         $("#image-caption").on("change", function(){
+         $("#image-caption").on("focus", function(){
             if ($("#image-caption").val() !== "") {
                $("#icon-show-hide").hide().removeClass("hidden").fadeIn();
             } else {
                $("#icon-show-hide").fadeOut();
             }
-
-
          });
 
 
@@ -1751,12 +1771,6 @@
 
          // clipboard button
          new Clipboard('.btn');
-
-         // Popovers for the information icons -- this allows multiple popovers per page
-         $('[data-toggle="popover"]').popover({
-            'container': 'body',
-            "animation": true
-         });
 
          // Select the icon from the modal
          var iconValue = "";

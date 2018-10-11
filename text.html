@@ -50,16 +50,15 @@
    <style>
 
       td:first-of-type {
-font-weight: bold;
-}
+         font-weight: bold;
+      }
 
-</style>
+   </style>
 
 
 </head>
 
 <body id="top">
-
 
    <!-- Navbar include -->
    <div w3-include-html="navbar.html"></div>
@@ -77,7 +76,7 @@ font-weight: bold;
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#type" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-Boostrap 3.3.7 <small id="docs-link">| text</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| text</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -89,17 +88,6 @@ Boostrap 3.3.7 <small id="docs-link">| text</small></a>
             <h1>Text</h1>
             <p class="lead">Special textual formats improve the understandability and readability of certain textual entries.</p>
             <p>Using special text formats also helps those with visual impairment using screen reading software.</p>
-
-            <div class="alert alert-info" role="alert">
-               <p>
-                  <i class="fa fa-fw fa-bolt" aria-hidden="true"></i>
-                  <a class="close" data-dismiss="alert" aria-label="close">×</a>
-                  <strong>Pro-Tip</strong>
-                  <br>
-When using angle brackets inside the <code>&lt;code&gt;</code> element, you will likely need to replace the <strong>left</strong> <code>&lt;</code> and <strong>right</strong> <code>&gt;</code> angle brackets with <code>&&#65279;lt;</code> and <code>&&#65279;gt;</code>
-                  HTML entities, respectively.
-               </p>
-            </div>
 
          </div>
       </div>
@@ -117,134 +105,158 @@ When using angle brackets inside the <code>&lt;code&gt;</code> element, you will
                <td style="width:20%">
                   <p class='lead'>Use lead text to summarize content or focus readers</p>
                </td>
-               <td id="well6" style="width:50%"><pre class="prettyprint lang-html">&lt;p class="lead"&gt;Use lead text to summarize content or focus readers&lt;/p&gt;</pre>
+               <td id="well6" style="width:50%">
+                  <pre class="prettyprint lang-html">&lt;p class="lead"&gt;Use lead text to summarize content or focus readers&lt;/p&gt;</pre>
                </td>
                <td style="width:10%"><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well6" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Math Variables</td>
                <td><var>a</var> + <var>b</var> = <var>c</var></td>
-               <td id="well20"><pre class="prettyprint lang-html">&lt;var&gt;a&lt;/var&gt; + &lt;var&gt;b&lt;/var&gt; = &lt;var&gt;c&lt;/var&gt;</pre>
+               <td id="well20">
+                  <pre class="prettyprint lang-html">&lt;var&gt;a&lt;/var&gt; + &lt;var&gt;b&lt;/var&gt; = &lt;var&gt;c&lt;/var&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well20" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Keyboard Keys</td>
                <td><kbd>CTRL</kbd> + <kbd>Z</kbd></td>
-               <td id="well21"><pre class="prettyprint lang-html">&lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;Z&lt;/kbd&gt;</pre>
+               <td id="well21">
+                  <pre class="prettyprint lang-html">&lt;kbd&gt;CTRL&lt;/kbd&gt; + &lt;kbd&gt;Z&lt;/kbd&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well21" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Computer Code</td>
                <td><code>&lt;p&gt;This is a paragraph element&lt;/p&gt;</code></td>
-               <td id="well22"><pre class="prettyprint lang-html">&lt;code&gt;&lt;p&gt;This is a paragraph element&lt;/p&gt;&lt;/code&gt;</pre>
+               <td id="well22">
+                  <pre class="prettyprint lang-html">&lt;code&gt;&&#65279;lt;p&&#65279;gt;This is a paragraph element&&#65279;lt;/p&&#65279;gt;&gt;&lt;/code&gt;</pre>
+                  <div class="alert alert-info" role="alert">
+                     <p>
+                        <i class="fa fa-fw fa-bolt" aria-hidden="true"></i>
+                        <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                        <strong>Pro-Tip</strong>
+                        <br>
+                        When using angle brackets inside the <code>&lt;code&gt;</code> element, you will need to escape the <strong>left</strong> <code>&lt;</code> and <strong>right</strong> <code>&gt;</code> angle brackets with <code>&&#65279;lt;</code>
+                        and <code>&&#65279;gt;</code> HTML entities, respectively. For large chunks of code, use our <a href="code-wells.html">Code Well</a> tool.
+                     </p>
+                  </div>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well22" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Computer Output</td>
                <td><samp>You have pressed a key!</samp></td>
-               <td id="well23"><pre class="prettyprint lang-html">&lt;samp&gt;You have pressed a key!&lt;/samp&gt;</pre>
+               <td id="well23">
+                  <pre class="prettyprint lang-html">&lt;samp&gt;You have pressed a key!&lt;/samp&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well23" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Marker Text</td>
                <td>Pay attention <mark>to this</mark></td>
-               <td id="well25"><pre class="prettyprint lang-html">Pay attention &lt;mark&gt;to this&lt;/mark&gt;</pre>
+               <td id="well25">
+                  <pre class="prettyprint lang-html">Pay attention &lt;mark&gt;to this&lt;/mark&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well25" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Typewriter</td>
                <td><tt>Typewriter Text</tt></td>
-               <td id="well26"><pre class="prettyprint lang-html">&lt;tt&gt;Typewriter Text&lt;/tt&gt;</pre>
+               <td id="well26">
+                  <pre class="prettyprint lang-html">&lt;tt&gt;Typewriter Text&lt;/tt&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well26" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Linethrough</td>
                <td>This and <del>not that</del></td>
-               <td id="well27"><pre class="prettyprint lang-html">This and &lt;del&gt;not that&lt;/del&gt;</pre>
+               <td id="well27">
+                  <pre class="prettyprint lang-html">This and &lt;del&gt;not that&lt;/del&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well27" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Small Text</td>
                <td>Primary Text <small>(subordinate text)</small></td>
-               <td id="well28"><pre class="prettyprint lang-html">Primary text &lt;small&gt;(subordinate text)&lt;/small&gt;</pre>
+               <td id="well28">
+                  <pre class="prettyprint lang-html">Primary text &lt;small&gt;(subordinate text)&lt;/small&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well28" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Superscript</td>
                <td>2<sup>3</sup> = 8</td>
-               <td id="well30"><pre class="prettyprint lang-html">2&lt;sup&gt;3&lt;/sup&gt; = 8</pre>
+               <td id="well30">
+                  <pre class="prettyprint lang-html">2&lt;sup&gt;3&lt;/sup&gt; = 8</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well30" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Subscript</td>
                <td>Water, a.k.a. H<sub>2</sub>O</td>
-               <td id="well31"><pre class="prettyprint lang-html">Water, a.k.a. H&lt;sub&gt;2&lt;/sub&gt;O</pre>
+               <td id="well31">
+                  <pre class="prettyprint lang-html">Water, a.k.a. H&lt;sub&gt;2&lt;/sub&gt;O</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well31" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Uppercase</td>
                <td>
                   <p class="text-uppercase">make this uppercase!</p>
                </td>
-               <td id="well32"><pre class="prettyprint lang-html">&lt;p class="text-uppercase"&gt;make this uppercase!&lt;/p&gt;</pre>
+               <td id="well32">
+                  <pre class="prettyprint lang-html">&lt;p class="text-uppercase"&gt;make this uppercase!&lt;/p&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well32" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Lowercased</td>
                <td>
                   <p class="text-lowercase">make THIS lowercased!</p>
                </td>
-               <td id="well33"><pre class="prettyprint lang-html">&lt;p class="text-lowercase"&gt;MAKE THIS LOWERCASED!&lt;/p&gt;</pre>
+               <td id="well33">
+                  <pre class="prettyprint lang-html">&lt;p class="text-lowercase"&gt;MAKE THIS LOWERCASED!&lt;/p&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well33" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
             <tr>
                <td>Title Case</td>
                <td>
                   <p class="text-capitalize">make this a title!</p>
                </td>
-               <td id="well34"><pre class="prettyprint lang-html">&lt;p class="text-capitalize"&gt;make this a title!&lt;/p&gt;</pre>
+               <td id="well34">
+                  <pre class="prettyprint lang-html">&lt;p class="text-capitalize"&gt;make this a title!&lt;/p&gt;</pre>
                </td>
                <td><button class="push-down-1 btn btn-code-well btn-primary pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#well34" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard">
-<i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
-</button></td>
+                     <i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy
+                  </button></td>
             </tr>
          </tbody>
       </table>

@@ -67,7 +67,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| tables</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| tables</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -99,56 +99,36 @@
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxHeader"> Header Row
+                     <input type="checkbox" id="checkboxHeader"> Header Row
                   </label>
                </div>
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="variableWidths"> Variable Widths
+                     <input type="checkbox" id="variableWidths"> Variable Widths
                   </label>
                </div>
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxStriped"> Striped
+                     <input type="checkbox" id="checkboxStriped"> Striped
                   </label>
                </div>
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxHover"> Hover
-                  </label>
-               </div>
-
-               <div class="checkbox">
-                  <label>
-                  <input type="checkbox" id="checkboxCondensed"> Condensed
+                     <input type="checkbox" id="checkboxHover"> Hover
                   </label>
                </div>
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxResponsive"> Responsive
-                  </label>
-               </div>
-
-               <hr>
-
-               <div class="checkbox">
-                  <label>
-                  <input type="checkbox" id="checkboxBordered"> All Borders
+                     <input type="checkbox" id="checkboxCondensed"> Condensed
                   </label>
                </div>
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="someBordered"> Some Borders<br/><small class="descriptor">recommended</small>
-                  </label>
-               </div>
-
-               <div class="checkbox">
-                  <label>
-                  <input type="checkbox" id="checkboxNoBordered"> No Borders
+                     <input type="checkbox" id="checkboxResponsive"> Responsive
                   </label>
                </div>
 
@@ -156,8 +136,41 @@
 
                <div class="checkbox">
                   <label>
-                  <input type="checkbox" id="checkboxSteps"> Steps Column<br/><small class="descriptor">requires variable width</small>
+                     <input type="checkbox" id="checkboxBordered"> All Borders
                   </label>
+               </div>
+
+               <div class="checkbox">
+                  <label>
+                     <input type="checkbox" id="someBordered"> Some Borders<br /><small class="descriptor">recommended</small>
+                  </label>
+               </div>
+
+               <div class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkboxNoBordered"> No Borders
+                  </label>
+               </div>
+
+               <hr>
+
+               <div class="checkbox">
+                  <label>
+                     <input type="checkbox" id="checkboxSteps"> Steps Column<br /><small class="descriptor">requires variable width</small>
+                  </label>
+               </div>
+
+               <hr>
+
+               <div class="form-group">
+                  <label for="alert-caption">Caption</label> <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Captions</h5><hr><p>Per the W3C, &ldquo;Captions and summaries provide information that can help users find, navigate, and understand tables. While they are not required in every case to meet WCAG 2.0, captions and summaries are fairly straightforward ways to provide such information that is often needed.&rdquo;  </p><p>For more information, see the <a href='https://www.w3.org/WAI/tutorials/tables/caption-summary/' target='_blank'>W3C Accessibility Page</a></p>">
+                     <i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i></a>
+                  <input type="text" class="form-control" id="table-caption">
+               </div>
+
+               <div class="form-group">
+                  <label for="alert-text">Summary</label>
+                  <input type="text" class="form-control" id="table-summary">
                </div>
 
             </form>
@@ -175,23 +188,27 @@
 
             <div class="example" id="simple-example">
 
-               <table class="table table-striped">
-                  <thead>
-                     <tr>
-                        <th>content</th>
-                        <th>content</th>
-                        <th>content</th>
-                     </tr>
-                  </thead>
+               <table class="table table-striped numbered-steps">
+                  <thead></thead>
                   <tbody>
                      <tr>
-                        <td>content</td>
-                        <td>content</td>
+                        <td style="width: 8%">1</td>
+                        <td style="width: %">content</td>
+                     </tr>
+                     <tr>
+                        <td>2</td>
                         <td>content</td>
                      </tr>
                      <tr>
+                        <td>3</td>
                         <td>content</td>
+                     </tr>
+                     <tr>
+                        <td>4</td>
                         <td>content</td>
+                     </tr>
+                     <tr>
+                        <td>5</td>
                         <td>content</td>
                      </tr>
                   </tbody>
@@ -202,99 +219,66 @@
             <div class="well">
 
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Beautifier -->
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-                  </button>
+               </button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Preview</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
 
                <hr class="well-separator">
 
 <pre class="prettyprint" id="simple-code" contenteditable="true">
-&lt;table class='table table-striped'&gt;
-   &lt;thead&gt;
-      &lt;tr&gt;
-         &lt;th&gt;content&lt;/th&gt;
-         &lt;th&gt;content&lt;/th&gt;
-         &lt;th&gt;content&lt;/th&gt;
-      &lt;/tr&gt;
-   &lt;/thead&gt;
-   &lt;tbody&gt;
-      &lt;tr&gt;
-         &lt;td&gt;content&lt;/td&gt;
-         &lt;td&gt;content&lt;/td&gt;
-         &lt;td&gt;content&lt;/td&gt;
-      &lt;/tr&gt;
-      &lt;tr&gt;
-         &lt;td&gt;content&lt;/td&gt;
-         &lt;td&gt;content&lt;/td&gt;
-         &lt;td&gt;content&lt;/td&gt;
-      &lt;/tr&gt;
-   &lt;/tbody&gt;
+&lt;table class="table table-striped numbered-steps"&gt;
+	&lt;thead&gt;&lt;/thead&gt;
+	&lt;tbody&gt;
+		&lt;tr&gt;
+			&lt;td style="width: 8%"&gt;1&lt;/td&gt;
+			&lt;td style="width: %"&gt;content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;2&lt;/td&gt;
+			&lt;td&gt;content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;3&lt;/td&gt;
+			&lt;td&gt;content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;4&lt;/td&gt;
+			&lt;td&gt;content&lt;/td&gt;
+		&lt;/tr&gt;
+		&lt;tr&gt;
+			&lt;td&gt;5&lt;/td&gt;
+			&lt;td&gt;content&lt;/td&gt;
+		&lt;/tr&gt;
+	&lt;/tbody&gt;
 &lt;/table&gt;
 </pre>
 
             </div>
             <!-- .well -->
 
-            <h4 class="sub-header">Notes</h4>
-
-
-            <p>Accent Your Data With Colors! Change the background color of any table row (or table data) element by adding the following classes:</p>
-
-            <table class='table'>
-               <thead></thead>
-               <tbody>
-                  <tr class="active">
-                     <td>grey</td>
-                     <td><code>.active</code></td>
-                     <td><pre class="prettyprint" id="class-active">&lt;tr class="active"&gt;content&lt;tr&gt;</pre></td>
-                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-active" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button></td>
-                  </tr>
-                  <tr class="info">
-                     <td>blue</td>
-                     <td><code>.info</code> </td>
-                     <td><pre class="prettyprint" id="class-info">&lt;tr class="info"&gt;content&lt;tr&gt;</pre></td>
-                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-info" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button></td>
-                  </tr>
-                  <tr class="success">
-                     <td>green</td>
-                     <td><code>.success</code></td>
-                     <td><pre class="prettyprint" id="class-success">&lt;tr class="success"&gt;content&lt;tr&gt;</pre></td>
-                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-success" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button></td>
-                  </tr>
-                  <tr class="warning">
-                     <td>yellow</td>
-                     <td><code>.warning</code></td>
-                     <td><pre class="prettyprint" id="class-warning">&lt;tr class="warning"&gt;content&lt;tr&gt;</pre></td>
-                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-warning" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button></td>
-                  </tr>
-                  <tr class="danger">
-                     <td>red</td>
-                     <td><code>.danger</code></td>
-                     <td><pre class="prettyprint" id="class-danger">&lt;tr class="danger"&gt;content&lt;tr&gt;</pre></td>
-                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-danger" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button></td>
-                  </tr>
-               </tbody>
-            </table>
-
-
             <h4 class="sub-header">Custom CSS</h4>
 
 
-            <p>Custom CSS is required for the steps column and for removing borders from tables.</p>
+            <p>Custom CSS is required for the steps column and for removing borders from tables. Using CSS, I've arbitraily set the background to <code>aliceblue</code>. To create a <strong>steps table</strong>, set the width of the first <code>&lt;td&gt;</code>element
+               to ~5 - 10%, and choose your own background color.</p>
+               <p>You may wish to specify specific styling for the <code>&lt;caption&gt;</code> element and <code>.summary</code> class.</p>
 
             <div class="well">
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <hr class="well-separator">
 
 
-<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Set styles for the Steps column */
 .numbered-steps tr td:first-of-type {
    padding: 3px;
@@ -313,16 +297,84 @@
 }
 
 /* Remove all borders from table */
-table.table-borderless tr,
-table.table-borderless th,
-table.table-borderless td {
+   table.table-borderless tr,
+   table.table-borderless th,
+   table.table-borderless td {
    border: none !important;
 }
+
+/* Arbitrary styling for the caption and summary */
+caption {
+   font-size: larger;
+   text-align: center;
+   color: inherit;
+}
+
+caption .summary {
+   font-size: smaller;
+   text-align: center;
+   color: gray;
+}
 </pre>
+
 
             </div>
             <!-- .well -->
 
+            <h4 class="sub-header">Notes</h4>
+            <p>The following notes apply:</p>
+
+            <table class='table'>
+               <caption>Accent your data<br><span class="summary">Alternate background colors based on Bootstrap classes.</span></caption>
+               <thead></thead>
+               <tbody>
+                  <tr class="active">
+                     <td class="text-center bold">grey</td>
+                     <td><code>.active</code></td>
+                     <td>
+                        <pre class="prettyprint" id="class-active">&lt;tr class="active"&gt;content&lt;tr&gt;</pre>
+                     </td>
+                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-active" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr class="info">
+                     <td class="text-center bold">blue</td>
+                     <td><code>.info</code> </td>
+                     <td>
+                        <pre class="prettyprint" id="class-info">&lt;tr class="info"&gt;content&lt;tr&gt;</pre>
+                     </td>
+                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-info" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr class="success">
+                     <td class="text-center bold">green</td>
+                     <td><code>.success</code></td>
+                     <td>
+                        <pre class="prettyprint" id="class-success">&lt;tr class="success"&gt;content&lt;tr&gt;</pre>
+                     </td>
+                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-success" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr class="warning">
+                     <td class="text-center bold">yellow</td>
+                     <td><code>.warning</code></td>
+                     <td>
+                        <pre class="prettyprint" id="class-warning">&lt;tr class="warning"&gt;content&lt;tr&gt;</pre>
+                     </td>
+                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-warning" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr class="danger">
+                     <td class="text-center bold">red</td>
+                     <td><code>.danger</code></td>
+                     <td>
+                        <pre class="prettyprint" id="class-danger">&lt;tr class="danger"&gt;content&lt;tr&gt;</pre>
+                     </td>
+                     <td><button class="btn btn-code-well pull-right copier push-down-1" type="button" data-clipboard-demo="" data-clipboard-target="#class-danger" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+               </tbody>
+            </table>
 
          </div>
          <!-- .col-sm-8 -->
@@ -419,12 +471,21 @@ table.table-borderless td {
             var theaderClose = "</thead><tbody>";
             var tableWrapperOpen = "";
             var tableWrapperClose = "";
+            var tableCaption = "";
+            var tableSummary = "";
 
             if ($('#variableWidths').is(':checked')) {
                th = thVar;
                //numRows -= 1;
             }
 
+            if ($("#table-summary").val() !== "") {
+               tableSummary = "<br><span class='summary'>" + $("#table-summary").val() + "</span>";
+            }
+
+            if ($("#table-caption").val() !== "") {
+               tableCaption = "<caption>" + $("#table-caption").val() + tableSummary + "</caption>";
+            }
 
             if ($('#checkboxStriped').is(':checked')) {
                tableClassOpen += " table-striped";
@@ -491,7 +552,7 @@ table.table-borderless td {
             }
 
             // Write the table
-            var bsTable = tableWrapperOpen + tableOpen + tableClassOpen + tableClassClose + theaderOpen + thFinal + theaderClose + tr + tableClose + tableWrapperClose;
+            var bsTable = tableWrapperOpen + tableOpen + tableClassOpen + tableClassClose + tableCaption + theaderOpen + thFinal + theaderClose + tr + tableClose + tableWrapperClose;
 
             $("#simple-example").html(bsTable);
             $('#simple-code').text(bsTable);

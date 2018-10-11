@@ -628,3 +628,33 @@ ol.linenums li:before{
 .icon-grid td {
    text-align: center;
 }
+
+/* Turns off unerline on hover for the infomation icons */
+a[data-toggle="popover"] {
+   text-decoration: none !important;
+}
+
+.btn-secondary-dark {
+    color: #000000;
+    background-color: transparent;
+    border-color: #000000;
+}
+
+.btn-secondary-light {
+   color: #FFFFFF;
+   background-color: transparent;
+   border-color: #FFFFFF;
+}
+
+/* Arbitrary styling for the caption and summary */
+caption {
+   font-size: larger;
+   text-align: center;
+   color: inherit;
+}
+
+caption .summary {
+   font-size: smaller;
+   text-align: center;
+   color: gray;
+}

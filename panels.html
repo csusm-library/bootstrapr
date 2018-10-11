@@ -202,12 +202,6 @@
             </div>
             <!-- well closes -->
 
-            <h4 class="sub-header">Notes</h4>
-
-            <div class="alert alert-info">
-            <p><i class="fa fa-fw fa-exclamation-circle"></i> <strong>Panel Title</strong><br>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
-            </div>
-
             <h4 class="sub-header">Custom CSS</h4>
 
 
@@ -255,6 +249,15 @@ h1, h2, h3, h4, h5, h6 {
 
             </div>
             <!-- .well -->
+
+            <h4 class="sub-header">Notes</h4>
+            <p>The following notes apply:</p>
+
+            <div class="alert alert-info">
+            <p><i class="fa fa-fw fa-exclamation-circle"></i> <strong>Panel Title</strong><br>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
+            </div>
+
+
 
          </div>
          <!-- col-sm-9 -->
@@ -314,7 +317,7 @@ h1, h2, h3, h4, h5, h6 {
          })
 
          // Add active class to navmenu selection
-         $("li#cards").addClass("active");
+         $("li#panels").addClass("active");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");

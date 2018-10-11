@@ -77,10 +77,9 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Code Wells</h1>
-            <p class="lead">Code wells display computer language in a highly readable format.</p>
+            <p class="lead">Code wells display computer languages in a highly readable format.</p>
             <p>Code Wells are rendered with the <code>&lt;pre&gt;</code> element. Google's Prettify package is used to color-code the output. Unlike other HTML elements, the <code>&lt;pre&gt;</code> element preserves all spacing exactly as you type
-               it.</p>
-
+               it. In most cases, the tool will autodetect your language and color the code accordingly. In certain cases, such as CSS, you may have to specify it by selecting from the dropdown.</p>
 
          </div>
       </div>
@@ -141,7 +140,7 @@
 
             <div class="example" id="simple-example">
 
-<pre class="prettyprint">
+<pre class="prettyprint linenums">
 // This is a javascript comment
 $( document ).ready(function() {
    $('.navfeatures').addClass('active');
@@ -167,7 +166,7 @@ $( document ).ready(function() {
                <hr class="well-separator">
 
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;pre class='prettyprint'&gt;
+&lt;pre class='prettyprint linenums'&gt;
 // This is a javascript comment
 $( document ).ready(function() {
    $('.navfeatures').addClass('active');
@@ -183,7 +182,7 @@ $( document ).ready(function() {
 
             <h4 class="sub-header">Custom CSS</h4>
 
-            <p>Custom CSS is required if you wish to disable the alternating backgrounds on numbered lines. Alternating backgrounds are fine on lighter backgrounds but generally look poor on darker backgrounds.</p>
+            <p>Custom CSS is required if you wish to disable the alternating backgrounds on numbered lines. Alternating backgrounds on numbered lines are fine on lighter backgrounds but generally look poor on darker backgrounds.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -205,12 +204,12 @@ ol.linenums li {
 
 
             <h4 class="sub-header">Notes</h4>
+<p>The following notes apply:</p>
 
             <div class='alert alert-info' role='alert'>
                <p><i class="fa fa-fw fa-code" aria-hidden="true"></i><a class='close' data-dismiss='alert' aria-label='close'>×</a><strong>Theme Colors</strong><br />There are many color themes available for syntax highlighting. I have used Google's
                   dark theme <a href="https://github.com/google/code-prettify/blob/master/styles/sunburst.css">sunburst.css</a>. For more themes, see <a href="https://rawgit.com/google/code-prettify/master/styles/index.html" target="_blank">this theme gallery</a> or <a href="https://jmblog.github.io/color-themes-for-google-code-prettify/" target="_blank">this other theme gallery</a>.</p>
             </div>
-
 
          </div>
          <!-- .col-sm-9 -->

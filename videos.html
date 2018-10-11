@@ -57,9 +57,11 @@
       }
 
       .well-bg {
-         background: aliceblue;
+         background: #f5f5f5;
          padding: 15px;
          font-size: 1.1rem;
+         border-radius: 60px;
+         text-align: center;
       }
    </style>
 
@@ -94,7 +96,7 @@
          <div class="col-sm-12">
             <h1>Video</h1>
             <p class="lead">Video is highly engaging and facilitates active learning, allowing users multiple views of material at their own pace.</p>
-            <p>video can be embedded from any number of streaming services, including YouTube, Vimeo, The Internet Archive, TED, and any others using an <code>&lt;iframe&gt;</code>embed.</p>
+            <p>Video can be embedded from any number of streaming services, including YouTube, Vimeo, The Internet Archive, TED, and any others using an <code>&lt;iframe&gt;</code>embed.</p>
          </div>
       </div>
 
@@ -108,144 +110,143 @@
 
                <label for="button-url">iFrame Embed URL</label>
                <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Embedding Your Video</h5><hr><p>Look for the &lt;strong&gt;Share&lt;/strong&gt; or &lt;strong&gt;embed&lt;/strong&gt; option to find the <code>&lt;&#8203;iframe&#8203;&gt;</code> code you need. The code should look something like this:</p><div class='well-bg'>&lt;&#8203;iframe src='https://archive.org/embed/someVideo' width='640' height='480' frameborder='0' webkitallowfullscreen='true' mozallowfullscreen='true' allowfullscreen&gt;&#8203;&lt;&#8203;iframe&gt;
-                     &lt;/div&gt;">
+                     &lt;/div&gt;<br>">
                   <i class="fa fa-info-circle" aria-hidden="true"></i>
                </a>
                <div class="input-group">
                   <span class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                   <input type="text" class="form-control" id="video-url">
                </div>
-               <p style="margin-left: 6px; margin-top: 0px;" class="text-left"><a href="https://nd.libapps.com/libguides/image_manager.php" target="_blank"><a href="https://www.youtube.com/" target="_blank"><small><i class="fa fa-youtube-square"
-                              aria-hidden="true"></i> Youtube</a></small>&nbsp; |&nbsp;
-                     <a href="https://vimeo.com/" target="_blank"><small><i class="fa fa-vimeo-square" aria-hidden="true"></i> Vimeo</a></small></a> &nbsp;|&nbsp; <a href="https://notredame.kanopystreaming.com/" target="_blank"><small> <span style="padding: 1px 4px; background: #337ab7; color: #ffffff; font-size: 11px; font-family: Georgia, serif; border-radius: 4px;">k</span>
-                        Kanopy</a></small></a></p>
+               <p style="margin-left: 6px; margin-top: 0px">
+                  <a href="https://www.youtube.com/" target="_blank"><small>Youtube</small></a> | 
+                  <a href="https://vimeo.com/" target="_blank"><small>Vimeo</small></a> | 
+                  <a href="https://notredame.kanopystreaming.com/" target="_blank"><small>Kanopy</small></a> | <a href="https://www.ted.com/talks" target="_blank"><small>TED</small></a><br><a href="https://archive.org/details/movies" target="_blank"><small>Internet Archive</small></a></p>
 
                <div class="form-group">
-               <label for="video-dimensions">Dimensions</label>
-               <select class="form-control" id="video-dimensions">
-                  <option value="16by9" selected="selected">16:9 ratio (letterbox) </option>
-                  <option value="4by3">4:3 ratio (pan-and-scan)</option>
-               </select>
-         </div>
+                  <label for="video-dimensions">Dimensions</label>
+                  <select class="form-control" id="video-dimensions">
+                     <option value="16by9" selected="selected">16:9 ratio (letterbox) </option>
+                     <option value="4by3">4:3 ratio (pan-and-scan)</option>
+                  </select>
+               </div>
 
 
-         <label for="button-url">Caption</label>
-         <div class="input-group">
-            <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" id="video-caption">
-         </div>
+               <label for="button-url">Caption</label>
+               <div class="input-group">
+                  <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="video-caption">
+               </div>
 
-         <div class="form-group push-down-2">
-            <div class="checkbox" style="margin-top: 20px;">
-               <label>
-                  <input type="checkbox" id="reverse-background"> Dark Background
-               </label>
+               <div class="form-group push-down-2">
+                  <div class="checkbox" style="margin-top: 20px;">
+                     <label>
+                        <input type="checkbox" id="reverse-background"> Dark Background
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group push-down-2">
+                  <div class="checkbox" style="margin-top: 20px;">
+                     <label>
+                        <input type="checkbox" id="add-text"> Add Text
+                     </label>
+                  </div>
+               </div>
+
+               <div id="text-reveal" class="hidden">
+                  <div class="form-group">
+                     <label for="video-text" class="control-label">Text Column</label>
+                     <textarea class="form-control" id="video-text" rows='6'></textarea>
+                     <p style="margin:2px 0px 0px 3px" id="add-lorem"><a><small><i class="fa fa-font fa-fw" aria-hidden="true"></i>| Use Lorem Ipsum</small></a></p>
+                  </div>
+               </div>
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-video"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-video"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
             </div>
-         </div>
 
-         <div class="form-group push-down-2">
-            <div class="checkbox" style="margin-top: 20px;">
-               <label>
-                  <input type="checkbox" id="add-text"> Add Text
-               </label>
+         </div>
+         <!-- .col-sm-3 -->
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+
+               <div class="row">
+                  <div class="col-sm-6">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem expedita dignissimos consequuntur vitae blanditiis a dolorum dicta rem ipsum veniam
+                        nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta corrupti fuga ducimus dolore rem voluptatem odio, iusto sunt, reprehenderit incidunt quia voluptatibus.</p>
+                  </div>
+                  <div class="col-sm-6">
+                     <div class="panel panel-default">
+                        <div class="panel-body" style="background: #000000">
+                           <div class="embed-responsive embed-responsive-16by9">
+                              <iframe src="https://archive.org/embed/archiveteam_videobot_twitter_com_870067388430995457" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="" class="embed-responsive-item"></iframe>
+                           </div>
+                        </div>
+                        <div class="panel-footer">
+                           <i class="fa fa-film"></i>
+                           Stuart Hall on Ideology in the Media
+                        </div>
+                     </div>
+                  </div>
+               </div>
+
+
             </div>
-         </div>
+            <!-- example -->
 
-         <div id="text-reveal" class="hidden">
-            <div class="form-group">
-               <label for="video-text" class="control-label">Text Column</label>
-               <textarea class="form-control" id="video-text" rows='6'></textarea>
-               <p style="margin:2px 0px 0px 3px" id="add-lorem"><a><small><i class="fa fa-font fa-fw" aria-hidden="true"></i>| Use Lorem Ipsum</small></a></p>
-            </div>
-         </div>
+            <div class="well">
 
-         </form>
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
-         <div class="push-down-3">
-            <button type="button" class="btn btn-default" id="clear-video"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-            <button type="button" class="btn btn-primary" id="display-video"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
-         </div>
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
 
-      </div>
-      <!-- .col-sm-3 -->
-      <div class="col-sm-9">
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
 
-         <div class="example" id="simple-example">
-
-
-            <div class='panel panel-default'><div class='panel-body' style='background: #000000'><div class='embed-responsive embed-responsive-16by9'><iframe src="https://archive.org/embed/CamelCigaretteCommercialsAd1" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="" class="embed-responsive-item"></iframe></div></div>
-            <div class='panel-footer'><i class='fa fa-film fa-fw'></i>Television Commercial for Camel Cigarettes (1954)</div></div>
-
-
-         </div>
-         <!-- example -->
-
-         <div class="well">
-
-            <!-- Copier-->
-            <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                  aria-hidden="true"></i> Copy</button>
-
-            <!-- Beautifier -->
-            <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
-
-            <!-- Update Example Panel-->
-            <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
-               Update Preview</button>
-
-            <hr class="well-separator">
+               <hr class="well-separator">
 
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class='panel panel-default'&gt;
-   &lt;div class='panel-body' style='background: #000000'&gt;
-      &lt;div class='embed-responsive embed-responsive-16by9'&gt;
-         &lt;iframe src="https://archive.org/embed/CamelCigaretteCommercialsAd1" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="" class="embed-responsive-item"&gt;&lt;/iframe&gt;
-      &lt;/div&gt;
-   &lt;/div&gt;
-   &lt;div class='panel-footer'&gt;
-      &lt;i class='fa fa-film fa-fw'&gt;&lt;/i&gt;Television Commercial for Camel Cigarettes (1954)
-   &lt;/div&gt;
+&lt;div class="row"&gt;
+	&lt;div class="col-sm-6"&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem expedita dignissimos consequuntur vitae blanditiis a dolorum dicta rem ipsum veniam nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta corrupti fuga ducimus dolore rem voluptatem odio, iusto sunt, reprehenderit incidunt quia voluptatibus.&lt;/p&gt;
+	&lt;/div&gt;
+	&lt;div class="col-sm-6"&gt;
+		&lt;div class="panel panel-default"&gt;
+			&lt;div class="panel-body" style="background: #000000"&gt;
+				&lt;div class="embed-responsive embed-responsive-16by9"&gt;
+					&lt;iframe src="https://archive.org/embed/archiveteam_videobot_twitter_com_870067388430995457" width="640" height="480" frameborder="0" webkitallowfullscreen="true" mozallowfullscreen="true" allowfullscreen="" class="embed-responsive-item"&gt;&lt;/iframe&gt;
+				&lt;/div&gt;
+			&lt;/div&gt;
+			&lt;div class="panel-footer"&gt;
+				&lt;i class="fa fa-film"&gt;&lt;/i&gt;
+				Stuart Hall on Ideology in the Media
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
 &lt;/div&gt;
 </pre>
 
-         </div>
-         <!-- well closes -->
-
-         <h4 class="sub-header">Custom CSS</h4>
-
-         <p>You may wish to add the <code>.text-shadow</code> class to add contrast to the heading and parapgraph elements. You may also with to add some top margin to the button with the <code>.margin-top</code> class.</p>
-
-         <div class="well">
-            <!-- Copier-->
-            <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                  aria-hidden="true"></i> Copy</button>
-
-            <hr class="well-separator">
+            </div>
+            <!-- well closes -->
 
 
-            <pre class="prettyprint lang-css" id="custom-css-code">
-         /* Adds text shadow to make the text inside the jumbotron pop */
-         .jumbotron p,
-         .jumbotron h1 {
-         text-shadow: 2px 2px 1px black;
-         }
-
-         /* Adds a top margin to the jumbotron button for better readability */
-         .jumbotron .btn {
-         margin-top: 1.5rem;
-         }
-         </pre>
 
          </div>
-         <!-- .well -->
+         <!-- .col-sm-9 -->
+
+
 
       </div>
-      <!-- .col-sm-9 -->
-
-
-
-   </div>
-   <!-- .row -->
+      <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -1639,11 +1640,13 @@
 
          // add lorem ipsum
          $('#add-lorem').click(function() {
-            $('#video-text').val("Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem expedita dignissimos consequuntur vitae blanditiis a dolorum dicta rem ipsum veniam nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta corrupti fuga ducimus dolore rem voluptatem odio, iusto sunt, reprehenderit incidunt quia voluptatibus. Qui voluptas vitae, labore expedita quae corrupti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas, eius quod quam enim vel quia, quae, reiciendis illo ex aliquid temporibus natus modi velit nulla dolorem earum nisi corporis.");
+            $('#video-text').val(
+               "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem expedita dignissimos consequuntur vitae blanditiis a dolorum dicta rem ipsum veniam nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta corrupti fuga ducimus dolore rem voluptatem odio, iusto sunt, reprehenderit incidunt quia voluptatibus. Qui voluptas vitae, labore expedita quae corrupti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas, eius quod quam enim vel quia, quae, reiciendis illo ex aliquid temporibus natus modi velit nulla dolorem earum nisi corporis."
+            );
          });
 
          $('#add-text').on('change', function() {
-            if ( $('#add-text').is(':checked') ) {
+            if ($('#add-text').is(':checked')) {
                $('#text-reveal').hide().removeClass("hidden").fadeIn();
             } else {
                $('#text-reveal').addClass('hidden');
@@ -1684,10 +1687,10 @@
             var columnOpen = '';
             var columnClose = '';
 
-            if ( $('#add-text').is(':checked') ) {
-                  columnOpen = "<div class='row'><div class='col-sm-6'><p>" + videoText + "</p></div><div class='col-sm-6'>";
-                  columnClose = '</div></div>';
-               }
+            if ($('#add-text').is(':checked')) {
+               columnOpen = "<div class='row'><div class='col-sm-6'><p>" + videoText + "</p></div><div class='col-sm-6'>";
+               columnClose = '</div></div>';
+            }
 
             if (videoDimensions == '16by9') {
                dimensionsClass = 'embed-responsive-16by9';
@@ -1701,7 +1704,7 @@
                videoCaptionIcon = '';
             }
 
-            var responsiveDivOpen = "<div class='embed-responsive "  +  dimensionsClass + "'>";
+            var responsiveDivOpen = "<div class='embed-responsive " + dimensionsClass + "'>";
 
             var bsVideo = columnOpen + panelOpen + panelBodyOpen + responsiveDivOpen + newVideoURL + closingDiv + closingDiv + panelFooterOpen + videoCaptionIcon + videoCaption + panelFooterClose + closingDiv + columnClose;
 
@@ -1728,11 +1731,13 @@
             location.reload(true);
          });
 
+         $('#url-popover').popover().on('show.bs.popover', function() {
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+         });
+
          // clipboard button
          new Clipboard('.btn');
-
-         // Popovers for the information icons
-         $('[data-toggle="popover"]').popover({'container': 'body', "animation" : true});
 
       });
    </script>
