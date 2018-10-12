@@ -140,7 +140,7 @@
 
             <div class="example" id="simple-example">
 
-<pre class="prettyprint linenums">
+               <pre class="prettyprint linenums">
 // This is a javascript comment
 $( document ).ready(function() {
    $('.navfeatures').addClass('active');
@@ -165,7 +165,7 @@ $( document ).ready(function() {
 
                <hr class="well-separator">
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;pre class='prettyprint linenums'&gt;
 // This is a javascript comment
 $( document ).ready(function() {
@@ -204,12 +204,73 @@ ol.linenums li {
 
 
             <h4 class="sub-header">Notes</h4>
-<p>The following notes apply:</p>
+            <p>The following notes apply:</p>
 
             <div class='alert alert-info' role='alert'>
                <p><i class="fa fa-fw fa-code" aria-hidden="true"></i><a class='close' data-dismiss='alert' aria-label='close'>×</a><strong>Theme Colors</strong><br />There are many color themes available for syntax highlighting. I have used Google's
-                  dark theme <a href="https://github.com/google/code-prettify/blob/master/styles/sunburst.css">sunburst.css</a>. For more themes, see <a href="https://rawgit.com/google/code-prettify/master/styles/index.html" target="_blank">this theme gallery</a> or <a href="https://jmblog.github.io/color-themes-for-google-code-prettify/" target="_blank">this other theme gallery</a>.</p>
+                  dark theme <a href="https://github.com/google/code-prettify/blob/master/styles/sunburst.css">sunburst.css</a>. For more themes, see <a href="https://rawgit.com/google/code-prettify/master/styles/index.html" target="_blank">this
+                     theme gallery</a> or <a href="https://jmblog.github.io/color-themes-for-google-code-prettify/" target="_blank">this other theme gallery</a>.</p>
             </div>
+
+
+            <h4 class="sub-header">Including Google Prettify</h4>
+
+            <p>To include Google's syntax highlighter for your Web page, follow these steps. For more information on serving and customizing Prettify, see the <a href="https://github.com/google/code-prettify" target="_blank">Code-Prettify
+                  documentation</a>.</p>
+
+            <table class="table numbered-steps">
+               <thead></thead>
+               <tbody>
+                  <tr>
+                     <td style="width: 10%">1</td>
+                     <td style="width: 80%">Inlcude a link to the cloud-hosted <code>prettify.js</code> file within the <code>&lt;head&gt;</code> element of your HTML file.
+<pre class='prettyprint lang-html' id="well-step1">
+&lt;script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"&gt;&lt;/script&gt;
+</pre>
+                     </td>
+                     <td><button class="btn btn-code-well copier center-block" type="button" data-clipboard-demo="" data-clipboard-target="#well-step1" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>Add the <code>.prettyprint</code> class to your <code>&lt;pre&gt;</code> element. Although in many cases, Prettify will auto-detect your language, we recommend specifying it explicitly.
+
+<pre class='prettyprint' id="well-step2">
+&lt;script type="text/javascript" src="js/lang-css.js"&gt;</script>
+</pre>
+                     </td>
+                     <td><button class="btn btn-code-well copier center-block" type="button" data-clipboard-demo="" data-clipboard-target="#well-step2" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr>
+                     <td>3</td>
+                     <td>
+                        If your language <a href='https://github.com/google/code-prettify#how-do-i-specify-the-language-of-my-code' target='_blank'>is not supported natively</a>&mdash;such as with CSS&mdash;you may need to include the specific language
+                        file. We recommend you download the file from the following list:<p class='push-down-1' style='padding: 10px'><a href='https://github.com/google/code-prettify/blob/master/src/lang-apollo.js'>Apollo</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-basic.js'>Basic</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-clj.js'>Clojure</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-css.js'>CSS</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-dart.js'>Dart</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-erlang.js'>Erlang</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-go.js'>Go</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-hs.js'>Haskell</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lasso.js'>Lasso</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lisp.js'>Lisp/Scheme</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-llvm.js'>LLVM</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-logtalk.js'>Logtalk</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lua.js'>Lua</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-matlab.js'>MATLAB</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-ml.js'>MLs: F# &middot; Ocaml &middot;SML</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-mumps.js'>Mumps</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-n.js'>Nemerle</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-pascal.js'>Pascal</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-proto.js'>Protocol
+                              buffers</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-r.js'>R &middot; S</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-rd.js'>RD</a> &middot; <a
+                              href='https://github.com/google/code-prettify/blob/master/src/lang-rust.js'>Rust</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-scala.js'>Scala</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-sql.js'>SQL</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-swift.js'>Swift</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-tcl.js'>TCL</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-tex.js'>LaTeX</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-vb.js'>Visual Basic</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-vhdl.js'>VHDL</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-wiki.js'>Wiki</a>
+                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-xq.js'>XQ</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-yaml.js'>YAML</a></p>
+
+                        Download the appropriate language file and serve it from a subdirectory of your Web site.
+<pre class='prettyprint lang-html' id="well-step3">
+&lt;pre class='prettyprint lang-css'&gt; ... Your code here ... &lt;/pre&gt;
+</pre>
+
+                     </td>
+                     <td><button class="btn btn-code-well copier push-down-3" type="button" data-clipboard-demo="" data-clipboard-target="#well-step3" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+               </tbody>
+            </table>
+
 
          </div>
          <!-- .col-sm-9 -->
@@ -295,13 +356,11 @@ ol.linenums li {
             $('pre').removeClass('prettyprinted');
             prettyPrint();
 
-
          });
 
          $('#clear-code').click(function() {
             location.reload(true);
          });
-
 
          // clipboard button
          new Clipboard('.btn');
