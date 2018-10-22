@@ -110,13 +110,33 @@
                   </div>
                </div>
 
-               <div class="form-group">
+               <hr>
+
+               <label>
+                  <input type="radio" name="append-icons" value="plus" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="append-icons" value="arrow" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
+               </label>
+
+
+
+               <!-- <div class="form-group">
                   <div class="checkbox">
                      <label>
                         <input type="checkbox" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
                      </label>
                   </div>
                </div>
+
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
+                     </label>
+                  </div>
+               </div> -->
 
             </form>
 
@@ -137,17 +157,17 @@
                   <div class="panel panel-default">
                      <div class="panel-heading" role="tab" id="heading8122873">
                         <h5 class="panel-title">
-                           <a role="button" data-toggle="collapse" class="accordion-toggle" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="true" aria-controls="collapse8122873">Panel 1</a>
+                           <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="false" aria-controls="collapse8122873">Panel 1</a>
                         </h5>
                      </div>
-                     <div id="collapse8122873" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8122873">
+                     <div id="collapse8122873" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8122873">
                         <div class="panel-body">Lorem ipsum dolor sic amet!</div>
                      </div>
                   </div>
                   <div class="panel panel-default">
                      <div class="panel-heading" role="tab" id="heading411391">
                         <h5 class="panel-title">
-                           <a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="true" aria-controls="collapse411391">Panel 2</a>
+                           <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="false" aria-controls="collapse411391">Panel 2</a>
                         </h5>
                      </div>
                      <div id="collapse411391" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading411391">
@@ -157,7 +177,7 @@
                   <div class="panel panel-default">
                      <div class="panel-heading" role="tab" id="heading2183316">
                         <h5 class="panel-title">
-                           <a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="true" aria-controls="collapse2183316">Panel 3</a>
+                           <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="false" aria-controls="collapse2183316">Panel 3</a>
                         </h5>
                      </div>
                      <div id="collapse2183316" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2183316">
@@ -192,7 +212,7 @@
 				&lt;a role="button" data-toggle="collapse" class="accordion-toggle" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="true" aria-controls="collapse8122873"&gt;Panel 1&lt;/a&gt;
 			&lt;/h5&gt;
 		&lt;/div&gt;
-		&lt;div id="collapse8122873" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading8122873"&gt;
+		&lt;div id="collapse8122873" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8122873"&gt;
 			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
@@ -234,18 +254,18 @@
                <hr class="well-separator">
 
 
-               <pre class="prettyprint lang-css" id="custom-css-code">
+<pre class="prettyprint lang-css" id="custom-css-code">
 /* Adds 'plus' glyph for enabling collapsible panels */
 .panel-heading .accordion-toggle:before {
    font-family: FontAwesome;
    content: "\f068";
    float: right;
-   color: lightsteelblue;
+   color: silver;
 }
 
 .panel-heading .accordion-toggle.collapsed:before {
    content: "\f067";
-   color: lightsteelblue;
+   color: silver;
 }
 
 /* sets the link to the size of the entire panel title */
@@ -5751,7 +5771,7 @@
          // 1st Panel Open checked by default
          $('#first-open').prop('checked', true);
 
-         // 1st Panel Open checked by default
+         // Plus icon checked by default
          $('#plus-icon').prop('checked', true);
 
          // Reset button
@@ -5770,26 +5790,32 @@
             var panelIcon = $('#panel-icon').val();
             var allPanels = '';
             var startOpen = '';
-            var plusIcon = '';
+            var plusOrArrowIcon = '';
+            var ariaExpanded = 'aria-expanded="false"';
 
             for (i = 0; i < numPanels; i++) {
                rando = ~~(Math.random() * 10000000);
 
                if ($('#plus-icon').is(":checked")) {
-                  plusIcon = " class='accordion-toggle collapsed' ";
+                  plusOrArrowIcon = " class='accordion-plus-toggle collapsed' ";
+               } else if ($('#arrow-icon').is(":checked")) {
+                  plusOrArrowIcon = " class='accordion-arrow-toggle collapsed' ";
                } else {
-                  plusIcon = " class='' ";
+                  plusOrArrowIcon = " class='' ";
                }
 
                if (i == 0 && $('#first-open').is(":checked")) {
                   startOpen = ' in';
-                  // plusIcon = " class='accordion-toggle' ";
+                  ariaExpanded = 'true';
+                  var str = plusOrArrowIcon.replace(/collapsed/g,"");
+                  plusOrArrowIcon = str;
                } else {
                   startOpen = '';
+                  ariaExpanded = 'false';
                }
 
-               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusIcon + " data-parent='#accordion" +
-                  accordionRando + "' href='#collapse" + rando + "' aria-expanded='true' aria-controls='collapse" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse" + rando +
+               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusOrArrowIcon + " data-parent='#accordion" +
+                  accordionRando + "' href='#collapse" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse" + rando +
                   "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
 
                allPanels += singlePanel;
