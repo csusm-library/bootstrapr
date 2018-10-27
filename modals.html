@@ -60,14 +60,14 @@
          <div class="col-sm-6">
             <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
-               <li class="active">Panels</li>
+               <li class="active">Modals</li>
             </ol>
          </div>
          <!-- col-sm-8 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/components/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| panels</small></a>
+               <a href="https://getbootstrap.com/docs/3.3/javascript/#modals" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+ Boostrap 3.3.7 <small id="docs-link">| Modals</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -76,9 +76,8 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <h1>Panels</h1>
-            <p class="lead">Panels help chunk and emphasize information clearly.</p>
-            <p>Panels are typically used in multiples or paired with other elements. Use panels to strong effect by placing them inside multiple columns.</p>
+            <h1>Modals</h1>
+            <p class="lead">Modals Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nesciunt laborum unde fugiat fuga enim iste minus adipisci aliquid ullam soluta, beatae quaerat, sint tempore maxime facilis eaque modi labore eos..</p>
          </div>
       </div>
 
@@ -161,13 +160,31 @@
          <div class="col-sm-9">
 
             <div class="example" id="simple-example">
-               <div class='panel panel-default'>
-                  <div class='panel-heading'>
-                     <h5 class='panel-title'>Panel Title</h5></div>
-                  <div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>
-                  <div class='panel-footer'>Footer content</div>
-               </div>
+
+               <div class="modal fade" tabindex="-1" role="dialog" id="myModal">
+                 <div class="modal-dialog" role="document">
+                   <div class="modal-content">
+                     <div class="modal-header">
+                       <button type="button" class="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+                       <h4 class="modal-title">Modal title</h4>
+                     </div>
+                     <div class="modal-body">
+                       <p>One fine body&hellip;</p>
+                     </div>
+                     <div class="modal-footer">
+                       <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+                       <button type="button" class="btn btn-primary">Save changes</button>
+                     </div>
+                   </div><!-- /.modal-content -->
+                 </div><!-- /.modal-dialog -->
+               </div><!-- /.modal -->
+
+
+
+
+
             </div>
+            <!-- .example -->
 
             <div class="well">
 

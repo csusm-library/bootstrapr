@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Metadata for the Webpage -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap.r</title>
+
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- Bootstrap CSS files-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- jQuery UI CSS (optional) -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <!-- Google web fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
+
+   <!-- Font Awesome Web Icons -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Main local stylesheet -->
+   <link rel="stylesheet" href="css/main.css">
+
+   <!-- Prettify theme -->
+   <link rel="stylesheet" href="css/prettify-theme.css">
+
+</head>
+
+<body id="top">
+
+   <!-- Navbar include -->
+   <div w3-include-html="navbar.html"></div>
+
+   <div class="container main-content">
+
+      <div class="row add-100">
+         <div class="col-sm-6">
+            <ol class="breadcrumb">
+               <li><a href="index.html">Home</a></li>
+               <li class="active">Carousels</li>
+            </ol>
+         </div>
+         <!-- col-sm-8 -->
+         <div class="col-sm-6">
+            <p class="pull-right">
+               <a href="https://getbootstrap.com/docs/3.3/javascript/#carousel" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| Carousels</small></a>
+            </p>
+         </div>
+         <!-- col-sm-4-->
+      </div>
+      <!-- .row -->
+
+      <div class="row">
+         <div class="col-sm-12">
+            <h1>Carousels</h1>
+            <p class="lead">Carousels provide Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quos, dignissimos deserunt illo laudantium officia, minima tempora dolorum totam in possimus, obcaecati adipisci iste iure, fuga beatae recusandae natus nemo.</p>
+         </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+               <div class="form-group">
+                  <label for="num-panels"># Panels</label>
+                  <input type="text" class="form-control" id="num-panels" style="width: 75px">
+               </div>
+
+               <label for="icon-html">Icon <span class="descriptor">| optional</span></label>
+               <div class="input-group">
+                  <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
+                  <input type="text" class="form-control" id="panel-icon">
+               </div>
+               <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
+
+
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="first-open"> 1st Panel Open
+                     </label>
+                  </div>
+               </div>
+
+               <hr>
+
+               <label>
+                  <input type="radio" name="append-icons" value="plus" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
+               </label>
+               <br>
+               <label>
+                  <input type="radio" name="append-icons" value="arrow" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
+               </label>
+
+
+
+               <!-- <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
+                     </label>
+                  </div>
+               </div> -->
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-panel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="panel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+         </div>
+         <!-- col-sm-3 -->
+
+
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <!-- set data-interval="false" on class "carousel slide" to stop auto-advance -->
+               <div id="shareCarousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel">
+                  <!-- Indicators -->
+                  <ol class="carousel-indicators">
+                     <li data-target="#shareCarousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#shareCarousel" data-slide-to="1"></li>
+                     <li data-target="#shareCarousel" data-slide-to="2"></li>
+                  </ol>
+
+                  <!-- Wrapper for slides -->
+                  <div class="carousel-inner">
+
+                     <div class="item active">
+                        <img src="http://www.placehold.it/800x400" alt="">
+                     </div>
+
+                     <div class="item">
+                        <img src="http://www.placehold.it/800x400" alt="">
+                     </div>
+
+                     <div class="item">
+                        <img src="http://www.placehold.it/800x400" alt="">
+                     </div>
+
+                  </div>
+
+                  <!-- Left and right controls -->
+                  <a class="left carousel-control" href="#shareCarousel" data-slide="prev">
+                     <span class="glyphicon glyphicon-chevron-left"></span>
+                     <span class="sr-only">Previous</span>
+                  </a>
+                  <a class="right carousel-control" href="#shareCarousel" data-slide="next">
+                     <span class="glyphicon glyphicon-chevron-right"></span>
+                     <span class="sr-only">Next</span>
+                  </a>
+               </div>
+               <!-- .carousel -->
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Preview</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;!-- set data-interval="false" on class "carousel slide" to stop auto-advance --&gt;
+   &lt;div id="shareCarousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel"&gt;
+
+   &lt;!-- Indicators --&gt;
+   &lt;ol class="carousel-indicators"&gt;
+      &lt;li data-target="#shareCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+      &lt;li data-target="#shareCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+   &lt;/ol&gt;
+
+   &lt;!-- Wrapper for slides --&gt;
+   &lt;div class="carousel-inner"&gt;
+      &lt;div class="item active"&gt;
+         &lt;img src="img/project-screen-caps/digital-story/spark-video-publish.png" alt=""&gt;
+      &lt;/div&gt;
+      &lt;div class="item"&gt;
+         &lt;img src="img/project-screen-caps/digital-story/spark-video-share.png" alt=""&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+
+   &lt;!-- Left and right controls --&gt;
+   &lt;a class="left carousel-control" href="#shareCarousel" data-slide="prev"&gt;
+      &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
+      &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
+   &lt;/a&gt;
+   &lt;a class="right carousel-control" href="#shareCarousel" data-slide="next"&gt;
+      &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
+      &lt;span class="sr-only"&gt;Next&lt;/span&gt;
+   &lt;/a&gt;
+
+&lt;/div&gt;
+&lt;!-- .carousel --&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-css" id="custom-css-code">
+/* Adds 'plus' glyph for enabling collapsible panels */
+.panel-heading .accordion-toggle:before {
+   font-family: FontAwesome;
+   content: "\f068";
+   float: right;
+   color: silver;
+}
+
+.panel-heading .accordion-toggle.collapsed:before {
+   content: "\f067";
+   color: silver;
+}
+
+/* sets the link to the size of the entire panel title */
+.panel-title > a {
+   display: block;
+}
+</pre>
+
+            </div>
+            <!-- .well -->
+
+            <h4 class="sub-header">Notes</h4>
+            <p>The following notes apply:</p>
+
+            <div class="alert alert-warning" role="alert">
+            	<p>
+            		<i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i>
+            		<a class="close" data-dismiss="alert" aria-label="close">×</a>
+            		<strong>Accessibility</strong>
+            		<br>
+            		The carousel component does not meet acceptable standards for accessibility. If content is mission critical, supplement the carousel with complementary information, or use a different component to serve your content.
+            	</p>
+            </div>
+
+            <div class="alert alert-danger" role="alert">
+               <p>
+                  <i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
+                  <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                  <strong>Keep Carousels Unique</strong>
+                  <br>
+                  While you may, for some incredibly strange reason, place multiple carousels a page,
+                  <strong>do not</strong>
+                  simply cut and paste the same carousel again and again. Make sure to generate each new carousel anew, ensuring the random number assigned to each carousel stays unique and does not conlflict with the other carousels on the page.
+               </p>
+            </div>
+
+         </div>
+         <!-- col-sm-9 -->
+      </div>
+      <!-- .row -->
+
+   </div>
+   <!-- .container-fluid -->
+
+
+   <!-- Navbar include -->
+   <div w3-include-html="footer.html"></div>
+
+   <!-- Back-to-top button -->
+   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+   <!-- jQuery Javascript Library (required by Bootstrap) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <!-- jQuery UI Library (optional) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+   <!-- Bootstrap Library -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <!-- Main local script file -->
+   <script src="js/main.js"></script>
+
+   <!-- includes for Google's code highlighter 'prettyprint' -->
+   <link rel="stylesheet" type="text/css" href="css/prettify.css">
+   <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
+
+   <!-- Bootstrap Table -->
+   <script type="text/javascript" src="js/jquery.sortelements.js"></script>
+   <script type="text/javascript" src="js/jquery.bdt.js"></script>
+
+   <!-- html file include script | used for navbar -->
+   <script src="js/w3data.js"></script>
+   <script>
+      w3IncludeHTML();
+   </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+
+
+   <script>
+      $(document).ready(function() {
+
+         // The searchable bootstrap table
+         $('#bootstrap-table').bdt();
+         $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
+
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
+
+         $('#refresh-button').on("click", function() {
+            $('#panel-icon').val('');
+         });
+
+         // Add active class to navmenu selection
+         $("#carousels").addClass("active");
+
+         // 1st Panel Open checked by default
+         $('#first-open').prop('checked', true);
+
+         // Plus icon checked by default
+         $('#plus-icon').prop('checked', true);
+
+         // Reset button
+         $('#clear-panel').on("click", function() {
+            location.reload(true);
+         });
+
+         $('#panel-build').click(function() {
+
+            var accordionRando = ~~(Math.random() * 10000000);
+            var panelGroupOpen = "<div class='panel-group' id='accordion" + accordionRando + "' role='tablist' aria-multiselectable='true'>";
+            var panelGroupClose = "</div>";
+            var numPanels = $('#num-panels').val();
+            var numPanelsRandom = '';
+            var singlePanel = $('');
+            var panelIcon = $('#panel-icon').val();
+            var allPanels = '';
+            var startOpen = '';
+            var plusOrArrowIcon = '';
+            var ariaExpanded = 'aria-expanded="false"';
+
+            for (i = 0; i < numPanels; i++) {
+               rando = ~~(Math.random() * 10000000);
+
+               if ($('#plus-icon').is(":checked")) {
+                  plusOrArrowIcon = " class='accordion-plus-toggle collapsed' ";
+               } else if ($('#arrow-icon').is(":checked")) {
+                  plusOrArrowIcon = " class='accordion-arrow-toggle collapsed' ";
+               } else {
+                  plusOrArrowIcon = " class='' ";
+               }
+
+               if (i == 0 && $('#first-open').is(":checked")) {
+                  startOpen = ' in';
+                  ariaExpanded = 'true';
+                  var str = plusOrArrowIcon.replace(/collapsed/g, "");
+                  plusOrArrowIcon = str;
+               } else {
+                  startOpen = '';
+                  ariaExpanded = 'false';
+               }
+
+               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusOrArrowIcon +
+                  " data-parent='#accordion" +
+                  accordionRando + "' href='#collapse" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse" + rando +
+                  "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
+
+               allPanels += singlePanel;
+            }
+
+            var bsPanel = panelGroupOpen + allPanels + panelGroupClose;
+
+            $("#simple-example").html(bsPanel);
+            $('#simple-code').text(bsPanel);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // Select the icon from the modal
+         var iconValue = "";
+         $('.icon-selector').on('click', function() {
+            iconValue = $(this).data("well-target");
+            $("#panel-icon").val(iconValue);
+            iconValue = "";
+            $('#icons-modal').modal('hide');
+         });
+
+         // clipboard button
+         new Clipboard('.btn');
+
+      });
+   </script>
+
+</body>
+
+</html>
