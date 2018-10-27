@@ -76,7 +76,7 @@
 
       <div class="row add-100">
          <div class="col-sm-6">
-            <ol class="breadcrumb">
+            <ol class="breadcrumb hidden">
                <li><a href="index.html">Home</a></li>
                <li class="active">Video</li>
             </ol>
@@ -118,8 +118,8 @@
                   <input type="text" class="form-control" id="video-url">
                </div>
                <p style="margin-left: 6px; margin-top: 0px">
-                  <a href="https://www.youtube.com/" target="_blank"><small>Youtube</small></a> | 
-                  <a href="https://vimeo.com/" target="_blank"><small>Vimeo</small></a> | 
+                  <a href="https://www.youtube.com/" target="_blank"><small>Youtube</small></a> |
+                  <a href="https://vimeo.com/" target="_blank"><small>Vimeo</small></a> |
                   <a href="https://notredame.kanopystreaming.com/" target="_blank"><small>Kanopy</small></a> | <a href="https://www.ted.com/talks" target="_blank"><small>TED</small></a><br><a href="https://archive.org/details/movies" target="_blank"><small>Internet Archive</small></a></p>
 
                <div class="form-group">
@@ -1633,6 +1633,7 @@
 
          // Add active class to navmenu selection
          $("li#videos").addClass("active");
+         $("#containers-dropdown").addClass("activated");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
