@@ -43,9 +43,14 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activated {
-   border-bottom: 4px solid #9d9d9d;
+   border-bottom: 4px solid white;
 }
 
+.navbar-inverse .navbar-nav > li.activated > a{
+   color: white;
+}
+
+/* headings */
 h1 { font-size: 2.5rem }
 h2 { font-size: 2rem }
 h3 { font-size: 1.75rem }
