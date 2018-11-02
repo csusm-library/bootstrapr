@@ -614,7 +614,7 @@ ol.linenums li:before{
 }
 
 .example:after {
-    content: "Preview";
+    content: "Example";
     position: absolute;
     top: 0;
     left: 0;
@@ -691,4 +691,14 @@ caption .summary {
    font-size: smaller;
    text-align: center;
    color: gray;
+}
+
+/* color picker */
+.sp-preview {
+   border: none !important;
+}
+
+.sp-replacer {
+   border: 1px solid lightgray !important;
+   border-radius: 3px !important;
 }

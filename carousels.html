@@ -47,6 +47,23 @@
    <!-- Prettify theme -->
    <link rel="stylesheet" href="css/prettify-theme.css">
 
+   <!-- Spectrum Color picker CSS -->
+   <link rel='stylesheet' href='css/spectrum.css' />
+
+   <style>
+
+      .carousel h3 {
+         color: white !important;
+      }
+
+      .carousel-indicators li,
+      .carousel-indicators li.active {
+         margin-left: 5px;
+      }
+
+   </style>
+
+
 </head>
 
 <body id="top">
@@ -77,7 +94,12 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Carousels</h1>
-            <p class="lead">Carousels provide Lorem ipsum dolor sit amet, consectetur adipisicing elit. Nihil quos, dignissimos deserunt illo laudantium officia, minima tempora dolorum totam in possimus, obcaecati adipisci iste iure, fuga beatae recusandae natus nemo.</p>
+            <p class="lead">Carousels provide a stationary slideshow effect for animating content.</p>
+
+            <p>There are many free image repositories, such as: <a href='https://www.google.com/imghp?hl=en&tab=wi' target='target=_blank'>Google Images</a>, <a href='http://www.lifeofpix.com/' target='target=_blank'>Life of Pix</a>, <a href='https://www.pexels.com/'
+                  target='target=_blank'>Pexels</a>, <a href='https://pixabay.com/' target='target=_blank'>Pixabay</a>, <a href='http://publicdomainarchive.com/' target='target=_blank'>Public Domain Archive</a>, <a href='http://realisticshots.com/'
+                  target='target=_blank'>Realistic
+                  Shots</a>, <a href='https://unsplash.com/' target='target=_blank'>Unsplash</a>. Librarians may wish to use their own <a href='https://nd.libapps.com/libguides/image_manager.php' target='target=_blank'>LibGuides Image Library</a></p>
          </div>
       </div>
 
@@ -88,60 +110,48 @@
          <div class="col-sm-3">
 
             <form>
+
+               <label>Carousel Size <span class="descriptor"> | (width x height)</span></label>
                <div class="form-group">
-                  <label for="num-panels"># Panels</label>
-                  <input type="text" class="form-control" id="num-panels" style="width: 75px">
+                  <div class="input-group" style="width: 150px;">
+                     <input id="image-width" type="text" class="form-control">
+                     <span class="input-group-addon">x</span>
+                     <input id="image-height" type="text" class="form-control">
+                  </div>
+                  <span class="placeholder">Example | 800 x 400</span>
                </div>
 
-               <label for="icon-html">Icon <span class="descriptor">| optional</span></label>
-               <div class="input-group">
-                  <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                  <input type="text" class="form-control" id="panel-icon">
+               <div class="form-group push-down-2">
+                  <label for="num-panels"># Slides</label>
+                  <input type="text" class="form-control" id="num-slides" style="width: 75px">
                </div>
-               <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
 
+               <div class="form-group push-down-2">
+                  <label for="num-panels">Interval <span class="descriptor"> | (in seconds)</span></label>
+                  <input type="text" class="form-control" id="data-interval" style="width: 75px">
+               </div>
 
-               <div class="form-group">
+               <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
-                        <input type="checkbox" id="first-open"> 1st Panel Open
+                        <input type="checkbox" id="add-captions"> Add Captions
                      </label>
                   </div>
                </div>
 
-               <hr>
-
-               <label>
-                  <input type="radio" name="append-icons" value="plus" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="append-icons" value="arrow" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
-               </label>
-
-
-
-               <!-- <div class="form-group">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
-                     </label>
+               <div class="form-group hidden push-down-2" id="caption-colored">
+                  <label>Captions Color</label>
+                  <div id="picker" class="input-group">
+                     <!-- .colorpicker-component -->
+                     <input id="color-picker" type="text" class="form-control" />
                   </div>
                </div>
-
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
-                     </label>
-                  </div>
-               </div> -->
 
             </form>
 
             <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-panel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="panel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default" id="refresh-carousel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="carousel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
             </div>
 
          </div>
@@ -153,37 +163,65 @@
             <div class="example" id="simple-example">
 
                <!-- set data-interval="false" on class "carousel slide" to stop auto-advance -->
-               <div id="shareCarousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel">
+               <div id="my-carousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel" data-interval="3000">
                   <!-- Indicators -->
                   <ol class="carousel-indicators">
-                     <li data-target="#shareCarousel" data-slide-to="0" class="active"></li>
-                     <li data-target="#shareCarousel" data-slide-to="1"></li>
-                     <li data-target="#shareCarousel" data-slide-to="2"></li>
+                     <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                     <li data-target="#my-carousel" data-slide-to="1"></li>
+                     <li data-target="#my-carousel" data-slide-to="2"></li>
                   </ol>
 
                   <!-- Wrapper for slides -->
                   <div class="carousel-inner">
 
                      <div class="item active">
-                        <img src="http://www.placehold.it/800x400" alt="">
+                        <img src="img/carousel-images/1.png" alt="image of India">
+                        <div class="carousel-caption">
+                           <h3>Humayun's Tomb</h3>
+                           <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                 href="https://unsplash.com/@raghunayyar?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Raghu Nayyar"><span
+                                    style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                       <title>unsplash-logo</title>
+                                       <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                    </svg></span><span style="display:inline-block;padding:2px 3px">Raghu Nayyar</span></a></p>
+                        </div>
+
                      </div>
 
                      <div class="item">
-                        <img src="http://www.placehold.it/800x400" alt="">
+                        <img src="img/carousel-images/2.png" alt="Image of India">
+                        <div class="carousel-caption">
+                           <h3>Streets of Agra</h3>
+                           <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                 href="https://unsplash.com/@tryoung?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Thomas Young"><span
+                                    style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                       <title>unsplash-logo</title>
+                                       <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                    </svg></span><span style="display:inline-block;padding:2px 3px">Thomas Young</span></a></p>
+                        </div>
                      </div>
 
                      <div class="item">
-                        <img src="http://www.placehold.it/800x400" alt="">
+                        <img src="img/carousel-images/3.png" alt="Image of India">
+                        <div class="carousel-caption">
+                           <h3>Mehndi</h3>
+                           <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                 href="https://unsplash.com/@aperinastudios?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Vitaliy Lyubezhanin"><span
+                                    style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                       <title>unsplash-logo</title>
+                                       <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                    </svg></span><span style="display:inline-block;padding:2px 3px">Vitaliy Lyubezhanin</span></a></p>
+                        </div>
                      </div>
 
                   </div>
 
                   <!-- Left and right controls -->
-                  <a class="left carousel-control" href="#shareCarousel" data-slide="prev">
+                  <a class="left carousel-control" href="#my-carousel" data-slide="prev">
                      <span class="glyphicon glyphicon-chevron-left"></span>
                      <span class="sr-only">Previous</span>
                   </a>
-                  <a class="right carousel-control" href="#shareCarousel" data-slide="next">
+                  <a class="right carousel-control" href="#my-carousel" data-slide="next">
                      <span class="glyphicon glyphicon-chevron-right"></span>
                      <span class="sr-only">Next</span>
                   </a>
@@ -203,43 +241,60 @@
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update preview window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
-                  Update Preview</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-long-arrow-up" aria-hidden="true"></i>
+                  Update Example</button>
 
                <hr class="well-separator">
 
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;!-- set data-interval="false" on class "carousel slide" to stop auto-advance --&gt;
-   &lt;div id="shareCarousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel"&gt;
-
+&lt;div id="my-carousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel" data-interval="3000"&gt;
    &lt;!-- Indicators --&gt;
    &lt;ol class="carousel-indicators"&gt;
-      &lt;li data-target="#shareCarousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
-      &lt;li data-target="#shareCarousel" data-slide-to="1"&gt;&lt;/li&gt;
+      &lt;li data-target="#my-carousel" data-slide-to="0" class="active"&gt;&lt;/li&gt;
+      &lt;li data-target="#my-carousel" data-slide-to="1"&gt;&lt;/li&gt;
+      &lt;li data-target="#my-carousel" data-slide-to="2"&gt;&lt;/li&gt;
    &lt;/ol&gt;
 
    &lt;!-- Wrapper for slides --&gt;
    &lt;div class="carousel-inner"&gt;
+
       &lt;div class="item active"&gt;
-         &lt;img src="img/project-screen-caps/digital-story/spark-video-publish.png" alt=""&gt;
+         &lt;img src="http://www.placehold.it/800x400" alt=""&gt;
+         &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;Heading Slide #1&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+         &lt;/div&gt;
+
       &lt;/div&gt;
+
       &lt;div class="item"&gt;
-         &lt;img src="img/project-screen-caps/digital-story/spark-video-share.png" alt=""&gt;
+         &lt;img src="http://www.placehold.it/800x400" alt=""&gt;
+         &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;Heading Slide #2&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+         &lt;/div&gt;
       &lt;/div&gt;
+
+      &lt;div class="item"&gt;
+         &lt;img src="http://www.placehold.it/800x400" alt=""&gt;
+         &lt;div class="carousel-caption"&gt;
+            &lt;h3&gt;Heading Slide #3&lt;/h3&gt;
+            &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.&lt;/p&gt;
+         &lt;/div&gt;
+      &lt;/div&gt;
+
    &lt;/div&gt;
 
    &lt;!-- Left and right controls --&gt;
-   &lt;a class="left carousel-control" href="#shareCarousel" data-slide="prev"&gt;
+   &lt;a class="left carousel-control" href="#my-carousel" data-slide="prev"&gt;
       &lt;span class="glyphicon glyphicon-chevron-left"&gt;&lt;/span&gt;
       &lt;span class="sr-only"&gt;Previous&lt;/span&gt;
    &lt;/a&gt;
-   &lt;a class="right carousel-control" href="#shareCarousel" data-slide="next"&gt;
+   &lt;a class="right carousel-control" href="#my-carousel" data-slide="next"&gt;
       &lt;span class="glyphicon glyphicon-chevron-right"&gt;&lt;/span&gt;
       &lt;span class="sr-only"&gt;Next&lt;/span&gt;
    &lt;/a&gt;
-
 &lt;/div&gt;
-&lt;!-- .carousel --&gt;
 </pre>
 
             </div>
@@ -247,7 +302,7 @@
 
             <h4 class="sub-header">Custom CSS</h4>
 
-            <p>Custom CSS (and Font Awesome 4) is required for the light blue plus symbols on the panels.</p>
+            <p>You may wish to set the color of the header (<code>&lt;h3&gt;</code>) and paragraph (<code>&lt;p&gt;</code>) of your captions once, explicity. You may also wish to add space the circular slide indicators out a wee bit.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -258,22 +313,16 @@
 
 
 <pre class="prettyprint lang-css" id="custom-css-code">
-/* Adds 'plus' glyph for enabling collapsible panels */
-.panel-heading .accordion-toggle:before {
-   font-family: FontAwesome;
-   content: "\f068";
-   float: right;
-   color: silver;
+/* Set the color of the captions explicitly */
+.carousel p,
+.carousel h3 {
+   color: white !important;
 }
 
-.panel-heading .accordion-toggle.collapsed:before {
-   content: "\f067";
-   color: silver;
-}
-
-/* sets the link to the size of the entire panel title */
-.panel-title > a {
-   display: block;
+/* Space the circular slide indicators out a wee bit */
+.carousel-indicators li,
+carousel-indicators li.active {
+   margin-left: 5px;
 }
 </pre>
 
@@ -281,16 +330,16 @@
             <!-- .well -->
 
             <h4 class="sub-header">Notes</h4>
-            <p>The following notes apply:</p>
+            <p>The following notes also apply:</p>
 
             <div class="alert alert-warning" role="alert">
-            	<p>
-            		<i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i>
-            		<a class="close" data-dismiss="alert" aria-label="close">×</a>
-            		<strong>Accessibility</strong>
-            		<br>
-            		The carousel component does not meet acceptable standards for accessibility. If content is mission critical, supplement the carousel with complementary information, or use a different component to serve your content.
-            	</p>
+               <p>
+                  <i class="fa fa-fw fa-eye-slash" aria-hidden="true"></i>
+                  <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                  <strong>Accessibility</strong>
+                  <br>
+                  The carousel component does not meet acceptable standards for accessibility. If content is mission critical, supplement the carousel with complementary information, or use a different component to serve your content.
+               </p>
             </div>
 
             <div class="alert alert-danger" role="alert">
@@ -350,14 +399,70 @@
    <!-- clipboard.js include -->
    <script src="js/clipboard.min.js"></script>
 
-
+   <!-- color picker -->
+   <script src='js/spectrum.js'></script>
 
    <script>
       $(document).ready(function() {
 
+         // Show caption color option
+         $("#add-captions").on("change", function() {
+            if ($('#add-captions').is(':checked')) {
+               $("#caption-colored").removeClass("hidden");
+            } else {
+               $("#caption-colored").addClass("hidden");
+            }
+         });
+
+         // Color picker by Brian Grinstead (maintained by Brian Grinstead at http://bgrins.github.io/spectrum/)
+
+         $("#color-picker").spectrum({
+            color: "#FFFFFF",
+            showInput: true,
+            className: "full-spectrum",
+            showInitial: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            maxSelectionSize: 10,
+            preferredFormat: "hex",
+            localStorageKey: "spectrum.demo",
+            move: function(color) {
+
+            },
+            show: function() {
+
+            },
+            beforeShow: function() {
+
+            },
+            hide: function() {
+
+            },
+            change: function() {
+
+            },
+            palette: [
+               ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                  "rgb(204, 204, 204)", "rgb(217, 217, 217)", "rgb(255, 255, 255)"
+               ],
+               ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                  "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"
+               ],
+               ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
+                  "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
+                  "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
+                  "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
+                  "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
+                  "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                  "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                  "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                  "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
+                  "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"
+               ]
+            ]
+         });
+
          // The searchable bootstrap table
-         $('#bootstrap-table').bdt();
-         $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
@@ -367,85 +472,75 @@
             $('[data-toggle="tooltip"]').tooltip()
          })
 
-         $('#refresh-button').on("click", function() {
-            $('#panel-icon').val('');
+         // Reset button
+         $('#refresh-carousel').on("click", function() {
+            location.reload(true);
          });
 
          // Add active class to navmenu selection
          $("#carousels").addClass("active");
          $("#containers-dropdown").addClass("activated");
 
-         // 1st Panel Open checked by default
-         $('#first-open').prop('checked', true);
 
-         // Plus icon checked by default
-         $('#plus-icon').prop('checked', true);
+         $('#carousel-build').click(function() {
 
-         // Reset button
-         $('#clear-panel').on("click", function() {
-            location.reload(true);
-         });
+            var imageWidth = $("#image-width").val();
+            var imageHeight = $("#image-height").val();
+            var numSlides = $("#num-slides").val();
+            var captionColors = " style='color: " + $("#color-picker").val() + " !important'";
+            var carouselID = "carousel-" + ~~(Math.random() * 10000000);
+            var dataInterval = "";
 
-         $('#panel-build').click(function() {
-
-            var accordionRando = ~~(Math.random() * 10000000);
-            var panelGroupOpen = "<div class='panel-group' id='accordion" + accordionRando + "' role='tablist' aria-multiselectable='true'>";
-            var panelGroupClose = "</div>";
-            var numPanels = $('#num-panels').val();
-            var numPanelsRandom = '';
-            var singlePanel = $('');
-            var panelIcon = $('#panel-icon').val();
-            var allPanels = '';
-            var startOpen = '';
-            var plusOrArrowIcon = '';
-            var ariaExpanded = 'aria-expanded="false"';
-
-            for (i = 0; i < numPanels; i++) {
-               rando = ~~(Math.random() * 10000000);
-
-               if ($('#plus-icon').is(":checked")) {
-                  plusOrArrowIcon = " class='accordion-plus-toggle collapsed' ";
-               } else if ($('#arrow-icon').is(":checked")) {
-                  plusOrArrowIcon = " class='accordion-arrow-toggle collapsed' ";
-               } else {
-                  plusOrArrowIcon = " class='' ";
-               }
-
-               if (i == 0 && $('#first-open').is(":checked")) {
-                  startOpen = ' in';
-                  ariaExpanded = 'true';
-                  var str = plusOrArrowIcon.replace(/collapsed/g, "");
-                  plusOrArrowIcon = str;
-               } else {
-                  startOpen = '';
-                  ariaExpanded = 'false';
-               }
-
-               singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusOrArrowIcon +
-                  " data-parent='#accordion" +
-                  accordionRando + "' href='#collapse" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse" + rando +
-                  "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
-
-               allPanels += singlePanel;
+            if ($("#data-interval").val() !== "") {
+               dataInterval = " data-interval='" + $("#data-interval").val()*1000 + "'";
+            } else {
+               dataInterval = "";
             }
 
-            var bsPanel = panelGroupOpen + allPanels + panelGroupClose;
+            var carouselOpen = "<div id='" + carouselID + "' class='carousel slide' data-ride='carousel'" + dataInterval + ">";
+            var closingDiv = "</div>";
+            var caption = "";
+            var indicator = "";
+            var indicators = "";
+            var slideCaptions = "";
+            var slide = "";
+            var slides = "";
 
-            $("#simple-example").html(bsPanel);
-            $('#simple-code').text(bsPanel);
+            if ($("#add-captions").is(":checked")) {
+               slideCaptions = "<div class='carousel-caption'><h3" + captionColors + ">This is a Heading</h3><p" + captionColors + ">This is a subheading</p></div>";
+            } else {
+               slideCaptions = "";
+            }
+
+            // Indicators
+            for (i = 1; i < numSlides; i++) {
+               indicator = "<li data-target='#" + carouselID + "' data-slide-to='" + i + "'></li>";
+               indicators += indicator;
+            }
+
+            indicators = "<ol class='carousel-indicators'><li data-target='#" + carouselID + "' data-slide-to='0' class='active'></li>" + indicators + "</ol>";
+
+            // Slides
+            for (i = 1; i < numSlides; i++) {
+               slide = "<div class='item'><img src='http://placehold.it/" + imageWidth + "x" + imageHeight + "' alt='...'>" + slideCaptions + "</div>";
+               slides += slide;
+            }
+
+            slides = "<div class='carousel-inner' role='listbox'>" + "<div class='item active'><img src='http://placehold.it/" + imageWidth + "x" + imageHeight +
+               "' alt='...'>" + slideCaptions + "</div>" + slides + "</div>";
+
+            var controls =
+               "<a class='left carousel-control' href='#" + carouselID + "' role='button' data-slide='prev'><span class='glyphicon glyphicon-chevron-left' aria-hidden='true'></span><span class='sr-only'>Previous</span></a><a class='right carousel-control' href='#" + carouselID + "' role='button' data-slide='next'><span class='glyphicon glyphicon-chevron-right' aria-hidden='true'></span><span class='sr-only'>Next</span></a>";
+
+
+            var bsCarousel = carouselOpen + indicators + slides + controls + closingDiv;
+
+            $("#simple-example").html(bsCarousel);
+            $('#simple-code').text(bsCarousel);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
 
-         });
-
-         // Select the icon from the modal
-         var iconValue = "";
-         $('.icon-selector').on('click', function() {
-            iconValue = $(this).data("well-target");
-            $("#panel-icon").val(iconValue);
-            iconValue = "";
-            $('#icons-modal').modal('hide');
          });
 
          // clipboard button
