@@ -362,8 +362,12 @@ input[type="radio"] {
     background-color: white;
 }
 
-.fa-fr {
-   margin-right: 1.5rem;
+.navbar .fa-fr {
+   padding-right: .7rem !important;
+}
+
+.fa-social {
+   margin-left: 1.2rem;
 }
 
 .white {

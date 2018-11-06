@@ -36,7 +36,7 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">-->
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -223,46 +223,60 @@ ol.linenums li {
                <tbody>
                   <tr>
                      <td style="width: 10%">1</td>
-                     <td style="width: 80%">Inlcude a link to the cloud-hosted <code>prettify.js</code> file within the <code>&lt;head&gt;</code> element of your HTML file.
-<pre class='prettyprint lang-html' id="well-step1">
+                     <td style="width: 80%">Inlcude a link to a cloud-hosted <code>prettify.js</code> file within the <code>&lt;head&gt;</code> element of your HTML file.
+<pre class='prettyprint lang-html' id="well-step0">
 &lt;script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"&gt;&lt;/script&gt;
+</pre>
+                     </td>
+                     <td><button class="btn btn-code-well copier center-block" type="button" data-clipboard-demo="" data-clipboard-target="#well-step0" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
+                              aria-hidden="true"></i> Copy</button></td>
+                  </tr>
+                  <tr>
+                     <td>2</td>
+                     <td>Add the <code>.prettyprint</code> class to your <code>&lt;pre&gt;</code> element.
+
+<pre class='prettyprint' id="well-step1">
+&lt;pre class="prettyprint"&gt; ... &lt;/pre&gt;
 </pre>
                      </td>
                      <td><button class="btn btn-code-well copier center-block" type="button" data-clipboard-demo="" data-clipboard-target="#well-step1" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
                               aria-hidden="true"></i> Copy</button></td>
                   </tr>
                   <tr>
-                     <td>2</td>
-                     <td>Add the <code>.prettyprint</code> class to your <code>&lt;pre&gt;</code> element. Although in many cases, Prettify will auto-detect your language, we recommend specifying it explicitly.
+                     <td>3</td>
+                     <td>Although in many cases, Prettify will auto-detect your language, we recommend specifying it explicitly.
 
-<pre class='prettyprint' id="well-step2">
-&lt;script type="text/javascript" src="js/lang-css.js"&gt;</script>
+<pre class='prettyprint lang-html' id="well-step2">
+&lt;pre class='prettyprint lang-css'&gt; ... Your code here ... &lt;/pre&gt;
 </pre>
                      </td>
                      <td><button class="btn btn-code-well copier center-block" type="button" data-clipboard-demo="" data-clipboard-target="#well-step2" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
                               aria-hidden="true"></i> Copy</button></td>
                   </tr>
                   <tr>
-                     <td>3</td>
+                     <td>4</td>
                      <td>
-                        If your language <a href='https://github.com/google/code-prettify#how-do-i-specify-the-language-of-my-code' target='_blank'>is not supported natively</a>&mdash;such as with CSS&mdash;you may need to include the specific language
-                        file. We recommend you download the file from the following list:<p class='push-down-1' style='padding: 10px'><a href='https://github.com/google/code-prettify/blob/master/src/lang-apollo.js'>Apollo</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-basic.js'>Basic</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-clj.js'>Clojure</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-css.js'>CSS</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-dart.js'>Dart</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-erlang.js'>Erlang</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-go.js'>Go</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-hs.js'>Haskell</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lasso.js'>Lasso</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lisp.js'>Lisp/Scheme</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-llvm.js'>LLVM</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-logtalk.js'>Logtalk</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-lua.js'>Lua</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-matlab.js'>MATLAB</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-ml.js'>MLs: F# &middot; Ocaml &middot;SML</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-mumps.js'>Mumps</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-n.js'>Nemerle</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-pascal.js'>Pascal</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-proto.js'>Protocol
-                              buffers</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-r.js'>R &middot; S</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-rd.js'>RD</a> &middot; <a
-                              href='https://github.com/google/code-prettify/blob/master/src/lang-rust.js'>Rust</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-scala.js'>Scala</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-sql.js'>SQL</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-swift.js'>Swift</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-tcl.js'>TCL</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-tex.js'>LaTeX</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-vb.js'>Visual Basic</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-vhdl.js'>VHDL</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-wiki.js'>Wiki</a>
-                           &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-xq.js'>XQ</a> &middot; <a href='https://github.com/google/code-prettify/blob/master/src/lang-yaml.js'>YAML</a></p>
+                        <p>If your language <a href='https://github.com/google/code-prettify#how-do-i-specify-the-language-of-my-code' target='_blank'>is not supported natively</a>&mdash;as is the case with CSS&mdash;you will need to include a link to the specific language
+                            file. First, download the appropriate language file from the following list:</p>
 
-                        Download the appropriate language file and serve it from a subdirectory of your Web site.
-<pre class='prettyprint lang-html' id="well-step3">
-&lt;pre class='prettyprint lang-css'&gt; ... Your code here ... &lt;/pre&gt;
-</pre>
+                        <p class='push-down-1' style='padding: 10px'><a href='https://github.com/google/code-prettify/blob/master/src/lang-apollo.js'>Apollo</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-basic.js'>Basic</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-clj.js'>Clojure</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-css.js'>CSS</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-dart.js'>Dart</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-erlang.js'>Erlang</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-go.js'>Go</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-hs.js'>Haskell</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-lasso.js'>Lasso</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-lisp.js'>Lisp/Scheme</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-llvm.js'>LLVM</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-logtalk.js'>Logtalk</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-lua.js'>Lua</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-matlab.js'>MATLAB</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-ml.js'>MLs: F#, Ocaml,SML</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-mumps.js'>Mumps</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-n.js'>Nemerle</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-pascal.js'>Pascal</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-proto.js'>Protocol
+                              buffers</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-r.js'>R, S</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-rd.js'>RD</a>, <a
+                              href='https://github.com/google/code-prettify/blob/master/src/lang-rust.js'>Rust</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-scala.js'>Scala</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-sql.js'>SQL</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-swift.js'>Swift</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-tcl.js'>TCL</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-tex.js'>LaTeX</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-vb.js'>Visual Basic</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-vhdl.js'>VHDL</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-wiki.js'>Wiki</a>
+                        , <a href='https://github.com/google/code-prettify/blob/master/src/lang-xq.js'>XQ</a>, <a href='https://github.com/google/code-prettify/blob/master/src/lang-yaml.js'>YAML</a></p>
+
+                        <p>Next, serve it from a subdirectory of your Web site, such as:
+
+<pre class='prettyprint' id="well-step3">
+&lt;script type="text/javascript" src="js/lang-css.js"&gt; ... &lt;/script&gt;
+</pre></p>
 
                      </td>
                      <td><button class="btn btn-code-well copier push-down-3" type="button" data-clipboard-demo="" data-clipboard-target="#well-step3" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-clipboard"
@@ -328,7 +342,7 @@ ol.linenums li {
 
          // Add active class to navmenu selection
          $("li#code-wells").addClass("active");
-         $("#features-dropdown").addClass("activated");
+         $("#containers-dropdown").addClass("activated");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");

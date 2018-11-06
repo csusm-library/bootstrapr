@@ -99,6 +99,27 @@ $(document).ready(function() {
 
    });
 
+   // Prettify / Beautify / indent the code for the button
+   $("#beautify-button").on("click", function() {
+
+      var beautifyLocal1 = formatFactory($('#simple-button-code').text());
+      $('#simple-button-code').text(beautifyLocal1);
+
+      $('pre').removeClass('prettyprinted');
+      prettyPrint();
+
+   });
+
+   // Prettify / Beautify / indent the code for the modal
+   $("#beautify-modal").on("click", function() {
+      var beautifyLocal2 = formatFactory($('#simple-modal-code').text());
+      $('#simple-modal-code').text(beautifyLocal2);
+
+      $('pre').removeClass('prettyprinted');
+      prettyPrint();
+
+   });
+
    // Update the preview window after changes to the code well
    $("#update-preview").on("click", function() {
       var modifiedCode = $('#simple-code').text();

@@ -36,7 +36,7 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">-->
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -53,6 +53,15 @@
       iframe {
          border: 3px solid #406885;
          padding: 3px;
+      }
+
+      .carousel h3 {
+         color: white !important;
+      }
+
+      .carousel-indicators li,
+      .carousel-indicators li.active {
+         margin-left: 5px;
       }
    </style>
 
@@ -227,16 +236,13 @@
                      <div class='panel-heading'>
                         <h5 class='panel-title'><strong>Panel Title</strong></h5>
                      </div>
-                     <div class='panel-body flex'> Edison bulb single-origin coffee iPhone, woke gastropub activated charcoal cardigan 8-bit literally messenger bag raw denim scenester mumblecore brunch dreamcatcher.</div>
+                     <div class='panel-body flex'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem impedit alias.</div>
                      <div class='panel-footer'>Footer content</div>
                   </div>
 
-                  <div class='panel panel-info' style="width:45%">
-                     <div class='panel-heading'>
-                        <h5 class='panel-title'><strong>Panel Title</strong></h5>
-                     </div>
-                     <div class='panel-body flex'> Edison bulb single-origin coffee iPhone, woke gastropub activated charcoal cardigan 8-bit literally messenger bag raw denim scenester mumblecore brunch dreamcatcher.</div>
-                     <div class='panel-footer' style="border-color: #bce8f1">Footer content</div>
+                  <div class="panel panel-default example" style="width:45%; margin-top: -1rem">
+                     <div class="panel-body" style="padding-top:2.5rem">Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis!</div>
+                     <ul class="list-group"></ul>
                   </div>
 
                </div>
@@ -247,7 +253,7 @@
          <div class='col-sm-6'>
             <div class='panel panel-default tool-cards' data-link="code-wells.html">
                <div class='panel-body flex'>
-                  <pre class="prettyprint">
+                  <pre class="prettyprint lang-js">
 // This is sample jQuery code...
 $( document ).ready(function() {
    $('.navfeatures').addClass('active');
@@ -264,31 +270,35 @@ $( document ).ready(function() {
             <div class='panel panel-default tool-cards' data-link="accordions.html">
                <div class='panel-body flex'>
 
-                  <div class='panel-group' id='accordion6965431' role='tablist' aria-multiselectable='true'>
-                     <div class='panel panel-default'>
-                        <div class='panel-heading' role='tab' id='heading4379613'>
-                           <h5 class='panel-title'><a role='button' data-toggle='collapse' class='accordion-toggle' data-parent='#accordion6965431' href='#collapse4379613' aria-expanded='true' aria-controls='collapse4379613'><strong>Panel 1</strong></a></h5>
+                  <div class="panel-group" id="accordion3566441" role="tablist" aria-multiselectable="true">
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading4853459">
+                           <h5 class="panel-title">
+                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle " data-parent="#accordion3566441" href="#collapse4853459" aria-expanded="true" aria-controls="collapse4853459">Panel 1</a>
+                           </h5>
                         </div>
-                        <div id='collapse4379613' class='panel-collapse collapse in' role='tabpanel' aria-labelledby='heading4379613'>
-                           <div class='panel-body'>Lorem ipsum dolor sic amet! Consectetur adipisicing elit!</div>
-                        </div>
-                     </div>
-                     <div class='panel panel-default'>
-                        <div class='panel-heading' role='tab' id='heading7893495'>
-                           <h5 class='panel-title'><a role='button' data-toggle='collapse' class='accordion-toggle collapsed' data-parent='#accordion6965431' href='#collapse7893495' aria-expanded='true' aria-controls='collapse7893495'><strong>Panel
-                                    2</strong></a></h5>
-                        </div>
-                        <div id='collapse7893495' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading7893495'>
-                           <div class='panel-body'>Lorem ipsum dolor sic amet!</div>
+                        <div id="collapse4853459" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4853459">
+                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
                         </div>
                      </div>
-                     <div class='panel panel-default'>
-                        <div class='panel-heading' role='tab' id='heading6298702'>
-                           <h5 class='panel-title'><a role='button' data-toggle='collapse' class='accordion-toggle collapsed' data-parent='#accordion6965431' href='#collapse6298702' aria-expanded='true' aria-controls='collapse6298702'><strong>Panel
-                                    3</strong></a></h5>
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading6745129">
+                           <h5 class="panel-title">
+                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion3566441" href="#collapse6745129" aria-expanded="false" aria-controls="collapse6745129">Panel 2</a>
+                           </h5>
                         </div>
-                        <div id='collapse6298702' class='panel-collapse collapse' role='tabpanel' aria-labelledby='heading6298702'>
-                           <div class='panel-body'>Lorem ipsum dolor sic amet!</div>
+                        <div id="collapse6745129" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6745129">
+                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
+                        </div>
+                     </div>
+                     <div class="panel panel-default">
+                        <div class="panel-heading" role="tab" id="heading1117282">
+                           <h5 class="panel-title">
+                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion3566441" href="#collapse1117282" aria-expanded="false" aria-controls="collapse1117282">Panel 3</a>
+                           </h5>
+                        </div>
+                        <div id="collapse1117282" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1117282">
+                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
                         </div>
                      </div>
                   </div>
@@ -306,11 +316,11 @@ $( document ).ready(function() {
                   <div class='row' class="example-columns">
                      <div class='col-sm-6'>
                         <h5>Column 1</h5>
-                        <p>Edison bulb single-origin coffee iPhone, woke gastropub activated charcoal cardigan 8-bit literally messenger bag raw denim.</p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores molestiae vero omnis totam.</p>
                      </div>
                      <div class='col-sm-6'>
                         <h5>Column 2</h5>
-                        <p>Dreamcatcher art party, health goth kogi wayfarers blue bottle organic keytar cold-pressed brooklyn. Kale cardigan, seitan. </p>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores molestiae vero omnis totam.</p>
                      </div>
                   </div>
 
@@ -325,22 +335,19 @@ $( document ).ready(function() {
 
                   <div class="row image-grid">
                      <div class="col-xs-6 col-sm-4 col-md-4">
-                        <div class="panel panel-default">
-                           <div class="panel-body"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></div>
-                           <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
-                        </div>
+                        <a href="" target="_self">
+                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
+                        </a>
                      </div>
                      <div class="col-xs-6 col-sm-4 col-md-4">
-                        <div class="panel panel-default">
-                           <div class="panel-body"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></div>
-                           <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
-                        </div>
+                        <a href="" target="_self">
+                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
+                        </a>
                      </div>
                      <div class="col-xs-6 col-sm-4 col-md-4">
-                        <div class="panel panel-default">
-                           <div class="panel-body"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></div>
-                           <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
-                        </div>
+                        <a href="" target="_self">
+                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
+                        </a>
                      </div>
                   </div>
 
@@ -354,19 +361,22 @@ $( document ).ready(function() {
             <div class='panel panel-default tool-cards' data-link="images.html">
                <div class='panel-body flex'>
 
-                  <div class='row'>
-                     <div class='col-sm-12'>
-                        <div style='width:150px;' class='panel panel-default pull-right embedded-photo-left'>
-                           <div class='panel-body' style='background:#FFFFFF'><img class='img img-responsive center-block' src='https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg' alt='Lilya Brik' /></div>
-                           <div class='panel-footer' style="height:3rem;">
-                              <p><i class='fa fa-camera-retro fa-fw' aria-hidden='true'></i> Lilya Brik</p>
+                  <div class="row">
+                     <div class="col-sm-6">
+                        <div class="panel panel-default">
+                           <div class="panel-body">
+                              <img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
+                           </div>
+                           <div class="panel-footer">
+                              <i class="fa fa-camera-retro" aria-hidden="true"></i>
+                              Image of Lilya Brik
                            </div>
                         </div>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Sit repudiandae architecto doloribus eligendi facilis totam eius quis, error veniam maxime aspernatur eos omnis reprehenderit, ab provident natus magni corporis,
-                           dignissimos.</p>
+                     </div>
+                     <div class="col-sm-6">
+                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor!</p>
                      </div>
                   </div>
-                  <!-- .row -->
 
                </div>
                <div class='panel-footer'><i class="fa fa-fw fa-picture-o"></i>Images</div>
@@ -377,10 +387,10 @@ $( document ).ready(function() {
             <div class='panel panel-default tool-cards' data-link="jumbotrons.html">
                <div class='panel-body flex'>
 
-                  <div class='jumbotron' style='background: #2c76c8; border-radius: 8px !important; height: 190px;'>
-                     <h3 style='color:#FFFFFF; margin-top: -.5rem;' class='jumbotronic'>This is the Jumbotron Title</h3>
-                     <h5 style='color:#FFFFFF'>This is a subtitle</h5>
-                     <p class='text-left'><a class='btn btn-info push-down-1' href='hp.com' target='_blank' role='button'><i class="fa fa-fw fa-paper-plane" aria-hidden="true"></i> Button</a></p>
+                  <div class='jumbotron' style='background:#cc4125;padding-top: 1rem'>
+                     <h1 style='color:#ffffff;text-shadow: 1px 1px gray;' class='jumbotronic text-center'>The Title</h1>
+                     <h6 style='text-shadow: 1px 1px gray; color:#ffffff' class="text-center">This is the subtle subtitle</h6>
+                     <p class='text-center push-down-2'><a class='btn btn-secondary-light' href='' target='_blank' role='button'><i class="fa fa-fw fa-calendar-check-o" aria-hidden="true"></i> I'm a Button!</a></p>
                   </div>
 
                </div>
@@ -426,7 +436,7 @@ $( document ).ready(function() {
                      </div>
                   </div>
                </div>
-               <div class='panel-footer'><i class="fa fa-fw fa-list-ul"></i>Lists</div>
+               <div class='panel-footer'><i class="fa fa-fw fa-check"></i>Lists</div>
             </div>
          </div>
 
@@ -458,7 +468,7 @@ $( document ).ready(function() {
                   </div>
 
                </div>
-               <div class='panel-footer'><i class="fa fa-fw fa-list-ul"></i>Media Lists</div>
+               <div class='panel-footer'><i class="fa fa-fw fa-th-list"></i>Media Lists</div>
             </div>
          </div>
 
@@ -512,7 +522,92 @@ $( document ).ready(function() {
                   </div>
 
                </div>
-               <div class='panel-footer'><i class="fa fa-fw fa-window-restore"></i>Tabs & Pills</div>
+               <div class='panel-footer'><i class="fa fa-fw fa-ellipsis-h" style="font-size: 150%"></i>Tabs &amp; Pills</div>
+            </div>
+         </div>
+
+         <div class='col-sm-6'>
+            <div class='panel panel-default tool-cards' data-link="carousels.html">
+               <div class='panel-body'>
+
+
+                  <div id="my-carousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel" data-interval="3000">
+                     <!-- Indicators -->
+                     <ol class="carousel-indicators">
+                        <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
+                        <li data-target="#my-carousel" data-slide-to="1"></li>
+                        <li data-target="#my-carousel" data-slide-to="2"></li>
+                     </ol>
+
+                     <!-- Wrapper for slides -->
+                     <div class="carousel-inner">
+
+                        <div class="item active">
+                           <img src="img/carousel-images/1.png" alt="image of India">
+                           <div class="carousel-caption">
+                              <h3>Humayun's Tomb</h3>
+                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                    href="https://unsplash.com/@raghunayyar?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Raghu Nayyar"><span
+                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                          <title>unsplash-logo</title>
+                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                       </svg></span><span style="display:inline-block;padding:2px 3px">Raghu Nayyar</span></a></p>
+                           </div>
+
+                        </div>
+
+                        <div class="item">
+                           <img src="img/carousel-images/2.png" alt="Image of India">
+                           <div class="carousel-caption">
+                              <h3>Streets of Agra</h3>
+                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                    href="https://unsplash.com/@tryoung?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Thomas Young"><span
+                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                          <title>unsplash-logo</title>
+                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                       </svg></span><span style="display:inline-block;padding:2px 3px">Thomas Young</span></a></p>
+                           </div>
+                        </div>
+
+                        <div class="item">
+                           <img src="img/carousel-images/3.png" alt="Image of India">
+                           <div class="carousel-caption">
+                              <h3>Mehndi</h3>
+                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
+                                    href="https://unsplash.com/@aperinastudios?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Vitaliy Lyubezhanin"><span
+                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
+                                          <title>unsplash-logo</title>
+                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
+                                       </svg></span><span style="display:inline-block;padding:2px 3px">Vitaliy Lyubezhanin</span></a></p>
+                           </div>
+                        </div>
+
+                     </div>
+
+                     <!-- Left and right controls -->
+                     <a class="left carousel-control" href="#my-carousel" data-slide="prev">
+                        <span class="glyphicon glyphicon-chevron-left"></span>
+                        <span class="sr-only">Previous</span>
+                     </a>
+                     <a class="right carousel-control" href="#my-carousel" data-slide="next">
+                        <span class="glyphicon glyphicon-chevron-right"></span>
+                        <span class="sr-only">Next</span>
+                     </a>
+                  </div>
+                  <!-- .carousel -->
+
+               </div>
+               <div class='panel-footer'><i class="fa fa-fw fa-chevron-right"></i>Carousels</div>
+            </div>
+         </div>
+
+         <div class='col-sm-6'>
+            <div class='panel panel-default tool-cards' data-link="modals.html">
+               <div class='panel-body'>
+
+
+               </div>
+               <div class='panel-footer'><i class="fa fa-fw fa-window-restore"></i>Modals</div>
             </div>
          </div>
 
@@ -547,15 +642,10 @@ $( document ).ready(function() {
          </div>
 
          <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="video.html">
-               <div class='panel-body'>
-                  <div class='panel panel-default'>
-                     <div class='panel-body' style='background: #000000'>
-                        <div class='embed-responsive embed-responsive-16by9'><iframe src="https://archive.org/embed/archiveteam_videobot_twitter_com_870067388430995457" width="640" height="480" frameborder="0" webkitallowfullscreen="true"
-                              mozallowfullscreen="true" allowfullscreen="" class="embed-responsive-item"></iframe></div>
-                     </div>
-                     <div class='panel-footer'><i class='fa fa-film'></i>Television Commercial for Camel Cigarettes (1954)</div>
-                  </div>
+            <div class='panel panel-default tool-cards' data-link="videos.html">
+               <div class='panel-body' style="padding: 3rem 7rem 7rem">
+
+                  <img src="img/video-placeholder.png" class="img img-responsive" alt="">
 
                </div>
                <div class='panel-footer'><i class="fa fa-fw fa-film"></i>Video</div>
@@ -613,7 +703,7 @@ $( document ).ready(function() {
                   </table>
 
                </div>
-               <div class='panel-footer'><i class="fa fa-fw fa-plus-circle"></i>Glyphs <small class="descriptor">| font awesome</small></div>
+               <div class='panel-footer'><i class="fa fa-fw fa-flag"></i>Glyphs <small class="descriptor">| font awesome <small>4</small></small></div>
             </div>
          </div>
 
@@ -668,7 +758,7 @@ $( document ).ready(function() {
                   </table>
 
                </div>
-               <div class='panel-footer'><i class="fa fa-fw fa-plus-circle"></i>Glyphs <small class="descriptor">| glyphicons</small></div>
+               <div class='panel-footer'><i class="fa fa-fw fa-plus-square"></i>Glyphs <small class="descriptor">| glyphicons</small></div>
             </div>
          </div>
 

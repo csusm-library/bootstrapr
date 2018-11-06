@@ -43,7 +43,7 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">-->
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -6490,6 +6490,10 @@
             var sourceLinkClose = '';
             var buttonIconSize = $('#button-icon-size').val();
             var theIcon = $('#symbol-icon').val();
+
+            if (iconColor == "") {
+               iconColor = "#337AB7";
+            }
 
             var iconPadding = Math.round(iconHeightWidth / 2.5);
 
