@@ -189,6 +189,7 @@ pre {
    width: 100px !important;
 }
 
+/* Clear's left and right margins */
 .clearfix {
    clear: both;
 }
@@ -705,4 +706,9 @@ caption .summary {
 .sp-replacer {
    border: 1px solid lightgray !important;
    border-radius: 3px !important;
+}
+
+/* Add padding on selector content area */
+.bootstrapr-selector > div {
+   padding: 0 1rem;
 }

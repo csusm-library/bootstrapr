@@ -120,6 +120,16 @@ $(document).ready(function() {
 
    });
 
+   // Prettify / Beautify / indent the code for the selector
+   $("#beautify-selector-js").on("click", function() {
+      var beautifyLocal3 = formatFactory($('#custom-js-code').text());
+      $('#custom-js-code').text(beautifyLocal3);
+
+      $('pre').removeClass('prettyprinted');
+      prettyPrint();
+
+   });
+
    // Update the preview window after changes to the code well
    $("#update-preview").on("click", function() {
       var modifiedCode = $('#simple-code').text();

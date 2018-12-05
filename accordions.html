@@ -101,8 +101,7 @@
                </div>
                <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
 
-
-               <div class="form-group">
+               <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
                         <input type="checkbox" id="first-open"> 1st Panel Open
@@ -110,8 +109,20 @@
                   </div>
                </div>
 
+               <div class="form-group hidden">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="open-multiple"> Can open multiple panels
+                     </label>
+                  </div>
+               </div>
+
                <hr>
 
+               <label>
+                  <input type="radio" name="append-icons" value="plus" id="no-icon"> No Icon
+               </label>
+               <br>
                <label>
                   <input type="radio" name="append-icons" value="plus" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
                </label>
@@ -119,24 +130,6 @@
                <label>
                   <input type="radio" name="append-icons" value="arrow" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
                </label>
-
-
-
-               <!-- <div class="form-group">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="plus-icon"> Add <i class="fa fa-fw fa-plus"></i> Icon
-                     </label>
-                  </div>
-               </div>
-
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="arrow-icon"> Add <i class="fa fa-fw fa-chevron-right"></i> Icon
-                     </label>
-                  </div>
-               </div> -->
 
             </form>
 
@@ -153,7 +146,7 @@
 
             <div class="example" id="simple-example">
 
-               <div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="true">
+               <div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="false">
                   <div class="panel panel-default">
                      <div class="panel-heading" role="tab" id="heading8122873">
                         <h5 class="panel-title">
@@ -204,38 +197,38 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-   &lt;div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="true"&gt;
-	&lt;div class="panel panel-default"&gt;
-		&lt;div class="panel-heading" role="tab" id="heading8122873"&gt;
-			&lt;h5 class="panel-title"&gt;
-				&lt;a role="button" data-toggle="collapse" class="accordion-toggle" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="true" aria-controls="collapse8122873"&gt;Panel 1&lt;/a&gt;
-			&lt;/h5&gt;
-		&lt;/div&gt;
-		&lt;div id="collapse8122873" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8122873"&gt;
-			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="panel panel-default"&gt;
-		&lt;div class="panel-heading" role="tab" id="heading411391"&gt;
-			&lt;h5 class="panel-title"&gt;
-				&lt;a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="true" aria-controls="collapse411391"&gt;Panel 2&lt;/a&gt;
-			&lt;/h5&gt;
-		&lt;/div&gt;
-		&lt;div id="collapse411391" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading411391"&gt;
-			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
-	&lt;div class="panel panel-default"&gt;
-		&lt;div class="panel-heading" role="tab" id="heading2183316"&gt;
-			&lt;h5 class="panel-title"&gt;
-				&lt;a role="button" data-toggle="collapse" class="accordion-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="true" aria-controls="collapse2183316"&gt;Panel 3&lt;/a&gt;
-			&lt;/h5&gt;
-		&lt;/div&gt;
-		&lt;div id="collapse2183316" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2183316"&gt;
-			&lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
-		&lt;/div&gt;
-	&lt;/div&gt;
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="panel-group" id="accordion7401210" role="tablist" aria-multiselectable="false"&gt;
+   &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading" role="tab" id="heading8122873"&gt;
+         &lt;h5 class="panel-title"&gt;
+            &lt;a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse8122873" aria-expanded="false" aria-controls="collapse8122873"&gt;Panel 1&lt;/a&gt;
+         &lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div id="collapse8122873" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading8122873"&gt;
+         &lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading" role="tab" id="heading411391"&gt;
+         &lt;h5 class="panel-title"&gt;
+            &lt;a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse411391" aria-expanded="false" aria-controls="collapse411391"&gt;Panel 2&lt;/a&gt;
+         &lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div id="collapse411391" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading411391"&gt;
+         &lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
+   &lt;div class="panel panel-default"&gt;
+      &lt;div class="panel-heading" role="tab" id="heading2183316"&gt;
+         &lt;h5 class="panel-title"&gt;
+            &lt;a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion7401210" href="#collapse2183316" aria-expanded="false" aria-controls="collapse2183316"&gt;Panel 3&lt;/a&gt;
+         &lt;/h5&gt;
+      &lt;/div&gt;
+      &lt;div id="collapse2183316" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading2183316"&gt;
+         &lt;div class="panel-body"&gt;Lorem ipsum dolor sic amet!&lt;/div&gt;
+      &lt;/div&gt;
+   &lt;/div&gt;
 &lt;/div&gt;
 </pre>
 
@@ -5783,7 +5776,7 @@
          $('#panel-build').click(function() {
 
             var accordionRando = ~~(Math.random() * 10000000);
-            var panelGroupOpen = "<div class='panel-group' id='accordion-" + accordionRando + "' role='tablist' aria-multiselectable='true'>";
+            var panelGroupOpen = "<div class='panel-group' id='accordion-" + accordionRando + "' role='tablist' aria-multiselectable='false'>";
             var panelGroupClose = "</div>";
             var numPanels = $('#num-panels').val();
             var numPanelsRandom = '';
@@ -5798,17 +5791,17 @@
                rando = ~~(Math.random() * 10000000);
 
                if ($('#plus-icon').is(":checked")) {
-                  plusOrArrowIcon = " class='accordion-plus-toggle collapsed' ";
+                  plusOrArrowIcon = " class='accordion-toggle accordion-plus-toggle collapsed' ";
                } else if ($('#arrow-icon').is(":checked")) {
-                  plusOrArrowIcon = " class='accordion-arrow-toggle collapsed' ";
+                  plusOrArrowIcon = " class='accordion-toggle accordion-arrow-toggle collapsed' ";
                } else {
-                  plusOrArrowIcon = " class='' ";
+                  plusOrArrowIcon = " class='accordion-toggle collapsed' ";
                }
 
                if (i == 0 && $('#first-open').is(":checked")) {
                   startOpen = ' in';
                   ariaExpanded = 'true';
-                  var str = plusOrArrowIcon.replace(/collapsed/g,"");
+                  let str = plusOrArrowIcon.replace(/collapsed/g,"");
                   plusOrArrowIcon = str;
                } else {
                   startOpen = '';

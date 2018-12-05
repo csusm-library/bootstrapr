@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Metadata for the Webpage -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap.r</title>
+
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- Bootstrap CSS files-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- jQuery UI CSS (optional) -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <!-- Google web fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">-->
+
+   <!-- Font Awesome Web Icons -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Main local stylesheet -->
+   <link rel="stylesheet" href="css/main.css">
+
+   <!-- Prettify theme -->
+   <link rel="stylesheet" href="css/prettify-theme.css">
+
+</head>
+
+<body id="top">
+
+   <!-- Navbar include -->
+   <div w3-include-html="navbar.html"></div>
+
+   <div class="container main-content">
+
+      <div class="row add-100">
+         <div class="col-sm-6">
+            <ol class="breadcrumb hidden">
+               <li><a href="index.html">Home</a></li>
+               <li class="active">Selectors</li>
+            </ol>
+         </div>
+         <!-- col-sm-8 -->
+         <div class="col-sm-6">
+            <p class="pull-right">
+               <a href="https://getbootstrap.com/docs/3.3/css/#selects" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| Selects</small></a>
+            </p>
+         </div>
+         <!-- col-sm-4-->
+      </div>
+      <!-- .row -->
+
+      <div class="row">
+         <div class="col-sm-12">
+            <h1>Selectors</h1>
+            <p class="lead">Use a select input to toggle show/hide on content areas.</p>
+            <p>Select inputs allow you to use a simple form control such as a dropdown input to conveniently hide and show content in <code>divs</code>.</p>
+         </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+               <div class="form-group">
+                  <label for="num-panels"># Content Sections</label>
+                  <input type="text" class="form-control input-number" id="num-sections">
+               </div>
+
+               <div class="form-group push-down-2">
+                  <select class="form-control " id="selector-size">
+                     <option value=" input-lg" selected="selected">Large</option>
+                     <option value="">Standard</option>
+                     <option value=" input-sm">Small</option>
+                  </select>
+               </div>
+
+               <div class="form-group push-down-2">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="first-selected"> Auto-select first content div
+                     </label>
+                  </div>
+               </div>
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-selector"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="selector-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+         </div>
+         <!-- col-sm-3 -->
+
+
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <div class="bootstrapr-selector">
+                  <!-- The input selector -->
+                  <form style="margin-bottom: 2rem">
+                     <select class="form-control input-lg" id="selector-1001001">
+                        <option disabled="disabled" value="" selected="selected"> -- Select -- </option>
+                        <option value="#content-div-1">Show section 1</option>
+                        <option value="#content-div-2">Show section 2</option>
+                        <option value="#content-div-3">Show section 3</option>
+                        <option value="#content-div-4">Show section 4</option>
+                     </select>
+                  </form>
+
+                  <!-- The content divs -->
+                  <div id="content-div-1" class="selector-content hidden">
+                     <p>This is the content for section 1</p>
+                  </div>
+                  <div id="content-div-2" class="selector-content hidden">
+                     <p>This is the content for section 2</p>
+                  </div>
+                  <div id="content-div-3" class="selector-content hidden">
+                     <p>This is the content for section 3</p>
+                  </div>
+                  <div id="content-div-4" class="selector-content hidden">
+                     <p>This is the content for section 4</p>
+                  </div>
+               </div>
+               <!-- bootstrapr-div -->
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <!-- Update Example Panel-->
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Example</button>
+
+               <hr class="well-separator">
+
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="bootstrapr-selector"&gt;
+   &lt;!-- The input selector --&gt;
+   &lt;form&gt;
+      &lt;select class="form-control input-lg" id="selector-1001001"&gt;
+         &lt;option disabled="disabled" value="" selected="selected"&gt;
+         -- Select --
+         &lt;/option&gt;
+         &lt;option value="#content-div-1"&gt;Show section 1&lt;/option&gt;
+         &lt;option value="#content-div-2"&gt;Show section 2&lt;/option&gt;
+         &lt;option value="#content-div-3"&gt;Show section 3&lt;/option&gt;
+         &lt;option value="#content-div-4"&gt;Show section 4&lt;/option&gt;
+      &lt;/select&gt;
+   &lt;/form&gt;
+
+   &lt;!-- The content divs --&gt;
+   &lt;div id="content-div-1" class="selector-content hidden"&gt;
+      &lt;p&gt;This is the content for section 1&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="content-div-2" class="selector-content hidden"&gt;
+      &lt;p&gt;This is the content for section 2&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="content-div-3" class="selector-content hidden"&gt;
+      &lt;p&gt;This is the content for section 3&lt;/p&gt;
+   &lt;/div&gt;
+   &lt;div id="content-div-4" class="selector-content hidden"&gt;
+      &lt;p&gt;This is the content for section 4&lt;/p&gt;
+   &lt;/div&gt;
+&lt;/div&gt;
+&lt;!-- bootstrapr-div --&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>Custom CSS is recommended to add marging and padding to the .</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint lang-css" id="custom-css-code">
+   .bootstrapr-selector > div {
+      padding: 0 1rem;
+   }
+</pre>
+
+            </div>
+            <!-- .well -->
+
+            <h4 class="sub-header">Required JS</h4>
+
+            <p>Custom jQuery is required to hide and show the divs. Make sure to place the function inside a <code>document.ready</code> function.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Beautifier -->
+               <button id="beautify-selector-js" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint" id="custom-js-code" contenteditable="true">
+   $(document).ready(function() {
+      $("#selector-1001001").on("change", function() {
+         $(".bootstrapr-selector div").addClass("hidden");
+         var showDiv = $("#selector-1001001").val();
+         $(showDiv).removeClass("hidden");
+      });
+   });
+</pre>
+
+            </div>
+            <!-- .well -->
+
+            <h4 class="sub-header">Notes</h4>
+            <p>The following notes apply:</p>
+            <div class="alert alert-danger" role="alert">
+               <p>
+                  <i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
+                  <a class="close" data-dismiss="alert" aria-label="close">×</a>
+                  <strong>Keep Selector Sets Unique</strong>
+                  <br>
+                  While you may place multiple selector dropdowns on a page,
+                  <strong>do not</strong>
+                  simply cut and paste the same selector again and again. Make sure to generate each new selector anew, ensuring the random number assigned to each one stays unique and does not conlflict with the other sets on the page.
+               </p>
+            </div>
+
+         </div>
+         <!-- col-sm-9 -->
+      </div>
+      <!-- .row -->
+
+   </div>
+   <!-- .container-fluid -->
+
+
+   <!-- Navbar include -->
+   <div w3-include-html="footer.html"></div>
+
+   <!-- Back-to-top button -->
+   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+   <!-- jQuery Javascript Library (required by Bootstrap) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <!-- jQuery UI Library (optional) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+   <!-- Bootstrap Library -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <!-- Main local script file -->
+   <script src="js/main.js"></script>
+
+   <!-- includes for Google's code highlighter 'prettyprint' -->
+   <link rel="stylesheet" type="text/css" href="css/prettify.css">
+   <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
+
+   <!-- html file include script | used for navbar -->
+   <script src="js/w3data.js"></script>
+   <script>
+      w3IncludeHTML();
+   </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+   <script>
+      $(document).ready(function() {
+
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
+
+         // Add active class to navmenu selection
+         $("#selectors").addClass("active");
+         $("#containers-dropdown").addClass("activated");
+
+         // Reset button
+         $('#clear-selector').on("click", function() {
+            location.reload(true);
+         });
+
+         // If the sample preview input dropdown changes, do this function
+         $("#selector-1001001").on("change", function() {
+            // Hide every content div
+            $(".bootstrapr-selector div").addClass("hidden");
+            // Get the selected option
+            var showDiv = $("#selector-1001001").val();
+            // Unhide the selected option
+            $(showDiv).removeClass("hidden");
+         });
+
+         // Build the code
+         $('#selector-build').click(function() {
+
+            var selectorRando = ~~(Math.random() * 10000000);
+            var selectorDivOpen = '<div class="bootstrapr-selector">';
+            var closingDiv = '</div>';
+            var formOpen = '<form>';
+            var formClose = '</form>';
+            var selectorSize = $("#selector-size").val();
+            var selectOpen = '<select class="form-control' + selectorSize + '" id="selector-' + selectorRando + '">'
+            var selectClose = '</select>';
+            var numSections = $("#num-sections").val();
+            var option = '';
+            var options = '';
+            var content = '';
+            var contents = '';
+            var paragraph = '<p>This is the content for section 1</p>';
+
+            for (i = 0; i < numSections; i++) {
+
+               option = '<option value="#content-div-' + (i + 1) + '">Section' + (i + 1) + '</option>';
+               content = '<div id="content-div-' + (i + 1) + '" class="hidden">' + paragraph + closingDiv;
+
+               if (i == 0 && $('#first-selected').is(':checked')) {
+                  option = '<option value="#content-div-' + (i + 1) + '">Section' + (i + 1) + '</option>';
+                  content = '<div id="content-div-' + (i + 1) + '">' + paragraph + closingDiv;
+               } else if (i == 0 && $('#first-selected').is(':checked')) {
+                  option = '<option disabled="disabled" value="" selected="selected"> -- Select -- </option>';
+               }
+
+               options += option;
+               contents += content;
+
+            }
+
+            // alert(numSections + selectOpen);
+
+
+            var bsSelector = selectorDivOpen + formOpen + selectOpen + options + selectClose + formClose + contents + closingDiv;
+
+            $("#simple-example").html(bsSelector);
+            $('#simple-code').text(bsSelector);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // clipboard button
+         new Clipboard('.btn');
+
+      });
+   </script>
+
+</body>
+
+</html>
