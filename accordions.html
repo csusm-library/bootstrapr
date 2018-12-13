@@ -248,20 +248,33 @@
 
 
 <pre class="prettyprint lang-css" id="custom-css-code">
-/* Adds 'plus' glyph for enabling collapsible panels */
-.panel-heading .accordion-toggle:before {
+/* plus glyph for showing collapsible panels */
+.panel-heading .accordion-plus-toggle:before {
    font-family: FontAwesome;
    content: "\f068";
    float: right;
    color: silver;
 }
 
-.panel-heading .accordion-toggle.collapsed:before {
+.panel-heading .accordion-plus-toggle.collapsed:before {
    content: "\f067";
    color: silver;
 }
 
-/* sets the link to the size of the entire panel title */
+/* arrow glyph for showing collapsible panels */
+.panel-heading .accordion-arrow-toggle:before {
+   font-family: FontAwesome;
+   content: "\f078";
+   float: right;
+   color: silver;
+}
+
+.panel-heading .accordion-arrow-toggle.collapsed:before {
+   content: "\f054";
+   color: silver;
+}
+
+/* sets the link to the width of the entire panel title */
 .panel-title > a {
    display: block;
 }

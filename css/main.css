@@ -584,6 +584,10 @@ ol.linenums li:before{
     width:3em;
 }
 
+.linenums li {
+    list-style-type: decimal;
+}
+
 /* Back to top button */
 
 #topper {
