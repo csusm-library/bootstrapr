@@ -79,6 +79,12 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    font-size: 1rem;
 }
 
+#download-all-css{
+   font-weight: 400;
+   background: #566277;
+   color: white;
+}
+
 .breadcrumb {
    font-size: 1rem;
    background: transparent;
