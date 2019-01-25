@@ -24,6 +24,7 @@ body {
 h1, h2, h3, h4, h5, h6 {
    font-family: "Open Sans", sans-serif;
    color: #474e5f;
+   color: #0f2438;
 }
 
 .sub-header {
@@ -179,7 +180,8 @@ pre {
 }
 
 .navbar-inverse {
-   background: #323744;
+   background: #0f2438;
+   background: #0f2438;
    padding: 2rem;
    color: #474e5f;
    border-radius: 0px;
@@ -438,7 +440,8 @@ margin: 0 2rem -2rem 0 !important;
 }
 
 #page-footer {
-   background: #323744;
+   background: #0f2438;
+   background: #0f2438;
    padding: 2rem;
    color: #474e5f;
    margin-top: 4rem;
@@ -512,7 +515,7 @@ margin: 0 2rem -2rem 0 !important;
 
 .dropdown-menu > .active > a,
 .dropdown-menu > .active > a small {
-   background-color: #474e5f !important;
+   background-color: #20364c !important;
    color: aliceblue;
 }
 
@@ -558,12 +561,13 @@ ol.linenums li {
 }
 
 .well {
-   background: #323744 !important;
+   background: #0f2438 !important;
 }
 
 .prettyprint {
    font-family: "Menlo", "Monaco", "Consolas", monospace !important;
-   background: #fafafa !important;
+   background: #fafafa;
+   background-color: transparent !important;
    border: none !important;
    padding: 10px !important;
    font-size: 15px;
