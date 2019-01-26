@@ -11,7 +11,8 @@ pre .atv, code .atv { color: #65B042 !important; } /* html/xml attribute value -
 pre .dec, code .dec { color: #3387CC !important; } /* decimal - blue */
 
 pre.prettyprint, code.prettyprint {
-	background-color: #0f2438 !important;
+	/* background-color: #0f2438 !important; */
+	background-color: #20364c !important;
 	border-radius: 8px !important;
 }
 

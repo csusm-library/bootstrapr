@@ -441,7 +441,6 @@ margin: 0 2rem -2rem 0 !important;
 
 #page-footer {
    background: #0f2438;
-   background: #0f2438;
    padding: 2rem;
    color: #474e5f;
    margin-top: 4rem;
@@ -561,7 +560,7 @@ ol.linenums li {
 }
 
 .well {
-   background: #0f2438 !important;
+   background: #20364c !important;
 }
 
 .prettyprint {
@@ -640,7 +639,7 @@ ol.linenums li:before{
     padding: 2px 8px;
     font-size: 15px;
     font-weight: bold;
-    background-color: #474E5F;
+    background-color: #20364c;
     color: #FFFFFF !important;
     padding:6px;
     border-radius: 4px 0 4px 0;
