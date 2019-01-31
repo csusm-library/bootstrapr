@@ -320,6 +320,14 @@ pre {
    margin-top: 7.2rem;
 }
 
+.push-right-1 {
+   margin-left: 1rem !important;
+}
+
+.push-right-2 {
+   margin-left: 2rem !important;
+}
+
 /* Add bottom margin to the description lists */
 dd {
    margin-bottom: 1rem;
@@ -389,6 +397,10 @@ input[type="radio"] {
 
 .aliceblue {
    color: aliceblue !important;
+}
+
+.indigo {
+   color: #406885;
 }
 
 .gray,

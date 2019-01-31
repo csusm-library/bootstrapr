@@ -1,0 +1,467 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+   <!-- Metadata for the Webpage -->
+   <meta charset="utf-8">
+   <meta http-equiv="X-UA-Compatible" content="IE=edge">
+   <meta name="viewport" content="width=device-width, initial-scale=1">
+   <title>Bootstrap.r</title>
+
+   <!-- Favicons -->
+   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+   <link rel="manifest" href="/manifest.json">
+   <meta name="msapplication-TileColor" content="#ffffff">
+   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+   <meta name="theme-color" content="#ffffff">
+
+   <!-- Bootstrap CSS files-->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+   <!-- jQuery UI CSS (optional) -->
+   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+   <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
+   <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
+   <!--[if lt IE 9]>
+      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+    <![endif]-->
+
+   <!-- Google web fonts -->
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+   <!--<link href="https://fonts.googleapis.com/css?family=Source+Serif+Pro:400,600" rel="stylesheet">-->
+
+   <!-- Font Awesome Web Icons -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+   <!-- Main local stylesheet -->
+   <link rel="stylesheet" href="css/main.css">
+
+   <!-- Prettify theme -->
+   <link rel="stylesheet" href="css/prettify-theme.css">
+
+   <!-- Spectrum Color picker CSS -->
+   <link rel='stylesheet' href='css/spectrum.css' />
+
+   <style>
+
+/* Add border so that we can visualize the stucture of the columns */
+.sample-content .col-sm-1,
+.sample-content .col-sm-4,
+.sample-content .col-sm-3,
+.sample-content .col-sm-6,
+.sample-content .col-sm-8,
+.sample-content .col-sm-9 {
+   border: .5px solid #ddd;
+}
+
+   </style>
+
+
+</head>
+
+<body id="top">
+
+   <!-- Navbar include -->
+   <div w3-include-html="navbar.html"></div>
+
+   <div class="container main-content">
+
+      <div class="row add-100">
+         <div class="col-sm-6">
+            <ol class="breadcrumb hidden">
+               <li><a href="index.html">Home</a></li>
+               <li class="active">Page</li>
+            </ol>
+         </div>
+         <!-- col-sm-8 -->
+         <div class="col-sm-6">
+            <p class="pull-right">
+               <a href="https://getbootstrap.com/docs/3.3/getting-started/#template" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| Page templates</small></a>
+            </p>
+         </div>
+         <!-- col-sm-4-->
+      </div>
+      <!-- .row -->
+
+      <div class="row">
+         <div class="col-sm-12">
+            <h1>Pages</h1>
+            <p class="lead">All bootstrap pages are built on a 12-column grid.</p>
+            <p>Use the generator below to create the skeleton for a simple Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs into the main-content <code>&lt;div&gt;</code>.</p>
+         </div>
+      </div>
+
+      <hr class="divider">
+
+      <div class="row">
+
+         <div class="col-sm-3">
+
+            <form>
+
+               <div class="form-group">
+                  <label for="icon-shape">Serve Bootstrap</label> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Serving Files</h5><hr><p>You may choose to serve your Bootstrap and jQuery files locally on your website, or load them from a remote server, or CDN (Content Delivery Network).</p><p>As long as you typically have internet connectivity, <a href='https://www.fastly.com/blog/why-you-should-use-content-delivery-network' target='_blank'>CDNs are preferred</a>.</p>"><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a>
+                  <select class="form-control" id="serve-bootstrap">
+                     <option value="cdn" selected="selected">From a CDN</option>
+                     <option value="locally">Locally</option>
+                  </select>
+               </div>
+
+               <div class="form-group push-down-1">
+                  <label for="icon-shape">Navbar</label>
+                  <select class="form-control" id="navbar-type">
+                     <option value="">None</option>
+                     <option value="standard" selected="selected">Standard</option>
+                     <option value="full-width">Full-width</option>
+                  </select>
+               </div>
+
+               <div class="form-group push-down-1 push-right-1">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="navbar-inverse"> Inverse
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group push-down-1">
+                  <label for="icon-shape">Jumbotron</label>
+                  <select class="form-control" id="jumbotron-type">
+                     <option value="">No jumbotron</option>
+                     <option id="jumbo-centered" value="centered" selected="selected">Centered jumbotron</option>
+                     <option id="jumbo-full" value="full-width">Full-width jumbotron</option>
+                  </select>
+               </div>
+
+              <div class="form-group">
+                  <label for="icon-shape">Main Content</label>
+                  <select class="form-control" id="main-content">
+                     <option value="container" selected="selected">Centered</option>
+                     <option value="container-fluid">Full-width</option>
+                  </select>
+               </div>
+
+               <div class="form-group push-down-1 push-right-1">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="include-sample"> Include sample content
+                     </label>
+                  </div>
+               </div>
+
+               <div class="form-group">
+                  <label for="icon-shape">Footer</label>
+                  <select class="form-control" id="footer-setting">
+                     <option value="">None</option>
+                     <option value="standard" selected="selected">Standard</option>
+                     <!-- <option value="sticky">Sticky</option> -->
+                  </select>
+               </div>
+
+            </form>
+
+            <div class="push-down-3">
+               <button type="button" class="btn btn-default" id="clear-page"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary" id="display-page"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            </div>
+
+
+         </div>
+         <!-- .col-sm-3 -->
+         <div class="col-sm-9">
+
+            <div class="example" id="simple-example">
+
+               <p class="text-center indigo">
+               <i class='fa fa-fw fa-file-code-o fa-5x'></i>
+               </p>
+               <p class="text-center indigo"><strong>Click &lsquo;Build&rsquo; to Render Preview</strong></p>
+
+            </div>
+            <!-- example -->
+
+            <div class="well">
+
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Save -->
+               <button id="save-page" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
+
+               <hr class="well-separator">
+
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;!DOCTYPE html&gt;
+&lt;html lang="en"&gt;
+   &lt;head&gt;
+
+      &lt;!-- Metadata for the Webpage --&gt;
+      &lt;meta charset="utf-8"&gt;
+      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+      &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+      &lt;title&gt;Title&lt;/title&gt;
+
+      &lt;!-- Bootstrap CSS files--&gt;
+      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+
+   &lt;/head&gt;
+   &lt;body&gt;
+
+      &lt;!-- This is where your body content goes... --&gt;
+
+      &lt;!-- jQuery Javascript Library (required by Bootstrap) --&gt;
+      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+
+      &lt;!-- Bootstrap Library --&gt;
+      &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+
+   &lt;/body&gt;
+&lt;/html&gt;
+</pre>
+
+            </div>
+            <!-- well closes -->
+
+            <h4 class="sub-header">Custom CSS / JS</h4>
+
+            <p>The Bootstrap 3.3.7 framework requires the jQuery libraries. If above you chose to serve Bootstrap from a CDN, <strong>these are already included</strong> in the generated HTML. If you chose to serve the files locally, you will need to first <a href="https://jquery.com/" target="_blank">download jQuery</a>, and <a href="https://getbootstrap.com/docs/3.3/getting-started/#download" target="_blank">download Bootstrap</a>. Then include the following code and point it at the appropriate files.</p>
+
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint lang-html" id="custom-css-code">
+&lt;!-- Bootstrap CSS — Place before closing tag of &lt;/HEAD&gt; element --&gt;
+&lt;link rel="stylesheet" href="your-website-path-to/bootstrap.min.css"&gt;
+
+
+&lt;!-- jQuery &amp; Bootstrap javascript — Place before closing tag of &lt;/BODY&gt; element --&gt;
+&lt;script src="your-website-path-to/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="your-website-path-to/bootstrap.min.js"&gt;&lt;/script&gt;
+</pre>
+
+            </div>
+            <!-- .well -->
+
+
+         </div>
+         <!-- .col-sm-9 -->
+
+
+      </div>
+
+
+   </div>
+   <!-- .container-fluid -->
+
+
+   <!-- Navbar include -->
+   <div w3-include-html="footer.html"></div>
+
+   <!-- Back-to-top button -->
+   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+   <!-- jQuery Javascript Library (required by Bootstrap) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+   <!-- jQuery UI Library (optional) -->
+   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+   <!-- Filesaver -->
+   <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
+
+   <!-- Bootstrap Library -->
+   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+   <!-- Main local script file -->
+   <script src="js/main.js"></script>
+
+   <!-- includes for Google's code highlighter 'prettyprint' -->
+   <link rel="stylesheet" type="text/css" href="css/prettify.css">
+   <script type="text/javascript" src="js/prettify.js"></script>
+
+   <!-- html file include script | used for navbar -->
+   <script src="js/w3data.js"></script>
+   <script>
+      w3IncludeHTML();
+   </script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
+
+   <script>
+      $(document).ready(function() {
+
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
+
+         // Add active class to navmenu selection
+         $("#pages").addClass("activated");
+
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+
+         $('#display-page').click(function() {
+
+            var doctype = '<!DOCTYPE html><html lang="en"><head><!-- Metadata for the Webpage --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Title</title>';
+
+            var serveBootstrap = $('#serve-bootstrap').val();
+            var footerSetting = $('#footer-setting').val();
+            var navbar = $('#navbar-type').val();
+            var navbarInverse = $('#navbar-inverse').val();
+            var navbarType = "";
+            var includeSample = $('#include-sample').val();
+            var jumbotronType = $('#jumbotron-type').val();
+            var bodyOpen = "<body>";
+            var bodyClose = "</body>";
+            var htmlClose = "</html>";
+
+            var headClose = "</head>";
+
+            var serveCSS = "";
+            var serveJS = "";
+            var sample = "";
+            var fullWidthJumbotron = "";
+            var centeredJumbotron = "";
+            var navCentered = "";
+            var navWide = "";
+
+            var header = "";
+            var nav = "";
+            var mainContent = "";
+            var footer = "";
+
+            var mainContentOpen = '<div class="' + $('#main-content').val() + '">';
+            var mainContentClose = "</div>";
+
+            if (serveBootstrap == "cdn") {
+               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
+               serveJS = '<!-- jQuery Javascript Library -->&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;';
+            } else {
+               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="your-website-path-to/bootstrap.min.css">';
+               serveJS = '<!-- jQuery Javascript Library -->&lt;script src="your-website-path-to/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="your-website-path-to/bootstrap.min.js"&gt;&lt;/script&gt;';
+            }
+
+            if ($('#navbar-inverse').is(":checked")) {
+               navbarType = "navbar-inverse";
+            } else {
+               navbarType = "navbar-default";
+            }
+
+            if (navbar == "standard") {
+               navCentered = '<!-- This is the jumbotron --><nav class="navbar ' + navbarType + '"><div class="container-fluid"><!-- Brand and toggle get grouped for better mobile display --><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">Brand</a></div> <!-- Collect the nav links, forms, and other content for toggling --><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav"><li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li><li><a href="#">Link</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="#">Action</a></li><li><a href="#">Another action</a></li><li><a href="#">Something else here</a></li><li role="separator" class="divider"></li><li><a href="#">Separated link</a></li><li role="separator" class="divider"></li><li><a href="#">One more separated link</a></li></ul></li></ul><form class="navbar-form navbar-left"><div class="form-group"><input type="text" class="form-control" placeholder="Search"></div><button type="submit" class="btn btn-default">Submit</button></form><ul class="nav navbar-nav navbar-right"><li><a href="#">Link</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="#">Action</a></li><li><a href="#">Another action</a></li><li><a href="#">Something else here</a></li><li role="separator" class="divider"></li><li><a href="#">Separated link</a></li></ul></li></ul></div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav>';
+               navWide = "";
+            } else if (navbar == "full-width") {
+               navWide = '<!-- This is the jumbotron --><nav class="navbar ' + navbarType + '"><div class="container-fluid"><!-- Brand and toggle get grouped for better mobile display --><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">Brand</a></div> <!-- Collect the nav links, forms, and other content for toggling --><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav"><li class="active"><a href="#">Link <span class="sr-only">(current)</span></a></li><li><a href="#">Link</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="#">Action</a></li><li><a href="#">Another action</a></li><li><a href="#">Something else here</a></li><li role="separator" class="divider"></li><li><a href="#">Separated link</a></li><li role="separator" class="divider"></li><li><a href="#">One more separated link</a></li></ul></li></ul><form class="navbar-form navbar-left"><div class="form-group"><input type="text" class="form-control" placeholder="Search"></div><button type="submit" class="btn btn-default">Submit</button></form><ul class="nav navbar-nav navbar-right"><li><a href="#">Link</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Dropdown <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="#">Action</a></li><li><a href="#">Another action</a></li><li><a href="#">Something else here</a></li><li role="separator" class="divider"></li><li><a href="#">Separated link</a></li></ul></li></ul></div><!-- /.navbar-collapse --></div><!-- /.container-fluid --></nav>';
+               navCentered = '';
+            } else {
+               navWide = "";
+               navCentered = "";
+            }
+
+            if ($('#include-sample').is(":checked")) {
+               sample = '<h1>This is a sample Page</h1><p>Below find common column widths.</p><div class="row sample-content"><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div><div class="col-sm-1">.col-sm-1</div></div><div class="row sample-content"><div class="col-sm-8">.col-sm-8</div><div class="col-sm-4">.col-sm-4</div></div><div class="row sample-content"><div class="col-sm-4">.col-sm-4</div><div class="col-sm-4">.col-sm-4</div><div class="col-sm-4">.col-sm-4</div></div><div class="row sample-content"><div class="col-sm-6">.col-sm-6</div><div class="col-sm-6">.col-sm-6</div></div><div class="row sample-content"><div class="col-sm-3">.col-sm-3</div><div class="col-sm-9">.col-sm-9</div></div>';
+            } else {
+               sample = "";
+            }
+
+         if (jumbotronType == "centered") {
+            centeredJumbotron = '<!-- Jumbotron --><div class="jumbotron"><div class="container"><h1>Hello, world!</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p><p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p></div></div>';
+            fullWidthJumbotron = '';
+         } else if (jumbotronType == "full-width") {
+            fullWidthJumbotron = '<!-- Jumbotron --><div class="jumbotron"><div class="container"><h1>Hello, world!</h1><p>Lorem ipsum dolor sit amet, consectetur adipisicing.</p><p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more</a></p></div></div>';
+            centeredJumbotron = '';
+         } else {
+            fullWidthJumbotron = '';
+            centeredJumbotron = '';
+         }
+
+         if (footerSetting == "standard") {
+            footer = '<footer class="footer"><div class="container"><hr><p class="text-muted">Place footer content here.</p></div></footer>';
+         } else {
+            footer = '';
+         }
+
+
+            var bsPage = doctype + serveCSS + headClose + bodyOpen + navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer + serveJS + bodyClose + htmlClose;
+
+            var bsPreview = bodyOpen + navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer + serveJS + bodyClose;
+
+            // This is needed to be able to insert the script element
+            theCode = bsPage.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
+            thePreview = bsPreview.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
+            bsPage = theCode;
+            bsPreview = thePreview;
+
+            // $("#simple-example").html(bsPage);
+            $('#simple-example').html(bsPreview);
+            $('#simple-code').text(bsPage);
+
+            $('pre').removeClass('prettyprinted');
+            prettyPrint();
+
+         });
+
+         // Do not allow full width page and centered jumbotron
+         // $('#main-content').on('change', function() {
+         //    if ($("#main-content").val() == "container" && $("#jumbotron-type").val() == "full-width" ) {
+         //       $("#jumbotron-type").val("centered");
+         //    } else if ($("#main-content").val() == "container-fluid" && $("#jumbotron-type").val() == "centered") {
+         //       $("#jumbotron-type").val("full-width");
+         //    }
+         // });
+         //
+         // $('#jumbotron-type').on('change', function() {
+         //    if ($("#main-content").val() == "container" && $("#jumbotron-type").val() == "full-width" ) {
+         //       $("#jumbotron-type").val("centered");
+         //    } else if ($("#main-content").val() == "container-fluid" && $("#jumbotron-type").val() == "centered") {
+         //       $("#jumbotron-type").val("full-width");
+         //    }
+         // });
+
+
+         $('#clear-page').click(function() {
+            location.reload(true);
+         });
+
+         // clipboard button
+         new Clipboard('.btn');
+
+         // Save button
+         $("#save-page").on("click", function() {
+            var blob = new Blob([$("#simple-code").text()], {
+               type: "text/txt;charset=utf-8"
+            });
+            saveAs(blob, "bootstrap-page.html");
+         });
+
+      });
+   </script>
+
+</body>
+
+</html>
