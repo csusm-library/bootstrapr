@@ -106,7 +106,16 @@
             <p class="lead">All bootstrap pages are built on a 12-column grid.</p>
             <p>Use the generator below to create the skeleton for a simple Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs into the main-content <code>&lt;div&gt;</code>.</p>
 
-               <p>The Bootstrap 3.3.7 framework requires the jQuery libraries. If above you choose to serve Bootstrap from a CDN, <strong>these will be already included</strong> in the generated HTML. If you choose to serve the files locally, you will need to <a href="https://jquery.com/" target="_blank">download jQuery</a> and <a href="https://getbootstrap.com/docs/3.3/getting-started/#download" target="_blank">download Bootstrap</a> and place the files somewhere sensible in your project directory.</p>
+            <div class="alert alert-default" role="alert">
+	<p>
+		<i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i>
+		<a class="close" data-dismiss="alert" aria-label="close">×</a>
+		<strong>Required Libraries</strong>
+		<br>
+		Bootstrap 3.3.7 framework requires the jQuery libraries. If you choose to serve Bootstrap from a CDN, these will be linked to in the generated HTML. If you choose to serve the files locally, you will need to download both jQuery and Bootstrap libraries and place them somewhere sensible in your project directory.
+	</p>
+</div>
+
          </div>
       </div>
 
@@ -126,7 +135,16 @@
                   </select>
                </div>
 
-               <div class="form-group push-down-1">
+               <div id="download-div" class="form-group push-down-1 push-right-1 hidden">
+                  <p>
+                     <small><a href="https://jquery.com/" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download jQuery</a></small>
+                  </p>
+                  <p>
+                     <small><a href="https://getbootstrap.com/docs/3.3/getting-started/#download" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download Bootstrap</a></small>
+                  </p>
+               </div>
+
+               <div class="form-group push-down-2">
                   <label for="icon-shape">Navbar</label>
                   <select class="form-control" id="navbar-type">
                      <option value="">None</option>
@@ -192,9 +210,9 @@
             <div class="example" id="simple-example">
 
                <p class="text-center indigo">
-               <i class='fa fa-fw fa-file-code-o fa-5x'></i>
+               <i class='fa fa-fw fa-save fa-5x'></i>
                </p>
-               <p class="text-center indigo"><strong>Click &lsquo;Build&rsquo; to Render Preview</strong></p>
+               <p class="text-center indigo"><strong>Click &lsquo;Save Page&rsquo; to download<br>and preview in a browser</strong></p>
 
             </div>
             <!-- example -->
@@ -207,6 +225,10 @@
 
                <!-- Save -->
                <button id="save-page" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
+
+               <!-- Beautifier -->
+               <!-- <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+               </button> -->
 
                <hr class="well-separator">
 
@@ -223,6 +245,12 @@
 
       &lt;!-- Bootstrap CSS files--&gt;
       &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+
+      &lt;!-- Google Open Sans web font --&gt;
+      &lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"&gt;
+
+      &lt;!-- Font Awesome Web Icons --&gt;
+      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
 
    &lt;/head&gt;
    &lt;body&gt;
@@ -277,6 +305,7 @@
    <!-- includes for Google's code highlighter 'prettyprint' -->
    <link rel="stylesheet" type="text/css" href="css/prettify.css">
    <script type="text/javascript" src="js/prettify.js"></script>
+   <script type="text/javascript" src="js/lang-css.js"></script>
 
    <!-- html file include script | used for navbar -->
    <script src="js/w3data.js"></script>
@@ -335,10 +364,10 @@
             var mainContentClose = "</div>";
 
             if (serveBootstrap == "cdn") {
-               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">';
+               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
                serveJS = '<!-- jQuery Javascript Library -->&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;';
             } else {
-               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="your-website-path-to/bootstrap.min.css">';
+               serveCSS = '<!-- Bootstrap CSS files--><link rel="stylesheet" href="your-website-path-to/bootstrap.min.css"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
                serveJS = '<!-- jQuery Javascript Library -->&lt;script src="your-website-path-to/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="your-website-path-to/bootstrap.min.js"&gt;&lt;/script&gt;';
             }
 
@@ -382,23 +411,31 @@
             footer = '';
          }
 
-
             var bsPage = doctype + serveCSS + headClose + bodyOpen + navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer + serveJS + bodyClose + htmlClose;
 
-            var bsPreview = bodyOpen + navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer + serveJS + bodyClose;
+            // var bsPreview = navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer;
 
             // This is needed to be able to insert the script element
             theCode = bsPage.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
-            thePreview = bsPreview.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
+            // thePreview = bsPreview.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
             bsPage = theCode;
-            bsPreview = thePreview;
+            // bsPreview = thePreview;
 
-            // $("#simple-example").html(bsPage);
-            $('#simple-example').html(bsPreview);
+            // $('#simple-example').html(bsPreview);
             $('#simple-code').text(bsPage);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
+
+         });
+
+         // Show the download links on choose to serve files Locally
+         $('#serve-bootstrap').on('change', function() {
+            if ($("#serve-bootstrap").val() == "locally") {
+               $("#download-div").hide().removeClass("hidden").fadeIn();
+            } else {
+               $("#download-div").fadeOut();
+            }
 
          });
 
