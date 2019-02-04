@@ -18,7 +18,8 @@ html, body {
 
 body {
   line-height: 1.4rem; /* 30px / 20px = 1.5 */
-  background: #fbfbfb;
+  /* background: #fbfbfb; */
+  background: #F6FAFE;
 }
 
 h1, h2, h3, h4, h5, h6 {
