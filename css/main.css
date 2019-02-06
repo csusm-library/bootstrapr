@@ -19,7 +19,7 @@ html, body {
 body {
   line-height: 1.4rem; /* 30px / 20px = 1.5 */
   /* background: #fbfbfb; */
-  background: #F6FAFE;
+  background: #f5f5f5;
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -234,6 +234,11 @@ pre {
 .btn-code-well:active,
 .btn-code-well:focus {
    background: #474e5f;
+   color: white;
+}
+
+code {
+   background-color: slategray;
    color: white;
 }
 
