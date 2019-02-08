@@ -58,12 +58,12 @@
 
       <div class="row add-100">
          <div class="col-sm-6">
-            <ol class="breadcrumb hidden">
+            <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
                <li class="active">Code Wells</li>
             </ol>
          </div>
-         <!-- col-sm-8 -->
+         <!-- col-sm-6 -->
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#code" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
@@ -79,7 +79,7 @@
             <h1>Code Wells</h1>
             <p class="lead">Code wells display computer languages in a highly readable format.</p>
             <p>Code Wells are rendered with the <code>&lt;pre&gt;</code> element. Google's Prettify package is used to color-code the output. Unlike other HTML elements, the <code>&lt;pre&gt;</code> element preserves all spacing exactly as you type
-               it. In most cases, the tool will autodetect your language and color the code accordingly. In certain cases, such as CSS, you may have to specify it by selecting from the dropdown.</p>
+               it. In most cases, the tool will autodetect your language and color the code accordingly.</p>
 
          </div>
       </div>
@@ -190,7 +190,7 @@ $( document ).ready(function() {
                      aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
                <hr class="well-separator">
 
@@ -207,9 +207,9 @@ ol.linenums li {
 
 
             <h4 class="sub-header">Notes</h4>
-            <p>The following notes apply:</p>
 
-            <div class='alert alert-info' role='alert'>
+
+            <div class='alert alert-info push-down-1' role='alert'>
                <p><i class="fa fa-fw fa-code" aria-hidden="true"></i><a class='close' data-dismiss='alert' aria-label='close'>×</a><strong>Theme Colors</strong><br />There are many color themes available for syntax highlighting. I have used Google's
                   dark theme <a href="https://github.com/google/code-prettify/blob/master/styles/sunburst.css">sunburst.css</a>. For more themes, see <a href="https://rawgit.com/google/code-prettify/master/styles/index.html" target="_blank">this
                      theme gallery</a> or <a href="https://jmblog.github.io/color-themes-for-google-code-prettify/" target="_blank">this other theme gallery</a>.</p>
@@ -226,7 +226,7 @@ ol.linenums li {
                <tbody>
                   <tr>
                      <td style="width: 10%">1</td>
-                     <td style="width: 80%">Inlcude a link to a cloud-hosted <code>prettify.js</code> file within the <code>&lt;head&gt;</code> element of your HTML file.
+                     <td style="width: 80%">Inlcude a link to a cloud-hosted <strong>prettify.js</strong> file within the <code>&lt;head&gt;</code> element of your HTML file.
 <pre class='prettyprint lang-html' id="well-step0">
 &lt;script src="https://cdn.rawgit.com/google/code-prettify/master/loader/run_prettify.js"&gt;&lt;/script&gt;
 </pre>

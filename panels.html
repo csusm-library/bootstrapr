@@ -58,12 +58,12 @@
 
       <div class="row add-100">
          <div class="col-sm-6">
-            <ol class="breadcrumb hidden">
+            <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
                <li class="active">Panels</li>
             </ol>
          </div>
-         <!-- col-sm-8 -->
+         <!-- col-sm-6 -->
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/components/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
@@ -183,17 +183,15 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class='panel panel-default'&gt;
-   &lt;div class='panel-heading'&gt;
-      &lt;h5 class='panel-title'&gt;
-         Panel Title
-      &lt;/h5&gt;
-   &lt;/div&gt;
-   &lt;div class='panel-body'&gt;
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="panel panel-default"&gt;
+	&lt;div class="panel-heading"&gt;
+		&lt;h5 class="panel-title"&gt;Panel Title&lt;/h5&gt;
+	&lt;/div&gt;
+	&lt;div class="panel-body"&gt;
       Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?
    &lt;/div&gt;
-   &lt;div class='panel-footer'&gt;
+	&lt;div class="panel-footer"&gt;
       Footer content
    &lt;/div&gt;
 &lt;/div&gt;
@@ -206,6 +204,8 @@
 
 
             <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading styles.</p>
+
+            <p>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
             <p>The 'example' panel requires additional CSS.</p>
 
             <div class="well">
@@ -213,7 +213,7 @@
                <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
@@ -253,15 +253,6 @@ h1, h2, h3, h4, h5, h6 {
 
             </div>
             <!-- .well -->
-
-            <h4 class="sub-header">Notes</h4>
-            <p>The following notes apply:</p>
-
-            <div class="alert alert-info">
-            <p><i class="fa fa-fw fa-exclamation-circle"></i> <strong>Panel Title</strong><br>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
-            </div>
-
-
 
          </div>
          <!-- col-sm-9 -->

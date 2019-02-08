@@ -58,12 +58,12 @@
 
       <div class="row add-100">
          <div class="col-sm-6">
-            <ol class="breadcrumb hidden">
+            <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
                <li class="active">Tables</li>
             </ol>
          </div>
-         <!-- col-sm-8 -->
+         <!-- col-sm-6 -->
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
@@ -142,7 +142,7 @@
 
                <div class="checkbox">
                   <label>
-                     <input type="checkbox" id="someBordered"> Some Borders<br /><small class="descriptor">recommended</small>
+                     <input type="checkbox" id="someBordered"> Some Borders<br /><span class="descriptor"> |recommended</span>
                   </label>
                </div>
 
@@ -276,13 +276,13 @@
                      aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
 
 
-               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Set styles for the Steps column */
 .numbered-steps tr td:first-of-type {
    padding: 3px;
@@ -326,10 +326,10 @@ caption .summary {
             <!-- .well -->
 
             <h4 class="sub-header">Notes</h4>
-            <p>The following notes apply:</p>
+
+            <p>Accent your table rows and cells by adding alternate background colors based on these Bootstrap classes.</p>
 
             <table class='table'>
-               <caption>Accent your data<br><span class="summary">Alternate background colors based on Bootstrap classes.</span></caption>
                <thead></thead>
                <tbody>
                   <tr class="active">
@@ -438,7 +438,7 @@ caption .summary {
 
          // Add active class to navmenu selection
          $("li#tables").addClass("active");
-         $("#containers-dropdown").addClass("activated");
+         $("#features-dropdown").addClass("activated");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");

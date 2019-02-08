@@ -17,7 +17,7 @@ html, body {
 }
 
 body {
-  line-height: 1.4rem; /* 30px / 20px = 1.5 */
+  line-height: 1.6rem; /* 30px / 20px = 1.5 */
   /* background: #fbfbfb; */
   background: #f5f5f5;
 }
@@ -29,7 +29,7 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .sub-header {
-   margin-top: 5rem;
+   margin-top: 3.5rem;
 }
 
 /* navbar classes */
@@ -73,6 +73,7 @@ h1, h2, h3, h4, h5, h6 {
 p {
    font-size: 1rem;
    margin-bottom: 1rem;
+   line-height: 1.6;
 }
 
 p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
@@ -90,6 +91,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 .breadcrumb {
    font-size: 1rem;
    background: transparent;
+   margin-top: -1rem;
 }
 
 .homepage hr {
@@ -142,6 +144,10 @@ pre {
 
 .well button {
    margin: 0 .5rem !important;
+}
+
+.well a:hover, .panel-title a:hover {
+   border-bottom: 0px !important;
 }
 
 /* Adds margin bottom to the images */
@@ -240,6 +246,7 @@ pre {
 code {
    background-color: slategray;
    color: white;
+   padding: 4px 6px;
 }
 
 .example {
@@ -297,13 +304,21 @@ code {
 .navbar-inverse .navbar-nav > .active > a:hover,
 .navbar-inverse .navbar-nav > .active > a:active {
    background: white !important;
-   color: #474E5F;
+   color: #2A5DB0;
    border-bottom: none;
 }
 
 .dropdown-menu {
    border-top: 0;
    margin-right:-1px;
+}
+
+.pull-up-1 {
+   margin-top: -1rem !important;
+}
+
+.pull-up-2 {
+   margin-top: -2rem !important;
 }
 
 .push-down-1 {
@@ -421,6 +436,7 @@ input[type="radio"] {
 .three-hunnit {
    font-weight: 400 !important;
 }
+
 .descriptor {
    color: gray;
    font-variant: small-caps !important;
@@ -692,7 +708,7 @@ ol.linenums li:before{
 }
 
 .table-hover>tbody>tr:hover {
-   background-color: aliceblue;
+   background-color: gainsboro;
 }
 
 .icon-grid td {
@@ -742,4 +758,10 @@ caption .summary {
 /* Add padding on selector content area */
 .bootstrapr-selector > div {
    padding: 0 1rem;
+}
+
+/* Add a border-bottom to links in the main content panel, rather than a text-decoration underline */
+.main-content a:hover {
+   border-bottom: 1px dashed #337ab7;
+   text-decoration: none;
 }
