@@ -20,8 +20,8 @@ body {
   line-height: 1.6rem; /* 30px / 20px = 1.5 */
   /* background: #fbfbfb; */
   /* background: #f5f5f5; */
-  /* background: #f5f9fc; */
-  background: #f2f5fa; 
+  background: #f5f9fc;
+  /* background: #f2f5fa; */
 }
 
 h1, h2, h3, h4, h5, h6 {
@@ -243,12 +243,6 @@ pre {
 .btn-code-well:focus {
    background: #474e5f;
    color: white;
-}
-
-code {
-   background-color: slategray;
-   color: white;
-   padding: 4px 6px;
 }
 
 .example {
