@@ -280,6 +280,11 @@ pre {
    color: white;
 }
 
+.photo-credit {
+   color: aliceblue;
+   opacity: .5;
+}
+
 .black {
    color: black;
 }
@@ -330,6 +335,10 @@ pre {
 
 .push-down-5 {
    margin-top: 5rem !important;
+}
+
+.page-divider {
+   margin-bottom: 3rem;
 }
 
 .push-down-jumbotron {
@@ -465,7 +474,7 @@ input[type="radio"] {
 }
 
 #photo-attribution {
-margin: 0 2rem -2rem 0 !important;
+   margin: 0 2rem -2rem 0 !important;
 }
 
 #page-footer {
