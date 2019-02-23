@@ -101,10 +101,11 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <p class="pull-right push-down-2"><span class='label label-large label-info'>Alpha</span></p>
             <h1>Pages</h1>
             <p class="lead">All bootstrap pages are built on a 12-column grid.</p>
-            <p>Use the generator below to create the skeleton for a simple Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs into the main-content <code>&lt;div&gt;</code>. I have also included an include for the Font Awesome 4 library, as well as the Open Sans Google Web font.</p>
+            <p>Use the generator below to create the skeleton for a simple Bootstrap page. Next add Bootstrap <strong>Containers</strong> and <strong>Features</strong> components into the main-content <code>&lt;div&gt;</code>.</p>
+
+            <p>For extended customization options, including  we recommend using <a href="http://www.initializr.com/" target="_blank">Initializr (with the Bootstrap option)</a>. For convenience, I have also included links to the Font Awesome 4 library and the 'Open Sans' Google Web font.</p>
 
          </div>
       </div>
@@ -228,7 +229,7 @@
                      aria-hidden="true"></i> Copy</button>
 
                <!-- Save -->
-               <button id="save-page" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
+               <button id="save-page" class="btn btn-code-well text-center" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
 
                <!-- Beautifier -->
                <!-- <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
@@ -236,7 +237,7 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
    &lt;head&gt;
@@ -246,6 +247,10 @@
       &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
       &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
       &lt;title&gt;Title&lt;/title&gt;
+
+      &lt;!-- HTML5 Shim --&gt;
+      &lt;!-- NOTE: Respond.js doesn't work viewing page via file:// --&gt;
+      &lt;!--[if lt IE 9]&gt;&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"&gt;&lt;/script&gt;&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
 
       &lt;!-- Bootstrap CSS files--&gt;
       &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
@@ -351,7 +356,7 @@
          $('#display-page').click(function() {
 
             var doctype =
-               '<!DOCTYPE html><html lang="en"><head><!-- Metadata for the Webpage --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Title</title>';
+               '<!DOCTYPE html><html lang="en"><head><!-- Metadata for the Webpage --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Title</title><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn\'t work if you view the page via file:// --><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script><script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script><![endif]-->';
 
             var serveBootstrap = $('#serve-bootstrap').val();
             var footerSetting = $('#footer-setting').val();
@@ -448,7 +453,7 @@
             bsPage = theCode;
             // bsPreview = thePreview;
 
-            // $('#simple-example').html(bsPreview);
+            // $('#simple-example').html(bsPage);
             $('#simple-code').text(bsPage);
 
             $('pre').removeClass('prettyprinted');

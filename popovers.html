@@ -50,15 +50,6 @@
    <!-- Spectrum Color picker CSS -->
    <link rel='stylesheet' href='css/spectrum.css' />
 
-   <style>
-
-      /* Adds a top margin to the jumbotron button for better readability */
-   .jumbotron .btn {
-      margin-top: 1.5rem;
-   }
-
-   </style>
-
 </head>
 
 <body id="top">
@@ -72,14 +63,14 @@
          <div class="col-sm-6">
             <ol class="breadcrumb">
                <li><a href="index.html">Home</a></li>
-               <li class="active">Jumbotrons</li>
+               <li class="active">Popovers</li>
             </ol>
          </div>
          <!-- col-sm-6 -->
          <div class="col-sm-6">
             <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/css/#jumbotron" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-                  Boostrap 3.3.7 <small id="docs-link">| jumbotrons</small></a>
+               <a href="https://getbootstrap.com/docs/3.3/javascript/#popovers" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+                  Boostrap 3.3.7 <small id="docs-link">| Popovers</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -88,11 +79,10 @@
 
       <div class="row">
          <div class="col-sm-12">
-            <h1>Jumbotrons</h1>
-            <p class="lead">Jumbotrons create a prominent visual introductory focus to a page.</p>
-            <p>Jumbotrons are an introductory feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and the aesthetic dimension approaches distraction for the user.</p>
-            <p>You may choose an image background or a colored background. The default background color is grey. You should aim for an image roughly <strong>1000px wide x 300px tall</strong>. Expect some image cropping, depending on device size and
-               orientation.</p>
+            <h1>Popovers</h1>
+            <p class="lead">Popovers hide and show ancillary information.</p>
+            <p>Analogous to footnotes, popovers provide ancillary information in context and at point of need. Clicking on the popover icon will show an information box which can be hidden simply by clicking elsewhere on the page. Choose the
+               direction in which the popover renders (top, bottom, left or right).</p>
          </div>
       </div>
 
@@ -105,139 +95,40 @@
             <form>
 
                <div class="form-group">
-                  <label>Jumbotron Width</label>
-                  <select class="form-control" id="jumbo-width">
-                     <option value="regular-size" selected="selected">Regular Width</option>
-                     <option value="full-size">Full Width</option>
-                  </select>
-               </div>
-               <p class="alert alert-warning hidden" id="full-size-warning">Remember to place full-width Jumbotrons <strong>outside</strong> the main <code>.container</code> div.</p>
-
-
-               <div class="form-group">
-                  <hr>
-                  <label style="margin-top:0em;" for="button-size">Background</label>
-                  <select class="form-control" id="jumbotron-background">
-                     <option selected="selected" value="image">Image</option>
-                     <option value="hex">Custom Hex Color </option>
-                     <option value="" disabled="disabled">- - - - - - - - - - - - - -</option>
-                     <option value="default">Default &mdash; light grey</option>
-                     <option value="blue">Primary &mdash; blue</option>
-                     <option value="info">Info &mdash; light blue</option>
-                     <option value="success">Success &mdash; green</option>
-                     <option value="warning">Warning &mdash; yellow</option>
-                     <option value="danger">Danger &mdash; red</option>
+                  <label>Popover Alignment</label>
+                  <select class="form-control" id="popover-alignment">
+                     <option value="top" selected="selected">Top</option>
+                     <option value="bottom">Bottom</option>
+                     <option value="right">Right</option>
+                     <option value="left">Left</option>
                   </select>
                </div>
 
-               <div class="form-group" id="image-selection-div">
-                  <label for="image-url">Image URL</label> | <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='_blank'>LibGuides Image Library</a></li></ul>">
-                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small>Find Image</small></a>
-                  <div class="input-group">
-                     <span class="input-group-addon" id="refresh-button1"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                     <input type="text" class="form-control" id="image-url">
-                  </div>
-                  <span class="placeholder">Example | http://web.com/image.png</span>
+               <div class="form-group">
+                  <label for="alert-text">Popover Title <span class="descriptor"> |optional</span></label>
+                  <input type="text" class="form-control" id="alert-title">
                </div>
 
-               <div class="hidden" id="background-color-hex-input">
-                  <label for="button-text" id="hex-color-label">Hex Color <a id="color-codes-popover" tabindex="5" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Use named colors too!</h5><hr><p>Modern browsers support 140 named colors. You may type either hex values or named colors into this field.</p><p><a href='https://htmlcolorcodes.com/color-names/' target='_blank'><i class='fa fa-external-link-square fa-fw' aria-hidden='true'></i> View HTML Color Codes</a></p>"
-                        data-original-title="" title="">
-                        <i class="fa fa-info-circle" aria-hidden="true"></i>
-                     </a></label>
-
-                  <div class="form-group" id="background-color-hex-input">
-                     <label>Background Color</label>
-                     <div id="picker" class="input-group">
-                        <!-- .colorpicker-component -->
-                        <input id="background-color" type="text" class="form-control" />
-                     </div>
-                  </div>
-
-               </div>
-               <hr>
 
                <div class="form-group">
-                  <label for="button-text">Jumbotron Title</label>
-                  <input type="text" class="form-control" id="jumbotron-title">
-                  <span class="placeholder">Example | Africana Studies</span>
+                  <label for="blockquote-quote">Popover Text</label>
+                  <textarea id="body-text" class="form-control" rows="5"></textarea>
+                  <p style="margin:2px 0px 0px 3px" id="add-lorem"><a><small><i class="fa fa-font fa-fw" aria-hidden="true"></i> Use Lorem Ipsum</small></a></p>
                </div>
 
-               <div class="form-group">
-                  <label for="button-text">Jumbotron Subtitle</label>
-                  <input type="text" class="form-control" id="jumbotron-subtitle">
-                  <span class="placeholder">Example | The problematics of...</span>
-
-               </div>
-
-               <div class="form-group" id="bg-colored">
-                  <label>Titles Color</label>
-                  <div id="picker" class="input-group">
-                     <!-- .colorpicker-component -->
-                     <input id="color-picker" type="text" class="form-control" />
-                  </div>
-               </div>
-
-               <!-- checkbox here -->
-               <div class="form-group">
-                  <div class="checkbox" style="margin-top: 20px;">
-                     <label>
-                        <input type="checkbox" id="text-shadow"> Text Shadow
-                     </label>
-                  </div>
-               </div>
-
-               <hr>
-
-               <div class="form-group">
-                  <label for="panel-accent">Button Color</label>
-                  <select class="form-control" id="button-color">
-                     <option value="no button" selected="selected">No Button</option>
-                     <option value=" btn-secondary-dark">Transparent &mdash; black</option>
-                     <option value=" btn-secondary-light">Transparent &mdash; white</option>
-                     <option value=" btn-primary">Primary &mdash; blue</option>
-                     <option value=" btn-info">Info &mdash; light blue</option>
-                     <option value=" btn-success">Success &mdash; green</option>
-                     <option value=" btn-warning">Warning &mdash; yellow</option>
-                     <option value=" btn-danger">Danger &mdash; red</option>
-                  </select>
-               </div>
-
-               <div class="form-group hidden" id="button-title-group">
-                  <label for="button-title">Button Title</label>
-                  <input type="text" class="form-control" id="button-title" placeholder="Learn More">
-               </div>
-
-               <div class="form-group hidden" id="button-alignment-div">
-                  <label style="margin-top:0em;" for="button-size">Button Alignment</label>
-                  <select class="form-control" id="button-alignment">
-                     <option selected="selected" value="text-left">Left</option>
-                     <option value="text-center">Center</option>
-                     <option value="text-right">Right</option>
-                  </select>
-               </div>
-
-               <label for="icon-html" id="optional-icon-hider">Icon <span class="descriptor">| optional</span></label>
+               <label for="icon-html" id="optional-icon-hider">Icon or Text</label>
                <div class="input-group">
                   <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                   <input type="text" class="form-control" id="button-icon">
                </div>
-               <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a></p>
-
-               <div class="form-group hidden" id="button-url-group">
-                  <label for="button-url">Button URL</label>
-                  <div class="input-group">
-                     <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-                     <input type="text" class="form-control" id="button-url" placeholder="http://url.com">
-                  </div>
-               </div>
+               <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a> | <a id="default-icon"><small>Set Default</small></a></p>
 
             </form>
 
 
             <div class="push-down-3">
                <button type="button" class="btn btn-default" id="clear-jumbotron"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="display-jumbotron"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-primary" id="display-popover"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
             </div>
 
 
@@ -247,18 +138,11 @@
 
             <div class="example" id="simple-example">
 
-
-               <div class="jumbotron" style="background-size: cover; background-image: url(&quot;https://libapps.s3.amazonaws.com/accounts/38465/images/Africana-mini.jpg&quot;);">
-                  <h1 style="color:#FFFFFF;text-shadow: 1px 1px gray;" class="jumbotronic">Africana Studies</h1>
-                  <h6 style=" text-shadow: 1px 1px gray; color:#FFFFFF">The Problematics of Race, Class and Gender</h6>
-                  <p class="text-left">
-                     <a class="btn btn-danger btn-lg" href="" target="_blank" role="button">
-                        <i class="fa fa-fw fa-graduation-cap" aria-hidden="true"></i>
-                        Course Page
-                     </a>
-                  </p>
-               </div>
-
+               <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+                  <a tabindex="-1" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-title="Lorem Ipsum" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cumque vitae facilis velit sunt doloribus.">
+                     <i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>
+                  </a>
+               </p>
 
             </div>
             <!-- example -->
@@ -278,67 +162,46 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class="jumbotron" style="background-size: cover; background-image: url(&quot;https://libapps.s3.amazonaws.com/accounts/38465/images/Africana-mini.jpg&quot;);"&gt;
-   &lt;h1 style="color:#FFFFFF;text-shadow: 1px 1px gray;" class="jumbotronic"&gt;Africana Studies&lt;/h1&gt;
-   &lt;h6 style=" text-shadow: 1px 1px gray; color:#FFFFFF"&gt;The Problematics of Race, Class and Gender&lt;/h6&gt;
-   &lt;p class="text-left"&gt;
-      &lt;a class="btn btn-danger btn-lg" href="" target="_blank" role="button"&gt;
-         &lt;i class="fa fa-fw fa-graduation-cap" aria-hidden="true"&gt;&lt;/i&gt;
-         Course Page
-      &lt;/a&gt;
-   &lt;/p&gt;
-&lt;/div&gt;
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.
+   &lt;a tabindex="-1" role="button" data-container="body" data-toggle="popover" data-trigger="focus" data-placement="top" data-title="Lorem Ipsum" data-content="Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium animi cumque vitae facilis velit sunt doloribus."&gt;
+      &lt;i class="fa fa-fw fa-info-circle" aria-hidden="true"&gt;&lt;/i&gt;
+   &lt;/a&gt;
+&lt;/p&gt;
 </pre>
 
             </div>
             <!-- well closes -->
 
-            <h4 class="sub-header">Custom CSS</h4>
 
-            <p>You may wish to add the <code>.text-shadow</code> class to add contrast to the heading and parapgraph elements. You may also with to add some top margin to the button with the <code>.margin-top</code> class. You might use classes such
-               as the <code>.btn-secondary-dark</code> and <code>.btn-secondary-light</code> to create transparent buttons.</p>
+            <div class="hidden">
+               <h4 class="sub-header">Custom CSS</h4>
 
-            <div class="well">
-               <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                     aria-hidden="true"></i> Copy</button>
+               <p>If you wish to add a link inside your popover, you may wish to specify that the anchor tag <code>&lt;a&gt;</code> inherits the size of the container popover.</p>
 
-               <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
+               <div class="well">
+                  <!-- Copier-->
+                  <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                        aria-hidden="true"></i> Copy</button>
+
+                  <!-- Update Example Panel-->
+                  <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                        aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
-               <hr class="well-separator">
+                  <hr class="well-separator">
 
 
 <pre class="prettyprint lang-css" id="custom-css-code">
-/* Adds text shadow to make the text inside the jumbotron pop */
-.jumbotron p,
-.jumbotron h1 {
-   text-shadow: 2px 2px 1px black;
-}
-
-/* Adds a top margin to the jumbotron button for better readability */
-.jumbotron .btn {
-   margin-top: 1.5rem;
-}
-
-/* Transparent buttons */
-.btn-secondary-dark {
-    color: #000000;
-    background-color: transparent;
-    border-color: #000000;
-}
-
-.btn-secondary-light {
-   color: #FFFFFF;
-   background-color: transparent;
-   border-color: #FFFFFF;
-}
+   [data-toggle="popover"] {
+      font-size: inherit;
+   }
 </pre>
 
+
+               </div>
+               <!-- .well -->
             </div>
-            <!-- .well -->
 
          </div>
          <!-- .col-sm-9 -->
@@ -6476,286 +6339,55 @@
    <script>
       $(document).ready(function() {
 
-         // Color picker by Brian Grinstead (maintained by Brian Grinstead at http://bgrins.github.io/spectrum/)
-
-         $("#color-picker").spectrum({
-            color: "#337ab7",
-            showInput: true,
-            className: "full-spectrum",
-            showInitial: true,
-            showPalette: true,
-            showSelectionPalette: true,
-            maxSelectionSize: 10,
-            preferredFormat: "hex",
-            localStorageKey: "spectrum.demo",
-            move: function(color) {
-
-            },
-            show: function() {
-
-            },
-            beforeShow: function() {
-
-            },
-            hide: function() {
-
-            },
-            change: function() {
-
-            },
-            palette: [
-               ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
-                  "rgb(204, 204, 204)", "rgb(217, 217, 217)", "rgb(255, 255, 255)"
-               ],
-               ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
-                  "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"
-               ],
-               ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
-                  "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
-                  "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
-                  "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
-                  "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
-                  "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
-                  "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
-                  "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
-                  "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
-                  "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"
-               ]
-            ]
-         });
-
-         $("#background-color").spectrum({
-            color: "#337ab7",
-            showInput: true,
-            className: "full-spectrum",
-            showInitial: true,
-            showPalette: true,
-            showSelectionPalette: true,
-            maxSelectionSize: 10,
-            preferredFormat: "hex",
-            localStorageKey: "spectrum.demo",
-            move: function(color) {
-
-            },
-            show: function() {
-
-            },
-            beforeShow: function() {
-
-            },
-            hide: function() {
-
-            },
-            change: function() {
-
-            },
-            palette: [
-               ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
-                  "rgb(204, 204, 204)", "rgb(217, 217, 217)", "rgb(255, 255, 255)"
-               ],
-               ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
-                  "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"
-               ],
-               ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
-                  "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
-                  "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
-                  "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
-                  "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
-                  "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
-                  "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
-                  "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
-                  "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
-                  "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"
-               ]
-            ]
-         });
-
          // The searchable bootstrap table
          $('#bootstrap-table').bdt();
          $('#search').css("width", "400px").css("margin-top", "0").parent().css("height", "3.6rem").prepend("<i style='opacity: .2' class='pull-left fa fa-search fa-2x'></i>");
 
-         // clear the image url button
-         $('#refresh-button1').click(function() {
-            $('#image-url').val('');
-            $('#jumbotron-background').val('default');
-         });
-
-         // clear the button color
-         $('#refresh-button2').click(function() {
-            $('#button-url').val('');
-         });
-
          // clear the icon
-         $('#refresh-button3').click(function() {
+         $('#refresh-button').click(function() {
             $('#button-icon').val('');
-         });
-
-         // Write black to the color field
-         $('#select-black').click(function() {
-            $('#color-picker').val("#000000")
-         });
-
-         // Write color to the color field
-         $('#select-white').click(function() {
-            $('#color-picker').val("#FFFFFF")
          });
 
          // tooltips function
          $('[data-toggle="tooltip"]').tooltip();
 
          // Add active class to navmenu selection
-         $("li#jumbotrons").addClass("active");
+         $("li#popovers").addClass("active");
          $("#features-dropdown").addClass("activated");
 
          // Add the brand name to the navbar on all sub-pages
          $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
-         $("#jumbo-width").on('change', function() {
-            if ($("#jumbo-width").val() == "regular-size") {
-               $("#full-size-warning").fadeOut();
-            } else {
-               $("#full-size-warning").hide().removeClass("hidden").fadeIn();
-            }
-         });
+         $("#button-icon").val("<i class='fa fa-fw fa-info-circle' aria-hidden='true'></i>");
 
-         $('#display-jumbotron').on("click", function() {
+         $('#display-popover').on("click", function() {
 
-            var imageURL = $('#image-url').val();
-            var jumbotronBackground = $('#jumbotron-background').val();
-            var jumbotronTitle = $('#jumbotron-title').val();
-            var jumbotronSubtitle = $('#jumbotron-subtitle').val();
-            var buttonURL = $('#button-url').val();
-            var buttonColor = $('#button-color').val();
-            var buttonTitle = $('#button-title').val();
-            var buttonIcon = $('#button-icon').val();
-            var textColor = $('#color-picker').val();
-            var setBackground = '';
-            var addImage = '';
-            var customColor = $('#background-color').val();
-            var textShadow = '';
-            var buttonAlignment = $('#button-alignment').val();
-            var jumboButton = '';
-            var jumboWidth = $('#jumbo-width').val();
-            var containerOpen = "";
-            var containerClose = "";
+            var buttonIcon = $("#button-icon").val();
+            var alertTitle = $("#alert-title").val();
+            var popoverAlignment = $("#popover-alignment").val();
+            var bodyText = $("#body-text").val();
 
-            if ($('#text-shadow').is(':checked')) {
-               textShadow = "text-shadow: 1px 1px gray;";
-            } else {
-               textShadow = "";
-            }
-
-            if (jumboWidth == "regular-size") {
-               containerOpen = "";
-               containerClose = "";
-            } else {
-               containerOpen = "<div class='container'>";
-               containerClose = "</div>";
-            }
-
-            switch (jumbotronBackground) {
-               // base lines
-               case 'none':
-                  setBackground = 'default';
-                  break;
-               case 'default':
-                  setBackground = '#eeeeee';
-                  break;
-               case 'hex':
-                  setBackground = customColor;
-                  break;
-
-                  // Bootstrap Colors
-               case 'info':
-                  setBackground = '#d9edf7';
-                  break;
-               case 'success':
-                  setBackground = '#dff0d8';
-                  break;
-               case 'warning':
-                  setBackground = '#fcf8e3';
-                  break;
-               case 'danger':
-                  setBackground = '#f2dede';
-                  break;
-               case 'blue':
-                  setBackground = '#2c76c8';
-                  break;
-            }
-
-            if (imageURL !== "") {
-               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
-            } else {
-               addImage = " style='background:" + setBackground + "'";
-            }
-
-            if (buttonColor == 'no button') {
-               jumboButton = "";
-            } else {
-               jumboButton = "<p class='" + buttonAlignment + "'><a class='btn" + buttonColor + "' href='" + buttonURL + "' target='_blank' role='button'>" + buttonIcon + " " + buttonTitle + "</a></p>";
-            }
-
-            var jumboOpening = "<div class='jumbotron'" + addImage + ">";
-            var jumboMiddle = "<h1 style='color:" + textColor + ";" + textShadow + "' class='jumbotronic'>" + jumbotronTitle + "</h1><h6 style=' " + textShadow + " color:" + textColor + "'>" + jumbotronSubtitle + "</h6>";
-            var jumboClosing = "</div>";
+            var openingParagraph = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. ";
+            var anchorElement = "<a tabindex='0' role='button' data-html='true' data-container='body' data-toggle='popover' data-trigger='focus' data-placement='" + popoverAlignment + "' data-title='" + alertTitle + "' data-content='" + bodyText + "'> " + buttonIcon + "</a>";
+            var closingParagraph = "</p>";
 
             // Write the table
-            var bsJumbotron = jumboOpening + containerOpen + jumboMiddle + jumboButton + containerClose + jumboClosing;
+            var bsPopover = openingParagraph + anchorElement + closingParagraph;
 
-            $("#simple-example").html(bsJumbotron);
-            $('#simple-code').text(bsJumbotron);
+            $("#simple-example").html(bsPopover);
+            $('#simple-code').text(bsPopover);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
+
+            // popover function
+            $('[data-toggle="popover"]').popover();
 
          });
 
          // Clear the Jumbotron
          $('#clear-jumbotron').click(function() {
             location.reload(true);
-         });
-
-
-         // show background color input
-         $("#jumbotron-background").on('change', function() {
-            if ($('#jumbotron-background').val() == 'image') {
-               $("#image-selection-div").removeClass("hidden");
-               $('#background-color-hex-input').addClass('hidden');
-            } else if ($('#jumbotron-background').val() == 'hex') {
-               $("#image-selection-div").addClass("hidden");
-               $("#hex-color-label").addClass("hidden");
-               $('#background-color-hex-input').removeClass('hidden');
-            } else {
-               $("#image-selection-div").addClass("hidden");
-               $('#background-color-hex-input').addClass('hidden');
-            }
-         });
-
-         $('#image-url').on('change', function() {
-
-            if ($('#image-url').val() !== '') {
-               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
-               $('#jumbotron-background').val('image');
-               $('#background-color-hex-input').addClass('hidden');
-            } else {
-               addImage = " style='background:" + setBackground + "'";
-            }
-         });
-
-         $('#button-color').on('change', function() {
-
-            if ($('#button-color').val() == 'no button') {
-               $('#button-title-group').addClass('hidden');
-               $('#button-url-group').addClass('hidden');
-               $('#button-alignment-div').addClass('hidden');
-               $('#optional-icon-hider').addClass('hidden');
-
-            } else {
-               $('#button-title-group').removeClass('hidden');
-               $('#button-url-group').removeClass('hidden');
-               $('#button-alignment-div').removeClass('hidden');
-               $('#optional-icon-hider').removeClass('hidden');
-            }
          });
 
          // Select the icon from the modal
@@ -6766,6 +6398,16 @@
             iconValue = "";
             $('#icons-modal').modal('hide');
          });
+
+         $('#default-icon').on('click', function() {
+            $('#button-icon').val('<i class="fa fa-fw fa-info-circle" aria-hidden="true"></i>');
+         });
+
+         $('#add-lorem').on('click', function() {
+            $('#body-text').val('Lorem ipsum dolor sit amet, consectetur adipisicing elit. Repellendus porro non laborum omnis accusamus, dolores consequatur placeat et officia ullam molestiae, doloremque reprehenderit repellat dolor adipisci at. Nesciunt, perferendis, autem.');
+         });
+
+
 
          // clipboard button
          new Clipboard('.btn');

@@ -137,6 +137,11 @@ $(document).ready(function() {
 
       $('pre').removeClass('prettyprinted');
       prettyPrint();
+
+      // popover function
+      $('[data-toggle="popover"]').popover();
+
+
    });
 
    // Popovers for the information icons -- this allows multiple popovers per page
