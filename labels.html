@@ -36,8 +36,10 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
+   <!-- Animations.css stylesheet -->
+   <link rel="stylesheet" href="css/animations.css">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -68,7 +70,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/components/#labels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-   Boostrap 3.3.7 <small id="docs-link">| labels</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| labels</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -99,21 +101,21 @@
                <div class="form-group">
                   <label for="label-color">Color</label>
                   <select class="form-control" id="label-color">
-                        <option value=" label-default" selected="selected">Default &mdash; grey</option>
-                        <option value=" label-primary">Primary &mdash; standard blue</option>
-                        <option value=" label-info">Information &mdash; light blue</option>
-                        <option value=" label-success">Success &mdash; green</option>
-                        <option value=" label-warning">Warning &mdash; yellow</option>
-                        <option value=" label-danger">Danger &mdash; red</option>
-                     </select>
+                     <option value=" label-default" selected="selected">Default &mdash; grey</option>
+                     <option value=" label-primary">Primary &mdash; standard blue</option>
+                     <option value=" label-info">Information &mdash; light blue</option>
+                     <option value=" label-success">Success &mdash; green</option>
+                     <option value=" label-warning">Warning &mdash; yellow</option>
+                     <option value=" label-danger">Danger &mdash; red</option>
+                  </select>
                </div>
 
                <div class="form-group">
                   <label for="label-size">Size</label>
                   <select class="form-control" id="label-size">
-                        <option value="large-sized">Large</option>
-                        <option value="normal-sized" selected="selected">Normal</option>
-                        <option value="small-sized">Small</option>
+                     <option value="large-sized">Large</option>
+                     <option value="normal-sized" selected="selected">Normal</option>
+                     <option value="small-sized">Small</option>
                   </select>
                </div>
 
@@ -140,18 +142,20 @@
             <div class="well" contenteditable="true">
 
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Beautifier -->
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-                  </button>
+               </button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Example</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Example</button>
 
                <hr class="well-separator">
 
-<pre class="prettyprint" id="simple-code">
+               <pre class="prettyprint" id="simple-code">
 &lt;span class='label label-danger label-large'&gt;Large&lt;/span&gt;
 &lt;span class='label label-info'&gt;Normal&lt;/span&gt;
 &lt;span class='label label-success label-small'&gt;Small&lt;/span&gt;
@@ -165,16 +169,18 @@
 
             <div class="well">
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                     aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
 
 
-<pre class="prettyprint lang-css" id="custom-css-code">
+               <pre class="prettyprint lang-css" id="custom-css-code">
 .label-large {
    font-size: large;
 }
@@ -232,7 +238,7 @@
    <script src="js/clipboard.min.js"></script>
 
    <!-- Animations JS -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -254,7 +260,7 @@
             var labelText = $('#label-text').val();
             var smallSized = '';
             var largeSized = '';
-            var realSize  = '';
+            var realSize = '';
 
             if (labelSize == "normal-sized") {
                var realSize = "";
@@ -287,9 +293,6 @@
          new Clipboard('.btn');
 
       });
-
-
-
    </script>
 
 </body>

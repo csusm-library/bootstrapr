@@ -36,8 +36,10 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
+   <!-- Animations.css stylesheet -->
+   <link rel="stylesheet" href="css/animations.css">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -68,7 +70,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/components/#panels" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| panels</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| panels</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -92,26 +94,26 @@
 
                <label for="card-num-columns"># Columns</label>
                <select class="form-control" id="card-num-columns" style="width: 75px">
-                   <option value="0">1</option>
-                   <option value="2">2</option>
-                   <option value="3">3</option>
-                   <option value="4">4</option>
-                   <option value="6">6</option>
+                  <option value="0">1</option>
+                  <option value="2">2</option>
+                  <option value="3">3</option>
+                  <option value="4">4</option>
+                  <option value="6">6</option>
                </select>
 
                <label for="panel-accent" class="push-down-1">Accent Color</label>
                <select class="form-control" id="panel-accent">
-                   <option value=" panel-default" selected="selected">Default &mdash; grey</option>
-                   <option value=" panel-primary">Primary &mdash; blue</option>
-                   <option value=" panel-info">Info &mdash; light blue</option>
-                   <option value=" panel-success">Success &mdash; green</option>
-                   <option value=" panel-warning">Warning &mdash; yellow</option>
-                   <option value=" panel-danger">Danger &mdash; red</option>
+                  <option value=" panel-default" selected="selected">Default &mdash; grey</option>
+                  <option value=" panel-primary">Primary &mdash; blue</option>
+                  <option value=" panel-info">Info &mdash; light blue</option>
+                  <option value=" panel-success">Success &mdash; green</option>
+                  <option value=" panel-warning">Warning &mdash; yellow</option>
+                  <option value=" panel-danger">Danger &mdash; red</option>
                </select>
 
                <div class="checkbox push-down-1">
                   <label>
-                  <input type="checkbox" id="add-example"> Example
+                     <input type="checkbox" id="add-example"> Example
                   </label>
                </div>
 
@@ -119,20 +121,20 @@
 
                <div class="checkbox push-down-1">
                   <label>
-                   <input type="checkbox" id="panel-header"> Header
-                   </label>
+                     <input type="checkbox" id="panel-header"> Header
+                  </label>
                </div>
 
                <div class="checkbox push-down-1">
                   <label>
-                    <input type="checkbox" id="panel-footer"> Footer
-                    </label>
+                     <input type="checkbox" id="panel-footer"> Footer
+                  </label>
                </div>
 
                <div class="checkbox push-down-1">
                   <label>
-                    <input type="checkbox" id="embedded-list"> Embedded List
-                    </label>
+                     <input type="checkbox" id="embedded-list"> Embedded List
+                  </label>
                </div>
 
                <div class="form-group hidden push-down-1" id="hide-show-list-num">
@@ -142,8 +144,8 @@
 
                <div class="checkbox push-down-1 hidden" id="hyperlink-hide-show">
                   <label>
-                <input type="checkbox" id="has-links"> Hyperlinks
-                </label>
+                     <input type="checkbox" id="has-links"> Hyperlinks
+                  </label>
                </div>
 
             </form>
@@ -164,7 +166,8 @@
             <div class="example" id="simple-example">
                <div class='panel panel-default'>
                   <div class='panel-heading'>
-                     <h5 class='panel-title'>Panel Title</h5></div>
+                     <h5 class='panel-title'>Panel Title</h5>
+                  </div>
                   <div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>
                   <div class='panel-footer'>Footer content</div>
                </div>
@@ -173,18 +176,20 @@
             <div class="well">
 
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Beautifier -->
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
                </button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Example</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Example</button>
 
                <hr class="well-separator">
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;div class="panel panel-default"&gt;
 	&lt;div class="panel-heading"&gt;
 		&lt;h5 class="panel-title"&gt;Panel Title&lt;/h5&gt;
@@ -203,23 +208,27 @@
 
             <h4 class="sub-header">Custom CSS</h4>
 
-            <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading styles.</p>
+            <p>Custom CSS is not required for the <code>.panel-title</code> div, but you may wish to ensure your headers are made bold elsewhere in your CSS styles. You may also need to add <code>!important</code> to override Bootstrap's heading
+               styles.</p>
 
-            <p>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the <code>&lt;H5&gt;</code> but will override its size property.</p>
+            <p>Per the option in the Bootstrap documentation, I've embedded the panel title inside an <code>&lt;H5&gt;</code> element. Remember that the <code>.panel-title</code> class will take the font-weight property (in this case, bold) for the
+               <code>&lt;H5&gt;</code> but will override its size property.</p>
             <p>The 'example' panel requires additional CSS.</p>
 
             <div class="well">
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                     aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
 
 
-<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Bold Headers */
 h1, h2, h3, h4, h5, h6 {
    font-weight: bold !important;
@@ -301,7 +310,7 @@ h1, h2, h3, h4, h5, h6 {
    </script>
 
    <!-- Animations JS -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -390,29 +399,29 @@ h1, h2, h3, h4, h5, h6 {
 
          $('#display-cards').click(function() {
 
-               var panelAccent = $('#panel-accent').val();
-               var panelFooter = '';
-               var panelHeader = '';
-               var closingDiv = "</div>";
-               var cardNumColumns = $('#card-num-columns').val();
-               var cardColumnWrapper = '';
-               var numberListItems = $("#number-list-items").val();
-               var listItemDiv = '';
-               var fullList = '';
-               var listOpen = "<ul class='list-group'>";
-               var listClose = "</ul>";
+            var panelAccent = $('#panel-accent').val();
+            var panelFooter = '';
+            var panelHeader = '';
+            var closingDiv = "</div>";
+            var cardNumColumns = $('#card-num-columns').val();
+            var cardColumnWrapper = '';
+            var numberListItems = $("#number-list-items").val();
+            var listItemDiv = '';
+            var fullList = '';
+            var listOpen = "<ul class='list-group'>";
+            var listClose = "</ul>";
 
-               if ( $('#embedded-list').is(':checked') && $('#has-links').is(':checked') ) {
-                  for (i = 0; i < numberListItems; i++) {
-                     listItemDiv += "<li class='list-group-item text-left'><a href='#'>List Item " + (i + 1) + "</a></li>";
-                  }
-               } else {
-                  for (i = 0; i < numberListItems; i++) {
-                     listItemDiv += "<li class='list-group-item text-left'>List Item " + (i + 1) + "</li>";
-                  }
+            if ($('#embedded-list').is(':checked') && $('#has-links').is(':checked')) {
+               for (i = 0; i < numberListItems; i++) {
+                  listItemDiv += "<li class='list-group-item text-left'><a href='#'>List Item " + (i + 1) + "</a></li>";
                }
+            } else {
+               for (i = 0; i < numberListItems; i++) {
+                  listItemDiv += "<li class='list-group-item text-left'>List Item " + (i + 1) + "</li>";
+               }
+            }
 
-               fullList = listOpen + listItemDiv + listClose;
+            fullList = listOpen + listItemDiv + listClose;
 
             if ($('#panel-header').is(':checked')) {
                panelHeader = "<div class='panel-heading'><h5 class='panel-title'>Panel Title</h5></div>";
@@ -427,7 +436,8 @@ h1, h2, h3, h4, h5, h6 {
             }
 
             var panelBegin = "<div class='panel" + panelAccent + addExample + "'>";
-            var panelBody = "<div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>" +
+            var panelBody =
+               "<div class='panel-body'>Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis perspiciatis delectus nihil magni?</div>" +
                fullList;
 
             // Write the table
@@ -478,8 +488,6 @@ h1, h2, h3, h4, h5, h6 {
          new Clipboard('.btn');
 
       });
-
-
    </script>
 
 </body>

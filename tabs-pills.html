@@ -36,8 +36,10 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
+   <!-- Animations.css stylesheet -->
+   <link rel="stylesheet" href="css/animations.css">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -68,7 +70,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#tabs" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
- Boostrap 3.3.7 <small id="docs-link">| tabs</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| tabs</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -93,8 +95,8 @@
                <label for="list-type">Tabs or Pills?</label>
                <div class="form-group">
                   <select class="form-control" id="tabPill">
-                      <option value="nav-tabs" selected>Tabs</option>
-                      <option value="nav-pills">Pills</option>
+                     <option value="nav-tabs" selected>Tabs</option>
+                     <option value="nav-pills">Pills</option>
                   </select>
                </div>
 
@@ -103,37 +105,37 @@
                   <input type="text" class="form-control" id="numTabs" placeholder="" name="numTabs" style="width:100px;">
                </div>
 
-                  <label for="list-type">Horizontal or Vertical</label>
-                  <div class="form-group">
-                     <select class="form-control" id="horizontalVertical">
-                            <option value="" selected>Horizontal</option>
-                            <option value="nav-stacked" id="option-vertical" disabled>Vertical</option>
-                     </select>
-                  </div>
+               <label for="list-type">Horizontal or Vertical</label>
+               <div class="form-group">
+                  <select class="form-control" id="horizontalVertical">
+                     <option value="" selected>Horizontal</option>
+                     <option value="nav-stacked" id="option-vertical" disabled>Vertical</option>
+                  </select>
+               </div>
 
-                  <label for="list-type" id="alignment-control-label">Alignment</label>
-                  <div id="alignment-control" class="form-group">
-                     <select class="form-control" id="alignment">
-                         <option value="" selected>Left</option>
-                         <option value="nav-justified">Justified</option>
-                     </select>
-                  </div>
+               <label for="list-type" id="alignment-control-label">Alignment</label>
+               <div id="alignment-control" class="form-group">
+                  <select class="form-control" id="alignment">
+                     <option value="" selected>Left</option>
+                     <option value="nav-justified">Justified</option>
+                  </select>
+               </div>
 
-                  <div class="form-group push-down-2" id="fadeInControl">
-                     <div class="checkbox">
-                        <label>
-                     <input type="checkbox" id="fade-in"> Tabs fade in
+               <div class="form-group push-down-2" id="fadeInControl">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="fade-in"> Tabs fade in
                      </label>
-                     </div>
                   </div>
+               </div>
 
-                  <div class="form-group hidden push-down-2" id="columnControl">
-                     <div class="checkbox">
-                        <label>
-                           <input type="checkbox" id="twoColumns"> 2 Columns
-                        </label>
-                     </div>
+               <div class="form-group hidden push-down-2" id="columnControl">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="twoColumns"> 2 Columns
+                     </label>
                   </div>
+               </div>
 
             </form>
 
@@ -159,16 +161,20 @@
 
                <!-- Tab panes: These contain the content which is hidden/shown -->
                <div class="tab-content">
-                  <div role="tabpanel" class="tab-pane active" id="tab1"><h6>TAB ONE content</h6>
+                  <div role="tabpanel" class="tab-pane active" id="tab1">
+                     <h6>TAB ONE content</h6>
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Officiis sed eligendi laborum quaerat dolorum officia deleniti dolor eos explicabo. Blanditiis voluptates officiis nesciunt vero laborum minima nihil iusto cumque nam?</p>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="tab2"><h6>TAB TWO content</h6>
+                  <div role="tabpanel" class="tab-pane" id="tab2">
+                     <h6>TAB TWO content</h6>
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero consequatur iste nam cumque, voluptatibus dicta ducimus officiis aliquam qui atque, quis fugiat ullam ad a. Aliquid sit sed perspiciatis minima.</p>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="tab3"><h6>TAB THREE content</h6>
+                  <div role="tabpanel" class="tab-pane" id="tab3">
+                     <h6>TAB THREE content</h6>
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Asperiores, optio aliquam velit eius facilis sed repudiandae, nostrum repellat nihil, sit nobis culpa vitae! Quos praesentium sed itaque iste, animi vero?</p>
                   </div>
-                  <div role="tabpanel" class="tab-pane" id="tab4"><h6>TAB FOUR content</h6>
+                  <div role="tabpanel" class="tab-pane" id="tab4">
+                     <h6>TAB FOUR content</h6>
                      <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quaerat, nihil nemo voluptatem quisquam ullam consequatur quas aliquam temporibus similique provident architecto itaque ea porro a, cum ipsam, harum commodi
                         perspiciatis!</p>
                   </div>
@@ -179,18 +185,20 @@
             <div class="well" contenteditable="true">
 
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Beautifier -->
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-                  </button>
+               </button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Example</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Example</button>
 
                <hr class="well-separator">
 
-<pre class="prettyprint" id="simple-code">
+               <pre class="prettyprint" id="simple-code">
 &lt;!-- Nav tabs: The 'links' which point to the 'tab panel' containers --&gt;
 &lt;ul class="nav nav-tabs" role="tablist"&gt;
    &lt;!-- Standard Tabs --&gt;
@@ -217,16 +225,18 @@
 
             <div class="well">
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                     aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
 
 
-<pre class="prettyprint lang-css" id="custom-css-code">
+               <pre class="prettyprint lang-css" id="custom-css-code">
 /* Adds padding around the content inside each tab panel */
 .tab-pane {
    padding: 1rem;
@@ -302,7 +312,7 @@
    <script src="js/clipboard.min.js"></script>
 
    <!-- Animations JS -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -413,28 +423,28 @@
 
          $('#twoColumns').on('change', function() {
 
-               if ($('#twoColumns').is(":checked")) {
-                  $("#horizontalVertical").val("nav-stacked");
-                  $("#alignment").val("");
-               } else {
-                  $("#horizontalVertical").val("");
-               }
+            if ($('#twoColumns').is(":checked")) {
+               $("#horizontalVertical").val("nav-stacked");
+               $("#alignment").val("");
+            } else {
+               $("#horizontalVertical").val("");
+            }
          });
 
          $('#horizontalVertical').on('change', function() {
 
-               if ($('#horizontalVertical').val() == "") {
-                  $("#twoColumns").prop('checked', false);
-               } else {
-                  $("#twoColumns").prop('checked', true);
-               }
+            if ($('#horizontalVertical').val() == "") {
+               $("#twoColumns").prop('checked', false);
+            } else {
+               $("#twoColumns").prop('checked', true);
+            }
          });
 
          $('#alignment').on('change', function() {
 
-               if ($('#alignment').val() == "nav-justified") {
-                  $("#twoColumns").prop('checked', false);
-               }
+            if ($('#alignment').val() == "nav-justified") {
+               $("#twoColumns").prop('checked', false);
+            }
          });
 
          $('#tabPill').on('change', function() {

@@ -36,8 +36,10 @@
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
+   <!-- Animations.css stylesheet -->
+   <link rel="stylesheet" href="css/animations.css">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -190,36 +192,36 @@
             <div class="example" id="simple-example">
 
                <table class="table table-striped">
-               <caption>
-               	Table Caption Here
-               	<br>
-               	<span class="summary">Table summary goes here</span>
-               </caption>
-               <thead>
-               	<tr>
-               		<th style="width:20%;">Heading 1</th>
-               		<th style="width:20%;">Heading 2</th>
-               		<th style="width:60%;">Heading 3</th>
-               	</tr>
-               </thead>
-               <tbody>
-               	<tr>
-               		<td>content</td>
-               		<td>content</td>
-               		<td>content</td>
-               	</tr>
-               	<tr>
-               		<td>content</td>
-               		<td>content</td>
-               		<td>content</td>
-               	</tr>
-               	<tr>
-               		<td>content</td>
-               		<td>content</td>
-               		<td>content</td>
-               	</tr>
-               </tbody>
-            </table>
+                  <caption>
+                     Table Caption Here
+                     <br>
+                     <span class="summary">Table summary goes here</span>
+                  </caption>
+                  <thead>
+                     <tr>
+                        <th style="width:20%;">Heading 1</th>
+                        <th style="width:20%;">Heading 2</th>
+                        <th style="width:60%;">Heading 3</th>
+                     </tr>
+                  </thead>
+                  <tbody>
+                     <tr>
+                        <td>content</td>
+                        <td>content</td>
+                        <td>content</td>
+                     </tr>
+                     <tr>
+                        <td>content</td>
+                        <td>content</td>
+                        <td>content</td>
+                     </tr>
+                     <tr>
+                        <td>content</td>
+                        <td>content</td>
+                        <td>content</td>
+                     </tr>
+                  </tbody>
+               </table>
 
 
             </div>
@@ -240,7 +242,7 @@
 
                <hr class="well-separator">
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;table class="table table-striped"&gt;
 &lt;caption&gt;
 	Table Caption Here
@@ -282,7 +284,7 @@
 
             <p>Custom CSS is required for the steps column and for removing borders from tables. Using CSS, I've arbitraily set the background to <code>aliceblue</code>. To create a <strong>steps table</strong>, set the width of the first <code>&lt;td&gt;</code>element
                to ~5 - 10%, and choose your own background color.</p>
-               <p>You may wish to specify specific styling for the <code>&lt;caption&gt;</code> element and <code>.summary</code> class.</p>
+            <p>You may wish to specify specific styling for the <code>&lt;caption&gt;</code> element and <code>.summary</code> class.</p>
 
             <div class="well">
                <!-- Copier-->
@@ -290,13 +292,14 @@
                      aria-hidden="true"></i> Copy</button>
 
                <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all Bootstrap.r CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                     aria-hidden="true"></i> Get all Bootstrap.r CSS</a>
 
 
                <hr class="well-separator">
 
 
-<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Set styles for the Steps column */
 .numbered-steps tr td:first-of-type {
    padding: 3px;
@@ -439,7 +442,7 @@ caption .summary {
    </script>
 
    <!-- Animations JS -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
    <!-- clipboard.js include -->
    <script src="js/clipboard.min.js"></script>
