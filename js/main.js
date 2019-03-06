@@ -141,7 +141,6 @@ $(document).ready(function() {
       // popover function
       $('[data-toggle="popover"]').popover();
 
-
    });
 
    // Popovers for the information icons -- this allows multiple popovers per page
@@ -149,6 +148,9 @@ $(document).ready(function() {
       'container': 'body',
       "animation": true
    });
+
+   // Init the animations package
+   AOS.init();
 
 });
 // document ready closes
