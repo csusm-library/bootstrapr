@@ -38,7 +38,7 @@
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
-   
+
    <!-- CSS Animations --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
@@ -177,6 +177,26 @@
             </div>
             <!-- well closes -->
 
+            <h4 class="sub-header">Required JS</h4>
+
+            <p>You must add the popover method to your javascript explicitly.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <hr class="well-separator">
+
+
+<pre class="prettyprint" id="custom-js-code" contenteditable="true">
+   // popover function
+   $('[data-toggle="popover"]').popover();
+</pre>
+
+            </div>
+            <!-- .well -->
+
 
             <div class="hidden">
                <h4 class="sub-header">Custom CSS</h4>
@@ -196,7 +216,7 @@
                   <hr class="well-separator">
 
 
-                  <pre class="prettyprint lang-css" id="custom-css-code">
+<pre class="prettyprint lang-css" id="custom-css-code">
    [data-toggle="popover"] {
       font-size: inherit;
    }

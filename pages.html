@@ -29,7 +29,8 @@
    <meta name="theme-color" content="#ffffff">
 
    <!-- Bootstrap CSS files-->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+   <!-- Latest compiled and minified CSS -->
+   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
    <!-- jQuery UI CSS (optional) -->
    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
@@ -37,16 +38,13 @@
    <!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries -->
    <!-- WARNING: Respond.js doesn't work if you view the page via file:// -->
    <!--[if lt IE 9]>
-      <script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
-      <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-    <![endif]-->
+<script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"></script>
+<script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
+<![endif]-->
 
    <!-- Google web fonts -->
    <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
-
-   
-   <!-- CSS Animations --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -60,20 +58,8 @@
    <!-- Spectrum Color picker CSS -->
    <link rel='stylesheet' href='css/spectrum.css' />
 
-   <style>
-
-      /* Add border so that we can visualize the stucture of the columns */
-.sample-content .col-sm-1,
-.sample-content .col-sm-4,
-.sample-content .col-sm-3,
-.sample-content .col-sm-6,
-.sample-content .col-sm-8,
-.sample-content .col-sm-9 {
-   border: .5px solid #ddd;
-}
-
-   </style>
-
+   <!-- CSS Animations -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
 </head>
 
@@ -95,7 +81,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/getting-started/#template" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-                  Boostrap 3.3.7 <small id="docs-link">| Page templates</small></a>
+                  Bootstrap 3.3.7 <small id="docs-link">| Page templates</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -106,10 +92,8 @@
          <div class="col-sm-12">
             <h1>Pages</h1>
             <p class="lead">All bootstrap pages are built on a 12-column grid.</p>
-            <p>Use the generator below to create the skeleton for a simple Bootstrap page. Next add Bootstrap <strong>Containers</strong> and <strong>Features</strong> components into the main-content <code>&lt;div&gt;</code>.</p>
-
-            <p>For extended customization options, including we recommend using <a href="http://www.initializr.com/" target="_blank">Initializr (with the Bootstrap option)</a>. For convenience, I have also included links to the Font Awesome 4
-               library and the 'Open Sans' Google Web font.</p>
+            <p>Use the generator below to create the skeleton for a simple Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs into the main-content <code>&lt;div&gt;</code>. I have
+               also included an include for the Font Awesome 4 library, as well as the Open Sans Google Web font.</p>
 
          </div>
       </div>
@@ -136,7 +120,7 @@
                      <small><a href="https://jquery.com/" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download jQuery</a></small>
                   </p>
                   <p>
-                     <small><a href="https://getbootstrap.com/docs/3.3/getting-started/#download" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download Bootstrap</a></small>
+                     <small><a href="https://getbootstrap.com/docs/3.4/getting-started/#download" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download Bootstrap</a></small>
                   </p>
                </div>
 
@@ -233,50 +217,46 @@
                      aria-hidden="true"></i> Copy</button>
 
                <!-- Save -->
-               <button id="save-page" class="btn btn-code-well text-center" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
+               <button id="save-page" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Save page"><i class="fa fa-save fa-fw" aria-hidden="true"></i> Save Page</button>
 
                <!-- Beautifier -->
                <!-- <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-               </button> -->
+         </button> -->
 
                <hr class="well-separator">
 
                <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;!DOCTYPE html&gt;
 &lt;html lang="en"&gt;
-   &lt;head&gt;
+&lt;head&gt;
 
-      &lt;!-- Metadata for the Webpage --&gt;
-      &lt;meta charset="utf-8"&gt;
-      &lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
-      &lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
-      &lt;title&gt;Title&lt;/title&gt;
+&lt;!-- Metadata for the Webpage --&gt;
+&lt;meta charset="utf-8"&gt;
+&lt;meta http-equiv="X-UA-Compatible" content="IE=edge"&gt;
+&lt;meta name="viewport" content="width=device-width, initial-scale=1"&gt;
+&lt;title&gt;Title&lt;/title&gt;
 
-      &lt;!-- HTML5 Shim --&gt;
-      &lt;!-- NOTE: Respond.js doesn't work viewing page via file:// --&gt;
-      &lt;!--[if lt IE 9]&gt;&lt;script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js"&gt;&lt;/script&gt;&lt;script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"&gt;&lt;/script&gt;&lt;![endif]--&gt;
+&lt;!-- Bootstrap CSS files--&gt;
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
 
-      &lt;!-- Bootstrap CSS files--&gt;
-      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
+&lt;!-- Google Open Sans web font --&gt;
+&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"&gt;
 
-      &lt;!-- Google Open Sans web font --&gt;
-      &lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"&gt;
+&lt;!-- Font Awesome Web Icons --&gt;
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
 
-      &lt;!-- Font Awesome Web Icons --&gt;
-      &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
+&lt;/head&gt;
+&lt;body&gt;
 
-   &lt;/head&gt;
-   &lt;body&gt;
+&lt;!-- This is where your body content goes... --&gt;
 
-      &lt;!-- This is where your body content goes... --&gt;
+&lt;!-- jQuery Javascript Library (required by Bootstrap) --&gt;
+&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
 
-      &lt;!-- jQuery Javascript Library (required by Bootstrap) --&gt;
-      &lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;!-- Bootstrap Library --&gt;
+&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
 
-      &lt;!-- Bootstrap Library --&gt;
-      &lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
-
-   &lt;/body&gt;
+&lt;/body&gt;
 &lt;/html&gt;
 </pre>
 
@@ -292,7 +272,7 @@
                   <a class="close" data-dismiss="alert" aria-label="close">×</a>
                   <strong>Required Libraries</strong>
                   <br>
-                  Bootstrap 3.3.7 framework requires the jQuery libraries. If you choose to serve Bootstrap from a <a href="https://www.fastly.com/blog/why-you-should-use-content-delivery-network" target="_blank">CDN</a>, these will be linked to in
+                  Bootstrap 3.4.1 framework requires the jQuery libraries. If you choose to serve Bootstrap from a <a href="https://www.fastly.com/blog/why-you-should-use-content-delivery-network" target="_blank">CDN</a>, these will be linked to in
                   the generated HTML. If you choose to serve the files locally, you will need to download both jQuery and Bootstrap libraries and place them somewhere sensible in your project directory.
                </p>
             </div>
@@ -324,7 +304,7 @@
    <script src="https://fastcdn.org/FileSaver.js/1.1.20151003/FileSaver.min.js"></script>
 
    <!-- Bootstrap Library -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+   <script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"></script>
 
    <!-- Main local script file -->
    <script src="js/main.js"></script>
@@ -340,33 +320,30 @@
       w3IncludeHTML();
    </script>
 
-   <!-- clipboard.js include -->
-   <script src="js/clipboard.min.js"></script>
-
    <!-- Animations JS -->
    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+   <!-- clipboard.js include -->
+   <script src="js/clipboard.min.js"></script>
 
    <script>
       $(document).ready(function() {
 
-               // tooltips function
-               $(function() {
-                  $('[data-toggle="tooltip"]').tooltip()
-               })
+         // tooltips function
+         $(function() {
+            $('[data-toggle="tooltip"]').tooltip()
+         })
 
-               // Add active class to navmenu selection
-               $("#pages").addClass("activated");
+         // Add active class to navmenu selection
+         $("#pages").addClass("activated");
 
-               // Add the brand name to the navbar on all sub-pages
-               $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
+         // Add the brand name to the navbar on all sub-pages
+         $("#brand-name").html("<h2 class='inline white'><a class='brand-link' href='index.html'>Bootstrap.r</a></h2>");
 
-               $('#display-page').click(function() {
+         $('#display-page').click(function() {
 
-                        var doctype =
-                           '<!DOCTYPE html><html lang="en"><head><!-- Metadata for the Webpage --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Title</title><!-- HTML5 Shim and Respond.js IE8 support of HTML5 elements and media queries --><!-- WARNING: Respond.js doesn\'t work if you view the page via file:// --><!--[if lt IE 9]><script src="https://oss.maxcdn.com/libs/html5shiv/3.7.2/html5shiv.js">
-   </script>
-   <script src="https://oss.maxcdn.com/libs/respond.js/1.4.2/respond.min.js"></script>
-   <![endif]-->';
+            var doctype =
+               '<!DOCTYPE html><html lang="en"><head><!-- Metadata for the Webpage --><meta charset="utf-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Title</title>';
 
             var serveBootstrap = $('#serve-bootstrap').val();
             var footerSetting = $('#footer-setting').val();
@@ -399,14 +376,12 @@
 
             if (serveBootstrap == "cdn") {
                serveCSS =
-                  '<!-- Bootstrap CSS files--><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
+                  '<!-- Bootstrap CSS files--><link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css" integrity="sha384-HSMxcRTRxnN+Bdg0JdbxYKrThecOKuH5zCYotlSAcp1+c8xmyTe9GYg1l9a69psu" crossorigin="anonymous"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
                serveJS =
-                  '<!-- jQuery Javascript Library -->&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;';
+                  '<!-- jQuery Javascript Library -->&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="https://stackpath.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js" integrity="sha384-aJ21OjlMXNL5UyIl/XNwTMqvzeRMZH2w8c5cRVpzpU8Y5bApTppSuUkhZXN0VxHd" crossorigin="anonymous"&gt;&lt;/script&gt;';
             } else {
                serveCSS =
-                  '<!-- Bootstrap CSS files--><link rel="stylesheet" href="your-website-path-to/bootstrap.min.css"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-<link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
+                  '<!-- Bootstrap CSS files--><link rel="stylesheet" href="your-website-path-to/bootstrap.min.css"><!-- Google Open Sans web font --><link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"><!-- Font Awesome Web Icons --><link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">';
                serveJS = '<!-- jQuery Javascript Library -->&lt;script src="your-website-path-to/jquery.min.js"&gt;&lt;/script&gt;<!-- Bootstrap Library -->&lt;script src="your-website-path-to/bootstrap.min.js"&gt;&lt;/script&gt;';
             }
 
@@ -465,7 +440,7 @@
             bsPage = theCode;
             // bsPreview = thePreview;
 
-            // $('#simple-example').html(bsPage);
+            // $('#simple-example').html(bsPreview);
             $('#simple-code').text(bsPage);
 
             $('pre').removeClass('prettyprinted');
