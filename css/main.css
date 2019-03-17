@@ -99,6 +99,11 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
    margin-top: -1rem;
 }
 
+.make-it-mine {
+   color: aliceblue;
+   opacity: .5 !important;
+}
+
 .homepage hr {
    border-bottom: 8px double #406885;
 }
@@ -219,9 +224,12 @@ pre {
    box-shadow: none !important;
 }
 
-
 #jumbotronic {
-   letter-spacing: .1em;
+   font-size: 4rem;
+   text-shadow: 1px 1px gray;
+   color:#FFFFFF;
+   font-weight: 300;
+   margin-top: 6rem;
 }
 
 @media (max-width: 767px) {
@@ -292,7 +300,7 @@ pre {
 
 .photo-credit {
    color: aliceblue;
-   opacity: .5;
+   opacity: .7;
 }
 
 .black {
@@ -403,15 +411,12 @@ input[type="radio"] {
 
 .btn-light,
 .btn-light:focus {
-   color: #FFFFFF;
-   background-color: transparent;
-   border-color: #FFFFFF;
-   font-weight: 600;
+   color: black;
+   background-color: white;
 }
 
 .btn-light:hover {
-    color: black;
-    background-color: white;
+   background-color: #d9edf7;
 }
 
 .navbar .fa-fr {

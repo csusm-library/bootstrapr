@@ -1,6 +1,6 @@
 /* Website Design */
 
-   Project: Bootstrap.r
+   Project: bootstrapr
    Web Design and Development
 
 	Release date: October, 2018
