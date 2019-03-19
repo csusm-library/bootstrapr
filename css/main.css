@@ -290,13 +290,12 @@ pre {
 } */
 
 .jumbotron-homepage {
-   height: 650px;
+   height: 700px;
    width: 100%;
 }
 
 .jumbotron-homepage h1 {
    color: #FFFFFF;
-   /* text-shadow: 1px 1px gray; */
    text-align: center;
    font-size: 7em;
 }
