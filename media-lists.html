@@ -296,9 +296,6 @@
          $("li#media-lists").addClass("active");
          $("#features-dropdown").addClass("activated");
 
-         // Add the brand name to the navbar on all sub-pages
-         $("#brand-name").html("<h1 class='inline white'><a class='brand-link' href='index.html'>Bootstrap<span class='make-it-mine'>r</span></a></h1>");
-
          $("#display-media-list").on("click", function() {
 
             if ($("#image-border").is(":checked")) {
@@ -319,8 +316,6 @@
             var mediaContent = "<p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laudantium tempora, officiis repellat minima.</p>";
             var closingDiv = "</div>";
             var listItems = "";
-
-
 
             for (i = 0; i < numItems; i++) {
                listItems += mediaDiv + mediaAlignmentDiv + image + closingDiv + mediaBodyDiv + mediaHeading + mediaContent + closingDiv + closingDiv;

@@ -6613,9 +6613,7 @@
          $("li#jumbotrons").addClass("active");
          $("#features-dropdown").addClass("activated");
 
-         // Add the brand name to the navbar on all sub-pages
-         $("#brand-name").html("<h1 class='inline white'><a class='brand-link' href='index.html'>Bootstrap<span class='make-it-mine'>r</span></a></h1>");
-
+         // Hide and show the full-sized warning alert
          $("#jumbo-width").on('change', function() {
             if ($("#jumbo-width").val() == "regular-size") {
                $("#full-size-warning").fadeOut();
