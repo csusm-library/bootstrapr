@@ -76,10 +76,11 @@
         top: 75;
         left: 0;
         width: 100%;
-        height: 650px;
+        height: 400px;
         padding-top: 2rem !important;
         /* background-color: rgba(135, 206, 250, .4); */
-        background-color: rgba(15, 36, 56, .2);
+        /* background-color: rgba(15, 36, 56, .2); */
+        background-color: rgba(70, 130, 180, .25);
         z-index: 2;
       }
 
@@ -93,37 +94,41 @@
    <!-- Navbar include -->
    <div w3-include-html="navbar.html"></div>
 
-   <div class="video-overlay"></div>
+   <div class="video-overlay hidden-xs hiden-sm"></div>
 
    <!-- Jumbotron -->
-   <div class='jumbotron-homepage push-down-jumbotron'>
+   <div class='jumbotron-homepage push-down-jumbotron hidden-xs hiden-sm'>
 
 
-      <video width="100%" playsinline autoplay muted loop>
+      <video width="100%" height="400" playsinline autoplay muted loop>
          <source src="mov/header.mov" type="video/mp4">
          <source src="mov/header.mp4" type="video/mp4">
+         Sorry. Your browser does not support HTML5 video.
       </video>
 
    </div>
    <!-- .jumbotron -->
 
 
-   <div class="container homepage">
+   <div class="container homepage push-down-5">
 
-      <div class='row push-down-3' id="interface-elements">
+      <div class='row' id="interface-elements">
 
-         <p class="lead lead-plus push-down-2 text-center"><span class="montserrat">Breakneck Bootstrap.</span> Use Bootstrapr to rapidly generate and customize Bootstrap 3 components&mdash;without writing a single line of code. Create an entire
-            site in minutes!</p>
+         <div class="container">
+            <p class="lead lead-plus push-down-3 text-center"><span class="montserrat">Breakneck Bootstrap.</span> Use Bootstrapr to rapidly generate and customize Bootstrap 3 components. All without writing a single line of code. Create an entire
+               site in minutes!</p>
 
-         <p class="text-center push-down-3">
-            <a role="button" class="btn btn-lg btn-primary" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
-               <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
-               View the Tutorial
-            </a>
-         </p>
+            <p class="text-center push-down-3">
+               <a role="button" class="btn btn-lg btn-primary" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
+                  <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
+                  View the Tutorial
+               </a>
+            </p>
+         </div>
+         <!-- container -->
 
          <!-- Page divider -->
-         <div class="col-sm-12 page-divider">
+         <div class="col-sm-12 page-divider push-down-2">
             <h1 class="text-center homepage-headings">Bootstrap Components</h1>
             <hr>
             <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885; margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>

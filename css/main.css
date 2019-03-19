@@ -290,7 +290,7 @@ pre {
 } */
 
 .jumbotron-homepage {
-   height: 700px;
+   height: 400px;
    width: 100%;
 }
 
@@ -359,6 +359,10 @@ pre {
 
 .push-down-5 {
    margin-top: 5rem !important;
+}
+
+.push-down-8 {
+   margin-top: 8rem !important;
 }
 
 .page-divider {
