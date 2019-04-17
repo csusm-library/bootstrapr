@@ -101,7 +101,7 @@
                <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
-                        <input name="weapon" type="checkbox" value="blaster" id="add-instructions">
+                        <input type="checkbox" id="add-instructions">
                         Add instructions
                      </label>
                   </div>
@@ -110,7 +110,7 @@
                <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
-                        <input name="weapon" type="checkbox" value="blaster" id="add-content">
+                        <input type="checkbox" id="add-content">
                         Add content area
                      </label>
                   </div>
@@ -119,7 +119,7 @@
                <div class="form-group push-down-2 hidden push-right-2" id="code-well-hider">
                   <div class="checkbox">
                      <label>
-                        <input name="weapon" type="checkbox" value="blaster" id="add-code-wells">
+                        <input type="checkbox" id="add-code-wells">
                         Add code wells
                      </label>
                   </div>
@@ -128,7 +128,7 @@
                <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
-                        <input name="weapon" type="checkbox" value="blaster" id="numbered">
+                        <input type="checkbox" id="numbered">
                         Numbered steps
                      </label>
                   </div>
@@ -137,7 +137,7 @@
                <div class="form-group push-down-2">
                   <div class="checkbox">
                      <label>
-                        <input name="weapon" type="checkbox" value="blaster" id="reset-all-button">
+                        <input type="checkbox" value="blaster" id="reset-all-button">
                         Reset all button
                      </label>
                   </div>
@@ -434,6 +434,7 @@ activateChecklist();
             if ($('#add-content').is(':checked')) {
                $("#code-well-hider").hide().removeClass("hidden").fadeIn();
             } else {
+               $("#add-code-wells").prop("checked", false);
                $("#code-well-hider").fadeOut();
             }
 
