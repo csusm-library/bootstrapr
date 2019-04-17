@@ -84,7 +84,6 @@
         z-index: 2;
       }
 
-
       #shaded-div {
         height: 2rem;
         background-color: rgba(70, 130, 180, .25);
@@ -101,20 +100,20 @@
    <div w3-include-html="navbar.html"></div>
 
    <div id="shaded-div" class="hidden-xs hiden-sm"></div>
-      <div class="video-overlay hidden-xs hiden-sm"></div>
+   <div class="video-overlay hidden-xs hiden-sm"></div>
 
-      <!-- Jumbotron -->
-      <div class='jumbotron-homepage push-down-jumbotron hidden-xs hiden-sm'>
+   <!-- Jumbotron -->
+   <div class='jumbotron-homepage push-down-jumbotron hidden-xs hiden-sm'>
 
 
-         <video width="100%" height="425" playsinline autoplay muted loop>
-            <source src="mov/header.mov" type="video/mp4">
-            <source src="mov/header.mp4" type="video/mp4">
-            Sorry. Your browser does not support HTML5 video.
-         </video>
+      <video width="100%" height="425" playsinline autoplay muted loop>
+         <source src="mov/header.mov" type="video/mp4">
+         <source src="mov/header.mp4" type="video/mp4">
+         Sorry. Your browser does not support HTML5 video.
+      </video>
 
-      </div>
-      <!-- .jumbotron -->
+   </div>
+   <!-- .jumbotron -->
 
 
    <div class="container homepage push-down-5">
@@ -417,7 +416,29 @@ $( document ).ready(function() {
             <div class='panel panel-default tool-cards' data-link="checklists.html">
                <div class='panel-body'>
 
-                  <img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
+                  <div class="alert alert-success" role="alert">
+                     <p>
+                        <i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i>
+                        Click each step as you finish to track your progress.
+                     </p>
+                  </div>
+                  <div class="ap-container">
+                     <div class="panel panel-default">
+                        <div class="panel-heading ap-check">
+                           <h5 class="panel-title">Panel Title</h5>
+                        </div>
+                     </div>
+                  </div>
+                  <div class="panel panel-default">
+                     <div class="panel-heading ap-check">
+                        <h5 class="panel-title">Panel Title</h5>
+                     </div>
+                  </div>
+                  <div class="panel panel-default">
+                     <div class="panel-heading ap-check">
+                        <h5 class="panel-title">Panel Title</h5>
+                     </div>
+                  </div>
 
                </div>
                <div class='panel-footer'>
@@ -889,6 +910,9 @@ $( document ).ready(function() {
          $(function() {
             $('[data-toggle="tooltip"]').tooltip()
          })
+
+         $('pre').removeClass('prettyprinted');
+         prettyPrint();
 
       });
    </script>
