@@ -216,3 +216,27 @@ h1, h2, h3, h4, h5, h6 {
 .image-grid img {
    margin-bottom: 1rem;
 }
+
+/* Styles for the instruction sets */
+.ap-check {
+   background-color: transparent !important;
+   height: 100%;
+   width: 100%;
+   border-bottom: none;
+}
+
+.ap-check .panel-title::before {
+   content: "\f1db\00a0\00a0";
+   font-family: "Fontawesome";
+   font-size: 150%;
+}
+
+.ap-checked .panel-title::before {
+   content: "\f058\00a0\00a0";
+   font-family: "Fontawesome";
+   color: green;
+}
+
+.ap-checked {
+   color: lightgray !important;
+}
