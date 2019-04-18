@@ -427,6 +427,8 @@ activateChecklist();
          $("#update-preview-button").on("click", function() {
             var modifiedCode = $('#simple-code').text();
             $("#simple-example").html(modifiedCode);
+
+            activateChecklist();
          });
 
          $("#add-content").on("change", function() {
