@@ -94,7 +94,7 @@
          <div class="col-sm-12">
             <h1>Jumbotrons</h1>
             <p class="lead">Jumbotrons create a prominent visual introductory focus to a page.</p>
-            <p>Jumbotrons are an introductory feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and the aesthetic dimension approaches distraction for the user.</p>
+            <p>Jumbotrons are an introductory feature. Use this feature advisedly—particular for situations in which users are more process- or information-focused, and where aesthetics may cause distraction for the user.</p>
             <p>You may choose an image background or a colored background. The default background color is grey. You should aim for an image roughly <strong>1000px wide x 300px tall</strong>. Expect some image cropping, depending on device size and
                orientation.</p>
          </div>
@@ -135,14 +135,40 @@
                </div>
 
                <div class="form-group" id="image-selection-div">
-                  <label for="image-url">Image URL</label> | <a id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='_blank'>LibGuides Image Library</a></li></ul>">
-                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small>Find Image</small></a>
+                  <label for="image-url">Image URL</label> | <span id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='_blank'>LibGuides Image Library</a></li></ul>">
+                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small>Find Image</small></span>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button1"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-url">
                   </div>
                   <span class="placeholder">Example | http://web.com/image.png</span>
                </div>
+
+
+
+               <!-- checkbox here -->
+               <div class="form-group push-down-1" id="has-overlay-color-show-hide">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="has-overlay-color"> Add Colored Overlay
+                     </label>
+                  </div>
+               </div>
+
+               <div class="hidden" id="overlay-color-div">
+                  <label for="overlay-text"></label>
+                  <div class="form-group" id="overlay-color-hex-input">
+                     <label>Overlay Color</label>
+                     <div class="input-group">
+                        <!-- .colorpicker-component -->
+                        <input id="overlay-color" name="button-text" type="text" class="form-control" />
+                     </div>
+                  </div>
+
+               </div>
+
+
+               <!-- background hex color -->
 
                <div class="hidden" id="background-color-hex-input">
                   <label for="button-text" id="hex-color-label">Hex Color <a id="color-codes-popover" tabindex="5" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Use named colors too!</h5><hr><p>Modern browsers support 140 named colors. You may type either hex values or named colors into this field.</p><p><a href='https://htmlcolorcodes.com/color-names/' target='_blank'><i class='fa fa-external-link-square fa-fw' aria-hidden='true'></i> View HTML Color Codes</a></p>"
@@ -176,7 +202,7 @@
 
                <div class="form-group" id="bg-colored">
                   <label>Titles Color</label>
-                  <div id="picker" class="input-group">
+                  <div class="input-group">
                      <!-- .colorpicker-component -->
                      <input id="color-picker" type="text" class="form-control" />
                   </div>
@@ -6493,7 +6519,6 @@
             showSelectionPalette: true,
             maxSelectionSize: 10,
             preferredFormat: "hex",
-            localStorageKey: "spectrum.demo",
             move: function(color) {
 
             },
@@ -6539,7 +6564,52 @@
             showSelectionPalette: true,
             maxSelectionSize: 10,
             preferredFormat: "hex",
-            localStorageKey: "spectrum.demo",
+            move: function(color) {
+
+            },
+            show: function() {
+
+            },
+            beforeShow: function() {
+
+            },
+            hide: function() {
+
+            },
+            change: function() {
+
+            },
+            palette: [
+               ["rgb(0, 0, 0)", "rgb(67, 67, 67)", "rgb(102, 102, 102)",
+                  "rgb(204, 204, 204)", "rgb(217, 217, 217)", "rgb(255, 255, 255)"
+               ],
+               ["rgb(152, 0, 0)", "rgb(255, 0, 0)", "rgb(255, 153, 0)", "rgb(255, 255, 0)", "rgb(0, 255, 0)",
+                  "rgb(0, 255, 255)", "rgb(74, 134, 232)", "rgb(0, 0, 255)", "rgb(153, 0, 255)", "rgb(255, 0, 255)"
+               ],
+               ["rgb(230, 184, 175)", "rgb(244, 204, 204)", "rgb(252, 229, 205)", "rgb(255, 242, 204)", "rgb(217, 234, 211)",
+                  "rgb(208, 224, 227)", "rgb(201, 218, 248)", "rgb(207, 226, 243)", "rgb(217, 210, 233)", "rgb(234, 209, 220)",
+                  "rgb(221, 126, 107)", "rgb(234, 153, 153)", "rgb(249, 203, 156)", "rgb(255, 229, 153)", "rgb(182, 215, 168)",
+                  "rgb(162, 196, 201)", "rgb(164, 194, 244)", "rgb(159, 197, 232)", "rgb(180, 167, 214)", "rgb(213, 166, 189)",
+                  "rgb(204, 65, 37)", "rgb(224, 102, 102)", "rgb(246, 178, 107)", "rgb(255, 217, 102)", "rgb(147, 196, 125)",
+                  "rgb(118, 165, 175)", "rgb(109, 158, 235)", "rgb(111, 168, 220)", "rgb(142, 124, 195)", "rgb(194, 123, 160)",
+                  "rgb(166, 28, 0)", "rgb(204, 0, 0)", "rgb(230, 145, 56)", "rgb(241, 194, 50)", "rgb(106, 168, 79)",
+                  "rgb(69, 129, 142)", "rgb(60, 120, 216)", "rgb(61, 133, 198)", "rgb(103, 78, 167)", "rgb(166, 77, 121)",
+                  "rgb(91, 15, 0)", "rgb(102, 0, 0)", "rgb(120, 63, 4)", "rgb(127, 96, 0)", "rgb(39, 78, 19)",
+                  "rgb(12, 52, 61)", "rgb(28, 69, 135)", "rgb(7, 55, 99)", "rgb(32, 18, 77)", "rgb(76, 17, 48)"
+               ]
+            ]
+         });
+
+         $("#overlay-color").spectrum({
+            color: "#337ab7",
+            showInput: true,
+            className: "full-spectrum",
+            showInitial: true,
+            showPalette: true,
+            showSelectionPalette: true,
+            maxSelectionSize: 10,
+            showAlpha: true,
+            preferredFormat: "rgb",
             move: function(color) {
 
             },
@@ -6622,6 +6692,18 @@
             }
          });
 
+         var overlayColor = "";
+
+         // Hide and show the color overlay section
+         $("#has-overlay-color").on('change', function() {
+
+            if ($("#has-overlay-color").is(":not(:checked)")) {
+               $("#overlay-color-div").fadeOut();
+            } else {
+               $("#overlay-color-div").hide().removeClass("hidden").fadeIn();
+            }
+         });
+
          $('#display-jumbotron').on("click", function() {
 
             var imageURL = $('#image-url').val();
@@ -6642,6 +6724,12 @@
             var jumboWidth = $('#jumbo-width').val();
             var containerOpen = "";
             var containerClose = "";
+
+            if ($("#has-overlay-color").is(":not(:checked)")) {
+               overlayColor = "";
+            } else {
+               overlayColor = " linear-gradient(" + $("#overlay-color").val() + ", " + $("#overlay-color").val() + "), ";
+            }
 
             if ($('#text-shadow').is(':checked')) {
                textShadow = "text-shadow: 1px 1px gray;";
@@ -6687,8 +6775,9 @@
                   break;
             }
 
+
             if (imageURL !== "") {
-               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
+               addImage = " style='background-size: cover; background-position: top center; background:" + overlayColor + " url(\"" + imageURL + "\");'";
             } else {
                addImage = " style='background:" + setBackground + "'";
             }
@@ -6725,20 +6814,26 @@
             if ($('#jumbotron-background').val() == 'image') {
                $("#image-selection-div").removeClass("hidden");
                $('#background-color-hex-input').addClass('hidden');
+               $("#has-overlay-color-show-hide").removeClass("hidden");
+               $("#overlay-color-div").removeClass("hidden");
             } else if ($('#jumbotron-background').val() == 'hex') {
                $("#image-selection-div").addClass("hidden");
                $("#hex-color-label").addClass("hidden");
                $('#background-color-hex-input').removeClass('hidden');
+               $("#has-overlay-color-show-hide").addClass("hidden");
+               $("#overlay-color-div").addClass("hidden");
             } else {
                $("#image-selection-div").addClass("hidden");
                $('#background-color-hex-input').addClass('hidden');
+               $("#has-overlay-color-show-hide").addClass("hidden");
+               $("#overlay-color-div").addClass("hidden");
             }
          });
 
          $('#image-url').on('change', function() {
 
             if ($('#image-url').val() !== '') {
-               addImage = " style='background-size: cover; background-image: url(\"" + imageURL + "\");'";
+               addImage = " style='background-size: cover; background-position: top center; background: " + overlayColor + " url(\"" + imageURL + "\");'";
                $('#jumbotron-background').val('image');
                $('#background-color-hex-input').addClass('hidden');
             } else {
