@@ -39,7 +39,8 @@
    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
 
-   <!-- CSS Animations --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- CSS Animations -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -74,6 +75,24 @@
       padding: .5rem;
    }
 
+   #column-list {
+      margin-top: 0;
+      border: 1px solid silver;
+      min-height: 10rem;
+      padding: .5rem;
+   }
+
+   #column-list li {
+      padding: 5px 10px;
+      border: 1px solid #ddd;
+      margin-bottom: 2px;
+      background: white;
+   }
+
+   #add-row {
+      height: 2.5rem;
+   }
+
    </style>
 
 </head>
@@ -96,7 +115,7 @@
          <div class="col-sm-6">
             <p class="pull-right">
                <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-   Boostrap 3.3.7 <small id="docs-link">| columns</small></a>
+                  Boostrap 3.3.7 <small id="docs-link">| columns</small></a>
             </p>
          </div>
          <!-- col-sm-4-->
@@ -107,7 +126,8 @@
          <div class="col-sm-12">
             <h1>Columns</h1>
             <p class="lead">Use columns to structure your page content.</p>
-            <p>Although many more column combinations are possible, these column layouts are among the most common. Stack them atop each other to structure your page. Place your columns inside rows. You may place an unlimited number of columns inside a single row, with each horizontally aligned set of columns adding up to 12.</p>
+            <p>Although many more column combinations are possible, these column layouts are among the most common. Stack them atop each other to structure your page. Place your columns inside rows. You may place an unlimited number of columns
+               inside a single row, with each horizontally aligned set of columns adding up to 12.</p>
          </div>
       </div>
 
@@ -117,57 +137,35 @@
 
          <div class="col-sm-3">
 
-            <form id="colForm">
-               <label>
-                  <input type="radio" name="cols" value="100" id="100"> 1 column <span class="descriptor"> |100</span>
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="cols" value="25-75" id="25-75"> 2 columns <span class="descriptor"> |25 / 75</span>
-               </label>
-               <br/>
-               <label>
-                  <input type="radio" name="cols" value="75-25" id="75-25"> 2 columns <span class="descriptor"> |75 / 25</span>
-               </label>
-               <br/>
-               <label>
-                  <input type="radio" name="cols" value="40-60" id="40-60"> 2 columns <span class="descriptor"> |40 / 60</span>
-               </label>
-               <br/>
-               <label>
-                  <input type="radio" name="cols" value="60-40" id="60-40"> 2 columns <span class="descriptor"> |60 / 40</span>
-               </label>
-               <br/>
-               <label>
-                  <input type="radio" name="cols" value="50-50" id="50-50"> 2 columns <span class="descriptor"> |50 / 50</span>
-               </label>
-               <br/>
-               <label>
-                  <input type="radio" name="cols" value="threeColumns" id="threeColumns"> 3 columns
-                  <span class="descriptor"> |equal widths</span>
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="cols" value="fourColumns" id="fourColumns"> 4 columns
-                  <span class="descriptor"> |equal widths</span>
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="cols" value="fiveColumns" id="fiveColumns"> 5 columns
-                  <span class="descriptor"> |equal widths</span>
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="cols" value="sixColumns" id="sixColumns"> 6 columns
-                  <span class="descriptor"> |equal widths</span>
-               </label>
-               <br>
-               <label>
-                  <input type="radio" name="cols" value="twelveColumns" id="twelveColumns"> 12 columns
-                  <span class="descriptor"> |equal widths</span>
-               </label>
 
-            </form>
+
+               <form>
+                  <!-- Select dropdown -->
+                  <div class="form-group">
+                     <label for="dropdown-1">Add Row(s)</label>
+                     <select class="form-control" id="add-row" name="dropdown-1">
+                        <option value="select" selected="selected">-- select # columns --</option>
+                        <option value="1col-100">1 Column — 100%</option>
+                        <option value="2col-25-75">2 Columns — 25% - 75%</option>
+                        <option value="2col-75-25">2 columns — 75% - 25%</option>
+                        <option value="2col-50-50">2 columns — 50% - 50%</option>
+                        <option value="3col-25-50-25">3 columns — 25% - 50% - 25%</option>
+                        <option value="3col-equal">3 columns — Equal widths</option>
+                        <option value="4col-equal">4 columns — Equal widths</option>
+                        <option value="5col-equal">5 columns — Equal widths</option>
+                        <option value="6col-equal">6 columns — Equal widths</option>
+                        <option value="12col-equal">12 columns — Equal widths</option>
+                     </select>
+                  </div>
+               </form>
+
+            <!-- rows and columns added here -->
+            <ul id="column-list" class="list-group">
+            </ul>
+
+
+
+
 
             <div class="push-down-3">
                <button type="button" class="btn btn-default" id="clear-columns"><i class="fa fa-fw fa-refresh"></i> Reset</button>
@@ -204,18 +202,20 @@
             <div class="well">
 
                <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard" aria-hidden="true"></i> Copy</button>
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
 
                <!-- Beautifier -->
                <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-                  </button>
+               </button>
 
                <!-- Update Example Panel-->
-               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i> Update Example</button>
+               <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+                  Update Example</button>
 
                <hr class="well-separator">
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;div class="row"&gt;
    &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
    &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
@@ -249,7 +249,7 @@
          <!-- .col-sm-9 -->
 
       </div>
-         <!-- .row -->
+      <!-- .row -->
 
    </div>
    <!-- .container-fluid -->
@@ -298,6 +298,59 @@
             $('[data-toggle="tooltip"]').tooltip()
          })
 
+         // The holder for all the rows
+         var allRows = [];
+
+         $("#add-row").on("change", function(){
+
+            var addRow = "";
+            var newestRow = "";
+
+            if ( $("#add-row").val() != "select" ) {
+            newestRow = $("#add-row").val();
+
+            switch (newestRow) {
+               case "1col-100":
+                  addRow = "<li class='list-group-item'>1 Column | 100%</li>";
+                  break;
+               case "2col-25-75":
+                  addRow = "<li class='list-group-item'>2 columns | 25% - 75%</li>";
+                  break;
+               case "2col-75-25":
+                  addRow = "<li class='list-group-item'>2 columns | 75% - 25%</li>";
+                  break;
+               case "2col-50-50":
+                  addRow = "<li class='list-group-item'>2 columns | 50% - 50%</li>";
+                  break;
+               case "3col-25-50-25":
+                  addRow = "<li class='list-group-item'>3 columns | 25% - 50% - 25%</li>";
+                  break;
+               case "3col-equal":
+                  addRow = "<li class='list-group-item'>3 columns | Equal Widths</li>";
+                  break;
+               case "4col-equal":
+                  addRow = "<li class='list-group-item'>4 columns | Equal Widths</li>";
+                  break;
+               case "5col-equal":
+                  addRow = "<li class='list-group-item'>5 columns | Equal Widths</li>";
+                  break;
+               case "6col-equal":
+                  addRow = "<li class='list-group-item'>6 columns | Equal Widths</li>";
+                  break;
+               case "12col-equal":
+                  addRow = "<li class='list-group-item'>12 columns | Equal Widths</li>";
+                  break;
+            }
+
+            $("#column-list").append(addRow);
+            }
+
+            // reset the value of the dropdown
+            $("#add-row").val("select");
+
+         });
+
+
          // Add active class to navmenu selection
          $("li#columns").addClass("active");
          $("#containers-dropdown").addClass("activated");
@@ -305,70 +358,57 @@
          // ------- Display the Columns --------------------------
          $('#display-columns').click(function() {
 
-            var bsTable = '';
-            var colsFinal = $('input[name=cols]:checked').val();
+            var finalColumns = "";
 
-            var oneColumn = "<div class='row'><div class='col-sm-12'>content</div></div>";
-            var twentyFive = "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-9'>content</div></div>";
-            var seventyFive = "<div class='row'><div class='col-sm-9'>content</div><div class='col-sm-3'>content</div></div>";
-            var forty = "<div class='row'><div class='col-sm-5'>content</div><div class='col-sm-7'>content</div></div>";
-            var sixty = "<div class='row'><div class='col-sm-7'>content</div><div class='col-sm-5'>content</div></div>";
-            var fifty = "<div class='row'><div class='col-sm-6'>content</div><div class='col-sm-6'>content</div></div>";
-            var threeColumns = "<div class='row'><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div></div>";
-            var fourColumns = "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div></div>";
-            var fiveColumns =
-               "<div class='row'><div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
-            var sixColumns =
-               "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
-            var twelveColumns =
-               "<div class='row'><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div></div>";
+            $("#column-list li").each( function(){
 
-            switch (colsFinal) {
-               case '100':
-                  bsTable = oneColumn;
-                  break;
-               case '25-75':
-                  bsTable = twentyFive;
-                  break;
-               case '75-25':
-                  bsTable = seventyFive;
-                  break;
-               case '40-60':
-                  bsTable = forty;
-                  break;
-               case '60-40':
-                  bsTable = sixty;
-                  break;
-               case '50-50':
-                  bsTable = fifty;
-                  break;
-               case 'threeColumns':
-                  bsTable = threeColumns;
-                  break;
-               case 'fourColumns':
-                  bsTable = fourColumns;
-                  break;
-               case 'fiveColumns':
-                  bsTable = fiveColumns;
-                  break;
-               case 'sixColumns':
-                  bsTable = sixColumns;
-                  break;
-               case 'twelveColumns':
-                  bsTable = twelveColumns;
-                  break;
-            }
+               switch ($(this).text()) {
+                  case "1 Column | 100%":
+                     finalColumns += "<div class='row'><div class='col-sm-12'>content</div></div>";
+                     break;
+                  case "2 columns | 25% - 75%":
+                     finalColumns += "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-9'>content</div></div>";
+                     break;
+                  case "2 columns | 75% - 25%":
+                     finalColumns += "<div class='row'><div class='col-sm-9'>content</div><div class='col-sm-3'>content</div></div>";
+                     break;
+                  case "2 columns | 50% - 50%":
+                     finalColumns += "<div class='row'><div class='col-sm-6'>content</div><div class='col-sm-6'>content</div></div>";
+                     break;
+                  case "3 columns | 25% - 50% - 25%":
+                     finalColumns += "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-6'>content</div><div class='col-sm-3'>content</div></div>";
+                     break;
+                  case "3 columns | Equal Widths":
+                     finalColumns += "<div class='row'><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div></div>";
+                     break;
+                  case "4 columns | Equal Widths":
+                     finalColumns += "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div></div>";
+                     break;
+                  case "5 columns | Equal Widths":
+                     finalColumns += "<div class='row'><div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+                     break;
+                  case "6 columns | Equal Widths":
+                     finalColumns += "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+                     break;
+                  case "12 columns | Equal Widths":
+                     finalColumns += "<div class='row'><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div></div>";
+                     break;
+               }
+
+
+            });
 
             // Write the table
 
-            $("#simple-example").html(bsTable);
-            $('#simple-code').text(bsTable);
+            $("#simple-example").html(finalColumns);
+            $('#simple-code').text(finalColumns);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();
 
-
          });
+
+
 
          // ------- Reset the parameters  --------------------------
          $('#clear-columns').click(function() {
