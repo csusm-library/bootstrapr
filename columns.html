@@ -53,18 +53,6 @@
 
    <style>
 
-      /* #colForm, #col-list-examples {
-      margin-bottom: 30px;
-   }
-
-   #colForm label {
-      margin-bottom: 15px;
-   }
-
-   #colForm input {
-      margin-right: 10px;
-   } */
-
    /* Adds a dotted border to the divs for clarity */
    #simple-example > div > div {
       border: 1px dotted #999999;
@@ -77,20 +65,42 @@
 
    #column-list {
       margin-top: 0;
-      border: 1px solid silver;
+      /* border: 1px solid silver; */
       min-height: 10rem;
-      padding: .5rem;
+      /* padding: .5rem; */
+      border-radius: 3px;
    }
 
    #column-list li {
       padding: 5px 10px;
-      border: 1px solid #ddd;
+      border: 1px solid gray;
       margin-bottom: 2px;
       background: white;
+      border-radius: 0 !important;
    }
 
    #add-row {
       height: 2.5rem;
+   }
+
+   .example-column {
+      border: 1px dashed lightgray !important;
+      color: silver;
+   }
+
+   #row-stack {
+      border: 1px solid silver;
+      padding:.5rem;
+   }
+
+   #row-stack p {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: .5rem;
+      color: gray;
+   }
+
+   .lightgray {
+      color: silver;
    }
 
    </style>
@@ -139,29 +149,39 @@
 
 
 
-               <form>
-                  <!-- Select dropdown -->
-                  <div class="form-group">
-                     <label for="dropdown-1">Add Row(s)</label>
-                     <select class="form-control" id="add-row" name="dropdown-1">
-                        <option value="select" selected="selected">-- select # columns --</option>
-                        <option value="1col-100">1 Column — 100%</option>
-                        <option value="2col-25-75">2 Columns — 25% - 75%</option>
-                        <option value="2col-75-25">2 columns — 75% - 25%</option>
-                        <option value="2col-50-50">2 columns — 50% - 50%</option>
-                        <option value="3col-25-50-25">3 columns — 25% - 50% - 25%</option>
-                        <option value="3col-equal">3 columns — Equal widths</option>
-                        <option value="4col-equal">4 columns — Equal widths</option>
-                        <option value="5col-equal">5 columns — Equal widths</option>
-                        <option value="6col-equal">6 columns — Equal widths</option>
-                        <option value="12col-equal">12 columns — Equal widths</option>
-                     </select>
-                  </div>
-               </form>
+            <form>
+               <!-- Select dropdown -->
+               <div class="form-group">
+                  <label for="dropdown-1">Add Row(s)</label>
+                  <select class="form-control" id="add-row" name="dropdown-1">
+                     <option value="select" selected="selected">-- select # columns --</option>
+                     <option value="1col-100">1 Column — 100%</option>
+                     <option value="2col-15-85">2 Columns — 15% - 85%</option>
+                     <option value="2col-25-75">2 Columns — 25% - 75%</option>
+                     <option value="2col-75-25">2 columns — 75% - 25%</option>
+                     <option value="2col-50-50">2 columns — 50% - 50%</option>
+                     <option value="3col-25-50-25">3 columns — 25% - 50% - 25%</option>
+                     <option value="3col-equal">3 columns — Equal widths</option>
+                     <option value="4col-equal">4 columns — Equal widths</option>
+                     <option value="5col-equal">5 columns — Equal widths</option>
+                     <option value="6col-equal">6 columns — Equal widths</option>
+                     <option value="12col-equal">12 columns — Equal widths</option>
+                  </select>
+               </div>
+            </form>
 
             <!-- rows and columns added here -->
-            <ul id="column-list" class="list-group">
-            </ul>
+
+            <div class="panel" id="row-stack">
+               <p class="text-left lightgray"><strong>Stack row(s) below ...</strong></p>
+
+               <ul id="column-list" class="list-group">
+
+                  <li class="list-group-item example-column">1 Column | 100%</li>
+                  <li class="list-group-item example-column">3 columns | 25% - 50% - 25%</li>
+
+               </ul>
+            </div>
 
 
 
@@ -180,21 +200,12 @@
             <div class="example" id="simple-example">
 
                <div class="row">
-                  <div class="col-sm-4">content (4 cols)</div>
-                  <div class="col-sm-4">content (4 cols)</div>
-                  <div class="col-sm-4">content (4 cols)</div>
-                  <div class="col-sm-8">content (8 cols)</div>
-                  <div class="col-sm-4">content (4 cols)</div>
+                  <div class="col-sm-12">content</div>
                </div>
-
                <div class="row">
-                  <div class="col-sm-9">content (9 cols)</div>
-                  <div class="col-sm-3">content (3 cols)</div>
-               </div>
-
-               <div class="row">
-                  <div class="col-sm-6">content (6 cols)</div>
-                  <div class="col-sm-6">content (6 cols)</div>
+                  <div class="col-sm-3">content</div>
+                  <div class="col-sm-6">content</div>
+                  <div class="col-sm-3">content</div>
                </div>
 
             </div>
@@ -215,21 +226,14 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;div class="row"&gt;
-   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
-   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
-   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
-   &lt;div class="col-sm-8"&gt;content (8 cols)&lt;/div&gt;
-   &lt;div class="col-sm-4"&gt;content (4 cols)&lt;/div&gt;
+   &lt;div class="col-sm-12"&gt;content&lt;/div&gt;
 &lt;/div&gt;
 &lt;div class="row"&gt;
-   &lt;div class="col-sm-9"&gt;content (9 cols)&lt;/div&gt;
-   &lt;div class="col-sm-3"&gt;content (3 cols)&lt;/div&gt;
-&lt;/div&gt;
-&lt;div class="row"&gt;
-   &lt;div class="col-sm-6"&gt;content (6 cols)&lt;/div&gt;
-   &lt;div class="col-sm-6"&gt;content (6 cols)&lt;/div&gt;
+   &lt;div class="col-sm-3"&gt;content&lt;/div&gt;
+   &lt;div class="col-sm-6"&gt;content&lt;/div&gt;
+   &lt;div class="col-sm-3"&gt;content&lt;/div&gt;
 &lt;/div&gt;
 </pre>
 
@@ -301,48 +305,58 @@
          // The holder for all the rows
          var allRows = [];
 
-         $("#add-row").on("change", function(){
+         $("#add-row").on("change", function() {
+
+            // Remove the examples
+            $("#column-list .example-column").remove();
+            // $("#simple-code").empty();
+            // $("#simple-example").empty();
+            // $("#row-stack p").removeClass("lightgray");
+
 
             var addRow = "";
             var newestRow = "";
 
-            if ( $("#add-row").val() != "select" ) {
-            newestRow = $("#add-row").val();
+            if ($("#add-row").val() != "select") {
+               newestRow = $("#add-row").val();
 
-            switch (newestRow) {
-               case "1col-100":
-                  addRow = "<li class='list-group-item'>1 Column | 100%</li>";
-                  break;
-               case "2col-25-75":
-                  addRow = "<li class='list-group-item'>2 columns | 25% - 75%</li>";
-                  break;
-               case "2col-75-25":
-                  addRow = "<li class='list-group-item'>2 columns | 75% - 25%</li>";
-                  break;
-               case "2col-50-50":
-                  addRow = "<li class='list-group-item'>2 columns | 50% - 50%</li>";
-                  break;
-               case "3col-25-50-25":
-                  addRow = "<li class='list-group-item'>3 columns | 25% - 50% - 25%</li>";
-                  break;
-               case "3col-equal":
-                  addRow = "<li class='list-group-item'>3 columns | Equal Widths</li>";
-                  break;
-               case "4col-equal":
-                  addRow = "<li class='list-group-item'>4 columns | Equal Widths</li>";
-                  break;
-               case "5col-equal":
-                  addRow = "<li class='list-group-item'>5 columns | Equal Widths</li>";
-                  break;
-               case "6col-equal":
-                  addRow = "<li class='list-group-item'>6 columns | Equal Widths</li>";
-                  break;
-               case "12col-equal":
-                  addRow = "<li class='list-group-item'>12 columns | Equal Widths</li>";
-                  break;
-            }
+               switch (newestRow) {
+                  case "1col-100":
+                     addRow = "<li class='list-group-item'>1 Column | 100%</li>";
+                     break;
+                  case "2col-15-85":
+                     addRow = "<li class='list-group-item'>2 columns | 15% - 85%</li>";
+                     break;
+                  case "2col-25-75":
+                     addRow = "<li class='list-group-item'>2 columns | 25% - 75%</li>";
+                     break;
+                  case "2col-75-25":
+                     addRow = "<li class='list-group-item'>2 columns | 75% - 25%</li>";
+                     break;
+                  case "2col-50-50":
+                     addRow = "<li class='list-group-item'>2 columns | 50% - 50%</li>";
+                     break;
+                  case "3col-25-50-25":
+                     addRow = "<li class='list-group-item'>3 columns | 25% - 50% - 25%</li>";
+                     break;
+                  case "3col-equal":
+                     addRow = "<li class='list-group-item'>3 columns | Equal Widths</li>";
+                     break;
+                  case "4col-equal":
+                     addRow = "<li class='list-group-item'>4 columns | Equal Widths</li>";
+                     break;
+                  case "5col-equal":
+                     addRow = "<li class='list-group-item'>5 columns | Equal Widths</li>";
+                     break;
+                  case "6col-equal":
+                     addRow = "<li class='list-group-item'>6 columns | Equal Widths</li>";
+                     break;
+                  case "12col-equal":
+                     addRow = "<li class='list-group-item'>12 columns | Equal Widths</li>";
+                     break;
+               }
 
-            $("#column-list").append(addRow);
+               $("#column-list").append(addRow);
             }
 
             // reset the value of the dropdown
@@ -360,11 +374,14 @@
 
             var finalColumns = "";
 
-            $("#column-list li").each( function(){
+            $("#column-list li").each(function() {
 
                switch ($(this).text()) {
                   case "1 Column | 100%":
                      finalColumns += "<div class='row'><div class='col-sm-12'>content</div></div>";
+                     break;
+                  case "2 columns | 15% - 85%":
+                     finalColumns += "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-10'>content</div></div>";
                      break;
                   case "2 columns | 25% - 75%":
                      finalColumns += "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-9'>content</div></div>";
@@ -385,13 +402,16 @@
                      finalColumns += "<div class='row'><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div></div>";
                      break;
                   case "5 columns | Equal Widths":
-                     finalColumns += "<div class='row'><div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+                     finalColumns +=
+                        "<div class='row'><div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
                      break;
                   case "6 columns | Equal Widths":
-                     finalColumns += "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
+                     finalColumns +=
+                        "<div class='row'><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div></div>";
                      break;
                   case "12 columns | Equal Widths":
-                     finalColumns += "<div class='row'><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div></div>";
+                     finalColumns +=
+                        "<div class='row'><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div></div>";
                      break;
                }
 
