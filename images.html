@@ -39,7 +39,8 @@
    <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
 
-   <!-- CSS Animations --> <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+   <!-- CSS Animations -->
+   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -81,7 +82,7 @@
          <div class="col-sm-12">
             <h1>Images</h1>
             <p class="lead">Images support and enhance the meaning of textual content on the page.</p>
-            <p>The first steps in working with images are to save your image at the appropriate resolution and size, and place them in an image repository. You may wish to add attribution through the use of a panel and caption.</p>
+            <p>The first steps in working with images are to save your image at the appropriate resolution and size and place them in an image repository. You may wish to add attribution through the use of a caption.</p>
          </div>
       </div>
 
@@ -98,27 +99,47 @@
                   <select class="form-control" id="image-alignment">
                      <option value="image-only" selected="selected">Image Only</option>
                      <option value="disabled" disabled="disabled">-------------------------------</option>
-                     <option value="image-left-50">Image (50%) ... Text (50%)</option>
-                     <option value="image-right-50">Text (50%) ... Image (50%)</option>
+                     <option value="image-left-50">Text (50%) ... Image (50%)</option>
+                     <option value="image-right-50">Image (50%) ... Text (50%)</option>
                      <option value="disabled" disabled="disabled">-------------------------------</option>
-                     <option value="image-left-25">Image (25%) ... Text (75%)</option>
-                     <option value="image-right-25">Text (75%) ... Image (25%)</option>
+                     <option value="image-right-25">Image (25%) ... Text (75%)</option>
+                     <option value="image-left-25">Text (75%) ... Image (25%)</option>
+                     <option value="disabled" disabled="disabled">-------------------------------</option>
+                     <option value="image-right-float">Image Right (wrap text)</option>
+                     <option value="image-left-float">Image Left (wrap text)</option>
                   </select>
+               </div>
+
+               <div class="form-group push-down-1 push-right-1" id="show-hide-image-center">
+                  <div class="checkbox">
+                     <label>
+                        <input type="checkbox" id="center-the-image" checked> Center the Image
+                     </label>
+                  </div>
+               </div>
+
+               <!-- Simple input -->
+               <div id="show-hide-image-width" class="hidden">
+                  <label for="widthOfImage">Image Width <small class="gray">| Required</small></label>
+                  <div class="input-group push-right-1" style="width: 100px">
+                     <input name="widthOfImage" type="text" class="form-control" id="image-width-px" placeholder="300">
+                     <span class="input-group-addon">px</span>
+                  </div>
                </div>
 
                <div class="form-group push-down-1">
                   <label for="alignment">Image Shape</label>
                   <select class="form-control" id="image-shape">
-                     <option value="none" selected="selected">Square</option>
-                     <option value="rounded">Rounded square</option>
-                     <option value="thumbnail">Rounded square with borders</option>
+                     <option value="none" selected="selected">Rectangle</option>
+                     <option value="rounded">Rectangle Rounded</option>
+                     <option value="thumbnail">Rectangle w/ Rounded Borders</option>
                      <option value="circle">Circle</option>
                   </select>
                </div>
 
                <div class="form-group push-down-1">
-                  <label for="button-url">Image URL</label> | <span id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><ul class='list-inline'><li><a href='https://www.google.com/imghp?hl=en&tab=wi' target='_blank'>Google Images</a></li>,<li><a href='http://www.lifeofpix.com/' target='_blank'>Life of Pix</a></li>,<li><a href='https://www.pexels.com/' target='_blank'>Pexels</a></li>,<li><a href='https://pixabay.com/' target='_blank'>Pixabay</a></li>,<li><a href='http://publicdomainarchive.com/' target='_blank'>Public Domain Archive</a></li>,<li><a href='http://realisticshots.com/' target='_blank'>Realistic Shots</a></li>,<li><a href='https://unsplash.com/' target='_blank'>Unsplash</a></li></ul><hr><p>Librarians may wish to use:</p><ul class='list-inline'><li><a href='https://nd.libapps.com/libguides/image_manager.php' target='_blank'>LibGuides Image Library</a></li></ul>">
-                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small>Find Image</small></span>
+                  <label for="button-url">Image URL</label> | <span id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Find an Image</h5><hr><p>There are many free image repositories, such as:</p><p><a href='https://www.google.com/imghp?hl=en&tab=wi' target='_blank'>Google Images</a>, <a href='http://www.lifeofpix.com/' target='_blank'>Life of Pix</a>, <a href='https://www.pexels.com/' target='_blank'>Pexels</a>, <a href='https://pixabay.com/' target='_blank'>Pixabay</a>, <a href='http://publicdomainarchive.com/' target='_blank'>Public Domain Archive</a>, <a href='http://realisticshots.com/' target='_blank'>Realistic Shots</a>, <a href='https://unsplash.com/' target='_blank'>Unsplash</a><hr><p>Librarians may wish to use:</p><a href='https://nd.libapps.com/libguides/image_manager.php' target='_blank'>LibGuides Image Library</a>">
+                     <i class="fa fa-search fa-fw" aria-hidden="true"></i> <small><strong>Find Image</strong></small></span>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-url">
@@ -127,26 +148,30 @@
                </div>
 
                <div class="form-group push-down-1">
-                  <label for="alt-text">Alt-text </label> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Alt-text</h5><hr><p>Alt-text describes your image for the visually impaired. This text does not show in the page but describe images which matter to the content on the page. For purely decorative images which add no meaning, leave this field blank.</p><p><a href='http://webaim.org/techniques/alttext/' target='_blank'><i class='fa fa-external-link fa-fw' aria-hidden='true'></i> Read more about alt-text</a></p>"><i class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a><input type="text" class="form-control" id="image-alt-text">
+                  <label for="alt-text">Alt-text </label> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Alt-text</h5><hr><p>Alt-text describes your image for the visually impaired. This text does not show in the page but describe images which matter to the content on the page. For purely decorative images which add no meaning, leave this field blank.</p><p><a href='http://webaim.org/techniques/alttext/' target='_blank'><i class='fa fa-external-link fa-fw' aria-hidden='true'></i> Read more about alt-text</a></p>"><i
+                        class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a><input type="text" class="form-control" id="image-alt-text">
                   <span class="placeholder">Example | Image of Lilya Brik</span>
                </div>
 
+               <hr>
+
                <div class="form-group">
-                  <label for="button-url">Caption</label>
+                  <label for="button-url">Caption</label><span> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Image Caption</h5><hr><p>Adding a caption will place the image inside a panel element and add the caption to its footer.</p>"><i
+                           class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a></span>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-caption">
                   </div>
-                  <span class="placeholder">Example | Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)</span>
+                  <span class="placeholder">Example | Rodchenko's famous photo of Lilya Brik used in Russian Constructivist posters</span>
                </div>
 
-               <div id="icon-show-hide" class="hidden push-down-1">
+               <div id="icon-show-hide" class="push-down-1">
                   <label for="button-url">Icon <span class="descriptor">| optional</span></label>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-icon-choice"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-icon">
                   </div>
-                  <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select an Icon</small></a> | <a id="add-icon"><small>Default
+                  <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select Icon</small></a> | <a id="add-icon"><small>Default
                            ( <i class="fa fa-camera-retro" aria-hidden="true"></i> )</small></a></p>
                </div>
 
@@ -166,20 +191,20 @@
             <div class="example" id="simple-example">
 
                <div class="row">
-               	<div class="col-sm-6">
-               		<div class="panel panel-default">
-               			<div class="panel-body">
-               				<img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
-               			</div>
-               			<div class="panel-footer">
-               				<i class="fa fa-camera-retro" aria-hidden="true"></i>
-               				Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)
-               			</div>
-               		</div>
-               	</div>
-               	<div class="col-sm-6">
-               		<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p>
-               	</div>
+                  <div class="col-sm-6">
+                     <div class="thumbnail">
+                        <img class="img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
+                        <p class="push-down-1 text-center">
+                           <i class="fa fa-fw fa-camera-retro" aria-hidden="true"></i>
+                           Rodchenko's famous photo of Lilya Brik
+                        </p>
+                     </div>
+                  </div>
+                  <div class="col-sm-6">
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit
+                        amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p>
+                     <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet dolorum nesciunt quod aperiam dolor.</p>
+                  </div>
                </div>
 
             </div>
@@ -203,18 +228,17 @@
 <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;div class="row"&gt;
 	&lt;div class="col-sm-6"&gt;
-		&lt;div class="panel panel-default"&gt;
-			&lt;div class="panel-body"&gt;
-				&lt;img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik"&gt;
-			&lt;/div&gt;
-			&lt;div class="panel-footer"&gt;
-				&lt;i class="fa fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
-				Image of Lilya Brik from Rodchenko's protest poster (Russian Constructivism)
-			&lt;/div&gt;
+		&lt;div class="thumbnail"&gt;
+			&lt;img class="img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik"&gt;
+			&lt;p class="push-down-1 text-center"&gt;
+				&lt;i class="fa fa-fw fa-camera-retro" aria-hidden="true"&gt;&lt;/i&gt;
+				Rodchenko's famous photo of Lilya Brik
+			&lt;/p&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
 	&lt;div class="col-sm-6"&gt;
 		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!&lt;/p&gt;
+		&lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet dolorum nesciunt quod aperiam.&lt;/p&gt;
 	&lt;/div&gt;
 &lt;/div&gt;
 </pre>
@@ -222,16 +246,37 @@
             </div>
             <!-- well closes -->
 
-            <h4 class="sub-header">Notes</h4>
+
+            <h4 class="sub-header">Custom CSS</h4>
+
+            <p>Custom CSS is required for adding a <code>margin-right</code> and <code>margin-bottom</code> when floating images to the right or left.</p>
+
+            <div class="well">
+               <!-- Copier-->
+               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+                     aria-hidden="true"></i> Copy</button>
+
+               <!-- Update Example Panel-->
+               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
+                     aria-hidden="true"></i> Get all bootstrapr CSS</a>
+
+               <hr class="well-separator">
 
 
-            <div class="alert alert-info push-down-1" role="alert">
-            	<p><i class="fa fa-info-circle fa-fw" aria-hidden="true"></i>
-            		<a class="close" data-dismiss="alert" aria-label="close">×</a>
-            		<strong>Image Alignment</strong></p>
-            		<p>The <code>.center-block</code> class is added by default. This will center the image horizontally. To negate this effect, simply remove this class from the <code>&lt;img&gt;</code> element. If you wish to float an image, use the <code>.pull-left</code> and <code>.pull-right</code> classes.</p>
+               <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+.bsr-right-margin {
+   margin-right: 1rem;
+   margin-bottom: 1rem;
+}
+
+.bsr-left-margin {
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+}
+</pre>
 
             </div>
+            <!-- .well -->
 
          </div>
          <!-- col-sm-9 -->
@@ -1612,7 +1657,7 @@
    <!-- .modal -->
 
    <!-- Animations JS -->
-      <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
    <script>
       $(document).ready(function() {
@@ -1630,11 +1675,32 @@
          $("li#image").addClass("active");
          $("#containers-dropdown").addClass("activated");
 
-         $("#image-caption").on("focus", function(){
-            if ($("#image-caption").val() !== "") {
-               $("#icon-show-hide").hide().removeClass("hidden").fadeIn();
+         // $("#image-caption").on("change", function() {
+         //    if ($("#image-caption").val() !== "") {
+         //       $("#icon-show-hide").hide().removeClass("hidden").fadeIn();
+         //    } else {
+         //       $("#icon-show-hide").fadeOut();
+         //    }
+         // });
+
+         $("#image-alignment").on('change', function() {
+
+            if (($("#image-alignment").val() == "image-left-float") || ($("#image-alignment").val() == "image-right-float")) {
+               $("#show-hide-image-width").hide().removeClass("hidden").fadeIn();
             } else {
-               $("#icon-show-hide").fadeOut();
+               $("#show-hide-image-width").fadeOut();
+               $("#image-width-px").val();
+            }
+         });
+
+
+         $("#image-alignment").on('change', function() {
+
+            if (($("#image-alignment").val() == "image-only")) {
+               $("#show-hide-image-center").hide().removeClass("hidden").fadeIn();
+            } else {
+               $("#show-hide-image-center").fadeOut();
+               $("#center-the-image").prop("checked", false);
             }
          });
 
@@ -1646,6 +1712,8 @@
             var imageAltText = $("#image-alt-text").val();
             var imageCaption = $("#image-caption").val();
             var imageIcon = $("#image-icon").val();
+            var thumbnailOpen = "";
+            var thumbnailClose = "";
             var leftContent = "";
             var rightContent = "";
             var shaped = "";
@@ -1655,6 +1723,21 @@
             var panelBodyClose = "";
             var panelFooterOpen = "";
             var panelFooterClose = "";
+            var spacer = "";
+            var isFloated = "";
+            var imageWidthPx = "width='" + $("#image-width-px").val() + "' ";
+            if ($("#image-width-px").val() == "") {
+               imageWidthPx = "";
+            }
+
+            var floatRight = "";
+            var floatLeft = "";
+
+            if (imageAlignment == "image-left-float" && imageCaption == "") {
+               floatLeft = "pull-left bsr-right-margin ";
+            } else if (imageAlignment == "image-right-float" && imageCaption == "") {
+               floatRight = "pull-right bsr-left-margin ";
+            }
 
             var rowOpen = "<div class='row'>";
             var rowClose = "</div>";
@@ -1662,44 +1745,52 @@
             var rightDivOpen = "";
             var divClose = "</div>";
 
-            var lorem = "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p>"
+            var centerBlock = "";
+            if ($("#center-the-image").is(":checked")) {
+               centerBlock = "center-block ";
+            }
+
+            var imageBase = "<img " + imageWidthPx + "class='" + centerBlock + floatLeft + floatRight + "img img-responsive";
+
+            var lorem =
+               "<p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi incidunt nulla enim praesentium exercitationem cumque optio, labore ullam, ad eligendi nisi, aut sequi facilis quisquam adipisci quasi. Magnam, deserunt, alias!</p><p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Doloribus amet dolorum nesciunt quod aperiam dolor accusantium libero quaerat voluptates ex placeat exercitationem odit dolore modi illum, tempora id enim ducimus et Lorem ipsum dolor sit amet, consectetur adipisicing elit. Cumque iusto error cum quo odit, distinctio esse reprehenderit similique, odio repellat.</p>";
+
 
             switch (imageShape) {
 
                case 'none':
                   shaped = "";
-                 break;
+                  break;
 
                case 'rounded':
                   shaped = " img-rounded";
-                 break;
+                  break;
 
                case 'thumbnail':
                   shaped = " img-thumbnail";
-                 break;
+                  break;
 
                case 'circle':
                   shaped = " img-circle";
-                 break;
+                  break;
             }
 
             if (imageCaption !== "") {
-               panelOpen = "<div class='panel panel-default'>";
-               panelClose = "</div>";
-               panelBodyOpen = "<div class='panel-body'>";
-               panelBodyClose = "</div>";
-               panelFooterOpen = "<div class='panel-footer'>" + imageIcon + " " + imageCaption;
-               panelFooterClose = "</div>";
-            } else {
-               panelOpen = "";
-               panelClose = "";
-               panelBodyOpen = "";
-               panelBodyClose = "";
-               panelFooterOpen = "";
-               panelFooterClose = "";
+
+               if (imageAlignment == "image-left-float") {
+                  isFloated = " pull-left bsr-right-margin";
+               } else if (imageAlignment == "image-right-float") {
+                  isFloated = " pull-right bsr-left-margin";
+               }
+
+               thumbnailOpen = "<div class='thumbnail" + isFloated + "'>";
+               thumbnailClose = "</div>";
+
+               imageCaption = "<p class='push-down-1 text-center'>" + imageIcon + imageCaption + "</p>";
+
             }
 
-            var theImage = panelOpen + panelBodyOpen + "<img class='center-block img img-responsive" + shaped + "' src='" + imageURL + "' alt='" + imageAltText + "'>" + panelBodyClose + panelFooterOpen + panelFooterClose + panelClose;
+            var theImage = thumbnailOpen + imageBase + shaped + "' src='" + imageURL + "' alt='" + imageAltText + "'>" + imageCaption + spacer + thumbnailClose;
 
             switch (imageAlignment) {
 
@@ -1710,38 +1801,58 @@
                   rowClose = "";
                   divClose = "";
                   leftContent = theImage;
-                 break;
+                  break;
 
                case 'image-left-50':
                   leftDivOpen = "<div class='col-sm-6'>";
                   rightDivOpen = "<div class='col-sm-6'>";
                   leftContent = theImage;
                   rightContent = lorem;
-                 break;
+                  break;
 
                case 'image-right-50':
                   leftDivOpen = "<div class='col-sm-6'>";
                   rightDivOpen = "<div class='col-sm-6'>";
                   leftContent = lorem;
                   rightContent = theImage;
-                 break;
+                  break;
 
                case 'image-left-25':
                   leftDivOpen = "<div class='col-sm-3'>";
                   rightDivOpen = "<div class='col-sm-9'>";
                   leftContent = theImage;
                   rightContent = lorem;
-                 break;
+                  break;
 
                case 'image-right-25':
                   leftDivOpen = "<div class='col-sm-9'>";
                   rightDivOpen = "<div class='col-sm-3'>";
                   leftContent = lorem;
                   rightContent = theImage;
-                 break;
+                  break;
+
+               case 'image-right-float':
+                  leftDivOpen = "";
+                  rightDivOpen = "";
+                  rowOpen = "";
+                  rowClose = "";
+                  divClose = "";
+                  leftContent = lorem;
+                  rightContent = theImage;
+                  break;
+
+               case 'image-left-float':
+                  leftDivOpen = "";
+                  rightDivOpen = "";
+                  rowOpen = "";
+                  rowClose = "";
+                  divClose = "";
+                  leftContent = lorem;
+                  rightContent = theImage;
+                  break;
             }
 
-            var bsImage = rowOpen + leftDivOpen + leftContent + divClose + rightDivOpen + rightContent + divClose + rowClose;
+            var bsImage = rowOpen + rightDivOpen + rightContent + divClose + leftDivOpen + leftContent + divClose + rowClose;
 
             $("#simple-example").html(bsImage);
             $('#simple-code').text(bsImage);
@@ -1767,6 +1878,8 @@
 
          $("#refresh-icon-choice").on("click", function() {
             $("#image-icon").val("");
+            $("#icon-show-hide").fadeOut();
+
          });
 
          // clipboard button
@@ -1783,7 +1896,7 @@
 
          // add the default icon (camera-retro) into the input field
          $('#add-icon').click(function() {
-            $('#image-icon').val('<i class="fa fa-camera-retro" aria-hidden="true"></i>');
+            $('#image-icon').val('<i class="fa fa-fw fa-camera-retro" aria-hidden="true"></i>');
          });
 
       });

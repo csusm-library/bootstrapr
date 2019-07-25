@@ -391,6 +391,16 @@ pre {
    margin-left: 2rem !important;
 }
 
+.bsr-right-margin {
+   margin-right: 1rem;
+   margin-bottom: 1rem;
+}
+
+.bsr-left-margin {
+   margin-left: 1rem;
+   margin-bottom: 1rem;
+}
+
 /* Add bottom margin to the description lists */
 dd {
    margin-bottom: 1rem;
