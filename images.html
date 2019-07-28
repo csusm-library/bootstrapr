@@ -144,7 +144,8 @@
                      <span class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-url">
                   </div>
-                  <span class="placeholder">Example | http://www.link.com</span>
+                  <!-- <span class="placeholder">Example | http://image.com/image.png</span> -->
+                  <p class="text-left" style="margin-left: 8px;"><a id="placeholder-image"><small>Placeholder Image (300px<sup>2</sup>)</small></a></p>
                </div>
 
                <div class="form-group push-down-1">
@@ -1704,6 +1705,10 @@
             }
          });
 
+         $("#placeholder-image").on("click", function(){
+            $("#image-url").val("http://placehold.it/300x300");
+         });
+
          $("#display-image").on("click", function() {
 
             var imageAlignment = $("#image-alignment").val();
@@ -1878,7 +1883,6 @@
 
          $("#refresh-icon-choice").on("click", function() {
             $("#image-icon").val("");
-            $("#icon-show-hide").fadeOut();
 
          });
 
