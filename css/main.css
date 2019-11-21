@@ -10,9 +10,9 @@ html {
 }
 
 html, body {
-   font-family: "open sans", Arial, sans-serif;
+   font-family: "Open Sans", Arial, sans-serif;
    margin: 0;
-   font-size: 16px;
+   font-size: 17px;
    padding: 0;
    color: black;
    touch-action: manipulation;
@@ -28,9 +28,13 @@ body {
 }
 
 h1, h2, h3, h4, h5, h6 {
-   font-family: "montserrat", Arial, sans-serif;
+   font-family: "Montserrat", Arial, sans-serif;
    /* color: #0f2438; */
    color: #20364c;
+}
+
+.col-sm-12 > h1 {
+  font-size: 3rem;
 }
 
 .sub-header {
@@ -181,10 +185,6 @@ pre {
    border-top: none;
    border-left: none;
    border-right: none;
-}
-
-.lead-plus {
-   font-size: 180%;
 }
 
 .brand-link {
@@ -601,6 +601,58 @@ input[type="radio"] {
    color: aliceblue;
 }
 
+.dropdown-menu li a {
+  font-weight: 500;
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+.dropdown-menu li {
+   margin-bottom: .5rem;
+}
+
+.dropdown-menu li a i {
+  color: gray;
+  opacity: .5;
+}
+
+.form-group input,
+.input-group input {
+  padding: 1.25rem .75rem !important;
+  /* font-size: 1rem; */
+}
+
+/* fields with numbers */
+.number-control {
+  width: 100px !important;
+}
+
+.long-number-control {
+  width: 225px !important;
+}
+
+select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    appearance: none;
+    box-sizing: content-box;
+    padding: .25rem -.5rem .25rem .5rem !important;
+    width: 90% !important;
+}
+
+.navbar-nav .dropdown a,
+.navbar-nav #pages a {
+  font-family: "Montserrat", Arial, sans-serif;
+}
+
+#action-buttons {
+  border-top: 1px solid silver;
+  padding-top: 1rem;
+}
+
+#action-buttons .btn-primary {
+  margin-left: .25rem;
+}
+
 /* Special classes  -------------------------------------------- */
 
 
@@ -845,4 +897,15 @@ caption .summary {
 
 .ap-content .pre {
    margin-top: 1rem;
+}
+
+/* Lead classes */
+
+.lead {
+  font-family: "Montserrat", Arial, sans-serif;
+
+}
+
+.lead-plus {
+   font-size: 150%;
 }

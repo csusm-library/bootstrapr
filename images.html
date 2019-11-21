@@ -121,7 +121,7 @@
                <!-- Simple input -->
                <div id="show-hide-image-width" class="hidden">
                   <label for="widthOfImage">Image Width <small class="gray">| Required</small></label>
-                  <div class="input-group push-right-1" style="width: 100px">
+                  <div class="input-group push-right-1 number-control">
                      <input name="widthOfImage" type="text" class="form-control" id="image-width-px" placeholder="300">
                      <span class="input-group-addon">px</span>
                   </div>
@@ -178,9 +178,9 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-image"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="display-image"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="display-image"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-image"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
 

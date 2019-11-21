@@ -80,7 +80,7 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Accordions</h1>
-            <p class="lead">Accordions chunk, conceal and reveal content effectively.</p>
+            <p class="lead-plus">Accordions chunk, conceal and reveal content effectively.</p>
             <p>By concealing larger amounts of data, accordions allow users to quickly find information by scanning headings. Accordions are great for FAQs.</p>
          </div>
       </div>
@@ -94,7 +94,7 @@
             <form>
                <div class="form-group">
                   <label for="num-panels"># Panels</label>
-                  <input type="text" class="form-control" id="num-panels" style="width: 75px">
+                  <input type="text" class="form-control number-control" id="num-panels">
                </div>
 
                <label for="icon-html">Icon <span class="descriptor">| optional</span></label>
@@ -136,9 +136,10 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-panel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="panel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+                <button type="button" class="btn btn-primary pull-right" id="panel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+                <button type="button" class="btn btn-default pull-right" id="clear-panel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+
             </div>
 
          </div>

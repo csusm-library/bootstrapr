@@ -1,14 +1,14 @@
-/* Website Design */
+/* Web Application Design */
 
-   Project: bootstrapr
+   Project: Bootstrapr
    Web Design and Development
 
 	Release date: October, 2018
 
    Randal Sean Harrison, Ph.D.
    Website Developer
-	Employed: Hesburgh Libraries, University of Notre Dame
-	Contact: rharriso@nd.edu
+ 	 Employed: Hesburgh Libraries, University of Notre Dame
+	 Contact: rharriso @ nd.edu
 
 /* Technologies, Credits  */
 

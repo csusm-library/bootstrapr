@@ -88,7 +88,7 @@
       <div class="row">
          <div class="col-sm-12">
             <h1>Alerts</h1>
-            <p class="lead">Alerts and notes are useful to make information pop.</p>
+            <p class="lead-plus">Alerts and notes are useful to make information pop.</p>
             <p>Use alerts to foreground important information, indicating success, offering warnings, declaring prohibition, and elevating specific links.</p>
          </div>
       </div>
@@ -112,7 +112,7 @@
 
                <div class="form-group">
                   <label for="button-color">Color</label>
-                  <select class="form-control" id="alert-color" style="margin-bottom: 15px;">
+                  <select role="menu" class="form-control" id="alert-color" style="margin-bottom: 15px;">
                      <option id="option-default" value=" alert-default">Default &mdash; light grey</option>
                      <option id="option-lt-blue" value=" alert-info" selected="selected">Information &mdash; blue</option>
                      <option id="option-red" value=" alert-danger">Danger &mdash; red</option>
@@ -121,7 +121,7 @@
                   </select>
                </div>
 
-               <div style="margin-top: 30px;" class="checkbox">
+               <div class="checkbox push-down-2">
                   <label>
                      <input type="checkbox" id="standard-icons"> Use Default Icons
                   </label>
@@ -146,9 +146,9 @@
 
             </form>
 
-            <div class="push-down-2 button-box">
-               <button type="button" class="btn btn-default" id="clearAlert"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="alertButton"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-2 button-box" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="alertButton"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clearAlert"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
 

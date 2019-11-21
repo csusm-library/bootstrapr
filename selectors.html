@@ -81,7 +81,7 @@
          <div class="col-sm-12">
             <h1>Selectors</h1>
             <p class="lead">Use a select input to toggle show/hide on content areas.</p>
-            <p>Select inputs allow you to use a simple form control such as a dropdown input to conveniently hide and show content in <code>divs</code>.</p>
+            <p>Select inputs allow you to use a simple form control such as a dropdown input to conveniently hide and show content in <code>&lt;divs&gt;</code>.</p>
          </div>
       </div>
 
@@ -99,8 +99,8 @@
 
                <div class="form-group push-down-2">
                   <select class="form-control " id="selector-size">
-                     <option value=" input-lg" selected="selected">Large</option>
-                     <option value="">Standard</option>
+                     <option value=" input-lg">Large</option>
+                     <option value="" selected="selected">Standard</option>
                      <option value=" input-sm">Small</option>
                   </select>
                </div>
@@ -115,9 +115,9 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-selector"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="selector-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="selector-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-selector"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
          </div>
@@ -174,7 +174,7 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
 &lt;div class="bootstrapr-selector"&gt;
    &lt;!-- The input selector --&gt;
    &lt;form&gt;
@@ -225,10 +225,10 @@
 
                <hr class="well-separator">
 
-               <pre class="prettyprint lang-css" id="custom-css-code">
-   .bootstrapr-selector > div {
-      padding: 0 1rem;
-   }
+<pre class="prettyprint lang-css" id="custom-css-code">
+ .bootstrapr-selector > div {
+    padding: 0 1rem;
+ }
 </pre>
 
             </div>
@@ -250,14 +250,14 @@
                <hr class="well-separator">
 
 
-               <pre class="prettyprint" id="custom-js-code" contenteditable="true">
-   $(document).ready(function() {
-      $("#selector-1001001").on("change", function() {
-         $(".bootstrapr-selector div").addClass("hidden");
-         var showDiv = $("#selector-1001001").val();
-         $(showDiv).removeClass("hidden");
-      });
-   });
+<pre class="prettyprint" id="custom-js-code" contenteditable="true">
+$(document).ready(function() {
+  $("#selector-1001001").on("change", function() {
+     $(".bootstrapr-selector div").addClass("hidden");
+     var showDiv = $("#selector-1001001").val();
+     $(showDiv).removeClass("hidden");
+  });
+});
 </pre>
 
             </div>
@@ -360,23 +360,24 @@
             var formOpen = '<form>';
             var formClose = '</form>';
             var selectorSize = $("#selector-size").val();
-            var selectOpen = '<select class="form-control' + selectorSize + '" id="selector-' + selectorRando + '">'
+            var selectOpen = '<select class="form-control' + selectorSize + '" id="selector-' + selectorRando + '"><option disabled="disabled" value="" selected="selected">-- Select --</option>';
             var selectClose = '</select>';
             var numSections = $("#num-sections").val();
             var option = '';
             var options = '';
             var content = '';
             var contents = '';
-            var paragraph = '<p>This is the content for section 1</p>';
+            var openingParagraph = "<p>This is the content for section ";
+            var closingParagraph = "</p>";
 
             for (i = 0; i < numSections; i++) {
 
                option = '<option value="#content-div-' + (i + 1) + '">Section' + (i + 1) + '</option>';
-               content = '<div id="content-div-' + (i + 1) + '" class="hidden">' + paragraph + closingDiv;
+               content = '<div id="content-div-' + (i + 1) + '" class="hidden">' + openingParagraph + (i + 1) + closingParagraph + closingDiv;
 
                if (i == 0 && $('#first-selected').is(':checked')) {
                   option = '<option value="#content-div-' + (i + 1) + '">Section' + (i + 1) + '</option>';
-                  content = '<div id="content-div-' + (i + 1) + '">' + paragraph + closingDiv;
+                  content = '<div id="content-div-' + (i + 1) + '">' + openingParagraph + (i + 1) + closingParagraph + closingDiv;
                } else if (i == 0 && $('#first-selected').is(':checked')) {
                   option = '<option disabled="disabled" value="" selected="selected"> -- Select -- </option>';
                }
@@ -386,12 +387,14 @@
 
             }
 
-            // alert(numSections + selectOpen);
+            // Write the unique ID to the JS code section
+            var jsCode = "$(document).ready(function() {$('#selector-" + selectorRando + "').on('change', function() {$('.bootstrapr-selector div').addClass('hidden');var showDiv = $('#selector-" + selectorRando + "').val();$(showDiv).removeClass('hidden');});});";
 
             var bsSelector = selectorDivOpen + formOpen + selectOpen + options + selectClose + formClose + contents + closingDiv;
 
             $("#simple-example").html(bsSelector);
             $('#simple-code').text(bsSelector);
+            $('#custom-js-code').text(jsCode);
 
             $('pre').removeClass('prettyprinted');
             prettyPrint();

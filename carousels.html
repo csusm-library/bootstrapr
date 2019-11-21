@@ -116,22 +116,22 @@
 
                <label>Carousel Size <span class="descriptor"> | (width x height)</span></label>
                <div class="form-group">
-                  <div class="input-group" style="width: 150px;">
+                  <div class="input-group long-number-control">
                      <input id="image-width" type="text" class="form-control">
-                     <span class="input-group-addon">x</span>
+                     <span class="input-group-addon">by</span>
                      <input id="image-height" type="text" class="form-control">
                   </div>
-                  <span class="placeholder">Example | 800 x 400</span>
+                  <span class="placeholder">Example | 800 by 400</span>
                </div>
 
                <div class="form-group push-down-2">
                   <label for="num-panels"># Slides</label>
-                  <input type="text" class="form-control" id="num-slides" style="width: 75px">
+                  <input type="text" class="form-control number-control" id="num-slides">
                </div>
 
                <div class="form-group push-down-2">
                   <label for="num-panels">Interval <span class="descriptor"> | in seconds</span></label>
-                  <input type="text" class="form-control" id="data-interval" style="width: 75px">
+                  <input type="text" class="form-control number-control" id="data-interval">
                </div>
 
                <div class="form-group push-down-2">
@@ -152,9 +152,9 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="refresh-carousel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="carousel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+               <button type="button" class="btn btn-default pull-right" id="refresh-carousel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+               <button type="button" class="btn btn-primary pull-right" id="carousel-build"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
             </div>
 
          </div>

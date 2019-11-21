@@ -145,9 +145,9 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-checklist"><i class="fa fa-fw fa-refresh"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="display-checklist"><i class="fa fa-fw fa-gears"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="display-checklist"><i class="fa fa-fw fa-gears"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-checklist"><i class="fa fa-fw fa-refresh"></i> Reset</button>
             </div>
 
 
@@ -414,7 +414,7 @@ activateChecklist();
 
          // Add active class to navmenu selection
          $("li#checklist").addClass("active");
-         $("#features-dropdown").addClass("activated");
+         $("#content-dropdown").addClass("activated");
 
          // Reset button
          $('#clear-checklist').click(function() {

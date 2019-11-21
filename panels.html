@@ -93,7 +93,7 @@
             <form>
 
                <label for="card-num-columns"># Columns</label>
-               <select class="form-control" id="card-num-columns" style="width: 75px">
+               <select class="form-control number-control" id="card-num-columns">
                   <option value="0">1</option>
                   <option value="2">2</option>
                   <option value="3">3</option>
@@ -150,13 +150,10 @@
 
             </form>
 
-
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-cards"><i class="fa fa-fw fa-refresh"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="display-cards"><i class="fa fa-fw fa-gears"></i> Build</button>
+            <div class="push-down-3" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="display-cards"><i class="fa fa-fw fa-gears"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-cards"><i class="fa fa-fw fa-refresh"></i> Reset</button>
             </div>
-
-
 
          </div>
          <!-- col-sm-3 -->
