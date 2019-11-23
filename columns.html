@@ -118,6 +118,58 @@
       color: #a94442;
 
     }
+
+    /* Bounding arrow icon -- thanks to https://codepen.io/dragoeco/pen/ZWpGqo */
+    .bounce {
+      display: inline-block;
+      position: relative;
+      -moz-animation: bounce 0.5s infinite linear;
+      -o-animation: bounce 0.5s infinite linear;
+      -webkit-animation: bounce 0.5s infinite linear;
+      animation: bounce 0.75s infinite linear;
+      colr: 000;
+    }
+
+    .fa-twitter {
+      color: #027bdd;
+      font-size: 30px;
+      margin: 20px;
+    }
+
+    @-webkit-keyframes bounce {
+      0% { top: 0; }
+      50% { top: -0.2em; }
+      70% { top: -0.3em; }
+      100% { top: 0; }
+    }
+
+    @-moz-keyframes bounce {
+      0% { top: 0; }
+      50% { top: -0.2em; }
+      70% { top: -0.3em; }
+      100% { top: 0; }
+    }
+
+    @-o-keyframes bounce {
+      0% { top: 0; }
+      50% { top: -0.2em; }
+      70% { top: -0.3em; }
+      100% { top: 0; }
+    }
+
+    @-ms-keyframes bounce {
+      0% { top: 0; }
+      50% { top: -0.2em; }
+      70% { top: -0.3em; }
+      100% { top: 0; }
+    }
+
+    @keyframes bounce {
+      0% { top: 0; }
+      50% { top: -0.2em; }
+      70% { top: -0.3em; }
+      100% { top: 0; }
+    }
   </style>
 
 </head>
@@ -169,9 +221,9 @@
         <form>
           <!-- Select dropdown -->
           <div class="form-group">
-            <label for="dropdown-1">Add Row(s)</label>
-            <select class="form-control" id="add-row" name="dropdown-1">
-              <option value="select" selected="selected">Add to stack ...</option>
+            <label for="dropdown-1">Add Column Sets</label>
+            <select class="form-control text-center" id="add-row" name="dropdown-1">
+              <option value="select" selected="selected"> -- Select Column Set -- </option>
               <option value="1col-100">1 Column — 100%</option>
               <option value="2col-15-85">2 Columns — 15% - 85%</option>
               <option value="2col-25-75">2 Columns — 25% - 75%</option>
@@ -187,10 +239,12 @@
           </div>
         </form>
 
+        <p class="text-center"><i class="fa fa-fw fa-arrow-circle-o-down bounce"></i></p>
+
         <!-- rows and columns added here -->
 
         <div class="panel" id="row-stack">
-          <p class="text-left lightgray"><strong>Stack row(s) below ...</strong></p>
+          <p class="text-center lightgray"><strong>Stack Rows Here</strong></p>
 
           <ul id="column-list" class="list-group">
 
@@ -201,13 +255,13 @@
         </div>
 
         <div class="checkbox push-down-2">
-           <label>
-              <input type="checkbox" id="columns-one-row"> All columns in one row
-           </label>
+          <label>
+            <input type="checkbox" id="columns-one-row"> All columns in one row
+          </label>
         </div>
 
-        <div class="push-down-3" id="action-buttons">
-          <button type="button" class="btn btn-primary pull-right" id="display-columns"><i class="fa fa-fw fa-gears"></i> Build</button>
+        <div class="push-down-3" id="action-buttons"><span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
           <button type="button" class="btn btn-default pull-right" id="clear-columns"><i class="fa fa-fw fa-refresh"></i> Reset</button>
         </div>
 
@@ -345,23 +399,23 @@
       // If icons are checked
       $("#columns-one-row").on("change", function() {
 
-         if ( $('#columns-one-row').is(":checked") ) { //checks if the checkbox/this is selected or
-            // open and close for the each div option
-            finalDivOpener = "<div class='row'>";
-            finalDivCloser = "</div>"
+        if ($('#columns-one-row').is(":checked")) { //checks if the checkbox/this is selected or
+          // open and close for the each div option
+          finalDivOpener = "<div class='row'>";
+          finalDivCloser = "</div>"
 
-            divOpener = "";
-            divCloser = "";
+          divOpener = "";
+          divCloser = "";
 
-         } else {
+        } else {
 
-           divOpener = "<div class='row'>";
-           divCloser = "</div>"
+          divOpener = "<div class='row'>";
+          divCloser = "</div>"
 
-           finalDivOpener = "";
-           finalDivCloser = "";
+          finalDivOpener = "";
+          finalDivCloser = "";
 
-         }
+        }
 
       });
 
@@ -429,7 +483,7 @@
       $("#containers-dropdown").addClass("activated");
 
       // ------- Display the Columns --------------------------
-      $('#display-columns').click(function() {
+      $('#build-button').click(function() {
 
         var finalColumns = "";
 
@@ -466,14 +520,17 @@
               break;
             case "6 columns | Equal Widths":
               finalColumns +=
-                divOpener + "<div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div>" + divCloser;
+                divOpener +
+                "<div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div>" +
+                divCloser;
               break;
             case "12 columns | Equal Widths":
               finalColumns +=
-                divOpener + "<div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div>" + divCloser;
+                divOpener +
+                "<div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div>" +
+                divCloser;
               break;
           }
-
 
         });
 
@@ -496,20 +553,19 @@
         $(this).removeClass("delete-the-columns");
       });
 
-      $(document).on("click", "#column-list li", function(){
+      $(document).on("click", "#column-list li", function() {
         $(this).remove();
       });
 
       // Make the list elements draggable
       $(function() {
-            $( "#column-list li" ).draggable();
-         });
+        $("#column-list li").draggable();
+      });
 
       // ------- Reset the parameters  --------------------------
       $('#clear-columns').click(function() {
         location.reload(true);
       });
-
 
       // clipboard button
       new Clipboard('.btn');

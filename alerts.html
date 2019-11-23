@@ -147,7 +147,8 @@
             </form>
 
             <div class="push-down-2 button-box" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="alertButton"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
                <button type="button" class="btn btn-default pull-right" id="clearAlert"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
@@ -5725,7 +5726,7 @@
             $('#alert-icon').val('');
          });
 
-         $('#alertButton').on("click", function() {
+         $('#build-button').on("click", function() {
 
             var closeIcon = "<a class='close' data-dismiss='alert' aria-label='close'>×</a>"
             var alertIcon = $('#alert-icon').val();

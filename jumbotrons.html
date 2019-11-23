@@ -266,7 +266,8 @@
 
 
             <div class="push-down-3" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="display-jumbotron"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
                <button type="button" class="btn btn-default pull-right" id="clear-jumbotron"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
@@ -6703,7 +6704,7 @@
             }
          });
 
-         $('#display-jumbotron').on("click", function() {
+         $('#build-button').on("click", function() {
 
             var imageURL = $('#image-url').val();
             var jumbotronBackground = $('#jumbotron-background').val();

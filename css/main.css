@@ -66,6 +66,27 @@ h1, h2, h3, h4, h5, h6 {
    color: white;
 }
 
+/* Checkbox for confirming build status */
+#build-status {
+  display: inline;
+  width: 1.5rem;
+  text-align: center;
+  /* color: #007bff; */
+  color: rgba(0,128,0,.5);
+  display: none;
+  font-family: fontAwesome;
+}
+
+#build-status i {
+  width: 3rem;
+  /* color: #007bff; */
+  color: rgba(0,128,0,.5);
+  font-family: fontAwesome;
+  font-style: normal;
+}
+
+
+
 /* headings */
 h1 { font-size: 2.5rem }
 h2 { font-size: 2rem }
@@ -908,4 +929,190 @@ caption .summary {
 
 .lead-plus {
    font-size: 150%;
+}
+
+
+/* panel bodies ---------------------------------------------- */
+
+#accordion-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/accordions.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#alert-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/alerts.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#badge-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/badges.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#blockquote-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/blockquotes.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#button-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/buttons.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#carousel-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/carousels.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#checklist-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/checklists.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#code-well-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/code-wells.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#column-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/columns.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#film-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/films.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#image-grid-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/image-grids.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#image-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/images.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#jumbotron-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/jumbotrons.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#list-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/lists.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#label-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/labels.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#media-list-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/media-lists.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#modal-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/modals.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#page-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/pages.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#panel-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/panels.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#popover-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/popovers.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#symbol-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/symbols.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#table-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/tables.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#tab-pill-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/tabs.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#text-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/text.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#fontawesome-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/fontawesome.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+#glyphicons-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/glyphicons.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
 }

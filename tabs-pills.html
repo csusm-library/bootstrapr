@@ -140,7 +140,9 @@
             </form>
 
             <div class="push-down-2" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="displayTabs"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
                <button type="button" class="btn btn-default pull-right" id="clearTabs"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
@@ -327,7 +329,7 @@
          $("#containers-dropdown").addClass("activated");
 
          // ------- Display the table --------------------------
-         $('#displayTabs').click(function() {
+         $('#build-button').click(function() {
 
             var numTabs = $('#numTabs').val();
             var numDropdowns = $('#numDropdowns').val();

@@ -54,6 +54,15 @@
     td button:last-of-type {
       margin-top: .25rem;
     }
+
+    /* Allows the popover to work with the long link */
+    .popover {
+      max-width: 480px !important;
+    }
+
+    .popover-content {
+      word-wrap: break-word;
+    }
   </style>
 
 </head>
@@ -86,10 +95,13 @@
     <div class="row">
       <div class="col-sm-12">
         <h1>Google Embeds</h1>
-        <p class="lead-plus">Embedding dynamic content from 3rd party Web services lowers the cognitive load.</p>
-        <p>You may embed a Google Doc or Spreadsheet or Slide Presentation directly inside a guide box using an iframe. Set the height of your iframe window based on how much of the document you want to show at once without scrolling.</p>
+        <p class="lead-plus">Leverage the power of third party APIs from Google.</p>
+        <p>You may embed a Google Doc, Sheet, or Slide Presentation directly by using an iframe. Set the height of your iframe window based on how much of the document you want to show at once without scrolling.</p>
 
-        <div class="alert alert-danger push-down-2" role="alert"><p><i class="fa fa-times-circle fa-fw" aria-hidden="true"></i> Google Suite embeds HTML inside an <code>iframe</code> element, which is not supported on iPads. Do not use this feature if your users will require access on Apple mobile devices (or any device which doesn't support <code>iframe</code> embedding). I am currently investigating HTML5 alternatives to this which will work on mobile. Stay tuned!</p></div>
+        <div class="alert alert-warning push-down-2" role="alert">
+          <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i> Google Suite embeds HTML inside an <code>&lt;iframe&gt;</code> element. On iPads the iframe will show full-length and ignore any 'window height' property. Do not use
+            this feature if such behavior will have an adverse effect on users.</p>
+        </div>
       </div>
     </div>
 
@@ -99,55 +111,43 @@
 
       <div class="col-sm-3">
 
+
         <form>
-          <div class="form-group">
-            <label for="alert-text">Title <span class="descriptor"> |optional</span></label>
-            <input type="text" class="form-control" id="alert-title">
-          </div>
 
           <div class="form-group">
-            <label for="alert-text">Text</label>
-            <input type="text" class="form-control" id="alert-text">
-          </div>
-
-          <div class="form-group">
-            <label for="button-color">Color</label>
-            <select role="menu" class="form-control" id="alert-color" style="margin-bottom: 15px;">
-              <option id="option-default" value=" alert-default">Default &mdash; light grey</option>
-              <option id="option-lt-blue" value=" alert-info" selected="selected">Information &mdash; blue</option>
-              <option id="option-red" value=" alert-danger">Danger &mdash; red</option>
-              <option id="option-yellow" value=" alert-warning">Warning &mdash; yellow</option>
-              <option id="option-green" value=" alert-success">Success &mdash; green</option>
+            <label for="google-type">Type</label>
+            <select class="form-control" id="google-type">
+              <option value="document" selected="selected">Google Docs</option>
+              <option value="spreadsheets">Google Spreadsheets</option>
+              <option value="presentation">Google Slides</option>
             </select>
           </div>
 
+          <div class="form-group">
+            <label for="my-doc-id">Document ID</label>&nbsp;&nbsp;<a id="google-doc-popover" tabindex="1" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top"
+              data-content="<h5>Share Your Google Resource</h5><hr><ol><li>Open your Google doc, spreadsheet, or presentation.</li><li>Set your sharing option to '<strong>Public on the Web | Anyone on the internet</strong> can find and view'.</li><li>Copy your <span style='color:purple;font-weight: 500;'>Doc ID</span> from the sharing URL string. It's the bit between 'd/' and '/edit?' (see example, below).</li></ol><hr><p>Example of Doc ID:<br/><br/><span style='color: #337ab7;'>https://docs.google.com/document/d/</span><span style='color:purple;font-weight: 500;'>1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY</span><span style='color: #337ab7;'>/edit?usp=sharing</span></p>"><i
+                class="fa fa-info-circle" aria-hidden="true"></i></a>
+            <input type="text" class="form-control" id="my-doc-id" placeholder="1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY">
+            <a href="https://drive.google.com/drive/my-drive" target="_blank"><small><i class="fa fa-fw fa-external-link-square"></i> Google Drive</small></a>
+          </div>
+
+          <div class="form-group push-down-1">
+            <label for="google-doc-height">Window Height <small>(pixels)</small></label>
+            <input type="text" class="form-control number-control" id="google-doc-height" placeholder="1000">
+          </div>
+
           <div class="checkbox push-down-2">
-            <label>
-              <input type="checkbox" id="standard-icons"> Use Default Icons
+            <label for="print-link">
+              <input type="checkbox" id="print-link"> Add &lsquo;Print&rsquo; Link
             </label>
           </div>
-
-          <div style="margin-top: 30px;" class="checkbox">
-            <label>
-              <input type="checkbox" id="close-button"> Close Button
-            </label>
-          </div>
-
-
-          <label style="margin-top: 20px;" for="icon-html">Icon <span class="descriptor">| optional</span></label>
-          <div class="input-group">
-            <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
-            <input type="text" class="form-control" id="alert-icon">
-          </div>
-
-          <p class="text-left" style="margin-left: 8px;">
-            <a data-toggle="modal" data-target="#icons-modal" target="_blank">
-              <small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select Icon</small></a></p>
 
         </form>
 
         <div class="push-down-2 button-box" id="action-buttons">
-          <button type="button" class="btn btn-primary pull-right" id="alertButton"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+          <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
           <button type="button" class="btn btn-default pull-right" id="clearAlert"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
         </div>
 
@@ -159,11 +159,9 @@
 
         <div class="example" id="simple-example">
 
-          <div class="alert alert-warning" role="alert">
-            <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong>Lorem Ipsum Dolor</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Necessitatibus, nobis porro est optio unde ut dolorem atque dolor dolorum veritatis corporis neque illum voluptatum velit expedita eaque aliquid, similique.</p>
-          </div>
+          <p class='text-right'><a href='https://docs.google.com/document/d/1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY/edit' target='_blank'><i class='fa fa-print fa-spacer-right' aria-hidden='true'></i>Print This</a></p>
 
+          <iframe width='100%' height='640' frameborder='0' scrolling='yes' class="embed-responsive-item" src='https://docs.google.com/document/d/1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY/preview' allowfullscreen></iframe>
         </div>
         <div class="well">
 
@@ -181,48 +179,16 @@
 
           <hr class="well-separator">
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-&lt;div class="alert alert-warning" role="alert"&gt;
-	&lt;p&gt;
-		&lt;i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"&gt;&lt;/i&gt;
-		&lt;a class="close" data-dismiss="alert" aria-label="close"&gt;×&lt;/a&gt;
-		&lt;strong&gt;Lorem Ipsum Dolor&lt;/strong&gt;
-		&lt;br&gt;
-		Lorem ipsum dolor sit amet, consectetur adipisicing elit. Necessitatibus, nobis porro est optio unde ut dolorem atque dolor dolorum veritatis corporis neque illum voluptatum velit expedita eaque aliquid, similique.
-	&lt;/p&gt;
-&lt;/div&gt;
+          <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;p class='text-right'&gt;
+  &lt;a href='https://docs.google.com/document/d/1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY/edit' target='_blank'&gt;&lt;i class='fa fa-print fa-spacer-right' aria-hidden='true'&gt;&lt;/i&gt;Print This&lt;/a&gt;
+&lt;/p&gt;
+
+&lt;iframe width='100%' height='640' frameborder='0' scrolling='yes' class="embed-responsive-item" src='https://docs.google.com/document/d/1MPm4fG_RVwwoc3sqQhC_NBjJ_T0eVVGqUBHyS0MSUVY/preview' allowfullscreen&gt;&lt;/iframe&gt;
 </pre>
 
         </div>
         <!-- example closes -->
-
-        <h4 class="sub-header">Custom CSS</h4>
-
-        <p>Custom CSS is required for the default (grey) alert, which is borrowed from <a href="https://getbootstrap.com/docs/4.0/components/alerts/" target="_blank">Bootstrap 4</a>.</p>
-
-
-        <div class="well">
-          <!-- Copier-->
-          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-              aria-hidden="true"></i> Copy</button>
-
-          <!-- Update Example Panel-->
-          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
-              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all bootstrapr CSS</a>
-
-          <hr class="well-separator">
-
-
-          <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
-.alert-default {
-   background: #e2e3e5;
-   border-color: #d6d8db;
-   color: #383d41;
-}
-</pre>
-
-        </div>
-        <!-- .well -->
 
       </div>
       <!-- .col-sm-9 -->
@@ -293,116 +259,35 @@
         location.reload(true);
       });
 
-      // check the box by default
-      $('#standard-icons').prop('checked', true);
+      $('#print-link').prop('checked', true);
 
-      // close button added by default
-      $('#close-button').prop('checked', true);
-
-      // check the traditional icons checkbox
-      $("#standard-icons").click(function() {
-        if (!$(this).is(":not(:checked)")) { //checks if the checkbox/this is selected or not
-          $("#alert-icon").val(""); //empty the input value
-        }
+      $('#clearGoogleDocBuilder').click(function() {
+        location.reload(true);
       });
 
-      // uncheck the standard icons when text entered into this field
+      $('#build-button').click(function() {
 
-      $('#alert-icon').on('input', function(e) {
-        $('#standard-icons').prop("checked", false);
-      });
+        var googleType = $('#google-type').val();
+        var theDocID = $('#my-doc-id').val();
+        var googleDocHeight = $('#google-doc-height').val();
+        var printHeader = '';
 
-      $('#refresh-button').click(function() {
-        $('#alert-icon').val('');
-      });
-
-      $('#alertButton').on("click", function() {
-
-        var closeIcon = "<a class='close' data-dismiss='alert' aria-label='close'>×</a>"
-        var alertIcon = $('#alert-icon').val();
-        // adds fa-fw class
-        var alertIconSpaced = alertIcon.replace('" aria-hidden="true"></i>', '" aria-hidden="true"></i>');
-
-        var alertColorChoice = $('#alert-color').val();
-        var alertIconAssignation = '';
-        var checked = $('#standard-icons').prop('checked');
-        var customIzed = $("#alert-icon").val().length > 0;
-        var alertText = $('#alert-text').val();
-        var alertTitle = $('#alert-title').val();
-
-
-        if ($("#close-button").is(":not(:checked)")) {
-          closeIcon = ""; // empty the close icon string
-        } else {
-          closeIcon = "<a class='close' data-dismiss='alert' aria-label='close'>×</a>";
+        if ($('#print-link').is(":checked")) {
+          printHeader = "<p class='text-right'><a href='https://docs.google.com/" + googleType + "/d/" + theDocID + "/edit' target='_blank'><i class='fa fa-print fa-spacer-right' aria-hidden='true'></i>Print This</a></p>";
         }
 
-        if ($('#alert-title').val() !== '') {
-          alertTitle = "<strong>" + $('#alert-title').val() + "</strong><br/>";
-        }
+        var printDoc = "<iframe width='100%' height='" + googleDocHeight + "' frameborder='0' scrolling='yes' class='embed-responsive-item'  src='https://docs.google.com/" + googleType + "/d/" + theDocID +
+          "/preview' allowfullscreen></iframe>";
 
-        switch (alertColorChoice) {
-          case ' alert-default':
-            if (checked) {
-              alertIconAssignation = "<i class='fa fa-info-circle fa-fw' aria-hidden='true'></i>";
-            } else if (customIzed) {
-              alertIconAssignation = alertIconSpaced;
-            }
-            break;
-          case ' alert-info':
-            if (checked) {
-              alertIconAssignation = "<i class='fa fa-info-circle fa-fw' aria-hidden='true'></i>";
-            } else if (customIzed) {
-              alertIconAssignation = alertIconSpaced;
-            }
-            break;
-          case ' alert-danger':
-            if (checked) {
-              alertIconAssignation = "<i class='fa fa-times-circle fa-fw' aria-hidden='true'></i>";
-            } else if (customIzed) {
-              alertIconAssignation = alertIconSpaced;
-            }
-            break;
-          case ' alert-warning':
-            if (checked) {
-              alertIconAssignation = "<i class='fa fa-exclamation-triangle fa-fw' aria-hidden='true'></i>";
-            } else if (customIzed) {
-              alertIconAssignation = alertIconSpaced;
-            }
-            break;
-          case ' alert-success':
-            if (checked) {
-              alertIconAssignation = "<i class='fa fa-star fa-fw' aria-hidden='true'></i>";
-            } else if (customIzed) {
-              alertIconAssignation = alertIconSpaced;
-            }
-            break;
-        }
+        var bsGoogleDoc = printHeader + printDoc;
 
-        var alertOpening = "<div class='alert" + alertColorChoice + "' role='alert'><p>";
-        var alertClosing = alertIconAssignation + closeIcon + alertTitle + alertText + "</p></div>";
-
-        // Write the table
-        var bsAlert = alertOpening + alertClosing;
-
-        $("#simple-example").html(bsAlert);
-        $('#simple-code').text(bsAlert);
+        // Write the image
+        $("#simple-example").html(bsGoogleDoc);
+        $('#simple-code').text(bsGoogleDoc);
 
         $('pre').removeClass('prettyprinted');
         prettyPrint();
 
-        alertIconAssignation = '';
-
-      });
-
-      // Select the icon from the modal
-      var iconValue = "";
-      $('.icon-selector').on('click', function() {
-        $('#standard-icons').prop('checked', false);
-        iconValue = $(this).data("well-target");
-        $("#alert-icon").val(iconValue);
-        iconValue = "";
-        $('#icons-modal').modal('hide');
       });
 
       // clipboard button

@@ -3,924 +3,484 @@
 
 <head>
 
-   <!-- Metadata for the Webpage -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Bootstrapr</title>
+  <!-- Metadata for the Webpage -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrapr</title>
 
-   <!-- Favicons -->
-   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-   <link rel="manifest" href="img/favicon/manifest.json">
-   <meta name="msapplication-TileColor" content="#ffffff">
-   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
-   <meta name="theme-color" content="#ffffff">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-   <!-- Bootstrap CSS files-->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Bootstrap CSS files-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-   <!-- jQuery UI CSS (optional) -->
-   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <!-- jQuery UI CSS (optional) -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-   <!-- Google web fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+  <!-- Google web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
-   <!-- Font Awesome Web Icons -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Font Awesome Web Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-   <!-- CSS Animations -->
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-   <!-- Main local stylesheet -->
-   <link rel="stylesheet" href="css/main.css">
+  <!-- Main local stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
 
-   <style>
-      .tool-cards .example {
-         padding: 0px !important;
-         border-radius: 4px;
-      }
+  <style>
+    .tool-cards .example {
+      padding: 0px !important;
+      border-radius: 4px;
+    }
 
-      iframe {
-         border: 3px solid #406885;
-         padding: 3px;
-      }
+    iframe {
+      border: 3px solid #406885;
+      padding: 3px;
+    }
 
-      .carousel h3 {
-         color: white !important;
-      }
+    .carousel h3 {
+      color: white !important;
+    }
 
-      .carousel-indicators li,
-      .carousel-indicators li.active {
-         margin-left: 5px;
-      }
+    .carousel-indicators li,
+    .carousel-indicators li.active {
+      margin-left: 5px;
+    }
 
-      video::-webkit-media-controls-enclosure {
-        display: none !important;
-      }
+    video::-webkit-media-controls-enclosure {
+      display: none !important;
+    }
 
-      .video-overlay {
-        position: absolute;
-        top: 75;
-        left: 0;
-        width: 100%;
-        height: 600px;
-        /* padding-top: 10rem !important; */
-        /* background-color: rgba(135, 206, 250, .4); */
-        /* background-color: rgba(15, 36, 56, .2); */
-        /* background-color: rgba(70, 130, 180, .25); */
-        z-index: -1;
-        /* border-bottom: 2px solid lightgray; */
-        background-color: #323744;
-        background-color: #0f2438;
-        /* background-color: #000000;
+    .video-overlay {
+      position: absolute;
+      top: 75;
+      left: 0;
+      width: 100%;
+      height: 600px;
+      /* padding-top: 10rem !important; */
+      /* background-color: rgba(135, 206, 250, .4); */
+      /* background-color: rgba(15, 36, 56, .2); */
+      /* background-color: rgba(70, 130, 180, .25); */
+      z-index: -1;
+      /* border-bottom: 2px solid lightgray; */
+      background-color: #323744;
+      background-color: #0f2438;
+      /* background-color: #000000;
         opacity: .7; */
-        border-bottom: 400px solid #0f2438;
-      }
+      border-bottom: 400px solid #0f2438;
+    }
 
-      #shaded-div {
-        height: 2rem;
-        background-color: rgba(70, 130, 180, .25);
-      }
+    #shaded-div {
+      height: 2rem;
+      background-color: rgba(70, 130, 180, .25);
+    }
 
-   </style>
+    .panel-body {
+      max-width: 350px !important;
+      max-height: 300px !important;
+      height: 300px;
+    }
+  </style>
 
 
 </head>
 
 <body id="top">
 
-   <!-- Navbar include -->
-   <div w3-include-html="navbar.html"></div>
+  <!-- Navbar include -->
+  <div w3-include-html="navbar.html"></div>
 
-   <div id="shaded-div" class="hidden-xs hiden-sm"></div>
-   <div class="video-overlay hidden-xs hiden-sm"></div>
+  <div id="shaded-div" class="hidden-xs hiden-sm"></div>
+  <div class="video-overlay hidden-xs hiden-sm"></div>
 
-   <!-- Jumbotron -->
-   <div class='jumbotron-homepage push-down-jumbotron hidden-xs hiden-sm'>
+  <!-- Jumbotron -->
+  <div class='jumbotron-homepage push-down-jumbotron hidden-xs hiden-sm'>
 
 
-      <video width="100%" height="425" playsinline autoplay muted loop>
-         <source src="mov/header.mov" type="video/mp4">
-         <source src="mov/header.mp4" type="video/mp4">
-         Sorry. Your browser does not support HTML5 video.
-      </video>
+    <video width="100%" height="425" playsinline autoplay muted loop>
+      <source src="mov/header.mov" type="video/mp4">
+      <source src="mov/header.mp4" type="video/mp4">
+      Sorry. Your browser does not support HTML5 video.
+    </video>
 
-   </div>
-   <!-- .jumbotron -->
+  </div>
+  <!-- .jumbotron -->
 
 
-   <div class="container homepage push-down-5">
+  <div class="container homepage push-down-5">
 
-      <div class='row' id="interface-elements">
+    <div class='row' id="interface-elements">
 
-         <div class="container">
-            <p class="lead lead-plus push-down-3 text-center"><span class="montserrat">Breakneck Bootstrap.</span> Use Bootstrapr to rapidly generate and customize Bootstrap 3 components. All without writing a single line of code. Create an entire
-               site in minutes!</p>
+      <div class="container">
+        <p class="lead lead-plus push-down-3 text-center"><span class="montserrat">Breakneck Bootstrap.</span> Use Bootstrapr to rapidly generate and customize Bootstrap 3 components. All without writing a single line of code. Create an entire
+          site in minutes!</p>
 
-            <p class="text-center push-down-3">
-               <a role="button" class="btn btn-lg btn-danger" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
-                  <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
-                  View the Tutorial
-               </a>
-            </p>
-         </div>
-         <!-- container -->
-
-         <!-- Page divider -->
-         <div class="col-sm-12 page-divider push-down-2">
-            <h1 class="text-center homepage-headings">Bootstrap Components</h1>
-            <hr>
-            <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885; margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-         </div>
-
-         <!-- Accordions -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="accordions.html">
-               <div class='panel-body flex'>
-
-                  <div class="panel-group" id="accordion3566441" role="tablist" aria-multiselectable="true">
-                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading4853459">
-                           <h5 class="panel-title">
-                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle " data-parent="#accordion3566441" href="#collapse4853459" aria-expanded="true" aria-controls="collapse4853459">Panel 1</a>
-                           </h5>
-                        </div>
-                        <div id="collapse4853459" class="panel-collapse collapse in" role="tabpanel" aria-labelledby="heading4853459">
-                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
-                        </div>
-                     </div>
-                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading6745129">
-                           <h5 class="panel-title">
-                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion3566441" href="#collapse6745129" aria-expanded="false" aria-controls="collapse6745129">Panel 2</a>
-                           </h5>
-                        </div>
-                        <div id="collapse6745129" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading6745129">
-                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
-                        </div>
-                     </div>
-                     <div class="panel panel-default">
-                        <div class="panel-heading" role="tab" id="heading1117282">
-                           <h5 class="panel-title">
-                              <a role="button" data-toggle="collapse" class="accordion-plus-toggle collapsed" data-parent="#accordion3566441" href="#collapse1117282" aria-expanded="false" aria-controls="collapse1117282">Panel 3</a>
-                           </h5>
-                        </div>
-                        <div id="collapse1117282" class="panel-collapse collapse" role="tabpanel" aria-labelledby="heading1117282">
-                           <div class="panel-body">Lorem ipsum dolor sit amet, consectetur adipisicing elit. A earum tenetur unde recusandus doloribus!</div>
-                        </div>
-                     </div>
-                  </div>
-
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-server"></i>Accordions</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Alerts -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="alerts.html">
-               <div class='panel-body flex'>
-                  <div class='alert alert-info' role='alert'>
-                     <p><i class='fa fa-fw fa-exclamation-circle' aria-hidden='true'></i><strong class='capitalized'>Lorem Ipsum</strong><br />Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et
-                        dolore magna
-                        aliqua
-                     </p>
-                  </div>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-bullhorn"></i>Alerts</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="blockquotes.html">
-               <div class='panel-body flex'>
-                  <blockquote>
-                     <p>And when this happens, when we allow freedom to ring, when we let it ring from every village and every hamlet...we will be able to join hands and sing in the words of the old Negro spiritual: “Free at last! Free at last!
-                        thank God
-                        Almighty, we are free at last!”</p>
-                     <footer>Rev. Martin Luther King, Jr., <cite title="Source Title"> from <a href="http://www.americanrhetoric.com/speeches/mlkihaveadream.htm">I Have a Dream</a></cite></footer>
-                  </blockquote>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-quote-right"></i>Blockquotes</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="buttons.html">
-               <div class='panel-body flex'>
-
-                  <p class='text-center'><a role='button' class='btn btn-lg btn-default' href='http://hp.com' target='_blank'><i class="fa fa-fw fa-refresh" aria-hidden="true"></i> Clear</a> <a role='button' class='btn btn-lg btn-primary' href='http://hp.com'
-                        target='_blank'><i class="fa fa-fw fa-calendar-plus-o" aria-hidden="true"></i> Set Appointment</a></p>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-hand-pointer-o"></i>Buttons</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Carousels -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="carousels.html">
-               <div class='panel-body'>
-
-
-                  <div id="my-carousel" class="carousel slide img-thumbnail push-down-1" data-ride="carousel" data-interval="3000">
-                     <!-- Indicators -->
-                     <ol class="carousel-indicators">
-                        <li data-target="#my-carousel" data-slide-to="0" class="active"></li>
-                        <li data-target="#my-carousel" data-slide-to="1"></li>
-                        <li data-target="#my-carousel" data-slide-to="2"></li>
-                     </ol>
-
-                     <!-- Wrapper for slides -->
-                     <div class="carousel-inner">
-
-                        <div class="item active">
-                           <img src="img/carousel-images/1.png" alt="image of India">
-                           <div class="carousel-caption">
-                              <h3>Humayun's Tomb</h3>
-                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-                                    href="https://unsplash.com/@raghunayyar?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Raghu Nayyar"><span
-                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
-                                          <title>unsplash-logo</title>
-                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
-                                       </svg></span><span style="display:inline-block;padding:2px 3px">Raghu Nayyar</span></a></p>
-                           </div>
-
-                        </div>
-
-                        <div class="item">
-                           <img src="img/carousel-images/2.png" alt="Image of India">
-                           <div class="carousel-caption">
-                              <h3>Streets of Agra</h3>
-                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-                                    href="https://unsplash.com/@tryoung?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Thomas Young"><span
-                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
-                                          <title>unsplash-logo</title>
-                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
-                                       </svg></span><span style="display:inline-block;padding:2px 3px">Thomas Young</span></a></p>
-                           </div>
-                        </div>
-
-                        <div class="item">
-                           <img src="img/carousel-images/3.png" alt="Image of India">
-                           <div class="carousel-caption">
-                              <h3>Mehndi</h3>
-                              <p><a style="background-color:black;color:white;text-decoration:none;padding:4px 6px;font-family:-apple-system, BlinkMacSystemFont, &quot;San Francisco&quot;, &quot;Helvetica Neue&quot;, Helvetica, Ubuntu, Roboto, Noto, &quot;Segoe UI&quot;, Arial, sans-serif;font-size:12px;font-weight:bold;line-height:1.2;display:inline-block;border-radius:3px"
-                                    href="https://unsplash.com/@aperinastudios?utm_medium=referral&amp;utm_campaign=photographer-credit&amp;utm_content=creditBadge" target="_blank" rel="noopener noreferrer" title="Download free do whatever you want high-resolution photos from Vitaliy Lyubezhanin"><span
-                                       style="display:inline-block;padding:2px 3px"><svg xmlns="http://www.w3.org/2000/svg" style="height:12px;width:auto;position:relative;vertical-align:middle;top:-1px;fill:white" viewBox="0 0 32 32">
-                                          <title>unsplash-logo</title>
-                                          <path d="M20.8 18.1c0 2.7-2.2 4.8-4.8 4.8s-4.8-2.1-4.8-4.8c0-2.7 2.2-4.8 4.8-4.8 2.7.1 4.8 2.2 4.8 4.8zm11.2-7.4v14.9c0 2.3-1.9 4.3-4.3 4.3h-23.4c-2.4 0-4.3-1.9-4.3-4.3v-15c0-2.3 1.9-4.3 4.3-4.3h3.7l.8-2.3c.4-1.1 1.7-2 2.9-2h8.6c1.2 0 2.5.9 2.9 2l.8 2.4h3.7c2.4 0 4.3 1.9 4.3 4.3zm-8.6 7.5c0-4.1-3.3-7.5-7.5-7.5-4.1 0-7.5 3.4-7.5 7.5s3.3 7.5 7.5 7.5c4.2-.1 7.5-3.4 7.5-7.5z"></path>
-                                       </svg></span><span style="display:inline-block;padding:2px 3px">Vitaliy Lyubezhanin</span></a></p>
-                           </div>
-                        </div>
-
-                     </div>
-
-                     <!-- Left and right controls -->
-                     <a class="left carousel-control" href="#my-carousel" data-slide="prev">
-                        <span class="glyphicon glyphicon-chevron-left"></span>
-                        <span class="sr-only">Previous</span>
-                     </a>
-                     <a class="right carousel-control" href="#my-carousel" data-slide="next">
-                        <span class="glyphicon glyphicon-chevron-right"></span>
-                        <span class="sr-only">Next</span>
-                     </a>
-                  </div>
-                  <!-- .carousel -->
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-chevron-right"></i>Carousels</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="checklists.html">
-               <div class='panel-body'>
-
-                  <div class="alert alert-success" role="alert">
-                     <p>
-                        <i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i>
-                        Click each step as you finish to track your progress.
-                     </p>
-                  </div>
-                  <div class="ap-container">
-                     <div class="panel panel-default">
-                        <div class="panel-heading ap-check">
-                           <h5 class="panel-title">Panel Title</h5>
-                        </div>
-                     </div>
-                  </div>
-                  <div class="panel panel-default">
-                     <div class="panel-heading ap-check">
-                        <h5 class="panel-title">Panel Title</h5>
-                     </div>
-                  </div>
-                  <div class="panel panel-default">
-                     <div class="panel-heading ap-check">
-                        <h5 class="panel-title">Panel Title</h5>
-                     </div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-check-circle-o"></i>Checklists</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Code Wells -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="code-wells.html">
-               <div class='panel-body flex'>
-<pre class="prettyprint lang-js">
-// This is sample jQuery code...
-$( document ).ready(function() {
-   $('.navfeatures').addClass('active');
-   $('.navtables').addClass('active');
-   $('.navcodewells').addClass('active');
-});
-</pre>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-code"></i>Code Wells</h5>
-               </div>
-            </div>
-         </div>
-
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="columns.html">
-               <div class='panel-body flex'>
-
-                  <div class='row example-columns'>
-                     <div class='col-sm-6'>
-                        <h5>Column 1</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores molestiae vero omnis totam.</p>
-                     </div>
-                     <div class='col-sm-6'>
-                        <h5>Column 2</h5>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Quae asperiores molestiae vero omnis totam.</p>
-                     </div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-columns"></i>Columns</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="image-grid.html">
-               <div class='panel-body flex'>
-
-                  <div class="row image-grid">
-                     <div class="col-xs-6 col-sm-4 col-md-4">
-                        <a href="" target="_self">
-                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
-                        </a>
-                     </div>
-                     <div class="col-xs-6 col-sm-4 col-md-4">
-                        <a href="" target="_self">
-                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
-                        </a>
-                     </div>
-                     <div class="col-xs-6 col-sm-4 col-md-4">
-                        <a href="" target="_self">
-                           <img alt="" class="img-responsive center-block" src="http://placehold.it/250x250">
-                        </a>
-                     </div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-th"></i>Image Grids</h5>
-               </div>
-            </div>
-         </div>
-
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="images.html">
-               <div class='panel-body flex'>
-
-                  <div class="row">
-                     <div class="col-sm-6">
-                        <div class="panel panel-default">
-                           <div class="panel-body">
-                              <img class="center-block img img-responsive" src="https://libapps.s3.amazonaws.com/accounts/38465/images/russian-constructivism-art_1-b.jpg" alt="Image of Lilya Brik">
-                           </div>
-                           <div class="panel-footer">
-                              <i class="fa fa-camera-retro" aria-hidden="true"></i>
-                              Image of Lilya Brik
-                           </div>
-                        </div>
-                     </div>
-                     <div class="col-sm-6">
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Eligendi eveniet eius dolorum rem perferendis nemo mollitia id quis sed atque sunt, tenetur dolorem ut neque, enim adipisci cumque omnis sequi! Lorem ipsum dolor!</p>
-                     </div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-picture-o"></i>Images</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="jumbotrons.html">
-               <div class='panel-body flex'>
-
-                  <div class='jumbotron' style='background:#cc4125;padding-top: 1rem'>
-                     <h1 style='color:#ffffff;text-shadow: 1px 1px gray;' class='jumbotronic text-center'>The Title</h1>
-                     <h6 style='text-shadow: 1px 1px gray; color:#ffffff' class="text-center">This is the subtle subtitle</h6>
-                     <p class='text-center push-down-2'><a class='btn btn-secondary-light' href='' target='_blank' role='button'><i class="fa fa-fw fa-calendar-check-o" aria-hidden="true"></i> I'm a Button!</a></p>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-window-maximize"></i>Jumbotrons</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="labels.html">
-               <div class='panel-body flex'>
-                  <p>
-                     <span class="label label-default">Default</span>
-                     <span class="label label-primary">Primary</span>
-                     <span class="label label-success">Success</span>
-                     <span class="label label-info">Info</span>
-                     <span class="label label-warning">Warning</span>
-                     <span class="label label-danger">Danger</span>
-                  </p>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-tags"></i>Labels</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="lists.html">
-               <div class='panel-body' style="padding-top: 4rem !important">
-                  <div class='row'>
-                     <div class='col-sm-6'>
-                        <ul class='list-group'>
-                           <li class='list-group-item'><span class='badge'>12</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>17</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>32</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>4</span>List Item</li>
-                        </ul>
-                     </div>
-                     <div class='col-sm-6'>
-                        <ul class='list-group'>
-                           <li class='list-group-item'><span class='badge'>26</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>14</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>27</span>List Item</li>
-                           <li class='list-group-item'><span class='badge'>148</span>List Item</li>
-                        </ul>
-                     </div>
-                  </div>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-list-ul"></i>Lists</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Media Lists -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="media-lists.html">
-               <div class='panel-body' style="padding-top: 4rem !important">
-
-                  <div class="media">
-                     <div class="media-left">
-                        <img class="thumbnail" alt="" src="http://www.placehold.it/50x50">
-                     </div>
-                     <div class="media-body">
-                        <h5 class="media-heading">
-                           Media Heading
-                        </h5>
-                        <p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laudantium tempora, officiis repellat minima.</p>
-                     </div>
-                  </div>
-                  <div class="media">
-                     <div class="media-left">
-                        <img class="thumbnail" alt="" src="http://www.placehold.it/50x50">
-                     </div>
-                     <div class="media-body">
-                        <h5 class="media-heading">
-                           Media Heading
-                        </h5>
-                        <p>Media content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Vero, laudantium tempora, officiis repellat minima.</p>
-                     </div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-th-list"></i>Media Lists</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Modals -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="modals.html">
-               <div class='panel-body'>
-
-                  <img src="img/modal.png" style="width:60%; border: 3px solid #0f2438" class="img img-responsive center-block" alt="">
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-window-restore"></i>Modals</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Pages -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="pages.html">
-               <div class='panel-body flex'>
-
-                  <img src="img/container.png" style="max-width: 300px" class="img img-responsive" alt="">
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-file-code-o"></i>Pages</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Panels -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="panels.html">
-               <div class='panel-body flex'>
-
-                  <div class='panel panel-default' style="width:45%; margin-right: 5%">
-                     <div class='panel-heading'>
-                        <h5 class='panel-title'><strong>Panel Title</strong></h5>
-                     </div>
-                     <div class='panel-body flex'>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolorem rem impedit alias.</div>
-                     <div class='panel-footer'>Footer content</div>
-                  </div>
-
-                  <div class="panel panel-default example" style="width:45%; margin-top: -1rem">
-                     <div class="panel-body" style="padding-top:2.5rem">Panel body content ... Lorem ipsum dolor sit amet, consectetur adipisicing elit. Excepturi ex sed illo, fuga exercitationem dolorem maiores omnis!</div>
-                     <ul class="list-group"></ul>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-id-card-o"></i>Panels</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Popovers -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="popovers.html">
-               <div class='panel-body flex'>
-
-                  <img src="img/popover-capture.png" style="max-width: 300px" class="img img-responsive" alt="">
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-info-circle"></i>Popovers</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Symbols -->
-         <div class='col-sm-6'>
-
-            <div class='panel panel-default tool-cards' data-link="symbols.html">
-               <div class='panel-body flex'>
-
-                  <h1 class='short-round center-block' style='font-size: 50px; height: 110.00000000000001px; width: 110.00000000000001px; padding: 20px; border-radius: 90px 0px 0px 90px; background: #d9534f;'><i class="fa fa-camera-retro"
-                        aria-hidden="true"></i></h1>
-
-                  <h1 class='short-round center-block' style='font-size: 50px; height: 110.00000000000001px; width: 110.00000000000001px; padding: 20px; border-radius: 4px; background: #5cb85c;'><i class="fa fa-film" aria-hidden="true"></i></h1>
-
-                  <h1 class='short-round center-block' style='font-size: 50px; height: 110.00000000000001px; width: 110.00000000000001px; padding: 20px; border-radius: 0px 90px 90px 0px; background: #9a9ec3;'><i class="fa fa-headphones" aria-hidden="true"></i></h1>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-bullseye"></i>Symbols</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Tables -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="tables.html">
-               <div class='panel-body flex'>
-                  <table class='table table-striped table-bordered'>
-                     <thead>
-                        <tr>
-                           <th><strong>Heading</strong></th>
-                           <th><strong>Heading</strong></th>
-                           <th><strong>Heading</strong></th>
-                        </tr>
-                     </thead>
-                     <tbody>
-                        <tr>
-                           <td>content</td>
-                           <td>content</td>
-                           <td>content</td>
-                        </tr>
-                        <tr>
-                           <td>content</td>
-                           <td>content</td>
-                           <td>content</td>
-                        </tr>
-                     </tbody>
-                  </table>
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-table"></i>Tables</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="tabs-pills.html">
-               <div class='panel-body'>
-
-                  <div class="push-down-1">
-                     <ul class='nav nav-tabs nav-justified' role='tablist'>
-                        <li role='presentation' class='active'><a href='#tab6806053' role='tab' data-toggle='tab'>Tab1</a></li>
-                        <li role='presentation' class=''><a href='#tab2698915' role='tab' data-toggle='tab'>Tab2</a></li>
-                        <li role='presentation' class=''><a href='#tab3210178' role='tab' data-toggle='tab'>Tab3</a></li>
-                     </ul>
-                  </div>
-                  <div class='tab-content push-down-2'>
-                     <div role='tabpanel' class='tab-pane active' id='tab6806053'>
-                        <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Alias totam nisi, inventore laborum? Nesciunt ipsum quia error consectetur placeat, ut rerum tempore? Voluptates labore, amet reprehenderit iste consequatur
-                           incidunt, ullam!</p>
-                     </div>
-                     <div role='tabpanel' class='tab-pane ' id='tab2698915'>Content tab 2 here</div>
-                     <div role='tabpanel' class='tab-pane ' id='tab3210178'>Content tab 3 here</div>
-                  </div>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-ellipsis-h" style="font-size: 150%"></i>Tabs &amp; Pills</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Text -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="text.html">
-               <div class='panel-body flex'>
-
-                  <table class='table'>
-                     <tbody>
-                        <tr>
-                           <td>Keyboard Keys</td>
-                           <td><kbd>CTRL</kbd> + <kbd>Z</kbd></td>
-                        </tr>
-                        <tr>
-                           <td>Linethrough</td>
-                           <td>This and <del>not that</del></td>
-                        </tr>
-                        <tr>
-                           <td>Superscript</td>
-                           <td>2<sup>3</sup> = 8</td>
-                        </tr>
-                        <tr>
-                           <td>Subscript</td>
-                           <td>Water, a.k.a. H<sub>2</sub>O</td>
-                        </tr>
-                     </tbody>
-                  </table>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-font"></i>Text</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Video -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="videos.html">
-               <div class='panel-body' style="padding: 3rem 7rem 7rem">
-
-                  <img src="img/video-placeholder.png" class="img img-responsive" alt="">
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-film"></i>Video</h5>
-               </div>
-            </div>
-         </div>
-
-         <!-- Page divider -->
-         <div class="col-sm-12 page-divider">
-            <h1 class="text-center homepage-headings">Icon Fonts</h1>
-            <hr>
-            <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885;margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-         </div>
-
-
-         <!-- Font Awesome Icons -->
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="web-fonts-fontawesome.html">
-               <div class='panel-body flex'>
-
-                  <table class="table table-borderless icon-grid">
-                     <thead></thead>
-                     <tbody>
-                        <tr>
-                           <td><i class="fa fa-fw fa-user-circle-o"></i></td>
-                           <td><i class="fa fa-fw fa-apple"></i></td>
-                           <td><i class="fa fa-fw fa-certificate"></i></td>
-                           <td><i class="fa fa-fw fa-heart"></i></td>
-                           <td><i class="fa fa-fw fa-inbox"></i></td>
-                           <td><i class="fa fa-fw fa-plus"></i></td>
-                        </tr>
-                        <tr>
-                           <td><i class="fa fa-fw fa-bell"></i></td>
-                           <td><i class="fa fa-fw fa-calendar"></i></td>
-                           <td><i class="fa fa-fw fa-check-square-o"></i></td>
-                           <td><i class="fa fa-fw fa-search"></i></td>
-                           <td><i class="fa fa-fw fa-envelope"></i></td>
-                           <td><i class="fa fa-fw fa-folder-open"></i></td>
-                        </tr>
-                        <tr>
-                           <td><i class="fa fa-fw fa-gift"></i></td>
-                           <td><i class="fa fa-fw fa-map-marker"></i></td>
-                           <td><i class="fa fa-fw fa-pencil"></i></td>
-                           <td><i class="fa fa-fw fa-paper-plane"></i></td>
-                           <td><i class="fa fa-fw fa-text-width"></i></td>
-                           <td><i class="fa fa-fw fa-graduation-cap"></i></td>
-                        </tr>
-                        <tr>
-                           <td><i class="fa fa-fw fa-eye-slash"></i></td>
-                           <td><i class="fa fa-fw fa-camera"></i></td>
-                           <td><i class="fa fa-fw fa-gear"></i></td>
-                           <td><i class="fa fa-fw fa-tags"></i></td>
-                           <td><i class="fa fa-fw fa-wrench"></i></td>
-                           <td><i class="fa fa-fw fa-refresh"></i></td>
-                        </tr>
-                        <tr>
-                           <td><i class="fa fa-fw fa-briefcase"></i></td>
-                           <td><i class="fa fa-fw fa-thumb-tack"></i></td>
-                           <td><i class="fa fa-fw fa-paperclip"></i></td>
-                           <td><i class="fa fa-fw fa-cloud-download"></i></td>
-                           <td><i class="fa fa-fw fa-font"></i></td>
-                           <td><i class="fa fa-fw fa-clipboard"></i></td>
-                        </tr>
-                     </tbody>
-                  </table>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-flag"></i>Font Awesome 4</h5>
-               </div>
-            </div>
-         </div>
-
-         <div class='col-sm-6'>
-            <div class='panel panel-default tool-cards' data-link="web-fonts-bootstrap.html">
-               <div class='panel-body flex'>
-
-                  <table class="table table-borderless icon-grid">
-                     <thead></thead>
-                     <tbody>
-                        <tr>
-                           <td><span class="glyphicon glyphicon-user"></span></td>
-                           <td><span class="glyphicon glyphicon-apple"></span></td>
-                           <td><span class="glyphicon glyphicon-asterisk"></span></td>
-                           <td><span class="glyphicon glyphicon-heart"></span></td>
-                           <td><span class="glyphicon glyphicon-inbox"></span></td>
-                           <td><span class="glyphicon glyphicon-plus"></span></td>
-                        </tr>
-                        <tr>
-                           <td><span class="glyphicon glyphicon-bell"></span></td>
-                           <td><span class="glyphicon glyphicon-calendar"></span></td>
-                           <td><span class="glyphicon glyphicon-check"></span></td>
-                           <td><span class="glyphicon glyphicon-search"></span></td>
-                           <td><span class="glyphicon glyphicon-envelope"></span></td>
-                           <td><span class="glyphicon glyphicon-folder-open"></span></td>
-                        </tr>
-                        <tr>
-                           <td><span class="glyphicon glyphicon-gift"></span></td>
-                           <td><span class="glyphicon glyphicon-map-marker"></span></td>
-                           <td><span class="glyphicon glyphicon-pencil"></span></td>
-                           <td><span class="glyphicon glyphicon-plane"></span></td>
-                           <td><span class="glyphicon glyphicon-text-width"></span></td>
-                           <td><span class="glyphicon glyphicon-education"></span></td>
-                        </tr>
-                        <tr>
-                           <td><span class="glyphicon glyphicon-eye-close"></span></td>
-                           <td><span class="glyphicon glyphicon-camera"></span></td>
-                           <td><span class="glyphicon glyphicon-cog"></span></td>
-                           <td><span class="glyphicon glyphicon-tags"></span></td>
-                           <td><span class="glyphicon glyphicon-wrench"></span></td>
-                           <td><span class="glyphicon glyphicon-refresh"></span></td>
-                        </tr>
-                        <tr>
-                           <td><span class="glyphicon glyphicon-briefcase"></span></td>
-                           <td><span class="glyphicon glyphicon-pushpin"></span></td>
-                           <td><span class="glyphicon glyphicon-paperclip"></span></td>
-                           <td><span class="glyphicon glyphicon-cloud-download"></span></td>
-                           <td><span class="glyphicon glyphicon-font"></span></td>
-                           <td><span class="glyphicon glyphicon-copy"></span></td>
-                        </tr>
-                     </tbody>
-                  </table>
-
-               </div>
-               <div class='panel-footer'>
-                  <h5><i class="fa fa-fw fa-plus-square"></i>Glyphicons</h5>
-               </div>
-            </div>
-         </div>
-
-
-
+        <p class="text-center push-down-3">
+          <a role="button" class="btn btn-lg btn-danger" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
+            <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
+            View the Tutorial
+          </a>
+        </p>
       </div>
-      <!-- #tool-cards -->
+      <!-- container -->
 
-   </div>
-   <!-- .container  and # interface elements-->
+      <!-- Page divider -->
+      <div class="col-sm-12 page-divider push-down-2">
+        <h1 class="text-center homepage-headings">Bootstrap Components</h1>
+        <hr>
+        <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885; margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
+      </div>
 
-   <!-- Navbar include -->
-   <div w3-include-html="footer.html"></div>
+      <!-- Accordions -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="accordions.html">
+          <div class='panel-body' id="accordion-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-server"></i>Accordions</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Alerts -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="alerts.html">
+          <div class='panel-body' id="alert-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-bullhorn"></i>Alerts</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="blockquotes.html">
+          <div class='panel-body' id="blockquote-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-quote-right"></i>Blockquotes</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="buttons.html">
+          <div class='panel-body' id="button-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-hand-pointer-o"></i>Buttons</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Carousels -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="carousels.html">
+          <div class='panel-body' id="carousel-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-chevron-right"></i>Carousels</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="checklists.html">
+          <div class='panel-body' id="checklist-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-check-circle-o"></i>Checklists</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Code Wells -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="code-wells.html">
+          <div class='panel-body' id="code-well-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-code"></i>Code Wells</h5>
+          </div>
+        </div>
+      </div>
 
 
-   <!-- Back-to-top button -->
-   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="columns.html">
+          <div class='panel-body' id="column-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-columns"></i>Columns</h5>
+          </div>
+        </div>
+      </div>
 
-   <!-- jQuery Javascript Library (required by Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-   <!-- jQuery UI Library (optional) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-   <!-- Bootstrap Library -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-   <!-- Main local script file -->
-   <script src="js/main.js"></script>
-
-   <!-- includes for Google's code highlighter 'prettyprint' -->
-   <link rel="stylesheet" type="text/css" href="css/prettify.css">
-   <script type="text/javascript" src="js/prettify.js"></script>
-
-   <!-- html file include script | used for navbar -->
-   <script src="js/w3data.js"></script>
-
-   <!-- Animations JS -->
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="image-grid.html">
+          <div class='panel-body' id="image-grid-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-th"></i>Image Grids</h5>
+          </div>
+        </div>
+      </div>
 
 
-   <script>
-      w3IncludeHTML();
-   </script>
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="images.html">
+          <div class='panel-body' id="image-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-picture-o"></i>Images</h5>
+          </div>
+        </div>
+      </div>
 
-   <script>
-      $(document).ready(function() {
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="jumbotrons.html">
+          <div class='panel-body' id="jumbotron-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-window-maximize"></i>Jumbotrons</h5>
+          </div>
+        </div>
+      </div>
 
-         // tooltips function
-         $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-         })
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="labels.html">
+          <div class='panel-body' id="label-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-tags"></i>Labels</h5>
+          </div>
+        </div>
+      </div>
 
-         $('pre').removeClass('prettyprinted');
-         prettyPrint();
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="lists.html">
+          <div class='panel-body' id="list-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-list-ul"></i>Lists</h5>
+          </div>
+        </div>
+      </div>
 
-      });
-   </script>
+      <!-- Media Lists -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="media-lists.html">
+          <div class='panel-body' id="media-list-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-th-list"></i>Media Lists</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Modals -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="modals.html">
+          <div class='panel-body' id="modal-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-window-restore"></i>Modals</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Pages -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="pages.html">
+          <div class='panel-body' id="page-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-file-code-o"></i>Pages</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Panels -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="panels.html">
+          <div class='panel-body' id="panel-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-id-card-o"></i>Panels</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Popovers -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="popovers.html">
+          <div class='panel-body' id="popover-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-info-circle"></i>Popovers</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Symbols -->
+      <div class='col-sm-6 col-md-4'>
+
+        <div class='panel panel-default tool-cards' data-link="symbols.html">
+          <div class='panel-body' id="symbol-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-bullseye"></i>Symbols</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Tables -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="tables.html">
+          <div class='panel-body' id="table-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-table"></i>Tables</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="tabs-pills.html">
+          <div class='panel-body' id="tab-pill-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-ellipsis-h" style="font-size: 150%"></i>Tabs &amp; Pills</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Text -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="text.html">
+          <div class='panel-body' id="text-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-font"></i>Text</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Video -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="videos.html">
+          <div class='panel-body' id="film-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-film"></i>Video</h5>
+          </div>
+        </div>
+      </div>
+
+      <!-- Page divider -->
+      <div class="col-sm-12 page-divider">
+        <h1 class="text-center homepage-headings">Icon Fonts</h1>
+        <hr>
+        <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885;margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
+      </div>
+
+
+      <!-- Font Awesome Icons -->
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="web-fonts-fontawesome.html">
+          <div class='panel-body' id="fontawesome-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-flag"></i>Font Awesome 4</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4'>
+        <div class='panel panel-default tool-cards' data-link="web-fonts-bootstrap.html">
+          <div class='panel-body' id="glyphicons-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-plus-square"></i>Glyphicons</h5>
+          </div>
+        </div>
+      </div>
+
+
+
+    </div>
+    <!-- #tool-cards -->
+
+  </div>
+  <!-- .container  and # interface elements-->
+
+  <!-- Navbar include -->
+  <div w3-include-html="footer.html"></div>
+
+
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+  <!-- jQuery Javascript Library (required by Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+  <!-- jQuery UI Library (optional) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- Bootstrap Library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+
+  <!-- Main local script file -->
+  <script src="js/main.js"></script>
+
+  <!-- includes for Google's code highlighter 'prettyprint' -->
+  <link rel="stylesheet" type="text/css" href="css/prettify.css">
+  <script type="text/javascript" src="js/prettify.js"></script>
+
+  <!-- html file include script | used for navbar -->
+  <script src="js/w3data.js"></script>
+
+  <!-- Animations JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+
+  <script>
+    w3IncludeHTML();
+  </script>
+
+  <script>
+    $(document).ready(function() {
+
+      // tooltips function
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      $('pre').removeClass('prettyprinted');
+      prettyPrint();
+
+    });
+  </script>
 
 </body>
 

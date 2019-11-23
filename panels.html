@@ -151,7 +151,8 @@
             </form>
 
             <div class="push-down-3" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="display-cards"><i class="fa fa-fw fa-gears"></i> Build</button>
+              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
                <button type="button" class="btn btn-default pull-right" id="clear-cards"><i class="fa fa-fw fa-refresh"></i> Reset</button>
             </div>
 
@@ -391,7 +392,7 @@ h1, h2, h3, h4, h5, h6 {
             }
          });
 
-         $('#display-cards').click(function() {
+         $('#build-button').click(function() {
 
             var panelAccent = $('#panel-accent').val();
             var panelFooter = '';

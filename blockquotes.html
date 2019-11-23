@@ -145,8 +145,9 @@
             </form>
 
             <div class="push-down-3" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="display-blockquote"><i class="fa fa-fw fa-cogs pull-right" aria-hidden="true"></i> Build</button>
-               <button type="button" class="btn btn-default pull-right" id="clear-blockquote"><i class="fa fa-refresh fa-fw pull-right" aria-hidden="true"></i> Reset</button>
+              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-blockquote"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
          </div>
@@ -309,7 +310,7 @@ cite a {
             $('#source-link').val('');
          });
 
-         $('#display-blockquote').click(function() {
+         $('#build-button').click(function() {
 
             var blockquoteQuote = $('#quote').val();
             var blockquoteAuthor = $('#author').val();

@@ -1,156 +1,175 @@
 $(document).ready(function() {
 
-   // Clickable divs send you to the page with the data-link attribute assigned to an html page
-   $(document).delegate("#interface-elements .panel", "click", function() {
-      window.location = $(this).data("link");
-   });
+  // Clickable divs send you to the page with the data-link attribute assigned to an html page
+  $(document).delegate("#interface-elements .panel", "click", function() {
+    window.location = $(this).data("link");
+  });
 
-   // In-page sccroll-to links
-   $("a.scroll-link").click(function(event) {
-      event.preventDefault();
-      $("html, body").animate({
-         scrollTop: $($(this).attr("href")).offset().top - 130
-      }, 400);
-   });
+  // In-page sccroll-to links
+  $("a.scroll-link").click(function(event) {
+    event.preventDefault();
+    $("html, body").animate({
+      scrollTop: $($(this).attr("href")).offset().top - 130
+    }, 400);
+  });
 
-   // Resets prettyprint after DOM loads
-   $('pre').removeClass('prettyprinted');
-   prettyPrint();
+  // Resets prettyprint after DOM loads
+  $('pre').removeClass('prettyprinted');
+  prettyPrint();
 
-   // When the user scrolls down 20px from the top of the document, show the button
-   window.onscroll = function() {
-      scrollFunction()
-   };
+  // When the user scrolls down 20px from the top of the document, show the button
+  window.onscroll = function() {
+    scrollFunction()
+  };
 
-   function scrollFunction() {
-      if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
-         document.getElementById("topper").style.display = "block";
-      } else {
-         document.getElementById("topper").style.display = "none";
-      }
-   }
+  function scrollFunction() {
+    if (document.body.scrollTop > 80 || document.documentElement.scrollTop > 80) {
+      document.getElementById("topper").style.display = "block";
+    } else {
+      document.getElementById("topper").style.display = "none";
+    }
+  }
 
-   // When the user clicks on the button, scroll to the top of the document
-   function topFunction() {
-      document.body.scrollTop = 0; // For Safari
-      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-   }
+  // When the user clicks on the button, scroll to the top of the document
+  function topFunction() {
+    document.body.scrollTop = 0; // For Safari
+    document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+  }
 
-   $("#topper").on("click", function() {
-      $("html").animate({
-         scrollTop: 0
-      }, 400);
-   });
+  $("#topper").on("click", function() {
+    $("html").animate({
+      scrollTop: 0
+    }, 400);
+  });
 
-   // beautify the code
-   function formatFactory(html) {
-      function parse(html, tab = 0) {
-         var tab;
-         var html = $.parseHTML(html);
-         var formatHtml = new String();
-
-
-         function setTabs() {
-            var tabs = new String();
-
-            for (i = 0; i < tab; i++) {
-               // tabs += '\t';
-               tabs += '\t';
-            }
-            return tabs;
-         };
+  // beautify the code
+  function formatFactory(html) {
+    function parse(html, tab = 0) {
+      var tab;
+      var html = $.parseHTML(html);
+      var formatHtml = new String();
 
 
-         $.each(html, function(i, el) {
-            if (el.nodeName == '#text') {
-               if (($(el).text().trim()).length) {
-                  formatHtml += setTabs() + $(el).text().trim() + '\n';
-               }
-            } else {
-               var innerHTML = $(el).html().trim();
-               $(el).html(innerHTML.replace('\n', '').replace(/ +(?= )/g, ''));
+      function setTabs() {
+        var tabs = new String();
 
-
-               if ($(el).children().length) {
-                  $(el).html('\n' + parse(innerHTML, (tab + 1)) + setTabs());
-                  var outerHTML = $(el).prop('outerHTML').trim();
-                  formatHtml += setTabs() + outerHTML + '\n';
-
-               } else {
-                  var outerHTML = $(el).prop('outerHTML').trim();
-                  formatHtml += setTabs() + outerHTML + '\n';
-               }
-            }
-         });
-
-         return formatHtml;
+        for (i = 0; i < tab; i++) {
+          // tabs += '\t';
+          tabs += '\t';
+        }
+        return tabs;
       };
 
-      return parse(html.replace(/(\r\n|\n|\r)/gm, " ").replace(/ +(?= )/g, ''));
-   };
 
-   // Prettify / Beautify / indent the code
-   $("#beautify").on("click", function() {
-      var beautify = formatFactory($('#simple-code').text());
-      $('#simple-code').text(beautify);
+      $.each(html, function(i, el) {
+        if (el.nodeName == '#text') {
+          if (($(el).text().trim()).length) {
+            formatHtml += setTabs() + $(el).text().trim() + '\n';
+          }
+        } else {
+          var innerHTML = $(el).html().trim();
+          $(el).html(innerHTML.replace('\n', '').replace(/ +(?= )/g, ''));
 
-      $('pre').removeClass('prettyprinted');
-      prettyPrint();
 
-   });
+          if ($(el).children().length) {
+            $(el).html('\n' + parse(innerHTML, (tab + 1)) + setTabs());
+            var outerHTML = $(el).prop('outerHTML').trim();
+            formatHtml += setTabs() + outerHTML + '\n';
 
-   // Prettify / Beautify / indent the code for the button
-   $("#beautify-button").on("click", function() {
+          } else {
+            var outerHTML = $(el).prop('outerHTML').trim();
+            formatHtml += setTabs() + outerHTML + '\n';
+          }
+        }
+      });
 
-      var beautifyLocal1 = formatFactory($('#simple-button-code').text());
-      $('#simple-button-code').text(beautifyLocal1);
+      return formatHtml;
+    };
 
-      $('pre').removeClass('prettyprinted');
-      prettyPrint();
+    return parse(html.replace(/(\r\n|\n|\r)/gm, " ").replace(/ +(?= )/g, ''));
+  };
 
-   });
+  // Prettify / Beautify / indent the code
+  $("#beautify").on("click", function() {
+    var beautify = formatFactory($('#simple-code').text());
+    $('#simple-code').text(beautify);
 
-   // Prettify / Beautify / indent the code for the modal
-   $("#beautify-modal").on("click", function() {
-      var beautifyLocal2 = formatFactory($('#simple-modal-code').text());
-      $('#simple-modal-code').text(beautifyLocal2);
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
 
-      $('pre').removeClass('prettyprinted');
-      prettyPrint();
+  });
 
-   });
+  // Prettify / Beautify / indent the code for the button
+  $("#beautify-button").on("click", function() {
 
-   // Prettify / Beautify / indent the code for the selector
-   $("#beautify-selector-js").on("click", function() {
-      var beautifyLocal3 = formatFactory($('#custom-js-code').text());
-      $('#custom-js-code').text(beautifyLocal3);
+    var beautifyLocal1 = formatFactory($('#simple-button-code').text());
+    $('#simple-button-code').text(beautifyLocal1);
 
-      $('pre').removeClass('prettyprinted');
-      prettyPrint();
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
 
-   });
+  });
 
-   // Update the preview window after changes to the code well
-   $("#update-preview").on("click", function() {
-      var modifiedCode = $('#simple-code').text();
-      $("#simple-example").html(modifiedCode);
+  // Prettify / Beautify / indent the code for the modal
+  $("#beautify-modal").on("click", function() {
+    var beautifyLocal2 = formatFactory($('#simple-modal-code').text());
+    $('#simple-modal-code').text(beautifyLocal2);
 
-      $('pre').removeClass('prettyprinted');
-      prettyPrint();
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
 
-      // popover function
-      $('[data-toggle="popover"]').popover();
+  });
 
-   });
+  // Prettify / Beautify / indent the code for the selector
+  $("#beautify-selector-js").on("click", function() {
+    var beautifyLocal3 = formatFactory($('#custom-js-code').text());
+    $('#custom-js-code').text(beautifyLocal3);
 
-   // Popovers for the information icons -- this allows multiple popovers per page
-   $('[data-toggle="popover"]').popover({
-      'container': 'body',
-      "animation": true
-   });
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
 
-   // Init the animations package
-   AOS.init();
+  });
+
+  // Update the preview window after changes to the code well
+  $("#update-preview").on("click", function() {
+    var modifiedCode = $('#simple-code').text();
+    $("#simple-example").html(modifiedCode);
+
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
+
+    // popover function
+    $('[data-toggle="popover"]').popover();
+
+  });
+
+  // Popovers for the information icons -- this allows multiple popovers per page
+  $('[data-toggle="popover"]').popover({
+    'container': 'body',
+    "animation": true
+  });
+
+
+  // Show feedback on build button clicked
+  $("#build-button").on("click", function() {
+
+    // Show the checkmark once build button clicked
+    $("#build-status").fadeIn("fast");
+
+    // Play the sound once -- not used currently
+    // $('#pop')[0].play();
+    // $('#pop')[0].currentTime = 0;
+
+
+    // Hide the checkmark after .8 seconds
+    setTimeout(function() {
+      $("#build-status").fadeOut("fast");
+    }, 1200);
+  });
+
+
+  // Init the animations package
+  AOS.init();
 
 });
 // document ready closes

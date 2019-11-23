@@ -183,7 +183,9 @@
             </form>
 
             <div class="push-down-3" id="action-buttons">
-               <button type="button" class="btn btn-primary pull-right" id="display-modal"><i class="fa fa-fw fa-gears"></i> Build</button>
+              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+
+               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
                <button type="button" class="btn btn-default pull-right" id="clear-modal"><i class="fa fa-fw fa-refresh"></i> Reset</button>
             </div>
 
@@ -6532,7 +6534,7 @@
 
 
          // Build the modal button
-         $('#display-modal').click(function() {
+         $('#build-button').click(function() {
 
             var modalRando = ~~(Math.random() * 100000000);
             var modalSize = $("#modal-size").val();
