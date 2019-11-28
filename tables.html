@@ -100,66 +100,67 @@
                   <input type="text" class="form-control" id="numCols" style="width:75px;">
                </div>
 
+               <div class="form-group">
+                  <label for="button-color">Borders</label>
+                  <select role="menu" class="form-control" id="table-border-settings">
+                     <option value=" table-bordered">All borders</option>
+                     <option value="" selected="selected">Some borders</option>
+                     <option value=" table-borderless">No borders</option>
+                  </select>
+               </div>
+
+               <label for="close-button" class="push-down-1">Header Row</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxHeader"> Header Row
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxHeader">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
+               <label for="close-button">Variable Widths</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="variableWidths"> Variable Widths
+                  <label class="switch">
+                     <input type="checkbox" id="variableWidths">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
+               <label for="close-button">Striped</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxStriped"> Striped
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxStriped">
+                     <span class="slider round"></span>
                   </label>
                </div>
+               <label for="close-button">Hover</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxHover"> Hover
-                  </label>
-               </div>
-
-               <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxCondensed"> Condensed
-                  </label>
-               </div>
-
-               <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxResponsive"> Responsive
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxHover">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
-               <hr>
-
+               <label for="close-button">Condensed</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxBordered"> All Borders
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxCondensed">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
+               <label for="close-button">Responsive</label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="someBordered"> Some Borders<br /><span class="descriptor"> |recommended</span>
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxResponsive">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
+               <label for="close-button">Steps Column<br /><small class="descriptor">requires variable width</small></label>
                <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxNoBordered"> No Borders
-                  </label>
-               </div>
-
-               <hr>
-
-               <div class="checkbox">
-                  <label>
-                     <input type="checkbox" id="checkboxSteps"> Steps Column<br /><small class="descriptor">requires variable width</small>
+                  <label class="switch">
+                     <input type="checkbox" id="checkboxSteps">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
@@ -519,13 +520,8 @@ caption .summary {
                tableClassOpen += " table-hover";
             }
 
-            if ($('#checkboxBordered').is(':checked')) {
-               tableClassOpen += " table-bordered";
-            }
-
-            if ($('#checkboxNoBordered').is(':checked')) {
-               tableClassOpen += " table-borderless";
-            }
+            // Add border-status
+            tableClassOpen += $("#table-border-settings").val();
 
             if ($('#checkboxCondensed').is(':checked')) {
                tableClassOpen += " table-condensed";

@@ -120,22 +120,26 @@
                   <span class="placeholder">Example | I Have a Dream</span>
                </div>
 
-               <div class="form-group push-down-2">
+               <label for="no-italics" class="push-down-1">Remove Source Italics</label>
+               <div class="form-group ">
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="is-link"> Make Source a Link
+                     <label class="switch">
+                        <input type="checkbox" id="no-italics">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
 
-               <div class="form-group push-down-2">
-                  <div class="checkbox" style="margin-top: 20px;">
-                     <label>
-                        <input type="checkbox" id="no-italics"> Remove Source Italics
+               <label for="is-link" class="push-down-1">Make Source a Link</label>
+               <div class="form-group">
+                  <div class="checkbox">
+                     <label class="switch">
+                        <input type="checkbox" id="is-link">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
-
+               
                <div class="form-group push-down-1 hidden" id="source-link-hidden">
                   <label for="blockquote-source">Source Link</label>
                   <input type="text" class="form-control" id="source-link">

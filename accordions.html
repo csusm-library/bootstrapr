@@ -104,25 +104,27 @@
                </div>
                <p class="text-left" style="margin-left: 8px;"><a data-toggle="modal" data-target="#icons-modal" target="_blank"><small><i class="fa fa-search-plus" aria-hidden="true"></i>&nbsp;Select Icon</small></a></p>
 
-               <div class="form-group push-down-2">
+               <label for="standard-icons" class="push-down-1">First Panel Open</label>
+               <div class="form-group">
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="first-open"> 1st Panel Open
-                     </label>
+                     <label class="switch">
+                        <input type="checkbox" id="first-open">
+                        <span class="slider round"></span>
+                      </label>
                   </div>
                </div>
 
-               <div class="form-group hidden">
+               <label for="standard-icons"> Multiple Panels at Once</label>
+               <div class="form-group">
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="open-multiple"> Can open multiple panels
-                     </label>
+                     <label class="switch">
+                        <input type="checkbox" id="open-multiple">
+                        <span class="slider round"></span>
+                      </label>
                   </div>
                </div>
 
-               <hr>
-
-               <label>
+               <label class="push-down-1">
                   <input type="radio" name="append-icons" value="plus" id="no-icon"> No Icon
                </label>
                <br>
@@ -6480,6 +6482,13 @@
             var startOpen = '';
             var plusOrArrowIcon = '';
             var ariaExpanded = 'aria-expanded="false"';
+            var dataParent = " data-parent='#accordion-";
+
+            if ( $("#open-multiple").is(":checked")) {
+              dataParent = "";
+            } else {
+              dataParent = " data-parent='#accordion-";
+            }
 
             for (i = 0; i < numPanels; i++) {
                rando = ~~(Math.random() * 10000000);
@@ -6503,7 +6512,7 @@
                }
 
                singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading-" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusOrArrowIcon +
-                  " data-parent='#accordion-" +
+                  dataParent +
                   accordionRando + "' href='#collapse-" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse-" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse-" + rando +
                   "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading-" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
 

@@ -115,7 +115,7 @@
                   </select>
                </div>
 
-               <div id="download-div" class="form-group push-down-1 push-right-1 hidden">
+               <div id="download-div" class="form-group push-down-1 hidden">
                   <p>
                      <small><a href="https://jquery.com/" target="_blank"><i class="fa fa-fw fa-cloud-download" aria-hidden="true"></i> Download jQuery</a></small>
                   </p>
@@ -133,10 +133,13 @@
                   </select>
                </div>
 
-               <div class="form-group push-down-1 push-right-1">
+
+               <div class="form-group">
+                 <label for="close-button" class="push-down-1">Dark Navbar</label>
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="navbar-inverse"> Inverse
+                     <label class="switch">
+                        <input type="checkbox" id="navbar-inverse">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
@@ -158,10 +161,12 @@
                   </select>
                </div>
 
-               <div class="form-group push-down-1 push-right-1">
+               <div class="form-group push-down-2">
+                 <label for="close-button">Include sample content</label>
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="include-sample"> Include sample content
+                     <label class="switch">
+                        <input type="checkbox" id="include-sample">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
@@ -177,9 +182,9 @@
 
             </form>
 
-            <div class="push-down-3">
-               <button type="button" class="btn btn-default" id="clear-page"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
-               <button type="button" class="btn btn-primary" id="display-page"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+            <div class="push-down-2 button-box" id="action-buttons">
+               <button type="button" class="btn btn-primary pull-right" id="display-page"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
+               <button type="button" class="btn btn-default pull-right" id="clear-page"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
             </div>
 
 

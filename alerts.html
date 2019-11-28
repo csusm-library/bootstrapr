@@ -121,20 +121,24 @@
                   </select>
                </div>
 
-               <div class="checkbox push-down-2">
-                  <label>
-                     <input type="checkbox" id="standard-icons"> Use Default Icons
+               <label for="standard-icons" class="push-down-1">Use Default Icons</label>
+               <div class="checkbox">
+                  <label class="switch">
+                     <input type="checkbox" id="standard-icons">
+                     <span class="slider round"></span>
+                     </label>
+               </div>
+
+               <label for="close-button" class="push-down-1">Add Close Button</label>
+               <div class="checkbox">
+                  <label class='switch'>
+                     <input type="checkbox" id="close-button">
+                     <span class="slider round"></span>
                   </label>
                </div>
 
-               <div style="margin-top: 30px;" class="checkbox">
-                  <label>
-                     <input type="checkbox" id="close-button"> Close Button
-                  </label>
-               </div>
 
-
-               <label style="margin-top: 20px;" for="icon-html">Icon <span class="descriptor">| optional</span></label>
+               <label for="icon-html" class="push-down-1">Icon <span class="descriptor">| optional</span></label>
                <div class="input-group">
                   <span style="height: 16px;" class="input-group-addon" id="refresh-button"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                   <input type="text" class="form-control" id="alert-icon">

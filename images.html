@@ -110,13 +110,15 @@
                   </select>
                </div>
 
-               <div class="form-group push-down-1 push-right-1" id="show-hide-image-center">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="center-the-image" checked> Center the Image
+               <div class="form-group push-down-1" id="show-hide-image-center">
+               <label for="standard-icons" class="push-down-1">Center the Image</label>
+               <div class="checkbox">
+                  <label class="switch">
+                     <input type="checkbox" id="center-the-image" checked>
+                     <span class="slider round"></span>
                      </label>
-                  </div>
                </div>
+             </div>
 
                <!-- Simple input -->
                <div id="show-hide-image-width" class="hidden">
@@ -145,7 +147,7 @@
                      <input type="text" class="form-control" id="image-url">
                   </div>
                   <!-- <span class="placeholder">Example | http://image.com/image.png</span> -->
-                  <p class="text-left" style="margin-left: 8px;"><a id="placeholder-image"><small>Placeholder Image (300px<sup>2</sup>)</small></a></p>
+                  <p class="text-left" style="margin-left: 8px;"><a id="placeholder-image"><small><i class="fa fa-fw fa-plus-circle"></i> Placeholder Image (300px<sup>2</sup>)</small></a></p>
                </div>
 
                <div class="form-group push-down-1">
@@ -157,13 +159,12 @@
                <hr>
 
                <div class="form-group">
-                  <label for="button-url">Caption</label><span> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Image Caption</h5><hr><p>Adding a caption will place the image inside a panel element and add the caption to its footer.</p>"><i
+                  <label for="button-url">Caption</label><span> <a id="alt-text-popover" tabindex="3" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" data-content="<h5>Image Caption</h5><hr><p>Adding a caption will place the image inside a panel element and add the caption to its footer. For example: 'Rodchenko's famous photo of Lilya Brik used in Russian Constructivist posters'.</p>"><i
                            class="fa fa-fw fa-info-circle" aria-hidden="true"></i></a></span>
                   <div class="input-group">
                      <span class="input-group-addon" id="refresh-button2"><i class="fa fa-refresh" aria-hidden="true"></i></span>
                      <input type="text" class="form-control" id="image-caption">
                   </div>
-                  <span class="placeholder">Example | Rodchenko's famous photo of Lilya Brik used in Russian Constructivist posters</span>
                </div>
 
                <div id="icon-show-hide" class="push-down-1">
@@ -1710,7 +1711,7 @@
             $("#image-url").val("http://placehold.it/300x300");
          });
 
-         $("#display-image").on("click", function() {
+         $("#build-button").on("click", function() {
 
             var imageAlignment = $("#image-alignment").val();
             var imageURL = $("#image-url").val();

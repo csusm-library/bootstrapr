@@ -109,25 +109,31 @@
                </div>
 
                <div class="form-group push-down-2">
+                 <label for="grid-image-is-link">Make Images Links</label>
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="grid-image-is-link"> Make Images Links
+                     <label class="switch">
+                        <input type="checkbox" id="grid-image-is-link">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
 
                <div class="form-group">
+                 <label for="new-window">Open Links in New Tab</label>
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="new-window"> Open Links in New Tab
+                     <label class="switch">
+                        <input type="checkbox" id="new-window">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
 
                <div class="form-group">
+                 <label for="grid-image-caption">Add captions</label>
                   <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="grid-image-caption"> Add captions
+                     <label class="switch">
+                        <input type="checkbox" id="grid-image-caption">
+                        <span class="slider round"></span>
                      </label>
                   </div>
                </div>
@@ -156,19 +162,19 @@
             <div class="example" id="simple-example">
 
                <div class="row image-grid">
-                  <div class="col-xs-6 col-sm-4 col-md-4">
+                  <div class="col-sm-4 col-md-4">
                      <div class="panel panel-default">
                         <div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div>
                         <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
                      </div>
                   </div>
-                  <div class="col-xs-6 col-sm-4 col-md-4">
+                  <div class="col-sm-4 col-md-4">
                      <div class="panel panel-default">
                         <div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div>
                         <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
                      </div>
                   </div>
-                  <div class="col-xs-6 col-sm-4 col-md-4">
+                  <div class="col-sm-4 col-md-4">
                      <div class="panel panel-default">
                         <div class="panel-body"><a href="" target="_blank"><img alt="" class="img-responsive center-block" src="http://placehold.it/250x250" /></a></div>
                         <div class="panel-footer"><i class="fa fa-camera-retro" aria-hidden="true"></i>Image caption</div>
@@ -197,7 +203,7 @@
 
                <pre class="prettyprint" id="simple-code">
 &lt;div class="row image-grid"&gt;
-	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+	&lt;div class="col-sm-4 col-md-4"&gt;
 		&lt;div class="panel panel-default"&gt;
 			&lt;div class="panel-body"&gt;
 				&lt;a href="" target="_blank"&gt;
@@ -210,7 +216,7 @@
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+	&lt;div class="col-sm-4 col-md-4"&gt;
 		&lt;div class="panel panel-default"&gt;
 			&lt;div class="panel-body"&gt;
 				&lt;a href="" target="_blank"&gt;
@@ -223,7 +229,7 @@
 			&lt;/div&gt;
 		&lt;/div&gt;
 	&lt;/div&gt;
-	&lt;div class="col-xs-6 col-sm-4 col-md-4"&gt;
+	&lt;div class="col-sm-4 col-md-4"&gt;
 		&lt;div class="panel panel-default"&gt;
 			&lt;div class="panel-body"&gt;
 				&lt;a href="" target="_blank"&gt;
@@ -6488,19 +6494,19 @@
             switch (imagesPerRow) {
                case '2':
                   placeholderSize = '500';
-                  colSize = 'col-xs-6 col-sm-6 col-md-6';
+                  colSize = 'col-sm-6 col-md-6';
                   break;
                case '3':
                   placeholderSize = '250';
-                  colSize = 'col-xs-6 col-sm-4 col-md-4';
+                  colSize = 'col-sm-4 col-md-4';
                   break;
                case '4':
                   placeholderSize = '200';
-                  colSize = 'col-xs-6 col-sm-3 col-md-3';
+                  colSize = 'col-sm-3 col-md-3';
                   break;
                case '6':
                   placeholderSize = '125';
-                  colSize = 'col-xs-4 col-sm-4 col-md-2 ';
+                  colSize = 'col-sm-4 col-md-2 ';
                   break;
             }
 
