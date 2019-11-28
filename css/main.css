@@ -524,6 +524,10 @@ input[type="radio"] {
   color: lightgray;
 }
 
+.lightslategray {
+  color: lightslategray;
+}
+
 .indigo {
    color: #406885;
 }
