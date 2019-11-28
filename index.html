@@ -77,17 +77,17 @@
       left: 0;
       width: 100%;
       height: 600px;
+      z-index: -1;
+      background-color: #323744;
+      background-color: #0f2438;
+      border-bottom: 400px solid #0f2438;
       /* padding-top: 10rem !important; */
       /* background-color: rgba(135, 206, 250, .4); */
       /* background-color: rgba(15, 36, 56, .2); */
       /* background-color: rgba(70, 130, 180, .25); */
-      z-index: -1;
-      /* border-bottom: 2px solid lightgray; */
-      background-color: #323744;
-      background-color: #0f2438;
-      /* background-color: #000000;
+      /* border-bottom: 2px solid lightgray;
+      background-color: #000000;
         opacity: .7; */
-      border-bottom: 400px solid #0f2438;
     }
 
     #shaded-div {
@@ -99,6 +99,57 @@
       max-width: 350px !important;
       max-height: 300px !important;
       height: 300px;
+    }
+
+    /* Search form */
+    #filter-form .input-group {
+      border-radius: 4px;
+      width: 100%;
+    }
+
+    #filter-reset {
+      cursor: pointer;
+    }
+
+    #filter-form .input-group,
+    #filter-form .input-group input {
+      background: #e8f0fe;
+      border: none !important;
+      padding: 1rem;
+      font-size: 120%;
+    }
+
+    .input {
+      border: none !important;
+      border-top: none !important;
+      box-shadow: none;
+      outline: none;
+    }
+
+    .form-control {
+      border: none;
+      box-shadow: none !important;
+    }
+
+    #filter-form .input-group-text {
+      border: none;
+    }
+
+    #filter-form input {
+      color: darkslategray;
+    }
+
+    .input-group-addon {
+      background: transparent;
+      border: none;
+    }
+
+    a {
+      font-size: inherit;
+    }
+
+    .panel-footer {
+      background: #e8f0fe;
     }
   </style>
 
@@ -127,32 +178,62 @@
   <!-- .jumbotron -->
 
 
+  <div class="container-fluid" id="advert">
+
+    <h2 class="push-down-4">Breakneck <i class="fa fa-cogs" aria-hidden="true" b style="background: #0f2438; padding: .6rem; border-radius: 4px; color: aliceblue;"></i> Bootstrap</h2>
+    <p class="lead push-down-2 font-weight-light">Rapidly generate and customize Bootstrap 3 components&mdash;all without writing a single line of code. Create an entire site in minutes!</p>
+    <p class="my-4 lead">Need Bootstrap 4? <a href="https://randal-sean-harrison.github.io/bootstr4pr/" target="_blank"><strong>Bootstr4pr coming soon! </strong></a></p>
+
+
+    <p class="text-center push-down-3">
+      <a role="button" class="btn btn-lg btn-danger" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
+        <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
+        View the Tutorial
+      </a>
+    </p>
+
+  </div>
+
+  <!-- Page divider -->
   <div class="container homepage push-down-5">
 
-    <div class='row' id="interface-elements">
+    <h1 class="text-center homepage-headings">Bootstrap Components</h1>
 
-      <div class="container">
-        <p class="lead lead-plus push-down-3 text-center"><span class="montserrat">Breakneck Bootstrap.</span> Use Bootstrapr to rapidly generate and customize Bootstrap 3 components. All without writing a single line of code. Create an entire
-          site in minutes!</p>
-
-        <p class="text-center push-down-3">
-          <a role="button" class="btn btn-lg btn-danger" href="https://www.youtube.com/embed/Qh1A7QjF_tU?rel=0&amp;showinfo=0" target="_blank">
-            <i class="fa fa-fw fa-youtube-play" aria-hidden="true"></i>
-            View the Tutorial
-          </a>
-        </p>
+    <div class="row">
+      <div class="col-md-6 col-md-offset-3">
+        <!-- Search input -->
+        <form id="filter-form" action="javascript:void(0)">
+          <div class="input-group">
+            <span class="input-group-addon"><i class="fa fa-search fa-2x lightgray"></i></span>
+            <input id="search-input" type="text" class="form-control" aria-label="search filter for the components" placeholder="Search">
+            <span class="input-group-addon" id="filter-reset"><i class="fa fa-times-circle-o fa-fw fa-2x link-blue"></i></span>
+          </div>
+        </form>
       </div>
-      <!-- container -->
+      <!-- .col-md-8 -->
+    </div>
+    <!-- .row -->
 
-      <!-- Page divider -->
-      <div class="col-sm-12 page-divider push-down-2">
-        <h1 class="text-center homepage-headings">Bootstrap Components</h1>
-        <hr>
-        <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885; margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
+
+    <div class="row push-down-3">
+      <div class="col"></div>
+      <div class="col-6">
+        <!-- features-containers-selector -->
+        <div class="text-center">
+          <div id="features-containers-selector" class="btn-group" role="group" aria-label="navigation selection">
+            <button id="components" type="button" class="btn btn-primary btn-lg active-selector border-right-blue">All</button>
+            <button id="features" type="button" class="btn btn-primary border-right-blue btn-lg">Features</button>
+            <button id="containers" type="button" class="btn btn-primary btn-lg">Containers</button>
+          </div>
+        </div>
       </div>
+      <div class="col"></div>
+    </div>
+
+    <div class='row push-down-3' id="interface-elements">
 
       <!-- Accordions -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="accordions.html">
           <div class='panel-body' id="accordion-panel-body">
           </div>
@@ -163,7 +244,7 @@
       </div>
 
       <!-- Alerts -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="alerts.html">
           <div class='panel-body' id="alert-panel-body">
           </div>
@@ -173,7 +254,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="blockquotes.html">
           <div class='panel-body' id="blockquote-panel-body">
           </div>
@@ -183,7 +264,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="buttons.html">
           <div class='panel-body' id="button-panel-body">
           </div>
@@ -194,7 +275,7 @@
       </div>
 
       <!-- Carousels -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="carousels.html">
           <div class='panel-body' id="carousel-panel-body">
           </div>
@@ -204,7 +285,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="checklists.html">
           <div class='panel-body' id="checklist-panel-body">
           </div>
@@ -215,7 +296,7 @@
       </div>
 
       <!-- Code Wells -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="code-wells.html">
           <div class='panel-body' id="code-well-panel-body">
           </div>
@@ -226,7 +307,7 @@
       </div>
 
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="columns.html">
           <div class='panel-body' id="column-panel-body">
           </div>
@@ -236,18 +317,17 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
-        <div class='panel panel-default tool-cards' data-link="image-grid.html">
-          <div class='panel-body' id="image-grid-panel-body">
+      <div class='col-sm-6 col-md-4 component component-container'>
+        <div class='panel panel-default tool-cards' data-link="google-embed.html">
+          <div class='panel-body' id="google-embed-panel-body">
           </div>
           <div class='panel-footer'>
-            <h5><i class="fa fa-fw fa-th"></i>Image Grids</h5>
+            <h5><i class="fa fa-fw fa-google"></i>Google Embed</h5>
           </div>
         </div>
       </div>
 
-
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="images.html">
           <div class='panel-body' id="image-panel-body">
           </div>
@@ -257,7 +337,17 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
+        <div class='panel panel-default tool-cards' data-link="image-grid.html">
+          <div class='panel-body' id="image-grid-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-th"></i>Image Grids</h5>
+          </div>
+        </div>
+      </div>
+
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="jumbotrons.html">
           <div class='panel-body' id="jumbotron-panel-body">
           </div>
@@ -267,7 +357,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="labels.html">
           <div class='panel-body' id="label-panel-body">
           </div>
@@ -277,7 +367,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="lists.html">
           <div class='panel-body' id="list-panel-body">
           </div>
@@ -288,7 +378,7 @@
       </div>
 
       <!-- Media Lists -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="media-lists.html">
           <div class='panel-body' id="media-list-panel-body">
           </div>
@@ -299,7 +389,7 @@
       </div>
 
       <!-- Modals -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="modals.html">
           <div class='panel-body' id="modal-panel-body">
           </div>
@@ -310,7 +400,7 @@
       </div>
 
       <!-- Pages -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="pages.html">
           <div class='panel-body' id="page-panel-body">
           </div>
@@ -321,7 +411,7 @@
       </div>
 
       <!-- Panels -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="panels.html">
           <div class='panel-body' id="panel-panel-body">
           </div>
@@ -332,7 +422,7 @@
       </div>
 
       <!-- Popovers -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="popovers.html">
           <div class='panel-body' id="popover-panel-body">
           </div>
@@ -342,9 +432,19 @@
         </div>
       </div>
 
-      <!-- Symbols -->
-      <div class='col-sm-6 col-md-4'>
+      <!-- Selectors -->
+      <div class='col-sm-6 col-md-4 component component-container'>
+        <div class='panel panel-default tool-cards' data-link="selectors.html">
+          <div class='panel-body' id="selector-panel-body">
+          </div>
+          <div class='panel-footer'>
+            <h5><i class="fa fa-fw fa-info-circle"></i>Selectors</h5>
+          </div>
+        </div>
+      </div>
 
+      <!-- Symbols -->
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="symbols.html">
           <div class='panel-body' id="symbol-panel-body">
           </div>
@@ -355,7 +455,7 @@
       </div>
 
       <!-- Tables -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="tables.html">
           <div class='panel-body' id="table-panel-body">
           </div>
@@ -365,7 +465,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="tabs-pills.html">
           <div class='panel-body' id="tab-pill-panel-body">
           </div>
@@ -376,7 +476,7 @@
       </div>
 
       <!-- Text -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-feature'>
         <div class='panel panel-default tool-cards' data-link="text.html">
           <div class='panel-body' id="text-panel-body">
           </div>
@@ -387,7 +487,7 @@
       </div>
 
       <!-- Video -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-container'>
         <div class='panel panel-default tool-cards' data-link="videos.html">
           <div class='panel-body' id="film-panel-body">
           </div>
@@ -397,16 +497,9 @@
         </div>
       </div>
 
-      <!-- Page divider -->
-      <div class="col-sm-12 page-divider">
-        <h1 class="text-center homepage-headings">Icon Fonts</h1>
-        <hr>
-        <h1 class='short-round center-block' style='font-size: 25px; height: 55px; width: 55px; padding: 10px; border-radius: 62.5px; background: #406885;margin-top: -51px'><i class="fa fa-cogs" aria-hidden="true"></i></h1>
-      </div>
-
 
       <!-- Font Awesome Icons -->
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-all'>
         <div class='panel panel-default tool-cards' data-link="web-fonts-fontawesome.html">
           <div class='panel-body' id="fontawesome-panel-body">
           </div>
@@ -416,7 +509,7 @@
         </div>
       </div>
 
-      <div class='col-sm-6 col-md-4'>
+      <div class='col-sm-6 col-md-4 component component-all'>
         <div class='panel panel-default tool-cards' data-link="web-fonts-bootstrap.html">
           <div class='panel-body' id="glyphicons-panel-body">
           </div>
@@ -478,6 +571,64 @@
 
       $('pre').removeClass('prettyprinted');
       prettyPrint();
+
+      // Search field filter
+            $("#search-input").on("keyup", function(e) {
+
+              var value = $(this).val().toLowerCase();
+              $(".component").filter(function() {
+                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+              });
+
+            });
+
+            function resetEverything() {
+              // Clear all other the buttons
+              $("#features-containers-selector .btn").removeClass("active-selector");
+              $("#features-containers-selector #components").addClass("active-selector");
+
+              // Show all panels
+              $(".component").fadeIn();
+              $("#search-input").focus();
+            }
+
+            // Show all panels on focus into the input field
+            $("#search-field").on("focus", resetEverything);
+
+            $("#components").on("click", function() {
+              $(".component-container").fadeIn();
+              $(".component-feature").fadeIn();
+              $("#features").removeClass("active-selector");
+              $("#containers").removeClass("active-selector");
+              $("#search-field").val("");
+              $(this).addClass("active-selector");
+
+            });
+
+            $("#features").on("click", function() {
+              $(".component-container").fadeOut();
+              $(".component-feature").fadeIn();
+              $("#search-field").val("");
+              $("#components").removeClass("active-selector");
+              $("#containers").removeClass("active-selector");
+              $(this).addClass("active-selector");
+            });
+
+            $("#containers").on("click", function() {
+              $(".component-container").fadeIn();
+              $(".component-feature").fadeOut();
+              $("#search-field").val("");
+              $("#features").removeClass("active-selector");
+              $("#components").removeClass("active-selector");
+              $(this).addClass("active-selector");
+            });
+
+            // reset the form
+            $("#filter-reset").on("click", function() {
+              resetEverything();
+              $("#search-input").val("");
+            });
+
 
     });
   </script>

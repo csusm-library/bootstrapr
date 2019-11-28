@@ -423,6 +423,11 @@ carousel-indicators li.active {
             }
          });
 
+          // When the example-div is modified run this so the carousel autostarts
+         $("body").on('DOMSubtreeModified', "#simple-example", function() {
+            $('.carousel').carousel();
+          });
+
          // Color picker by Brian Grinstead (maintained by Brian Grinstead at http://bgrins.github.io/spectrum/)
 
          $("#color-picker").spectrum({
@@ -551,6 +556,7 @@ carousel-indicators li.active {
          new Clipboard('.btn');
 
       });
+
    </script>
 
 </body>
