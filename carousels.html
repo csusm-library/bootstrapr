@@ -124,25 +124,25 @@
                   <span class="placeholder">Example | 800 by 400</span>
                </div>
 
-               <div class="form-group push-down-2">
+               <div class="form-group push-down-1">
                   <label for="num-panels"># Slides</label>
                   <input type="text" class="form-control number-control" id="num-slides">
                </div>
 
-               <div class="form-group push-down-2">
+               <div class="form-group push-down-1">
                   <label for="num-panels">Interval <span class="descriptor"> | in seconds</span></label>
                   <input type="text" class="form-control number-control" id="data-interval">
                </div>
 
-               <div class="form-group push-down-2">
-                  <div class="checkbox">
-                     <label>
-                        <input type="checkbox" id="add-captions"> Add Captions
-                     </label>
-                  </div>
+               <label for="add-captions" class="push-down-1">Add Captions</label>
+               <div class="checkbox">
+                  <label class='switch'>
+                     <input type="checkbox" id="add-captions">
+                     <span class="slider round"></span>
+                  </label>
                </div>
 
-               <div class="form-group hidden push-down-2" id="caption-colored">
+               <div class="form-group hidden" id="caption-colored">
                   <label>Captions Color</label>
                   <div id="picker" class="input-group">
                      <!-- .colorpicker-component -->

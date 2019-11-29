@@ -165,7 +165,9 @@
                   <div class="form-group">
                      <label for="video-text" class="control-label">Text Column</label>
                      <textarea class="form-control" id="video-text" rows='6'></textarea>
-                     <p style="margin:2px 0px 0px 3px" id="add-lorem"><a><small><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i> Add <em>Lorem Ipsum</em></small></a></p>
+                     <span class="link-blue" role="button" id="add-lorem"><small> <i class="fa fa-fw fa-plus-circle" aria-hidden="true"></i> Add <em>Lorem Ipsum</em></small></span>
+
+                     <!-- <p style="margin:2px 0px 0px 3px" id="add-lorem"><a><small><i class="fa fa-plus-circle fa-fw" aria-hidden="true"></i> Add <em>Lorem Ipsum</em></small></a></p> -->
                   </div>
                </div>
 
@@ -304,9 +306,9 @@
          <!-- Modal content-->
          <div class="modal-content">
             <div class="modal-header">
-               <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times fa-lg fa-fw"></i></button>
+               <button type="button" class="close" data-dismiss="modal"><i class="fa fa-times-circle-o fa-2x fa-fw"></i></button>
                <h3 class="modal-title push-down-1 indent-right-2">Select an Icon</h3>
-               <p class="text-right push-down-1" style="margin-bottom: 0"><a href="https://fontawesome.com/v4.7.0/icons/" target="_blank"><i class="fa fa-fw fa-flag"></i> All Font Awesome Icons <small>(4.7.0)</small></a></p>
+               <p class="text-right push-down-1" style="margin-bottom: 0"><a href="https://fontawesome.com/v4.7.0/icons/" target="_blank"><i class="fa fa-fw fa-flag"></i> Font Awesome Icons</a></p>
             </div>
             <div class="modal-body">
 
@@ -1647,9 +1649,9 @@
          $("#containers-dropdown").addClass("activated");
 
          // add lorem ipsum
-         $('#add-lorem').click(function() {
-            $('#video-text').val(
-               "Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem expedita dignissimos consequuntur vitae blanditiis a dolorum dicta rem ipsum veniam nulla. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Molestiae soluta corrupti fuga ducimus dolore rem voluptatem odio, iusto sunt, reprehenderit incidunt quia voluptatibus. Qui voluptas vitae, labore expedita quae corrupti. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Recusandae quas, eius quod quam enim vel quia, quae, reiciendis illo ex aliquid temporibus natus modi velit nulla dolorem earum nisi corporis."
+         $('#add-lorem').on('click', function() {
+            $('#video-text').append(
+               'Lorem ipsum dolor sit amet, consectetur adipisicing elit. Consequatur provident animi natus magni possimus ad explicabo iste, exercitationem.'
             );
          });
 
