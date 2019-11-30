@@ -194,7 +194,7 @@
 
           <!-- List group controls -->
 
-          <div class="checkbox push-down-1 hidden" id="show-hide-extended-content">
+          <div class="form-group push-down-1 hidden" id="show-hide-extended-content">
             <label for="extended-contents">Extended Content</label>
             <label class="switch">
               <input type="checkbox" id="extended-content">
@@ -202,12 +202,14 @@
             </label>
           </div>
 
-          <label for="has-badge">Add Badges</label>
-          <div class="checkbox">
-            <label class='switch'>
-              <input type="checkbox" id="has-badge">
-              <span class="slider round"></span>
-            </label>
+          <div class="form-group push-down-1 hidden" id="show-hide-has-badges">
+            <label for="has-badge">Add Badges</label>
+            <div class="checkbox">
+              <label class='switch'>
+                <input type="checkbox" id="has-badge">
+                <span class="slider round"></span>
+              </label>
+            </div>
           </div>
 
           <div class="hidden" id="show-hide-make-buttons">
@@ -424,7 +426,7 @@ dd {
 
         if ($("#list-type").val() == "") {
           $("#show-hide-horizontal-vertical").addClass("hidden");
-          $("#show-hide-badges").addClass("hidden");
+          $("#show-hide-has-badges").addClass("hidden");
           $("#show-hide-bullets-numbers").removeClass("hidden");
           $("#show-hide-is-unstyled").removeClass("hidden");
           $("#show-hide-is-inline").removeClass("hidden");
@@ -444,7 +446,7 @@ dd {
 
         } else if ($("#list-type").val() == "description") {
           $("#show-hide-horizontal-vertical").removeClass("hidden");
-          $("#show-hide-badges").addClass("hidden");
+          $("#show-hide-has-badges").addClass("hidden");
           $("#show-hide-bullets-numbers").addClass("hidden");
           $("#show-hide-is-unstyled").addClass("hidden");
           $("#show-hide-has-hyperlinks").addClass("hidden");
@@ -467,7 +469,7 @@ dd {
 
         } else {
           $("#show-hide-horizontal-vertical").addClass("hidden");
-          $("#show-hide-badges").removeClass("hidden");
+          $("#show-hide-has-badges").removeClass("hidden");
           $("#show-hide-bullets-numbers").addClass("hidden");
           $("#show-hide-is-unstyled").addClass("hidden");
           $("#show-hide-has-hyperlinks").removeClass("hidden");
