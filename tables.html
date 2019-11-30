@@ -112,7 +112,7 @@
                <label for="close-button" class="push-down-1">Header Row</label>
                <div class="checkbox">
                   <label class="switch">
-                     <input type="checkbox" id="checkboxHeader">
+                     <input type="checkbox" id="checkboxHeader" checked>
                      <span class="slider round"></span>
                   </label>
                </div>
@@ -120,7 +120,7 @@
                <label for="close-button">Variable Widths</label>
                <div class="checkbox">
                   <label class="switch">
-                     <input type="checkbox" id="variableWidths">
+                     <input type="checkbox" id="variableWidths" checked>
                      <span class="slider round"></span>
                   </label>
                </div>
@@ -128,7 +128,7 @@
                <label for="close-button">Striped</label>
                <div class="checkbox">
                   <label class="switch">
-                     <input type="checkbox" id="checkboxStriped">
+                     <input type="checkbox" id="checkboxStriped" checked>
                      <span class="slider round"></span>
                   </label>
                </div>
@@ -164,9 +164,7 @@
                   </label>
                </div>
 
-               <hr>
-
-               <div class="form-group">
+               <div class="form-group push-down-2">
                   <label for="alert-caption">Caption</label> <span id="url-popover" tabindex="2" data-html="true" data-trigger="focus" role="button" data-container="body" data-toggle="popover" data-placement="top" width="auto" data-content="<h5>Captions</h5><hr><p>Per the W3C, &ldquo;Captions and summaries provide information that can help users find, navigate, and understand tables. While they are not required in every case to meet WCAG 2.0, captions and summaries are fairly straightforward ways to provide such information that is often needed.&rdquo;  </p><p>For more information, see the <a href='https://www.w3.org/WAI/tutorials/tables/caption-summary/' target='_blank'>W3C Accessibility Page</a>.</p>">
                      <i class="fa fa-exclamation-circle fa-fw" aria-hidden="true"></i></span>
                   <input type="text" class="form-control" id="table-caption">
@@ -493,7 +491,8 @@ caption .summary {
             var th = "<th>content</th>";
             var thVar = "<th style='width: %;'>content</th>";
             var theaderOpen = "<thead>";
-            var theaderClose = "</thead><tbody>";
+            var theaderClose = "</thead>";
+            var tbodyOpen = "<tbody>";
             var tableWrapperOpen = "";
             var tableWrapperClose = "";
             var tableCaption = "";
@@ -542,6 +541,13 @@ caption .summary {
                }
             }
 
+            if ( $('#checkboxHeader').is(':not(:checked)') ) {
+               for (i = 0; i < numCols; i++) {
+                  theaderOpen = "";
+                  theaderClose = "";
+               }
+            }
+
             // columns
             for (i = 0; i < numCols; i++) {
                tds += td;
@@ -572,7 +578,7 @@ caption .summary {
             }
 
             // Write the table
-            var bsTable = tableWrapperOpen + tableOpen + tableClassOpen + tableClassClose + tableCaption + theaderOpen + thFinal + theaderClose + tr + tableClose + tableWrapperClose;
+            var bsTable = tableWrapperOpen + tableOpen + tableClassOpen + tableClassClose + tableCaption + theaderOpen + thFinal + theaderClose + tbodyOpen + tr + tableClose + tableWrapperClose;
 
             $("#simple-example").html(bsTable);
             $('#simple-code').text(bsTable);
