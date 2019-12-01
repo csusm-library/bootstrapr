@@ -6472,7 +6472,18 @@
          $('#build-button').click(function() {
 
             var accordionRando = ~~(Math.random() * 10000000);
-            var panelGroupOpen = "<div class='panel-group' id='accordion-" + accordionRando + "' role='tablist' aria-multiselectable='false'>";
+            var dataParent = " data-parent='#accordion-" + accordionRando;
+            var multiSelect = "false";
+
+            if ( $("#open-multiple").is(":checked")) {
+              dataParent = " data-parent='";
+              multiSelect = "true";
+            } else {
+              dataParent = " data-parent='#accordion-" + accordionRando;
+              multiSelect = "false";
+            }
+
+            var panelGroupOpen = "<div class='panel-group' id='accordion-" + accordionRando + "' role='tablist' aria-multiselectable='" + multiSelect + "'>";
             var panelGroupClose = "</div>";
             var numPanels = $('#num-panels').val();
             var numPanelsRandom = '';
@@ -6482,13 +6493,6 @@
             var startOpen = '';
             var plusOrArrowIcon = '';
             var ariaExpanded = 'aria-expanded="false"';
-            var dataParent = " data-parent='#accordion-";
-
-            if ( $("#open-multiple").is(":checked")) {
-              dataParent = "";
-            } else {
-              dataParent = " data-parent='#accordion-";
-            }
 
             for (i = 0; i < numPanels; i++) {
                rando = ~~(Math.random() * 10000000);
@@ -6504,7 +6508,7 @@
                if (i == 0 && $('#first-open').is(":checked")) {
                   startOpen = ' in';
                   ariaExpanded = 'true';
-                  let str = plusOrArrowIcon.replace(/collapsed/g, "");
+                  let str = plusOrArrowIcon.replace(/collapsed/ig, "");
                   plusOrArrowIcon = str;
                } else {
                   startOpen = '';
@@ -6513,7 +6517,7 @@
 
                singlePanel = "<div class='panel panel-default'><div class='panel-heading' role='tab' id='heading-" + rando + "'><h5 class='panel-title'><a role='button' data-toggle='collapse'" + plusOrArrowIcon +
                   dataParent +
-                  accordionRando + "' href='#collapse-" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse-" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse-" + rando +
+               "' href='#collapse-" + rando + "' aria-expanded='" + ariaExpanded + "' aria-controls='collapse-" + rando + "'>" + panelIcon + "Panel " + (i + 1) + "</a></h5></div><div id='collapse-" + rando +
                   "' class='panel-collapse collapse" + startOpen + "' role='tabpanel' aria-labelledby='heading-" + rando + "'><div class='panel-body'>Lorem ipsum dolor sic amet!</div></div></div>";
 
                allPanels += singlePanel;
