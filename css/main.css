@@ -58,11 +58,11 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 .activated {
-  border-bottom: 4px solid white;
+  background: white;
 }
 
 .navbar-inverse .navbar-nav>li.activated>a {
-  color: white;
+  color: black;
 }
 
 .checkbox {
@@ -113,14 +113,14 @@ h1, h2, h3, h4, h5, h6 {
 
 /* add the checkmark ✓  */
 .slider:after {
- display: inline-block;
- content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0✓";
- font-family: "fontAwesome";
- color: silver;
- font-size:105%;
- margin-top:.3rem !important;
- margin-left:.3rem !important;
- z-index: 1000 !important;
+  display: inline-block;
+  content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0✓";
+  font-family: "fontAwesome";
+  color: silver;
+  font-size: 105%;
+  margin-top: .3rem !important;
+  margin-left: .3rem !important;
+  z-index: 1000 !important;
 }
 
 input:checked+.slider {
@@ -380,7 +380,7 @@ pre {
 
 @media (max-width: 767px) {
   .navbar-inverse .navbar-nav .open .dropdown-menu>li>a {
-    color: white !important;
+    color: gray !important;
   }
 
   #jumbotronic {
@@ -388,8 +388,23 @@ pre {
     letter-spacing: normal;
   }
 
+#containers-dropdown .dropdown-toggle,
+#features-dropdown .dropdown-toggle {
+  color: black;
+}
+
+  .navbar-nav,
+  .navbar-inverse .navbar-nav .open .dropdown-menu {
+    background-color: white;
+  }
+
   .navbar-inverse .navbar-nav .open .dropdown-menu .divider {
     background-color: gray;
+  }
+
+  .dropdown-menu li {
+    color: black;
+    background: white;
   }
 }
 

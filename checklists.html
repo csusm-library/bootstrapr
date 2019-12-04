@@ -418,10 +418,6 @@ activateChecklist();
             $('[data-toggle="tooltip"]').tooltip()
          })
 
-         // Add active class to navmenu selection
-         $("li#checklist").addClass("active");
-         $("#content-dropdown").addClass("activated");
-
          // Reset button
          $('#clear-checklist').click(function() {
             location.reload(true);
@@ -517,6 +513,10 @@ activateChecklist();
 
          // clipboard button
          new Clipboard('.btn');
+
+         // Add active class to navmenu selection
+         $("li#checklist").addClass("activate");
+         $("#containers-dropdown").addClass("activated");
 
       });
    </script>
