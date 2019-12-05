@@ -389,16 +389,16 @@ activateChecklist();
          function activateChecklist() {
 
             // Activate instructions
-            $(".ap-check").on("click", function() {
+            $(".ap-check h5").on("click", function() {
 
-               if ($(this).hasClass("ap-checked")) {
-                  $(this).removeClass("ap-checked");
-                  $(this).next().css("color", "black");
-                  $(this).find(".ap-content").slideDown();
+               if ($(this).parent().hasClass("ap-checked")) {
+                  $(this).parent().removeClass("ap-checked");
+                  $(this).parent().next().css("color", "black");
+                  $(this).parent().find(".ap-content").slideDown();
                } else {
-                  $(this).addClass("ap-checked");
-                  $(this).next().css("color", "silver");
-                  $(this).find(".ap-content").slideUp();
+                  $(this).parent().addClass("ap-checked");
+                  $(this).parent().next().css("color", "silver");
+                  $(this).parent().find(".ap-content").slideUp();
                }
 
             });
