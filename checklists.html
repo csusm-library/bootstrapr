@@ -55,6 +55,9 @@
       padding-top: 1rem;
       color: #007bff;
       margin-right: 1rem;
+      display: block;
+      width: 100%;
+      text-align: right;
     }
 
     .btn-snagit:hover {
@@ -68,8 +71,13 @@
 
     .btn-snagit:before {
       font-family: FontAwesome;
-      content: "\f0ea\00a0";
+      content: "\f063\00a0";
     }
+
+    .ap-content {
+      padding-left: 1.9rem;
+    }
+
   </style>
 
 
@@ -316,8 +324,12 @@
           <hr class="well-separator">
 
 
-          <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
 /* Checklist functionality */
+.ap-content {
+  padding-left: 1.9rem;
+}
+
 .ap-content .well {
    margin-top: 1rem;
 }
@@ -347,18 +359,21 @@
 
 /* Copy Button */
 .btn-snagit {
-  padding-top: 1rem;
-  color: #007bff;
-  margin-right: 1rem;
+   padding-top: 1rem;
+   color: #007bff;
+   margin-right: 1rem;
+   display: block;
+   width: 100%;
+   text-align: right;
 }
 
 .btn-snagit:hover {
-  color: #0062cc;
+   color: #0062cc;
 }
 
 .btn-snagit:before {
-  font-family: FontAwesome;
-  content: "\f0ea\00a0";
+   font-family: FontAwesome;
+   content: "\f0ea\00a0";
 }
 </pre>
 

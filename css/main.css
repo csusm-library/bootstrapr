@@ -1061,7 +1061,6 @@ caption .summary {
 
 /* Add a border-bottom to links in the main content panel, rather than a text-decoration underline */
 .main-content a:hover {
-  border-bottom: 1px dashed #337ab7;
   text-decoration: none;
 }
 
