@@ -164,11 +164,11 @@
             </div>
           </div>
 
-          <div class="form-group">
+          <div class="form-group hidden" id="add-image-hider">
             <label for="add-code-wells">Add Images</label>
             <div class="checkbox">
               <label class="switch">
-                <input type="checkbox" id="add-images">
+                <input type="checkbox" id="add-image">
                 <span class="slider round"></span>
               </label>
             </div>
@@ -579,9 +579,12 @@ new ClipboardJS('.btn-snagit', {
 
         if ($('#add-content').is(':checked')) {
           $("#code-well-hider").hide().removeClass("hidden").fadeIn();
+          $("#add-image-hider").hide().removeClass("hidden").fadeIn();
         } else {
           $("#add-code-wells").prop("checked", false);
+          $("#add-image").prop("checked", false);
           $("#code-well-hider").fadeOut();
+          $("#add-image-hider").fadeOut();
         }
 
       });
@@ -607,7 +610,7 @@ new ClipboardJS('.btn-snagit', {
           $("#code-well-hider").fadeOut();
         }
 
-        if ($('#add-images').is(':checked')) {
+        if ($('#add-image').is(':checked')) {
           var placeholderImage = '<img class="img img-responsive ap-image" src="http://placehold.it/800x400">';
         } else {
           placeholderImage = "";
