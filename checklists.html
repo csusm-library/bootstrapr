@@ -3,211 +3,241 @@
 
 <head>
 
-   <!-- Metadata for the Webpage -->
-   <meta charset="utf-8">
-   <meta http-equiv="X-UA-Compatible" content="IE=edge">
-   <meta name="viewport" content="width=device-width, initial-scale=1">
-   <title>Bootstrapr &middot; Checklists</title>
+  <!-- Metadata for the Webpage -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrapr &middot; Checklists</title>
 
-   <!-- Favicons -->
-   <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
-   <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
-   <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
-   <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
-   <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
-   <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
-   <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
-   <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
-   <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
-   <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
-   <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
-   <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
-   <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
-   <link rel="manifest" href="img/favicon/manifest.json">
-   <meta name="msapplication-TileColor" content="#ffffff">
-   <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
-   <meta name="theme-color" content="#ffffff">
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
 
-   <!-- Bootstrap CSS files-->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+  <!-- Bootstrap CSS files-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
 
-   <!-- jQuery UI CSS (optional) -->
-   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+  <!-- jQuery UI CSS (optional) -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
-   <!-- Google web fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
-   <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+  <!-- Google web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
-   <!-- CSS Animations -->
-   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+  <!-- CSS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
 
-   <!-- Font Awesome Web Icons -->
-   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <!-- Font Awesome Web Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 
-   <!-- Main local stylesheet -->
-   <link rel="stylesheet" href="css/main.css">
+  <!-- Main local stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
 
-   <!-- Prettify theme -->
-   <link rel="stylesheet" href="css/prettify-theme.css">
+  <!-- Prettify theme -->
+  <link rel="stylesheet" href="css/prettify-theme.css">
+
+  <style>
+    .btn-snagit {
+      padding-top: 1rem;
+      color: #007bff;
+      margin-right: 1rem;
+    }
+
+    .btn-snagit:hover {
+      color: #0062cc;
+    }
+
+    .btn-snagit:active {
+      -webkit-box-shadow: none;
+      box-shadow: none;
+    }
+
+    .btn-snagit:before {
+      font-family: FontAwesome;
+      content: "\f0ea\00a0";
+    }
+  </style>
 
 
 </head>
 
 <body id="top">
 
-   <!-- Navbar include -->
-   <div w3-include-html="navbar.html"></div>
+  <!-- Navbar include -->
+  <div w3-include-html="navbar.html"></div>
 
-   <div class="container main-content">
+  <div class="container main-content">
 
-      <div class="row add-100">
-         <div class="col-sm-6">
-            <ol class="breadcrumb">
-               <li><a href="index.html">Home</a></li>
-               <li class="active">Checklists</li>
-            </ol>
-         </div>
-         <!-- col-sm-6 -->
-         <div class="col-sm-6">
-            <p class="pull-right">
-               <a href="https://getbootstrap.com/docs/3.3/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-                  Boostrap 3.3.7</a>
-            </p>
-         </div>
-         <!-- col-sm-4-->
+    <div class="row add-100">
+      <div class="col-sm-6">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">Checklists</li>
+        </ol>
       </div>
-      <!-- .row -->
-
-      <div class="row">
-         <div class="col-sm-12">
-            <h1>Checklists</h1>
-            <p class="lead">Easily track your progress with checklist panels.</p>
-            <p>Use checkable instruction sets to track your progress through a task. Choose to show desciptions or additional content in each panel, such as code wells.</p>
-         </div>
+      <!-- col-sm-6 -->
+      <div class="col-sm-6">
+        <p class="pull-right">
+          <a href="https://getbootstrap.com/docs/3.3/" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+            Boostrap 3.3.7</a>
+        </p>
       </div>
+      <!-- col-sm-4-->
+    </div>
+    <!-- .row -->
 
-      <hr class="divider">
-      <div class="row">
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Checklists</h1>
+        <p class="lead">Easily track your progress with checklist panels.</p>
+        <p>Use checkable instruction sets to track your progress through a task. Choose to show desciptions or additional content in each panel, such as code wells.</p>
 
-         <div class="col-sm-3">
+        <div class="alert alert-warning">
 
-            <form>
+          <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong> &nbsp;Adding HTML to Code Wells</strong>
+            <br>When adding HTML to code wells, or any language which uses angle brackets, you must replace each <strong>left angle bracket</strong> (<code>&lt;</code>) with <code>&&#65279;lt;</code>, and replace each <strong>right angle
+              bracket</strong> (<code>&gt;</code>) with <code>&&#65279;gt;</code>. Consider automating this with our <strong><a href='code-wells.html'>Code Well</a></strong> tool.</p>
+        </div>
 
-               <div class="form-group">
-                  <label for="name1"># Steps</label>
-                  <input type="text" class="form-control input-number" id="num-steps">
-               </div>
+      </div>
+    </div>
 
-               <label for="add-instructions" class="push-down-1">Add Instructions</label>
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label class="switch">
-                        <input type="checkbox" id="add-instructions">
-                        <span class="slider round"></span>
-                     </label>
-                  </div>
-               </div>
+    <hr class="divider">
+    <div class="row">
 
-              <label for="add-content">Add Content Area</label>
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label class="switch">
-                        <input type="checkbox" id="add-content">
-                        <span class="slider round"></span>
-                     </label>
-                  </div>
-               </div>
+      <div class="col-sm-3">
 
-               <div class="form-group hidden" id="code-well-hider">
-                 <label for="add-code-wells">Add Code Wells</label>
-                  <div class="checkbox">
-                     <label class="switch">
-                        <input type="checkbox" id="add-code-wells">
-                        <span class="slider round"></span>
-                     </label>
-                  </div>
-               </div>
+        <form>
 
-              <label for="numbered">Add Numbered Steps</label>
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label class="switch">
-                        <input type="checkbox" id="numbered">
-                        <span class="slider round"></span>
-                     </label>
-                  </div>
-               </div>
+          <div class="form-group">
+            <label for="name1"># Steps</label>
+            <input type="text" class="form-control input-number" id="num-steps">
+          </div>
 
-               <label for="reset-all-button">Add Reset Button</label>
-               <div class="form-group">
-                  <div class="checkbox">
-                     <label class="switch">
-                        <input type="checkbox" value="blaster" id="reset-all-button">
-                        <span class="slider round"></span>
-                     </label>
-                  </div>
-               </div>
-
-            </form>
-
-            <div class="push-down-3" id="action-buttons">
-              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
-               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
-               <button type="button" class="btn btn-default pull-right" id="clear-checklist"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+          <label for="add-instructions" class="push-down-1">Add Instructions</label>
+          <div class="form-group">
+            <div class="checkbox">
+              <label class="switch">
+                <input type="checkbox" id="add-instructions">
+                <span class="slider round"></span>
+              </label>
             </div>
+          </div>
 
-
-
-         </div>
-         <!-- col-sm-3 -->
-
-         <div class="col-sm-9">
-
-            <div class="example" id="simple-example">
-
-
-               <div class="ap-container">
-                  <div class="panel panel-default">
-                     <div class="panel-heading ap-check">
-                        <h5 class="panel-title">1. Panel Title</h5>
-                        <div class="panel-body ap-content">Panel body content.</div>
-                     </div>
-                  </div>
-                  <div class="panel panel-default">
-                     <div class="panel-heading ap-check">
-                        <h5 class="panel-title">2. Panel Title</h5>
-                        <div class="panel-body ap-content">Panel body content.</div>
-                     </div>
-                  </div>
-                  <div class="panel panel-default">
-                     <div class="panel-heading ap-check">
-                        <h5 class="panel-title">3. Panel Title</h5>
-                        <div class="panel-body ap-content">Panel body content.</div>
-                     </div>
-                  </div>
-               </div>
-
+          <label for="add-content">Add Content Area</label>
+          <div class="form-group">
+            <div class="checkbox">
+              <label class="switch">
+                <input type="checkbox" id="add-content">
+                <span class="slider round"></span>
+              </label>
             </div>
-            <!-- .example -->
+          </div>
 
-            <!-- button well -->
-            <div class="well">
+          <div class="form-group hidden" id="code-well-hider">
+            <label for="add-code-wells">Add Code Wells</label>
+            <div class="checkbox">
+              <label class="switch">
+                <input type="checkbox" id="add-code-wells">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
 
-               <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                     aria-hidden="true"></i> Copy</button>
+          <label for="numbered">Add Numbered Steps</label>
+          <div class="form-group">
+            <div class="checkbox">
+              <label class="switch">
+                <input type="checkbox" id="numbered">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
 
-               <!-- Beautifier -->
-               <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
-               </button>
+          <label for="reset-all-button">Add Reset Button</label>
+          <div class="form-group">
+            <div class="checkbox">
+              <label class="switch">
+                <input type="checkbox" value="blaster" id="reset-all-button">
+                <span class="slider round"></span>
+              </label>
+            </div>
+          </div>
 
-               <!-- Update Example Panel-->
-               <button id="update-preview-button" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
-                  Update Example</button>
+        </form>
 
-               <hr class="well-separator">
+        <div class="push-down-3" id="action-buttons">
+          <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
+          <button type="button" class="btn btn-default pull-right" id="clear-checklist"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+        </div>
 
-<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+
+
+      </div>
+      <!-- col-sm-3 -->
+
+      <div class="col-sm-9">
+
+        <div class="example" id="simple-example">
+
+
+          <div class="ap-container">
+            <div class="panel panel-default">
+              <div class="panel-heading ap-check">
+                <h5 class="panel-title">1. Panel Title</h5>
+                <div class="panel-body ap-content">Panel body content.</div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading ap-check">
+                <h5 class="panel-title">2. Panel Title</h5>
+                <div class="panel-body ap-content">Panel body content.</div>
+              </div>
+            </div>
+            <div class="panel panel-default">
+              <div class="panel-heading ap-check">
+                <h5 class="panel-title">3. Panel Title</h5>
+                <div class="panel-body ap-content">Panel body content.</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+        <!-- .example -->
+
+        <!-- button well -->
+        <div class="well">
+
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Beautifier -->
+          <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+          </button>
+
+          <!-- Update Example Panel-->
+          <button id="update-preview-button" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+            Update Example</button>
+
+          <hr class="well-separator">
+
+          <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
    &lt;div class="ap-container"&gt;
    	&lt;div class="panel panel-default"&gt;
    		&lt;div class="panel-heading ap-check"&gt;
@@ -230,27 +260,44 @@
    &lt;/div&gt;
 </pre>
 
-            </div>
-            <!-- well closes -->
+        </div>
+        <!-- well closes -->
 
-            <h4 class="sub-header">Custom CSS</h4>
-
-            <p>Custom CSS is required to style the 'step' panels. <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">FontAwesome 4 icons</a> were also used for the empty circle and checked-circle icons.</p>
+        <p class="push-down-3"><strong>Note:</strong> To enable the copy button above the code wells, you will need to include a link to the clipboardJS library in your HTML document.</p>
 
 
-            <div class="well">
-               <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                     aria-hidden="true"></i> Copy</button>
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code-2" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
 
-               <!-- Update Example Panel-->
-               <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i class="fa fa-fw fa-file-code-o"
-                     aria-hidden="true"></i> Get all bootstrapr CSS</a>
+          <hr class="well-separator">
 
-               <hr class="well-separator">
+<pre class="prettyprint lang-html" contenteditable="true" id="custom-js-code-2">
+&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"&gt;&lt;/script&gt;
+</pre>
+        </div>
+        <!-- .well -->
 
 
-<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+        <h4 class="sub-header">Custom CSS</h4>
+
+        <p>Custom CSS is required to style the 'step' panels. <a href="https://fontawesome.com/v4.7.0/icons/" target="_blank">FontAwesome 4 icons</a> were also used for the empty circle and checked-circle icons.</p>
+
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Update Example Panel-->
+          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
+              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all bootstrapr CSS</a>
+
+          <hr class="well-separator">
+
+
+          <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+/* Checklist functionality */
 .ap-content .well {
    margin-top: 1rem;
 }
@@ -277,249 +324,288 @@
 .ap-checked {
    color: silver !important;
 }
+
+/* Copy Button */
+.btn-snagit {
+  padding-top: 1rem;
+  color: #007bff;
+  margin-right: 1rem;
+}
+
+.btn-snagit:hover {
+  color: #0062cc;
+}
+
+.btn-snagit:before {
+  font-family: FontAwesome;
+  content: "\f0ea\00a0";
+}
 </pre>
 
-            </div>
-            <!-- .well -->
+        </div>
+        <!-- .well -->
 
-            <h4 class="sub-header">Custom JS</h4>
+        <h4 class="sub-header">Custom JS</h4>
 
-            <p>Custom javascript is required for the show/hide functionality and the icon replacement.</p>
-
-
-            <div class="well">
-               <!-- Copier-->
-               <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
-                     aria-hidden="true"></i> Copy</button>
-
-               <hr class="well-separator">
+        <p>Custom javascript is required for the show/hide functionality and the icon replacement.</p>
 
 
-<pre class="prettyprint lang-js" contenteditable="true" id="custom-js-code">
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <hr class="well-separator">
+
+
+          <pre class="prettyprint lang-js" contenteditable="true" id="custom-js-code">
 function activateChecklist() {
 
-   // Activate instructions
-   $(".ap-check").on("click", function() {
+  // Activate instructions
+  $(".ap-check h5").on("click", function() {
 
-      if ($(this).hasClass("ap-checked")) {
-         $(this).removeClass("ap-checked");
-         $(this).next().css("color", "black");
-         $(this).find(".ap-content").slideDown();
-      } else {
-         $(this).addClass("ap-checked");
-         $(this).next().css("color", "silver");
-         $(this).find(".ap-content").slideUp();
-      }
+    if ($(this).parent().hasClass("ap-checked")) {
+       $(this).parent().removeClass("ap-checked");
+       $(this).parent().next().css("color", "black");
+       $(this).parent().find(".ap-content").slideDown();
+    } else {
+       $(this).parent().addClass("ap-checked");
+       $(this).parent().next().css("color", "silver");
+       $(this).parent().find(".ap-content").slideUp();
+    }
 
-   });
+  });
 
-   $(".ap-refresh").on("click", function() {
-      $(".ap-check").removeClass("ap-checked");
-      $(".ap-content").css("color", "black");
-      $(".ap-content").slideDown();
+  $(".ap-refresh").on("click", function() {
 
-   });
+    $(".ap-check").removeClass("ap-checked");
+    $(".ap-content").css("color", "black");
+    $(".ap-content").slideDown();
+
+  });
+
 }
 
 activateChecklist();
+
+// Instantiate the clipboard on all .btn-snagit class buttons
+new ClipboardJS('.btn-snagit', {
+  target: function(trigger) {
+    return trigger.nextElementSibling;
+  }
+});
 </pre>
 
-            </div>
-            <!-- .well -->
-
-            <h4 class="sub-header">Notes</h4>
-
-            <p>The code wells previewed here use the sunburst theme employed on this website. Unless you choose to adopt this theme, your code wells will likely render default gray. To read more about code well themes, <a href="code-wells.html">visit the Code Wells page</a></p>
+        </div>
+        <!-- .well -->
 
 
 
-         </div>
-         <!-- col-sm-9 -->
+        <h4 class="sub-header">Notes</h4>
+
+        <p>The code wells previewed here use the sunburst theme employed on this website. Unless you choose to adopt this theme, your code wells will likely render default gray. To read more about code well themes, <a href="code-wells.html">visit the
+            Code Wells page</a></p>
+
+
 
       </div>
-      <!-- .row -->
+      <!-- col-sm-9 -->
 
-   </div>
-   <!-- .container-fluid -->
+    </div>
+    <!-- .row -->
 
-
-   <!-- Navbar include -->
-   <div w3-include-html="footer.html"></div>
-
-
-   <!-- Back-to-top button -->
-   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
-
-   <!-- jQuery Javascript Library (required by Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-
-   <!-- jQuery UI Library (optional) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
-
-   <!-- Bootstrap Library -->
-   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-
-   <!-- Main local script file -->
-   <script src="js/main.js"></script>
-
-   <!-- includes for Google's code highlighter 'prettyprint' -->
-   <link rel="stylesheet" type="text/css" href="css/prettify.css">
-   <script type="text/javascript" src="js/prettify.js"></script>
-   <script type="text/javascript" src="js/lang-css.js"></script>
-
-   <!-- Bootstrap Table -->
-   <script type="text/javascript" src="js/jquery.sortElements.js"></script>
-   <script type="text/javascript" src="js/jquery.bdt.js"></script>
-
-   <!-- clipboard.js include -->
-   <script src="js/clipboard.min.js"></script>
-
-   <!-- html file include script | used for navbar -->
-   <script src="js/w3data.js"></script>
-   <script>
-      w3IncludeHTML();
-   </script>
-
-   <!-- Animations JS -->
-   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-
-   <script>
-      $(document).ready(function() {
-
-         function activateChecklist() {
-
-            // Activate instructions
-            $(".ap-check h5").on("click", function() {
-
-               if ($(this).parent().hasClass("ap-checked")) {
-                  $(this).parent().removeClass("ap-checked");
-                  $(this).parent().next().css("color", "black");
-                  $(this).parent().find(".ap-content").slideDown();
-               } else {
-                  $(this).parent().addClass("ap-checked");
-                  $(this).parent().next().css("color", "silver");
-                  $(this).parent().find(".ap-content").slideUp();
-               }
-
-            });
-
-            $(".ap-refresh").on("click", function() {
-               $(".ap-check").removeClass("ap-checked");
-               $(".ap-content").css("color", "black");
-               $(".ap-content").slideDown();
-
-            });
-         }
-
-         activateChecklist();
-
-         // tooltips function
-         $(function() {
-            $('[data-toggle="tooltip"]').tooltip()
-         })
-
-         // Reset button
-         $('#clear-checklist').click(function() {
-            location.reload(true);
-         });
+  </div>
+  <!-- .container-fluid -->
 
 
-
-         // Update the button/link preview window after changes to the code well
-         $("#update-preview-button").on("click", function() {
-            var modifiedCode = $('#simple-code').text();
-            $("#simple-example").html(modifiedCode);
-
-            activateChecklist();
-         });
-
-         $("#add-content").on("change", function() {
-
-            if ($('#add-content').is(':checked')) {
-               $("#code-well-hider").hide().removeClass("hidden").fadeIn();
-            } else {
-               $("#add-code-wells").prop("checked", false);
-               $("#code-well-hider").fadeOut();
-            }
-
-         });
-
-         // Build the modal button
-         $('#build-button').on("click", function() {
-
-            var numSteps = $("#num-steps").val();
-            var apContainerOpen = '<div class="ap-container">';
-            var panelOpener = '<div class="panel panel-default"><div class="panel-heading ap-check"><h5 class="panel-title">';
-            var panelMiddle = 'Panel Title</h5>';
-
-            var checklistStep = "";
-            var checklistSteps = "";
-            var closingDiv = "</div>";
-            var closingContentDiv = "</div>";
-
-            if ($('#add-content').is(':checked')) {
-               var contentDiv = '<div class="panel-body ap-content">Panel body content.';
-               $("#code-well-hider").hide().removeClass("hidden").fadeIn();
-            } else {
-               contentDiv = "";
-               $("#code-well-hider").fadeOut();
-            }
-
-            if ($('#reset-all-button').is(':checked')) {
-               var resetAllButton = '<p class="text-right"><a role="button" class="btn btn-primary ap-refresh"><i class="fa fa-fw fa-refresh" aria-hidden="true"></i> &nbsp;Reset All</a></p>';
-            } else {
-               resetAllButton = "";
-            }
+  <!-- Navbar include -->
+  <div w3-include-html="footer.html"></div>
 
 
-            if ($('#add-code-wells').is(':checked')) {
-               var codeWell =
-                  '<pre class="prettyprint simple-code push-down-2"> &lt;p&gt;Sample code, here...&lt;/p&gt;</pre>';
-            } else {
-               codeWell = "";
-            }
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
-            if ($('#add-instructions').is(':checked')) {
-               var addInstructions =
-                  '<div class="alert alert-success" role="alert"><p><i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i> Click each step as you finish to track your progress.</p></div>';
-            } else {
-               addInstructions = "";
-            }
+  <!-- jQuery Javascript Library (required by Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-            // Assemble the parts
-            for (i = 1; i <= numSteps; i++) {
+  <!-- jQuery UI Library (optional) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
-               if ($('#numbered').is(':not(:checked)')) {
-                  x = "";
-               } else {
-                  x = i + ". ";
-               }
+  <!-- Bootstrap Library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
 
-               checklistSteps += panelOpener + x + panelMiddle + contentDiv + codeWell + closingContentDiv + closingDiv + closingDiv;
-            }
+  <!-- Main local script file -->
+  <script src="js/main.js"></script>
 
-            checklistSteps = addInstructions + apContainerOpen + resetAllButton + checklistSteps + closingDiv;
+  <!-- includes for Google's code highlighter 'prettyprint' -->
+  <link rel="stylesheet" type="text/css" href="css/prettify.css">
+  <script type="text/javascript" src="js/prettify.js"></script>
+  <script type="text/javascript" src="js/lang-css.js"></script>
 
-            $("#simple-example").html(checklistSteps);
-            $('#simple-code').text(checklistSteps);
+  <!-- Bootstrap Table -->
+  <script type="text/javascript" src="js/jquery.sortElements.js"></script>
+  <script type="text/javascript" src="js/jquery.bdt.js"></script>
 
-            $('pre').removeClass('prettyprinted');
-            prettyPrint();
-
-            activateChecklist();
-
-         });
+  <!-- clipboard.js include -->
+  <script src="js/clipboard.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"></script>
 
 
-         // clipboard button
-         new Clipboard('.btn');
+  <!-- html file include script | used for navbar -->
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
 
-         // Add active class to navmenu selection
-         $("li#checklist").addClass("activate");
-         $("#containers-dropdown").addClass("activated");
+  <!-- Animations JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      function activateChecklist() {
+
+        // Activate instructions
+        $(".ap-check h5").on("click", function() {
+
+          if ($(this).parent().hasClass("ap-checked")) {
+            $(this).parent().removeClass("ap-checked");
+            $(this).parent().next().css("color", "black");
+            $(this).parent().find(".ap-content").slideDown();
+          } else {
+            $(this).parent().addClass("ap-checked");
+            $(this).parent().next().css("color", "silver");
+            $(this).parent().find(".ap-content").slideUp();
+          }
+
+        });
+
+        $(".ap-refresh").on("click", function() {
+          $(".ap-check").removeClass("ap-checked");
+          $(".ap-content").css("color", "black");
+          $(".ap-content").slideDown();
+
+        });
+      }
+
+      activateChecklist();
+
+      // tooltips function
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      // Reset button
+      $('#clear-checklist').click(function() {
+        location.reload(true);
+      });
+
+
+
+      // Update the button/link preview window after changes to the code well
+      $("#update-preview-button").on("click", function() {
+        var modifiedCode = $('#simple-code').text();
+        $("#simple-example").html(modifiedCode);
+
+        activateChecklist();
+      });
+
+      $("#add-content").on("change", function() {
+
+        if ($('#add-content').is(':checked')) {
+          $("#code-well-hider").hide().removeClass("hidden").fadeIn();
+        } else {
+          $("#add-code-wells").prop("checked", false);
+          $("#code-well-hider").fadeOut();
+        }
 
       });
-   </script>
+
+      // Build the modal button
+      $('#build-button').on("click", function() {
+
+        var numSteps = $("#num-steps").val();
+        var apContainerOpen = '<div class="ap-container">';
+        var panelOpener = '<div class="panel panel-default"><div class="panel-heading ap-check"><h5 class="panel-title">';
+        var panelMiddle = 'Panel Title</h5>';
+
+        var checklistStep = "";
+        var checklistSteps = "";
+        var closingDiv = "</div>";
+        var closingContentDiv = "</div>";
+
+        if ($('#add-content').is(':checked')) {
+          var contentDiv = '<div class="panel-body ap-content">Panel body content.';
+          $("#code-well-hider").hide().removeClass("hidden").fadeIn();
+        } else {
+          contentDiv = "";
+          $("#code-well-hider").fadeOut();
+        }
+
+        if ($('#reset-all-button').is(':checked')) {
+          var resetAllButton = '<p class="text-right"><a role="button" class="btn btn-primary ap-refresh"><i class="fa fa-fw fa-refresh" aria-hidden="true"></i> &nbsp;Reset All</a></p>';
+        } else {
+          resetAllButton = "";
+        }
+
+
+        if ($('#add-code-wells').is(':checked')) {
+          var codeWell =
+            '<a class="pull-right btn btn-snagit">Copy</a><pre class="prettyprint simple-code push-down-2">&lt;p&gt;Sample code, here...&lt;/p&gt;</pre>';
+        } else {
+          codeWell = "";
+        }
+
+        if ($('#add-instructions').is(':checked')) {
+          var addInstructions =
+            '<div class="alert alert-success" role="alert"><p><i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i> Click each step as you finish to track your progress.</p></div>';
+        } else {
+          addInstructions = "";
+        }
+
+        // Assemble the parts
+        for (i = 1; i <= numSteps; i++) {
+
+          if ($('#numbered').is(':not(:checked)')) {
+            x = "";
+          } else {
+            x = i + ". ";
+          }
+
+          checklistSteps += panelOpener + x + panelMiddle + contentDiv + codeWell + closingContentDiv + closingDiv + closingDiv;
+        }
+
+        checklistSteps = addInstructions + apContainerOpen + resetAllButton + checklistSteps + closingDiv;
+
+        $("#simple-example").html(checklistSteps);
+        $('#simple-code').text(checklistSteps);
+
+        $('pre').removeClass('prettyprinted');
+        prettyPrint();
+
+        activateChecklist();
+
+      });
+
+
+      // clipboard button
+      new Clipboard('.btn');
+
+      new Clipboard('.btn-snagit');
+
+      // Instantiate the clipboard on all .btn-snagit class buttons
+      new ClipboardJS('.btn-snagit', {
+        target: function(trigger) {
+          return trigger.nextElementSibling;
+        }
+      });
+
+      // Add active class to navmenu selection
+      $("li#checklist").addClass("activate");
+      $("#containers-dropdown").addClass("activated");
+
+    });
+  </script>
 
 </body>
 
