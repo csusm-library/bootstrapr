@@ -106,13 +106,6 @@
         <p class="lead">Easily track your progress with checklist panels.</p>
         <p>Use checkable instruction sets to track your progress through a task. Choose to show desciptions or additional content in each panel, such as code wells.</p>
 
-        <div class="alert alert-warning">
-
-          <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong> &nbsp;Adding HTML to Code Wells</strong>
-            <br>When adding HTML to code wells, or any language which uses angle brackets, you must replace each <strong>left angle bracket</strong> (<code>&lt;</code>) with <code>&&#65279;lt;</code>, and replace each <strong>right angle
-              bracket</strong> (<code>&gt;</code>) with <code>&&#65279;gt;</code>. Consider automating this with our <strong><a href='code-wells.html'>Code Well</a></strong> tool.</p>
-        </div>
-
       </div>
     </div>
 
@@ -195,24 +188,37 @@
 
         <div class="example" id="simple-example">
 
-
+          <div class="alert alert-success" role="alert">
+            <p>
+              <i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i>
+              Click each step as you finish to track your progress.
+            </p>
+          </div>
           <div class="ap-container">
+            <p class="text-right">
+              <a role="button" class="btn btn-primary ap-refresh">
+                <i class="fa fa-fw fa-refresh" aria-hidden="true"></i>
+                Reset All
+              </a>
+            </p>
             <div class="panel panel-default">
               <div class="panel-heading ap-check">
                 <h5 class="panel-title">1. Panel Title</h5>
-                <div class="panel-body ap-content">Panel body content.</div>
+                <div class="panel-body ap-content">
+                  Panel body content.
+                  <a class="pull-right btn btn-snagit">Copy</a>
+                  <pre class="prettyprint simple-code">&lt;p&gt;Sample code, here...&lt;/p&gt;</pre>
+                </div>
               </div>
             </div>
             <div class="panel panel-default">
               <div class="panel-heading ap-check">
                 <h5 class="panel-title">2. Panel Title</h5>
-                <div class="panel-body ap-content">Panel body content.</div>
-              </div>
-            </div>
-            <div class="panel panel-default">
-              <div class="panel-heading ap-check">
-                <h5 class="panel-title">3. Panel Title</h5>
-                <div class="panel-body ap-content">Panel body content.</div>
+                <div class="panel-body ap-content">
+                  Panel body content.
+                  <a class="pull-right btn btn-snagit">Copy</a>
+                  <pre class="prettyprint simple-code">&lt;p&gt;Sample code, here...&lt;/p&gt;</pre>
+                </div>
               </div>
             </div>
           </div>
@@ -238,26 +244,40 @@
           <hr class="well-separator">
 
           <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
-   &lt;div class="ap-container"&gt;
-   	&lt;div class="panel panel-default"&gt;
-   		&lt;div class="panel-heading ap-check"&gt;
-   			&lt;h5 class="panel-title"&gt;1. Panel Title&lt;/h5&gt;
-   			&lt;div class="panel-body ap-content"&gt;Panel body content.&lt;/div&gt;
-   		&lt;/div&gt;
-   	&lt;/div&gt;
-   	&lt;div class="panel panel-default"&gt;
-   		&lt;div class="panel-heading ap-check"&gt;
-   			&lt;h5 class="panel-title"&gt;2. Panel Title&lt;/h5&gt;
-   			&lt;div class="panel-body ap-content"&gt;Panel body content.&lt;/div&gt;
-   		&lt;/div&gt;
-   	&lt;/div&gt;
-   	&lt;div class="panel panel-default"&gt;
-   		&lt;div class="panel-heading ap-check"&gt;
-   			&lt;h5 class="panel-title"&gt;3. Panel Title&lt;/h5&gt;
-   			&lt;div class="panel-body ap-content"&gt;Panel body content.&lt;/div&gt;
-   		&lt;/div&gt;
-   	&lt;/div&gt;
-   &lt;/div&gt;
+&lt;div class="alert alert-success" role="alert"&gt;
+	&lt;p&gt;
+		&lt;i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"&gt;&lt;/i&gt;
+		Click each step as you finish to track your progress.
+	&lt;/p&gt;
+&lt;/div&gt;
+&lt;div class="ap-container"&gt;
+	&lt;p class="text-right"&gt;
+		&lt;a role="button" class="btn btn-primary ap-refresh"&gt;
+			&lt;i class="fa fa-fw fa-refresh" aria-hidden="true"&gt;&lt;/i&gt;
+			Reset All
+		&lt;/a&gt;
+	&lt;/p&gt;
+	&lt;div class="panel panel-default"&gt;
+		&lt;div class="panel-heading ap-check"&gt;
+			&lt;h5 class="panel-title"&gt;1. Panel Title&lt;/h5&gt;
+			&lt;div class="panel-body ap-content"&gt;
+				Panel body content.
+				&lt;a class="pull-right btn btn-snagit"&gt;Copy&lt;/a&gt;
+				&lt;pre class="prettyprint simple-code"&gt;&lt;p&gt;Sample code, here...&lt;/p&gt;&lt;/pre&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+	&lt;div class="panel panel-default"&gt;
+		&lt;div class="panel-heading ap-check"&gt;
+			&lt;h5 class="panel-title"&gt;2. Panel Title&lt;/h5&gt;
+			&lt;div class="panel-body ap-content"&gt;
+				Panel body content.
+				&lt;a class="pull-right btn btn-snagit"&gt;Copy&lt;/a&gt;
+				&lt;pre class="prettyprint simple-code"&gt;&lt;p&gt;Sample code, here...&lt;/p&gt;&lt;/pre&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/div&gt;
+&lt;/div&gt;
 </pre>
 
         </div>
@@ -273,7 +293,7 @@
 
           <hr class="well-separator">
 
-<pre class="prettyprint lang-html" contenteditable="true" id="custom-js-code-2">
+          <pre class="prettyprint lang-html" contenteditable="true" id="custom-js-code-2">
 &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/clipboard.js/2.0.4/clipboard.min.js"&gt;&lt;/script&gt;
 </pre>
         </div>
@@ -406,7 +426,17 @@ new ClipboardJS('.btn-snagit', {
         <p>The code wells previewed here use the sunburst theme employed on this website. Unless you choose to adopt this theme, your code wells will likely render default gray. To read more about code well themes, <a href="code-wells.html">visit the
             Code Wells page</a></p>
 
+        <div class="alert alert-warning">
 
+          <p><i class="fa fa-exclamation-triangle fa-fw" aria-hidden="true"></i><a class="close" data-dismiss="alert" aria-label="close">×</a><strong> &nbsp;Adding HTML to Code Wells</strong>
+            <br>When adding HTML to code wells, or any language which uses angle brackets, you must replace each <strong>left angle bracket</strong> (<code>&lt;</code>) with <code>&&#65279;lt;</code>, and replace each <strong>right angle
+              bracket</strong> (<code>&gt;</code>) with <code>&&#65279;gt;</code>. Consider automating this with our <strong><a href='code-wells.html'>Code Well</a></strong> tool.</p>
+        </div>
+
+        <div class="alert alert-success">
+          <p><i class="fa fa-fw fa-gift"></i> &nbsp;Special thanks to <a href="https://zenorocha.com/" target"_blank">Zeno Rocha</a> for his <a href="https://clipboardjs.com/" target="_blank">ClipboardJS</a>, which provides the copy functionality.
+          </p>
+        </div>
 
       </div>
       <!-- col-sm-9 -->
