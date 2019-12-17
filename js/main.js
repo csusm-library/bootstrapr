@@ -143,6 +143,7 @@ $(document).ready(function() {
 
   });
 
+
   // Popovers for the information icons -- this allows multiple popovers per page
   $('[data-toggle="popover"]').popover({
     'container': 'body',

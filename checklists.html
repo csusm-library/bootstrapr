@@ -261,7 +261,7 @@
           </button>
 
           <!-- Update Example Panel-->
-          <button id="update-preview-button" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+          <button id="update-preview-button" class="btn btn-code-well pull-left previewr-button" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
             Update Example</button>
 
           <hr class="well-separator">
@@ -565,13 +565,14 @@ new ClipboardJS('.btn-snagit', {
         location.reload(true);
       });
 
-
-
       // Update the button/link preview window after changes to the code well
       $("#update-preview-button").on("click", function() {
         var modifiedCode = $('#simple-code').text();
         $("#simple-example").html(modifiedCode);
 
+        $('pre').removeClass('prettyprinted');
+        prettyPrint();
+        
         activateChecklist();
       });
 
@@ -632,7 +633,7 @@ new ClipboardJS('.btn-snagit', {
 
         if ($('#add-instructions').is(':checked')) {
           var addInstructions =
-            '<div class="alert alert-success" role="alert"><p><i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i> Click each step as you finish to track your progress.</p></div>';
+            '<p class="alert alert-success" role="alert"><i class="fa fa-lg fa-check-circle-o fa-fw green" aria-hidden="true"></i> Click each step as you finish to track your progress.</p>';
         } else {
           addInstructions = "";
         }
@@ -661,9 +662,13 @@ new ClipboardJS('.btn-snagit', {
 
       });
 
+      // Add active class to navmenu selection
+      $("li#checklist").addClass("activate");
+      $("#containers-dropdown").addClass("activated");
+
 
       // clipboard button
-      new Clipboard('.btn');
+      new Clipboard('');
 
       new Clipboard('.btn-snagit');
 
@@ -673,10 +678,6 @@ new ClipboardJS('.btn-snagit', {
           return trigger.nextElementSibling;
         }
       });
-
-      // Add active class to navmenu selection
-      $("li#checklist").addClass("activate");
-      $("#containers-dropdown").addClass("activated");
 
     });
   </script>
