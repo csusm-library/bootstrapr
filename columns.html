@@ -203,10 +203,17 @@
       <div class="col-sm-12">
         <h1>Columns</h1>
         <p class="lead">Use columns to structure your page content.</p>
-        <p>Although many more column combinations are possible, I have included the most common column layouts here. Columns live inside <code>&lt;rows&gt;</code> and by default we have placed each column selection inside a single row.</p>
+        <p>Although many more column combinations are possible, I have included the most common column layouts here.</p>
 
-        <p>However, you may place an unlimited number of columns
+        <p>Columns live inside <code>&lt;rows&gt;</code>. By default we have placed each column selection inside a single row. However, you may also place an unlimited number of columns
           inside a single row (see the example code). As column widths surpass 12 columns, the next columns are pushed down to the next line.</p>
+          <h5>Instructions</h5>
+            <ul>
+              <li><strong>Add</strong> a column to the column stack</li>
+              <li><strong>Click</strong> on a column in the Stack to delete it</li>
+              <li><strong>Click and drag</strong> to reposition the column</li>
+            </ul>
+
       </div>
     </div>
 
@@ -239,7 +246,7 @@
           </div>
         </form>
 
-        <p class="text-center"><i class="fa fa-fw fa-arrow-circle-o-down bounce"></i></p>
+        <p class="text-center"><i class="fa fa-lg fa-fw fa-arrow-circle-o-down bounce link-blue"></i></p>
 
         <!-- rows and columns added here -->
 
@@ -353,13 +360,24 @@
   <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
   <!-- jQuery Javascript Library (required by Bootstrap) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
   <!-- jQuery UI Library (optional) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <!-- Bootstrap Library -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
+<script>
+    (function($) {
+        $(function() {
+            if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+                $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+$('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+            }
+        });
+    })(window.jQuery);
+</script>
 
   <!-- Main local script file -->
   <script src="js/main.js"></script>
@@ -437,37 +455,37 @@
 
           switch (newestRow) {
             case "1col-100":
-              addRow = "<li class='list-group-item'>1 Column | 100%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>1 Column | 100%</li>";
               break;
             case "2col-15-85":
-              addRow = "<li class='list-group-item'>2 columns | 15% - 85%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>2 columns | 15% - 85%</li>";
               break;
             case "2col-25-75":
-              addRow = "<li class='list-group-item'>2 columns | 25% - 75%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>2 columns | 25% - 75%</li>";
               break;
             case "2col-75-25":
-              addRow = "<li class='list-group-item'>2 columns | 75% - 25%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>2 columns | 75% - 25%</li>";
               break;
             case "2col-50-50":
-              addRow = "<li class='list-group-item'>2 columns | 50% - 50%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>2 columns | 50% - 50%</li>";
               break;
             case "3col-25-50-25":
-              addRow = "<li class='list-group-item'>3 columns | 25% - 50% - 25%</li>";
+              addRow = "<li class='list-group-item ui-state-default'>3 columns | 25% - 50% - 25%</li>";
               break;
             case "3col-equal":
-              addRow = "<li class='list-group-item'>3 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'>3 columns | Equal Widths</li>";
               break;
             case "4col-equal":
-              addRow = "<li class='list-group-item'>4 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'>4 columns | Equal Widths</li>";
               break;
             case "5col-equal":
-              addRow = "<li class='list-group-item'>5 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'>5 columns | Equal Widths</li>";
               break;
             case "6col-equal":
-              addRow = "<li class='list-group-item'>6 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'>6 columns | Equal Widths</li>";
               break;
             case "12col-equal":
-              addRow = "<li class='list-group-item'>12 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'>12 columns | Equal Widths</li>";
               break;
           }
 
@@ -572,6 +590,12 @@
       // clipboard button
       new Clipboard('.btn');
 
+      $( function() {
+          $("#column-list").sortable({
+            placeholder: "ui-state-highlight"
+          });
+          $("#column-list").disableSelection();
+        } );
 
     });
   </script>

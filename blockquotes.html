@@ -35,7 +35,7 @@
    <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
    <!-- Google web fonts -->
-   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet">
+   <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet">
 <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
 
    <!-- Font Awesome Web Icons -->
@@ -139,7 +139,7 @@
                      </label>
                   </div>
                </div>
-               
+
                <div class="form-group push-down-1 hidden" id="source-link-hidden">
                   <label for="blockquote-source">Source Link</label>
                   <input type="text" class="form-control" id="source-link">
@@ -256,13 +256,24 @@ cite a {
    <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
    <!-- jQuery Javascript Library (required by Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
    <!-- jQuery UI Library (optional) -->
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
    <!-- Bootstrap Library -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
+<script>
+    (function($) {
+        $(function() {
+            if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+                $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+$('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+            }
+        });
+    })(window.jQuery);
+</script>
 
    <!-- clipboard.js include -->
    <script src="js/clipboard.min.js"></script>

@@ -1,0 +1,742 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Metadata for the Webpage -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrapr &middot; Forms</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Bootstrap CSS files-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery UI CSS (optional) -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- Google web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500" rel="stylesheet">
+
+
+  <!-- CSS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome Web Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Main local stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Prettify theme -->
+  <link rel="stylesheet" href="css/prettify-theme.css">
+
+  <style>
+    /* Adds a dotted border to the divs for clarity */
+    #simple-example>div>div {
+      border: 1px dotted #999999;
+    }
+
+    #simple-example>div>div {
+      margin-bottom: .5rem;
+      padding: .5rem;
+    }
+
+    #component-list {
+      margin-top: 0;
+      /* border: 1px solid silver; */
+      min-height: 10rem;
+      /* padding: .5rem; */
+      border-radius: 3px;
+    }
+
+    #component-list li {
+      padding: 5px 10px;
+      border: 1px solid lightblue;
+      margin-bottom: 2px;
+      background: white;
+      border-radius: 0 !important;
+    }
+
+    #add-form-component {
+      height: 2.5rem;
+    }
+
+    .example-component {
+      border: 1px dashed lightgray !important;
+      color: silver;
+    }
+
+    #row-stack {
+      border: 1px solid silver;
+      padding: .5rem;
+    }
+
+    #row-stack p {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: .5rem;
+      color: gray;
+    }
+
+    .lightgray {
+      color: silver;
+    }
+
+    #component-list li:hover {
+      background: #f2dede !important;
+      color: #a94442;
+      border: 1px solid #a94442;
+    }
+
+    .delete-the-columns {
+      cursor: pointer;
+    }
+
+    .delete-the-columns:before {
+      content: "\f05c\00a0\00a0";
+      font-family: fontAwesome;
+      color: #a94442;
+
+    }
+
+    /* Bounding arrow icon -- thanks to https://codepen.io/dragoeco/pen/ZWpGqo */
+    .bounce {
+      display: inline-block;
+      position: relative;
+      -moz-animation: bounce 0.5s infinite linear;
+      -o-animation: bounce 0.5s infinite linear;
+      -webkit-animation: bounce 0.5s infinite linear;
+      animation: bounce 0.75s infinite linear;
+      color: 000;
+    }
+
+    .fa-twitter {
+      color: #027bdd;
+      font-size: 30px;
+      margin: 20px;
+    }
+
+    @-webkit-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-moz-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-o-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-ms-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    #simple-example .btn-primary {
+      margin-left: .25rem;
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <!-- Navbar include -->
+  <div w3-include-html="navbar.html"></div>
+
+  <div class="container main-content">
+
+    <div class="row add-100">
+      <div class="col-sm-6">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Home</a></li>
+          <li class="active">Columns</li>
+        </ol>
+      </div>
+      <!-- col-sm-6 -->
+      <div class="col-sm-6">
+        <p class="pull-right">
+          <a href="https://getbootstrap.com/docs/3.3/css/#forms" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
+            Boostrap 3.3.7 <small id="docs-link">| Forms</small></a>
+        </p>
+      </div>
+      <!-- col-sm-4-->
+    </div>
+    <!-- .row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Forms</h1>
+        <p class="lead">Use forms to capture related data from users.</p>
+        <p>Although many form combinations are possible, I have included the most common inputs here.</p>
+
+        <h5>Instructions</h5>
+        <ul>
+          <li><strong>Add</strong> a column to the column stack</li>
+          <li><strong>Click</strong> on a column in the Stack to delete it</li>
+          <li><strong>Click and drag</strong> to reposition the column</li>
+        </ul>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="row">
+
+      <div class="col-sm-3">
+
+
+
+        <form>
+          <!-- Select -->
+          <div class="form-group">
+            <label for="add-form-component">Add Form Component</label>
+            <select class="form-control text-center" id="add-form-component" name="add-form-component">
+              <option value="select-something" selected="selected"> -- Select Component -- </option>
+              <option value="input-text">Input (text)</option>
+              <option value="icon-left">Input (icon left)</option>
+              <option value="icon-right">Input (icon right)</option>
+              <option value="icons-both">Input (icons left + right)</option>
+              <option value="input-email">Input (email)</option>
+              <option value="input-password">Input (password)</option>
+              <option value="divider" disabled>-----------------------------</option>
+              <option value="textarea">Textarea</option>
+              <option value="divider" disabled>-----------------------------</option>
+              <option value="radio-buttons">Radio buttons</option>
+              <option value="checkbox">Checkbox</option>
+              <option value="checkboxes">Checkboxes</option>
+              <option value="divider" disabled>-----------------------------</option>
+              <option value="select">Select</option>
+              <option value="multiselect">Multiselect</option>
+              <option value="divider" disabled>-----------------------------</option>
+              <option value="form-buttons">Form Buttons</option>
+            </select>
+          </div>
+        </form>
+
+        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce link-blue"></i></p>
+
+        <!-- rows and columns added here -->
+
+        <div class="panel" id="row-stack">
+          <p class="text-center lightgray"><strong>Build Form Here</strong></p>
+
+          <ul id="component-list" class="list-group">
+
+            <li class="list-group-item example-component ui-state-default">Input (text)</li>
+            <li class="list-group-item example-component ui-state-default">Textarea</li>
+            <li class="list-group-item example-component ui-state-default">Form Buttons</li>
+          </ul>
+        </div>
+
+        <label for="form-is-inline" class="push-down-1">Inline form</label>
+        <div class="checkbox">
+          <label class="switch">
+            <input type="checkbox" id="form-is-inline">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <label for="form-is-horizontal" class="push-down-1">Horizontal form</label>
+        <div class="checkbox">
+          <label class="switch">
+            <input type="checkbox" id="form-is-horizontal">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <label for="form-gives-feedback" class="push-down-1">Add feedback</label>
+        <div class="checkbox">
+          <label class="switch">
+            <input type="checkbox" id="form-gives-feedback">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <label for="form-has-help-text" class="push-down-1">Add help text</label>
+        <div class="checkbox">
+          <label class="switch">
+            <input type="checkbox" id="form-has-help-text">
+            <span class="slider round"></span>
+          </label>
+        </div>
+
+        <div class="push-down-3" id="action-buttons"><span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
+          <button type="button" class="btn btn-default pull-right" id="clear-columns"><i class="fa fa-fw fa-refresh"></i> Reset</button>
+        </div>
+
+      </div>
+      <!-- .col-sm-3 -->
+
+      <div class="col-sm-9">
+
+        <div class="example" id="simple-example">
+
+          <form action="process-form.php">
+
+            <div class="form-group">
+              <label for="text-field-1">Text Input</label>
+              <input name="text-field-1" type="text" class="form-control" id="text-field-1" placeholder="input text here">
+            </div>
+
+            <label for="text-area-1">Text Area</label>
+            <textarea name="text-area-1" class="form-control" rows="4"></textarea>
+
+            <button type="reset" class="btn btn-default push-down-2">Clear</button>
+            <button type="submit" class="btn btn-primary push-down-2">Submit</button>
+
+          </form>
+
+        </div>
+
+        <div class="well">
+
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Beautifier -->
+          <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+          </button>
+
+          <!-- Update Example Panel-->
+          <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+            Update Example</button>
+
+          <hr class="well-separator">
+
+          <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;form action="process-form.php"&gt;
+
+  &lt;div class="form-group"&gt;
+    &lt;label for="text-field-1"&gt;Text Input&lt;/label&gt;
+    &lt;input name="text-field-1" type="text" class="form-control" id="text-field-1" placeholder="input text here"&gt;
+  &lt;/div&gt;
+
+  &lt;label for="text-area-1"&gt;Text Area&lt;/label&gt;
+  &lt;textarea name="text-area-1" class="form-control" rows="4"&gt;&lt;/textarea&gt;
+
+  &lt;button type="reset" class="btn btn-default push-down-2"&gt;Clear&lt;/button&gt;
+  &lt;button type="submit" class="btn btn-primary push-down-2"&gt;Submit&lt;/button&gt;
+
+&lt;/form&gt;
+</pre>
+
+        </div>
+        <!-- well closes -->
+
+
+      </div>
+      <!-- .col-sm-9 -->
+
+    </div>
+    <!-- .row -->
+
+  </div>
+  <!-- .container-fluid -->
+
+
+  <!-- Navbar include -->
+  <div w3-include-html="footer.html"></div>
+
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+  <!-- jQuery Javascript Library (required by Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
+
+  <!-- jQuery UI Library (optional) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- Bootstrap Library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')
+  </script>
+  <script>
+    (function($) {
+      $(function() {
+        if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+          $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+          $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+        }
+      });
+    })(window.jQuery);
+  </script>
+
+  <!-- Main local script file -->
+  <script src="js/main.js"></script>
+
+  <!-- includes for Google's code highlighter 'prettyprint' -->
+  <link rel="stylesheet" type="text/css" href="css/prettify.css">
+  <script type="text/javascript" src="js/prettify.js"></script>
+  <script type="text/javascript" src="js/lang-css.js"></script>
+
+  <!-- html file include script | used for navbar -->
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+
+  <!-- Animations JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- clipboard.js include -->
+  <script src="js/clipboard.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      // tooltips function
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      // The holder for all the rows
+      var allRows = [];
+
+      var divOpener = "";
+      var divCloser = ""
+
+      var inlineForm = "";
+      var horizontalForm = "";
+
+      // on change form is inline
+      $("#form-is-inline").on("change", function() {
+        if ($('#form-is-inline').is(":checked")) {
+          inlineForm = "form-inline";
+        } else {
+          inlineForm = "";
+        }
+      });
+
+      // on change form is horizontal
+      $("#form-is-horizontal").on("change", function() {
+        if ($('#form-is-horizontal').is(":checked")) {
+          horizontalForm = " form-horizontal";
+        } else {
+          horizontalForm = "";
+        }
+      });
+
+
+      // If icons are checked
+      // $("#columns-one-row").on("change", function() {
+      //
+      //   if ($('#columns-one-row').is(":checked")) { //checks if the checkbox/this is selected or
+      //     // open and close for the each div option
+      //     finalDivOpener = "<div class='row'>";
+      //     finalDivCloser = "</div>"
+      //
+      //     divOpener = "";
+      //     divCloser = "";
+      //
+      //   } else {
+      //
+      //     divOpener = "<div class='row'>";
+      //     divCloser = "</div>"
+      //
+      //     finalDivOpener = "";
+      //     finalDivCloser = "";
+      //
+      //   }
+      //
+      // });
+
+      $("#add-form-component").on("change", function() {
+
+        // Remove the examples
+        $("#component-list .example-component").remove();
+
+
+        var addRow = "";
+        var newestRow = "";
+
+        if ($("#add-form-component").val() != "select-something") {
+          newestRow = $("#add-form-component").val();
+
+          switch (newestRow) {
+            case "input-text":
+              addRow = "<li class='list-group-item ui-state-default'>Input | text</li>";
+              break;
+            case "icon-left":
+              addRow = "<li class='list-group-item ui-state-default'>Input | icon left</li>";
+              break;
+            case "icon-right":
+              addRow = "<li class='list-group-item ui-state-default'>Input | icon right</li>";
+              break;
+            case "icons-both":
+              addRow = "<li class='list-group-item ui-state-default'>Input | icons both</li>";
+              break;
+            case "input-email":
+              addRow = "<li class='list-group-item ui-state-default'>Input | email</li>";
+              break;
+            case "input-password":
+              addRow = "<li class='list-group-item ui-state-default'>Input | password</li>";
+              break;
+            case "textarea":
+              addRow = "<li class='list-group-item ui-state-default'>Textarea</li>";
+              break;
+            case "radio-buttons":
+              addRow = "<li class='list-group-item ui-state-default'>Radio buttons</li>";
+              break;
+            case "checkbox":
+              addRow = "<li class='list-group-item ui-state-default'>Checkbox</li>";
+              break;
+            case "checkboxes":
+              addRow = "<li class='list-group-item ui-state-default'>Checkboxes</li>";
+              break;
+            case "select":
+              addRow = "<li class='list-group-item ui-state-default'>Select</li>";
+              break;
+            case "multiselect":
+              addRow = "<li class='list-group-item ui-state-default'>Multiselect</li>";
+              break;
+            case "form-buttons":
+              addRow = "<li class='list-group-item ui-state-default'>Form buttons</li>";
+              break;
+          }
+
+          $("#component-list").append(addRow);
+        }
+
+        // reset the value of the dropdown
+        $("#add-form-component").val("select-something");
+
+      });
+
+
+      // Add active class to navmenu selection
+      $("li#forms").addClass("active");
+      $("#cfeatures-dropdown").addClass("activated");
+
+      // ------- Display the Columns --------------------------
+      $('#build-button').click(function() {
+
+        var finalDivOpener = "<form class='bsr-form " + inlineForm + horizontalForm + "' action=''>";
+        var finalDivCloser = "</form>";
+
+        var finalColumns = "";
+
+        $("#component-list li").each(function() {
+
+          switch ($(this).text()) {
+            case "Input | text":
+              finalColumns += divOpener + "<div class='form-group'><label for='tex-input'>Text Input</label><input name='text-input' type='text' class='form-control' id='input-text-" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'></div>" + divCloser;
+              break;
+            case "Input | icon left":
+              finalColumns += divOpener +
+                "<div class='form-group'><label for='exampleInputAmount'>Left Icon</label><div class='input-group'><div class='input-group-addon'>@</div><input type='text' class='form-control' id='exampleInputAmount'></div></div>" +
+                divCloser;
+              break;
+            case "Input | icon right":
+              finalColumns += divOpener +
+                "<div class='form-group'><label for='exampleInputAmount'>Right Icon</label><div class='input-group'><input type='text' class='form-control' id='exampleInputAmount'><div class='input-group-addon'>@</div></div></div>" +
+                divCloser;
+              break;
+            case "Input | icons both":
+              finalColumns += divOpener +
+                "<div class='form-group'><label for='exampleInputAmount'>Icons Both</label><div class='input-group'><div class='input-group-addon'>@</div><input type='text' class='form-control' id='exampleInputAmount'><div class='input-group-addon'>@</div></div></div>" +
+                divCloser;
+              break;
+            case "Input | email":
+              finalColumns += divOpener + "<div class='form-group'><label for='email'>Email address</label><input name='email' type='email' class='form-control' id='input-email-" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "' placeholder='Email'></div>" + divCloser;
+              break;
+            case "Input | password":
+              finalColumns += divOpener + "<div class='form-group'><label for='password'>Password</label><input type='password' class='form-control' id='input-password-" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "' placeholder='Password'></div>" + divCloser;
+              break;
+            case "Textarea":
+              finalColumns += divOpener + "<div class='form-group'><label for='checkboxes'>Text Area</label><textarea class='form-control' rows='5'></textarea></div>" + divCloser;
+              break;
+            case "Radio buttons":
+              finalColumns += divOpener +
+                "<div class='form-group'><label for='checkboxes'>Radio Buttons</label><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-1' value='radio1' checked='checked'> Option 1</label></div><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-2' value='radio2'> Option 2</label></div><div class='radio disabled'><label><input type='radio' name='bsr-radios' id='bsr-radios-3' value='radio3'> Option 3</label></div></div>" +
+                divCloser;
+              break;
+            case "Checkbox":
+              finalColumns +=
+                divOpener + "<div class='form-group'><label for='checkboxes'>Checkbox</label><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><label><input type='checkbox' value=''> Option</label></div></div>" + divCloser;
+              break;
+            case "Checkboxes":
+              finalColumns +=
+                divOpener +
+                "<div class='form-group'><label for='checkboxes'>Checkboxes</label><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><label><input type='checkbox' value=''> Option 1</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(
+                  10000000)) + "'><label><input type='checkbox' value=''> Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><label><input type='checkbox' value=''>Label</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) + "'><label><input type='checkbox' value=''> Option 3</label></div></div>" +
+                divCloser;
+              break;
+            case "Select":
+              finalColumns +=
+                divOpener +
+                "<div class='form-group'><label for='checkboxes'>Select</label><select class='form-control' id='select-" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>" +
+                divCloser;
+              break;
+            case "Multiselect":
+              finalColumns +=
+                divOpener + "<div class='form-group'><label for='checkboxes'>Multiselect</label><select multiple class='form-control' id='multiselect-" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><option>1</option><option>2</option><option>3</option><option>4</option><option>5</option></select></div>" +
+                divCloser;
+              break;
+            case "Form buttons":
+              finalColumns +=
+                divOpener + "<button type='reset' class='btn btn-default' id='bsr-clear-button'>Clear</button><button type='submit' class='btn btn-primary' id='bsr-submit-button'>Submit</button>" +
+                divCloser;
+              break;
+          }
+
+        });
+
+
+        finalColumns = finalDivOpener + finalColumns + finalDivCloser;
+
+        // Write the table
+
+        $("#simple-example").html(finalColumns);
+        $('#simple-code').text(finalColumns);
+
+        $('pre').removeClass('prettyprinted');
+        prettyPrint();
+
+        // Stop the form button from reloading the page
+        $(".bsr-form").submit(function(e) {
+          e.preventDefault(e);
+        });
+
+      });
+
+      // add the delete-the-columns icon on hover
+      $(document).on("mouseenter", "#component-list li", function(e) {
+        $(this).addClass("delete-the-columns");
+      }).on("mouseleave", "#component-list li", function(e) {
+        $(this).removeClass("delete-the-columns");
+      });
+
+      $(document).on("click", "#component-list li", function() {
+        $(this).remove();
+      });
+
+      // ------- Reset the parameters  --------------------------
+      $('#clear-columns').click(function() {
+        location.reload(true);
+      });
+
+      // clipboard button
+      new Clipboard('.btn');
+
+      $(function() {
+        $("#component-list").sortable({
+          placeholder: "ui-state-highlight"
+        });
+        $("#component-list").disableSelection();
+      });
+
+    });
+  </script>
+
+</body>
+
+</html>

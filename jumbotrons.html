@@ -389,13 +389,24 @@
    <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
    <!-- jQuery Javascript Library (required by Bootstrap) -->
-   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
 
    <!-- jQuery UI Library (optional) -->
    <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
    <!-- Bootstrap Library -->
    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+<script>window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
+<script>
+    (function($) {
+        $(function() {
+            if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+                $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+$('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+            }
+        });
+    })(window.jQuery);
+</script>
 
    <!-- Main local script file -->
    <script src="js/main.js"></script>
