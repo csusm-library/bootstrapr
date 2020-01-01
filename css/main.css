@@ -114,7 +114,7 @@ h1, h2, h3, h4, h5, h6 {
   color: silver;
   font-size: 105%;
   margin-top: .3rem !important;
-  margin-left: .3rem !important;
+  margin-left: .35rem !important;
   z-index: 1000 !important;
 }
 
