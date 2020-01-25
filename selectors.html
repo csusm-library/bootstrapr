@@ -52,7 +52,7 @@
   <link rel="stylesheet" href="css/prettify-theme.css">
 
   <style>
-    .bootstrapr-selector>div {
+    .bootstrapr-selector > div {
       padding: 1rem;
     }
   </style>
@@ -76,9 +76,8 @@
       <!-- col-sm-6 -->
       <div class="col-sm-6">
         <p class="pull-right">
-          <a href="https://getbootstrap.com/docs/3.3/css/#selects" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-            Boostrap 3.3.7 <small id="docs-link">| Selects</small></a>
-        </p>
+          <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
+            <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a></p>
       </div>
       <!-- col-sm-4-->
     </div>
@@ -163,7 +162,6 @@
               <p>This is the content for section 4</p>
             </div>
           </div>
-          <!-- bootstrapr-div -->
 
         </div>
         <!-- example -->
@@ -259,13 +257,11 @@
           <hr class="well-separator">
 
 
-          <pre class="prettyprint" id="custom-js-code" contenteditable="true">
-$(document).ready(function() {
-  $("#selector-1001001").on("change", function() {
-     $(".bootstrapr-selector div").addClass("hidden");
-     var showDiv = $("#selector-1001001").val();
-     $(showDiv).removeClass("hidden");
-  });
+<pre class="prettyprint lang-js" id="custom-js-code" contenteditable="true">
+$("#selector-1001001").on("change", function() {
+   $(".bootstrapr-selector div").addClass("hidden");
+   var showDiv = $("#selector-1001001").val();
+   $(showDiv).removeClass("hidden");
 });
 </pre>
 
@@ -371,6 +367,9 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
         $(showDiv).removeClass("hidden");
       });
 
+
+
+
       // Build the code
       $('#build-button').click(function() {
 
@@ -408,8 +407,8 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
         }
 
         // Write the unique ID to the JS code section
-        var jsCode = "$(document).ready(function() {$('#selector-" + selectorRando + "').on('change', function() {$('.bootstrapr-selector div').addClass('hidden');var showDiv = $('#selector-" + selectorRando +
-          "').val();$(showDiv).removeClass('hidden');});});";
+        var jsCode = "$('#selector-" + selectorRando + "').on('change', function() {$('.bootstrapr-selector div').addClass('hidden');var showDiv = $('#selector-" + selectorRando +
+          "').val();$(showDiv).removeClass('hidden');});";
 
         var bsSelector = selectorDivOpen + formOpen + selectOpen + options + selectClose + formClose + contents + closingDiv;
 

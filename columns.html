@@ -192,8 +192,8 @@
       <!-- col-sm-6 -->
       <div class="col-sm-6">
         <p class="pull-right">
-          <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank" data-toggle="tooltip" data-placement="bottom" title="Bootstrap Docs"><i class="fa fa-fw fa-file-text-o" aria-hidden="true"></i>
-            Boostrap 3.3.7 <small id="docs-link">| columns</small></a>
+          <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
+            <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank"><span id="docs-link">Columns</span></a>
         </p>
       </div>
       <!-- col-sm-4-->
@@ -402,6 +402,11 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
   <script>
     $(document).ready(function() {
 
+      // Add active class to navmenu selection
+      $("li#columns").addClass("active");
+      $("#containers-dropdown").addClass("activated");
+
+
       // tooltips function
       $(function() {
         $('[data-toggle="tooltip"]').tooltip()
@@ -496,11 +501,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
         $("#add-row").val("select");
 
       });
-
-
-      // Add active class to navmenu selection
-      $("li#columns").addClass("active");
-      $("#containers-dropdown").addClass("activated");
 
       // ------- Display the Columns --------------------------
       $('#build-button').click(function() {
