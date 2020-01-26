@@ -728,7 +728,7 @@ input[type="radio"] {
 }
 
 #page-footer a:hover {
-  color: #939fbe;
+  color: #939fbe !important;
   text-decoration: none;
   cursor: pointer;
 }
@@ -1213,6 +1213,14 @@ caption .summary {
   background-position: center center;
 }
 
+#form-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/forms.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
 #google-embed-panel-body {
   background-color: white;
   background-image: url("../img/card-backgrounds/google-embeds.png");
@@ -1355,4 +1363,18 @@ caption .summary {
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
+}
+
+
+.dropdown-menu>li:focus,
+.dropdown-menu>li:hover {
+  color: darkslategray;
+  background-color: #f5f5f5;
+}
+
+.dropdown-menu>li>a:focus,
+.dropdown-menu>li>a:hover {
+  color: darkslategray;
+  text-decoration: none;
+  background-color: transparent;
 }

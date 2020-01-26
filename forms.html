@@ -131,9 +131,12 @@
     }
 
     .fa-twitter {
-      color: #027bdd;
-      font-size: 30px;
+      color: white;
       margin: 20px;
+    }
+
+    .fa-twitter:hover {
+      color: #939fbe;
     }
 
     @-webkit-keyframes bounce {
@@ -243,7 +246,7 @@
     <div class="row add-100">
       <div class="col-sm-6">
         <ol class="breadcrumb">
-          <li><a href="index.html">Home</a></li>
+          <li><a href="index.html">Bootstrapr</a></li>
           <li class="active">Columns</li>
         </ol>
       </div>
@@ -308,7 +311,7 @@
           </div>
         </form>
 
-        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce link-blue"></i></p>
+        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce"></i></p>
 
         <!-- rows and columns added here -->
 
@@ -316,7 +319,6 @@
           <p class="text-center lightgray"><strong>Build Form Here</strong></p>
 
           <ul id="component-list" class="list-group">
-
             <li class="list-group-item example-component ui-state-default">Input (text)</li>
             <li class="list-group-item example-component ui-state-default">Textarea</li>
             <li class="list-group-item example-component ui-state-default">Form Buttons</li>
@@ -331,15 +333,15 @@
           </label>
         </div>
 
-        <label for="form-is-horizontal" class="push-down-1">Horizontal form</label>
+        <!-- <label for="form-is-horizontal" class="push-down-1">Horizontal form</label>
         <div class="checkbox">
           <label class="switch">
             <input type="checkbox" id="form-is-horizontal">
             <span class="slider round"></span>
           </label>
-        </div>
+        </div> -->
 
-        <label for="form-gives-feedback" class="push-down-1">Add feedback</label>
+        <!-- <label for="form-gives-feedback" class="push-down-1">Add feedback</label>
         <div class="checkbox">
           <label class="switch">
             <input type="checkbox" id="form-gives-feedback">
@@ -353,7 +355,7 @@
             <input type="checkbox" id="form-has-help-text">
             <span class="slider round"></span>
           </label>
-        </div>
+        </div> -->
 
         <div class="push-down-3" id="action-buttons"><span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
           <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-gears"></i> Build</button>
@@ -546,7 +548,6 @@
         // Remove the examples
         $("#component-list .example-component").remove();
 
-
         var addRow = "";
         var newestRow = "";
 
@@ -603,7 +604,6 @@
 
       });
 
-
       // Add active class to navmenu selection
       $("li#forms").addClass("active");
       $("#cfeatures-dropdown").addClass("activated");
@@ -651,7 +651,7 @@
               break;
             case "Radio buttons":
               finalColumns += divOpener +
-                "<div class='form-group'><label for='checkboxes'>Radio Buttons</label><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-1' value='radio1' checked='checked'> Option 1</label></div><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-2' value='radio2'> Option 2</label></div><div class='radio disabled'><label><input type='radio' name='bsr-radios' id='bsr-radios-3' value='radio3'> Option 3</label></div></div>" +
+                "<div class='form-group'><label for='radios'>Radio Buttons</label><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-1' value='radio1' checked='checked'> Option 1</label></div><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-2' value='radio2'> Option 2</label></div><div class='radio'><label><input type='radio' name='bsr-radios' id='bsr-radios-3' value='radio3'> Option 3</label></div></div>" +
                 divCloser;
               break;
             case "Checkbox":
@@ -663,9 +663,9 @@
               finalColumns +=
                 divOpener +
                 "<div class='form-group'><label for='checkboxes'>Checkboxes</label><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
-                "'><label><input type='checkbox' value=''> Option 1</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(
-                  10000000)) + "'><label><input type='checkbox' value=''> Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
-                "'><label><input type='checkbox' value=''>Label</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) + "'><label><input type='checkbox' value=''> Option 3</label></div></div>" +
+                "'><label><input type='checkbox' value='checkbox-1'> Option 1</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(
+                  10000000)) + "'><label><input type='checkbox' value='checkbox-2'> Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><label><input type='checkbox' value='checkbox-3'>Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) + "'><label><input type='checkbox' value='checkbox-4'> Option 4</label></div></div>" +
                 divCloser;
               break;
             case "Select":
