@@ -113,7 +113,7 @@
     }
 
     .delete-the-columns:before {
-      content: "\f05c\00a0\00a0";
+      content: "\f00d\00a0\00a0";
       font-family: fontAwesome;
       color: #a94442;
 
@@ -267,12 +267,10 @@
         <p class="lead">Use forms to capture related data from users.</p>
         <p>Although many form combinations are possible, I have included the most common inputs here.</p>
 
-        <h5>Instructions</h5>
-        <ul>
-          <li><strong>Add</strong> a column to the column stack</li>
-          <li><strong>Click</strong> on a column in the Stack to delete it</li>
-          <li><strong>Click and drag</strong> to reposition the column</li>
-        </ul>
+        <p class="alert alert-default"><i class="fa fa-fw fa-list-ol" aria-hidden="true"></i> &nbsp;<strong>Instructions</strong><br>
+        <strong class="gray">Select</strong> Form fields to add them to the stack. <strong class="gray">Click + Drag</strong class="gray"> to reorder them. <strong class="gray">Click</strong> a form field to delete it from the stack. <strong class="gray">Click Build</strong> to generate the code.
+        </p>
+
       </div>
     </div>
 
@@ -610,6 +608,8 @@
 
       // ------- Display the Columns --------------------------
       $('#build-button').click(function() {
+
+        $("#component-list .example-component").remove();
 
         var finalDivOpener = "<form class='bsr-form " + inlineForm + horizontalForm + "' action=''>";
         var finalDivCloser = "</form>";
