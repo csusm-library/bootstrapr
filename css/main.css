@@ -332,6 +332,14 @@ pre {
   margin-top: -1.1rem;
 }
 
+@media screen and (max-width: 500px) {
+
+  #brand-logo {
+    display: none;
+  }
+
+}
+
 .bootstrap-logo {
   color: white;
   background-color: #0f2438;
@@ -632,6 +640,15 @@ input[type="radio"] {
 
 .fa-social {
   margin-left: 1.2rem;
+}
+
+.fa-twitter {
+  color: white;
+  margin: 20px;
+}
+
+.fa-twitter:hover {
+  color: #939fbe;
 }
 
 .white {

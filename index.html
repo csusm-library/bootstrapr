@@ -113,7 +113,6 @@
 
     #filter-form .input-group,
     #filter-form .input-group input {
-      /* background: #e8f0fe; */
       background: #e9effc;
       border: none !important;
       padding: 1rem;
@@ -157,7 +156,6 @@
     /* .input-group {
       box-shadow: 2px 2px 6px lightgray;
     } */
-
   </style>
 
 
@@ -188,7 +186,8 @@
   <div class="container-fluid" id="advert">
 
     <h2 class="push-down-4">Breakneck <span class="bootstrap-logo">B</span> Bootstrap</h2>
-    <p class="lead push-down-2 font-weight-light">Rapidly generate and customize Bootstrap 3 components&mdash;all without writing a single line of code. Embed components into Bootstrap-friendly third-party apps, or create an entire site in minutes!</p>
+    <p class="lead push-down-2 font-weight-light">Rapidly generate and customize Bootstrap 3 components&mdash;all without writing a single line of code. Embed components into Bootstrap-friendly third-party apps, or create an entire site in minutes!
+    </p>
     <p class="my-4 lead push-down-2">Need Bootstrap 4? <a href="https://randal-sean-harrison.github.io/bootstr4pr/" target="_blank"><strong>Bootstr4pr coming soon! </strong></a></p>
 
 
@@ -549,27 +548,32 @@
 
 
   <!-- Back-to-top button -->
-  <a role="button" id="topper" data-toggle="tooltip" data-placement="top" title="Top" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+  <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
   <!-- jQuery Javascript Library (required by Bootstrap) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
 
   <!-- jQuery UI Library (optional) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <!-- Bootstrap Library -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
-<script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')
+  </script>
+  <script>
     (function($) {
-        $(function() {
-            if ($('body').css('color') !== 'rgb(246, 247, 251)') {
-                $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
-$('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
-            }
-        });
+      $(function() {
+        if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+          $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+          $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+        }
+      });
     })(window.jQuery);
-</script>
+  </script>
 
   <!-- Main local script file -->
   <script src="js/main.js"></script>
@@ -584,7 +588,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
   <!-- Animations JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
-
   <script>
     w3IncludeHTML();
   </script>
@@ -592,70 +595,69 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
   <script>
     $(document).ready(function() {
 
+
       // tooltips function
-      $(function() {
-        $('[data-toggle="tooltip"]').tooltip()
-      })
+      $('[data-toggle="tooltip"]').tooltip();
 
       $('pre').removeClass('prettyprinted');
       prettyPrint();
 
       // Search field filter
-            $("#search-input").on("keyup", function(e) {
+      $("#search-input").on("keyup", function(e) {
 
-              var value = $(this).val().toLowerCase();
-              $(".component").filter(function() {
-                $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
-              });
+        var value = $(this).val().toLowerCase();
+        $(".component").filter(function() {
+          $(this).toggle($(this).text().toLowerCase().indexOf(value) > -1)
+        });
 
-            });
+      });
 
-            function resetEverything() {
-              // Clear all other the buttons
-              $("#features-containers-selector .btn").removeClass("active-selector");
-              $("#features-containers-selector #components").addClass("active-selector");
+      function resetEverything() {
+        // Clear all other the buttons
+        $("#features-containers-selector .btn").removeClass("active-selector");
+        $("#features-containers-selector #components").addClass("active-selector");
 
-              // Show all panels
-              $(".component").fadeIn();
-              $("#search-input").focus();
-            }
+        // Show all panels
+        $(".component").fadeIn();
+        $("#search-input").focus();
+      }
 
-            // Show all panels on focus into the input field
-            $("#search-field").on("focus", resetEverything);
+      // Show all panels on focus into the input field
+      $("#search-field").on("focus", resetEverything);
 
-            $("#components").on("click", function() {
-              $(".component-container").fadeIn();
-              $(".component-feature").fadeIn();
-              $("#features").removeClass("active-selector");
-              $("#containers").removeClass("active-selector");
-              $("#search-field").val("");
-              $(this).addClass("active-selector");
+      $("#components").on("click", function() {
+        $(".component-container").fadeIn();
+        $(".component-feature").fadeIn();
+        $("#features").removeClass("active-selector");
+        $("#containers").removeClass("active-selector");
+        $("#search-field").val("");
+        $(this).addClass("active-selector");
 
-            });
+      });
 
-            $("#features").on("click", function() {
-              $(".component-container").fadeOut();
-              $(".component-feature").fadeIn();
-              $("#search-field").val("");
-              $("#components").removeClass("active-selector");
-              $("#containers").removeClass("active-selector");
-              $(this).addClass("active-selector");
-            });
+      $("#features").on("click", function() {
+        $(".component-container").fadeOut();
+        $(".component-feature").fadeIn();
+        $("#search-field").val("");
+        $("#components").removeClass("active-selector");
+        $("#containers").removeClass("active-selector");
+        $(this).addClass("active-selector");
+      });
 
-            $("#containers").on("click", function() {
-              $(".component-container").fadeIn();
-              $(".component-feature").fadeOut();
-              $("#search-field").val("");
-              $("#features").removeClass("active-selector");
-              $("#components").removeClass("active-selector");
-              $(this).addClass("active-selector");
-            });
+      $("#containers").on("click", function() {
+        $(".component-container").fadeIn();
+        $(".component-feature").fadeOut();
+        $("#search-field").val("");
+        $("#features").removeClass("active-selector");
+        $("#components").removeClass("active-selector");
+        $(this).addClass("active-selector");
+      });
 
-            // reset the form
-            $("#filter-reset").on("click", function() {
-              resetEverything();
-              $("#search-input").val("");
-            });
+      // reset the form
+      $("#filter-reset").on("click", function() {
+        resetEverything();
+        $("#search-input").val("");
+      });
 
 
     });
