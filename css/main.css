@@ -306,6 +306,10 @@ pre {
   border-right: none;
 }
 
+[role="separator"].divider {
+  padding: 1px !important;
+}
+
 .brand-link {
   font-size: inherit;
   color: white;
