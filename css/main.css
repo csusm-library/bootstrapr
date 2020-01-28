@@ -332,13 +332,13 @@ pre {
   margin-top: -1.1rem;
 }
 
-@media screen and (max-width: 420px) {
+/* @media screen and (max-width: 700px) {
 
   #brand-logo {
-    display: none;
+    font-size: 1.2rem;
   }
 
-}
+} */
 
 .bootstrap-logo {
   color: white;
@@ -369,7 +369,7 @@ pre {
 }
 
 .add-100 {
-  margin-top: 150px;
+  margin-top: 180px;
 }
 
 /* Limits the width of smaller numeric inputs */
