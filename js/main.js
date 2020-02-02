@@ -99,6 +99,16 @@ $(document).ready(function() {
 
   });
 
+  // Prettify / Beautify / indent the code
+  $("#beautify-html").on("click", function() {
+    var beautifyLocal4 = formatFactory($('#simple-code').text());
+    $('#simple-code').text(beautifyLocal4);
+
+    $('pre').removeClass('prettyprinted');
+    prettyPrint();
+
+  });
+
   // Prettify / Beautify / indent the code for the button
   $("#beautify-button").on("click", function() {
 
