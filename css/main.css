@@ -1399,3 +1399,7 @@ caption .summary {
   text-decoration: none;
   background-color: transparent;
 }
+
+.clickable {
+  cursor: pointer !important;
+}
