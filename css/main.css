@@ -154,15 +154,15 @@ input:checked+.slider:before {
   width: 1.5rem;
   text-align: center;
   /* color: #007bff; */
-  color: rgba(0, 128, 0, .5);
+  color: white;
   display: none;
   font-family: fontAwesome;
 }
 
 #build-status i {
-  width: 3rem;
+  width: 1rem;
   /* color: #007bff; */
-  color: rgba(0, 128, 0, .5);
+  color: white;
   font-family: fontAwesome;
   font-style: normal;
 }
@@ -887,7 +887,7 @@ select {
   padding-top: 1rem;
 }
 
-#action-buttons .btn-primary {
+#action-buttons .btn {
   margin-left: .25rem;
 }
 

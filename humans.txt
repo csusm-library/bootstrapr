@@ -6,7 +6,7 @@
 	Release date: October, 2018
 
    Randal Sean Harrison, Ph.D.
-   Website Developer
+   Developer
  	 Employed: Hesburgh Libraries, University of Notre Dame
 	 Contact: rharriso @ nd.edu
 

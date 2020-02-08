@@ -164,18 +164,37 @@ $(document).ready(function() {
   // Show feedback on build button clicked
   $("#build-button").on("click", function() {
 
-    // Show the checkmark once build button clicked
-    $("#build-status").fadeIn("fast");
+    // Change button color blue to green
+    $("#build-button").removeClass("btn-primary");
+    $("#build-button").addClass("btn-success");
+
+    // Replace the cogs icon with a checkmark
+    $("#build-button i").removeClass("fa-cogs");
+    $("#build-button i").addClass("fa-check");
+
+    // Replace text node with "Built"
+    // $('#build-button').contents().last().replaceWith(' Built');
 
     // Play the sound once -- not used currently
     // $('#pop')[0].play();
     // $('#pop')[0].currentTime = 0;
 
-
     // Hide the checkmark after .8 seconds
     setTimeout(function() {
-      $("#build-status").fadeOut("fast");
-    }, 1200);
+
+      // Change button color green to blue
+      $("#build-button").removeClass("btn-success");
+      $("#build-button").addClass("btn-primary");
+
+      // Replace the check icon with cogs
+      $("#build-button i").removeClass("fa-check");
+      $("#build-button i").addClass("fa-cogs");
+
+      // Replace text node with "Build" again
+      // $('#build-button').contents().last().replaceWith(' Build');
+
+    }, 1500);
+
   });
 
 

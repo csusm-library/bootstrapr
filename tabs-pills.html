@@ -144,10 +144,10 @@
             </form>
 
             <div class="push-down-2" id="action-buttons">
-              <span class="lead text-center" id="build-status"><i class="fa fa-fw fa-lg fa-check-circle-o"></i></span>
 
-               <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build</button>
-               <button type="button" class="btn btn-default pull-right" id="clearTabs"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+              <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
+              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-tabs"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+
             </div>
 
          </div>
@@ -431,7 +431,7 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
          });
 
          // ------- Reset the parameters  --------------------------
-         $('#clearTabs').click(function() {
+         $('#clear-tabs').click(function() {
             location.reload(true);
          });
 
