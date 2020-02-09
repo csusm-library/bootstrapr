@@ -244,7 +244,7 @@
       <div class="col-sm-6">
         <p class="pull-right">
           <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
-            <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/css/#forms" target="_blank"><span id="docs-link">Forms</span></a>
+          <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/css/#forms" target="_blank"><span id="docs-link">Forms</span></a>
         </p>
       </div>
       <!-- col-sm-4-->
@@ -258,7 +258,8 @@
         <p>Although many form combinations are possible, I have included the most common inputs here.</p>
 
         <p class="alert alert-default"><i class="fa fa-fw fa-list-ol" aria-hidden="true"></i> &nbsp;<strong>Instructions</strong><br>
-        <strong class="gray">Select</strong> Form fields to add them to the stack. <strong class="gray">Click + Drag</strong class="gray"> to reorder them. <strong class="gray">Click</strong> a form field to delete it from the stack. <strong class="gray">Click Build</strong> to generate the code.
+          <strong class="gray">Select</strong> Form fields to add them to the stack. <strong class="gray">Click + Drag</strong class="gray"> to reorder them. <strong class="gray">Click</strong> a form field to delete it from the stack. <strong
+            class="gray">Click Build</strong> to generate the code.
         </p>
 
       </div>
@@ -348,7 +349,7 @@
         <div class="push-down-3" id="action-buttons">
 
           <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-forms"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
         </div>
 
@@ -428,6 +429,12 @@
 
   <!-- Back-to-top button -->
   <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+  <!-- Confirmation modal -->
+  <div id="dialog-confirm" title="Reset Form">
+    <p>This will reset the form. Are you sure?</p>
+  </div>
+
 
   <!-- jQuery Javascript Library (required by Bootstrap) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
@@ -657,7 +664,8 @@
                 "<div class='form-group'><label for='checkboxes'>Checkboxes</label><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
                 "'><label><input type='checkbox' value='checkbox-1'> Option 1</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(
                   10000000)) + "'><label><input type='checkbox' value='checkbox-2'> Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
-                "'><label><input type='checkbox' value='checkbox-3'>Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) + "'><label><input type='checkbox' value='checkbox-4'> Option 4</label></div></div>" +
+                "'><label><input type='checkbox' value='checkbox-3'>Option 2</label></div><div class='checkbox' id='" + Math.floor(Math.random() * Math.floor(10000000)) +
+                "'><label><input type='checkbox' value='checkbox-4'> Option 4</label></div></div>" +
                 divCloser;
               break;
             case "Select":
@@ -709,11 +717,6 @@
 
       $(document).on("click", "#component-list li", function() {
         $(this).remove();
-      });
-
-      // ------- Reset the parameters  --------------------------
-      $('#clear-forms').click(function() {
-        location.reload(true);
       });
 
       // clipboard button

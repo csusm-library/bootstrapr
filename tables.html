@@ -180,7 +180,7 @@
             <div class="push-down-2 button-box" id="action-buttons">
 
               <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-table"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
             </div>
 
@@ -599,10 +599,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
 
          });
 
-         $('#clear-table').click(function() {
-            location.reload(true);
-         });
-
          $('#someBordered').prop("checked", true);
 
          // check the traditional icons checkbox
@@ -659,6 +655,11 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
       new Clipboard('.btn');
    </script>
 
+   <!-- Confirmation modal -->
+     <div id="dialog-confirm" title="Reset Form">
+        <p>This will reset the form. Are you sure?</p>
+     </div>
+     
 </body>
 
 </html>

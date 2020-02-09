@@ -155,7 +155,7 @@
             <div class="push-down-3" id="action-buttons">
 
               <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-              <button type="button" class="btn btn-lg btn-default pull-right" id="refresh-carousel"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
             </div>
 
@@ -372,6 +372,11 @@ carousel-indicators li.active {
    <!-- Navbar include -->
    <div w3-include-html="footer.html"></div>
 
+   <!-- Confirmation modal -->
+     <div id="dialog-confirm" title="Reset Form">
+        <p>This will reset the form. Are you sure?</p>
+     </div>
+
    <!-- Back-to-top button -->
    <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
@@ -492,11 +497,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
          $(function() {
             $('[data-toggle="tooltip"]').tooltip()
          })
-
-         // Reset button
-         $('#refresh-carousel').on("click", function() {
-            location.reload(true);
-         });
 
          // Add active class to navmenu selection
          $("#carousels").addClass("active");

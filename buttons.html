@@ -159,7 +159,7 @@
         <div class="push-down-2 button-box" id="action-buttons">
 
           <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-button"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
         </div>
 
@@ -6348,6 +6348,11 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
   <!-- Animations JS -->
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 
+  <!-- Confirmation modal -->
+    <div id="dialog-confirm" title="Reset Form">
+       <p>This will reset the form. Are you sure?</p>
+    </div>
+
   <script>
     w3IncludeHTML();
   </script>
@@ -6367,11 +6372,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
       // Add active class to navmenu selection
       $("li#buttons").addClass("active");
       $("#features-dropdown").addClass("activated");
-
-      // Reset form button
-      $('#clear-button').click(function() {
-        location.reload(true);
-      });
 
       // Reset form button
       $('#refresh-button').click(function() {

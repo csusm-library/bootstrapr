@@ -163,7 +163,7 @@
             <div class="push-down-3" id="action-buttons">
 
               <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-cards"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+              <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
             </div>
 
@@ -349,9 +349,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
          // Set footer to checked automatically
          // $('#panel-footer').prop("checked", true);
 
-         $('#clear-cards').click(function() {
-            location.reload(true);
-         });
 
          // Update the preview window after changes to the code well
          $("#update-preview").on("click", function() {
@@ -507,6 +504,11 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
       });
    </script>
 
+   <!-- Confirmation modal -->
+     <div id="dialog-confirm" title="Reset Form">
+        <p>This will reset the form. Are you sure?</p>
+     </div>
+     
 </body>
 
 </html>

@@ -186,7 +186,7 @@
         <div class="push-down-3" id="action-buttons">
 
           <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-modal"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
 
         </div>
 
@@ -6515,11 +6515,6 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
         }
       });
 
-      // Reset button
-      $('#clear-modal').click(function() {
-        location.reload(true);
-      });
-
       var modifiedCode = "";
       var beautifyLocal = "";
 
@@ -6620,6 +6615,11 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
 
     });
   </script>
+  
+  <!-- Confirmation modal -->
+    <div id="dialog-confirm" title="Reset Form">
+       <p>This will reset the form. Are you sure?</p>
+    </div>
 
 </body>
 
