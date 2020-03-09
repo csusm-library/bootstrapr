@@ -232,8 +232,7 @@ p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
 }
 
 .make-it-mine {
-  color: aliceblue;
-  opacity: .5 !important;
+  opacity: .6 !important;
 }
 
 .homepage hr {
