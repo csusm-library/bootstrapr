@@ -5,6 +5,8 @@ $(document).ready(function() {
     window.location = $(this).data("link");
   });
 
+  $('#include-navbar').load('../navbar.html');
+
   // In-page sccroll-to links
   $("a.scroll-link").click(function(event) {
     event.preventDefault();
