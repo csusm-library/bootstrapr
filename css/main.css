@@ -798,9 +798,17 @@ input[type="radio"] {
   display: inline !important;
 }
 
+#features-containers-selector .btn:hover,
+#features-containers-selector .btn:active,
+#features-containers-selector .btn:focus,
+#features-containers-selector .btn:active:focus,
+#features-containers-selector .btn:active:focus-within {
+  background: lightslategray !important;
+  border-color: lightslategray !important;
+}
+
 .active-selector {
-  /* background-color: #0069d9; */
-  background-color: lightslategray;
+  background: lightslategray;
   border-color: lightslategray;
 }
 
