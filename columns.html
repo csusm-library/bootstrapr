@@ -138,38 +138,93 @@
     }
 
     @-webkit-keyframes bounce {
-      0% { top: 0; }
-      50% { top: -0.2em; }
-      70% { top: -0.3em; }
-      100% { top: 0; }
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
     }
 
     @-moz-keyframes bounce {
-      0% { top: 0; }
-      50% { top: -0.2em; }
-      70% { top: -0.3em; }
-      100% { top: 0; }
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
     }
 
     @-o-keyframes bounce {
-      0% { top: 0; }
-      50% { top: -0.2em; }
-      70% { top: -0.3em; }
-      100% { top: 0; }
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
     }
 
     @-ms-keyframes bounce {
-      0% { top: 0; }
-      50% { top: -0.2em; }
-      70% { top: -0.3em; }
-      100% { top: 0; }
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
     }
 
     @keyframes bounce {
-      0% { top: 0; }
-      50% { top: -0.2em; }
-      70% { top: -0.3em; }
-      100% { top: 0; }
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
     }
   </style>
 
@@ -193,7 +248,7 @@
       <div class="col-sm-6">
         <p class="pull-right">
           <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
-            <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank"><span id="docs-link">Columns</span></a>
+          <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/css/#tables" target="_blank"><span id="docs-link">Columns</span></a>
         </p>
       </div>
       <!-- col-sm-4-->
@@ -206,11 +261,18 @@
         <p class="lead">Use columns to structure your page content.</p>
         <p>Although many more column combinations are possible, I have included the most common column layouts here.</p>
 
-        <p>Columns (e.g., <code>&lt;div class="col-sm-*"&gt;</code>) live inside rows (<code>&lt;div class="row"&gt;</code>). By default we have placed each set of columns inside a single row. However, you may also place an unlimited number of columns inside a single row (see the example code), and as column widths surpass 12 columns, the next columns are pushed down to the next line.</p>
+        <p>Columns (e.g., <code>&lt;div class="col-sm-*"&gt;</code>) live inside rows (<code>&lt;div class="row"&gt;</code>). By default we have placed each set of columns inside a single row. However, you may also place an unlimited number of
+          columns inside a single row (see the example code), and as column widths surpass 12 columns, the next columns are pushed down to the next line.</p>
 
-          <p class="alert alert-default"><i class="fa fa-fw fa-list-ol" aria-hidden="true"></i> &nbsp;<strong>Instructions</strong><br>
-          <strong class="gray">Select</strong> Column sets to add them to the stack. <strong class="gray">Click + Drag</strong class="gray"> to reorder them. <strong class="gray">Click</strong> a column set to delete it from the stack. <strong class="gray">Click Build</strong> to generate the code.
-          </p>
+        <div class="alert alert-default">
+          <strong>Instructions</strong><br>
+          <ol>
+            <li>&nbsp;Select column sets to add them to the stack</li>
+            <li>&nbsp;Click and drag column sets to reorder them</li>
+            <li>&nbsp;Click a column set to delete it from the stack</li>
+            <li>&nbsp;Click the Build button to generate the code</li>
+          </ol>
+        </div>
 
       </div>
     </div>
@@ -353,9 +415,9 @@
   <!-- .container-fluid -->
 
   <!-- Confirmation modal -->
-    <div id="dialog-confirm" title="Reset Form">
-       <p>This will reset the form. Are you sure?</p>
-    </div>
+  <div id="dialog-confirm" title="Reset Form">
+    <p>This will reset the form. Are you sure?</p>
+  </div>
 
   <!-- Navbar include -->
   <div w3-include-html="footer.html"></div>
@@ -364,24 +426,29 @@
   <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
 
   <!-- jQuery Javascript Library (required by Bootstrap) -->
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script><script>window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')</script>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
 
   <!-- jQuery UI Library (optional) -->
   <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 
   <!-- Bootstrap Library -->
   <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-<script>window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')</script>
-<script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')
+  </script>
+  <script>
     (function($) {
-        $(function() {
-            if ($('body').css('color') !== 'rgb(246, 247, 251)') {
-                $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
-$('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
-            }
-        });
+      $(function() {
+        if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+          $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+          $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+        }
+      });
     })(window.jQuery);
-</script>
+  </script>
 
   <!-- Main local script file -->
   <script src="js/main.js"></script>
@@ -515,43 +582,43 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
 
           switch ($(this).text()) {
             case "1 Column | 100%":
-              finalColumns += divOpener + "<div class='col-sm-12'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-12'>12 cols</div>" + divCloser;
               break;
             case "2 columns | 15% - 85%":
-              finalColumns += divOpener + "<div class='col-sm-2'>content</div><div class='col-sm-10'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-2'>2 cols</div><div class='col-sm-10'>10 cols</div>" + divCloser;
               break;
             case "2 columns | 25% - 75%":
-              finalColumns += divOpener + "<div class='col-sm-3'>content</div><div class='col-sm-9'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-3'>3 cols</div><div class='col-sm-9'>9 cols</div>" + divCloser;
               break;
             case "2 columns | 75% - 25%":
-              finalColumns += divOpener + "<div class='col-sm-9'>content</div><div class='col-sm-3'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-9'>9 cols</div><div class='col-sm-3'>3 cols</div>" + divCloser;
               break;
             case "2 columns | 50% - 50%":
-              finalColumns += divOpener + "<div class='col-sm-6'>content</div><div class='col-sm-6'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-6'>6 cols</div><div class='col-sm-6'>6 cols</div>" + divCloser;
               break;
             case "3 columns | 25% - 50% - 25%":
-              finalColumns += divOpener + "<div class='col-sm-3'>content</div><div class='col-sm-6'>content</div><div class='col-sm-3'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-3'>3 cols</div><div class='col-sm-6'>6 cols</div><div class='col-sm-3'>3 cols</div>" + divCloser;
               break;
             case "3 columns | Equal Widths":
-              finalColumns += divOpener + "<div class='col-sm-4'>content</div><div class='col-sm-4'>content</div><div class='col-sm-4'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-4'>4 cols</div><div class='col-sm-4'>4 cols</div><div class='col-sm-4'>4 cols</div>" + divCloser;
               break;
             case "4 columns | Equal Widths":
-              finalColumns += divOpener + "<div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div><div class='col-sm-3'>content</div>" + divCloser;
+              finalColumns += divOpener + "<div class='col-sm-3'>3 cols</div><div class='col-sm-3'>3 cols</div><div class='col-sm-3'>3 cols</div><div class='col-sm-3'>3 cols</div>" + divCloser;
               break;
             case "5 columns | Equal Widths":
               finalColumns +=
-                divOpener + "<div class='col-sm-2 col-sm-offset-1'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div>" + divCloser;
+                divOpener + "<div class='col-sm-2 col-sm-offset-1'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div>" + divCloser;
               break;
             case "6 columns | Equal Widths":
               finalColumns +=
                 divOpener +
-                "<div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div><div class='col-sm-2'>content</div>" +
+                "<div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div><div class='col-sm-2'>2 cols</div>" +
                 divCloser;
               break;
             case "12 columns | Equal Widths":
               finalColumns +=
                 divOpener +
-                "<div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div><div class='col-sm-1'>content</div>" +
+                "<div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div><div class='col-sm-1'>1 col</div>" +
                 divCloser;
               break;
           }
@@ -589,12 +656,12 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
       // clipboard button
       new Clipboard('.btn');
 
-      $( function() {
-          $("#column-list").sortable({
-            placeholder: "ui-state-highlight"
-          });
-          $("#column-list").disableSelection();
-        } );
+      $(function() {
+        $("#column-list").sortable({
+          placeholder: "ui-state-highlight"
+        });
+        $("#column-list").disableSelection();
+      });
 
     });
   </script>

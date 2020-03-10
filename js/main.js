@@ -199,7 +199,6 @@ $(document).ready(function() {
 
   });
 
-
   $("#dialog-confirm").dialog({
            autoOpen: false,
            resizable: false,
