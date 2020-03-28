@@ -143,11 +143,11 @@ h6 {
 .slider:after {
   display: inline-block;
   content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0✓";
-  font-family: Proxima-sans;
+  font-family: Proxima-nova;
   color: silver;
   font-size: 105%;
-  margin-top: .3rem !important;
-  margin-left: .35rem !important;
+  margin-top: .35rem !important;
+  margin-left: .45rem !important;
   z-index: 1000 !important;
 }
 
