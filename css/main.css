@@ -8,10 +8,12 @@ html {
   font-size: 100%;
 }
 
-html, body {
-  font-family: "Open Sans", Arial, sans-serif;
+body {
+  font-family: proxima-nova, sans-serif;
+  font-weight: 400;
+  font-style: normal;
   margin: 0;
-  font-size: 17px;
+  font-size: 16px;
   padding: 0;
   color: black;
   touch-action: manipulation;
@@ -24,12 +26,39 @@ body {
 
 h1, h2, h3, h4, h5, h6 {
   font-family: "Montserrat", Arial, sans-serif;
+  font-weight: 500;
   /* color: #0f2438; */
   color: #20364c;
 }
 
+/* headings */
+h1 {
+  font-size: 2.5rem
+}
+
+h2 {
+  font-size: 2rem
+}
+
+h3 {
+  font-size: 1.75rem
+}
+
+h4 {
+  font-size: 1.5rem
+}
+
+h5 {
+  font-size: 1.25rem
+}
+
+h6 {
+  font-size: 1.1rem
+}
+
 .col-sm-12>h1 {
-  font-size: 3rem;
+  font-size: 3.5rem;
+  margin-bottom: 1.75rem;
 }
 
 .sub-header {
@@ -37,6 +66,10 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 /* navbar classes */
+#bootstrap-nav li a {
+  font-weight: 600;
+}
+
 .navbar-inverse .navbar-nav>li>a {
   color: white;
 }
@@ -110,7 +143,7 @@ h1, h2, h3, h4, h5, h6 {
 .slider:after {
   display: inline-block;
   content: "\00a0\00a0\00a0\00a0\00a0\00a0\00a0✓";
-  font-family: "fontAwesome";
+  font-family: Proxima-sans;
   color: silver;
   font-size: 105%;
   margin-top: .3rem !important;
@@ -167,35 +200,6 @@ input:checked+.slider:before {
   font-style: normal;
 }
 
-/* headings */
-h1 {
-  font-size: 2.5rem
-}
-
-h2 {
-  font-size: 2rem
-}
-
-h3 {
-  font-size: 1.75rem
-}
-
-h4 {
-  font-size: 1.5rem
-}
-
-h5 {
-  font-size: 1.25rem
-}
-
-h6 {
-  font-size: 1.1rem
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: bold !important;
-}
-
 .homepage-headings {
   margin-bottom: 2rem;
   color: #406885;
@@ -206,13 +210,13 @@ h1, h2, h3, h4, h5, h6 {
 p {
   font-size: 1rem;
   margin-bottom: 1.5rem !important;
-  line-height: 1.6;
+  line-height: 1.4;
 }
 
 p, li, th, td, dd, dl, a, dd, input, textarea, button, select, option {
   vertical-align: baseline;
   -webkit-font-smoothing: antialiased;
-  font-size: 1rem;
+  font-size: 1.1rem;
 }
 
 #url-popover {
@@ -324,7 +328,7 @@ pre {
 }
 
 .montserrat {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: Proxima-nova, Arial, sans-serif;
 }
 
 #brand-logo {
@@ -702,6 +706,7 @@ input[type="radio"] {
 .descriptor {
   color: gray;
   font-variant: small-caps !important;
+  font-size: small;
 }
 
 .bold {
@@ -710,6 +715,10 @@ input[type="radio"] {
 
 .no-italics {
   font-style: normal;
+}
+
+label {
+   font-weight: 500;
 }
 
 .label-large {
@@ -725,6 +734,7 @@ input[type="radio"] {
   font-size: 90%;
   display: block;
   padding-left: .5rem;
+  font-size: smaller;
 }
 
 #docs-link {
@@ -840,7 +850,8 @@ input[type="radio"] {
 
 .dropdown-menu li a {
   font-weight: 500;
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: Proxima-nova, Arial, sans-serif !important;
+  color: #555555;
 }
 
 .dropdown-menu li {
@@ -886,7 +897,7 @@ select {
 
 .navbar-nav .dropdown a,
 .navbar-nav #pages a {
-  font-family: "Montserrat", Arial, sans-serif;
+  font-family: Proxima-nova, Arial, sans-serif !important;
 }
 
 #action-buttons {
@@ -1149,10 +1160,11 @@ caption .summary {
 
 /* Lead classes */
 .lead {
-  font-family: "Open Sans", Arial, sans-serif;
+  font-family: Proxima-nova, Arial, sans-serif;
   font-size: 150%;
-  font-weight: 300;
+  font-weight: 400;
   margin-bottom: .5rem !important;
+  font-style: italic;
 
 }
 
