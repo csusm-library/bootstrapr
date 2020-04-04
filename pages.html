@@ -43,8 +43,8 @@
    <![endif]-->
 
   <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500600" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
 
   <!-- Font Awesome Web Icons -->
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -92,10 +92,14 @@
       <div class="col-sm-12">
         <h1>Pages</h1>
         <p class="lead">All bootstrap pages are built on a 12-column grid.</p>
-        <p>Use the generator below to create the skeleton for a simple Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs into the main-content <code>&lt;div&gt;</code>. I have
-          also included an include for the Font Awesome 4 library, as well as the Open Sans Google Web font.</p>
+        <p>Fill in the fields below to customize a skeleton Bootstrap page. Then add Bootstrap components from the <strong>Features</strong> and <strong>Containers</strong> tabs to the main content div&mdash;the one with the <code>id="wrapper"</code>.
+        </p>
+
+          <p class='alert alert-default' role='alert' style="margin-bottom: none;"><i class="fa fa-fw fa-font-awesome" aria-hidden="true"></i><a class='close' data-dismiss='alert' aria-label='close'>×</a><strong> Font Awesome 4</strong><br>I have included a link to the Font Awesome 4 library.</p>
 
       </div>
+
+
     </div>
 
     <hr class="divider">
@@ -160,8 +164,8 @@
           <div class="form-group push-down-1">
             <label for="icon-shape">Jumbotron</label>
             <select class="form-control" id="jumbotron-type">
-              <option value="">No jumbotron</option>
-              <option id="jumbo-centered" value="centered" selected="selected">Centered jumbotron</option>
+              <option value="" selected="selected">No jumbotron</option>
+              <option id="jumbo-centered" value="centered">Centered jumbotron</option>
               <option id="jumbo-full" value="full-width">Full-width jumbotron</option>
             </select>
           </div>
@@ -175,7 +179,7 @@
           </div>
 
           <div class="form-group push-down-2">
-            <label for="close-button">Include sample content</label>
+            <label for="close-button">Add sample content</label>
             <div class="checkbox">
               <label class="switch">
                 <input type="checkbox" id="include-sample">
@@ -197,8 +201,8 @@
 
         <div class="push-down-2 button-box" id="action-buttons">
 
-          <button type="button" class="btn btn-lg btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
-          <button type="button" class="btn btn-lg btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> Reset</button>
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
+          <button type="button" class="btn btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Reset</span></button>
 
         </div>
 
@@ -260,10 +264,7 @@
 &lt;title&gt;Title&lt;/title&gt;
 
 &lt;!-- Bootstrap CSS files--&gt;
-&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css"&gt;
-
-&lt;!-- Google Open Sans web font --&gt;
-&lt;link href="https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700" rel="stylesheet"&gt;
+&lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous"&gt;
 
 &lt;!-- Font Awesome Web Icons --&gt;
 &lt;link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"&gt;
@@ -271,13 +272,47 @@
 &lt;/head&gt;
 &lt;body&gt;
 
+&lt;!-- Navbar --&gt;
+&lt;nav class="navbar container-fluid navbar-default"&gt;
+  &lt;div class="container"&gt;
+    &lt;div class="navbar-header"&gt;&lt;button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"&gt;&lt;span class="sr-only"&gt;Toggle navigation&lt;/span&gt;&lt;span
+          class="icon-bar"&gt;&lt;/span&gt;&lt;span class="icon-bar"&gt;&lt;/span&gt;&lt;span class="icon-bar"&gt;&lt;/span&gt;&lt;/button&gt;&lt;a class="navbar-brand" href="#"&gt;Brand&lt;/a&gt;&lt;/div&gt;
+    &lt;div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"&gt;
+      &lt;ul class="nav navbar-nav navbar-right"&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 1&lt;/a&gt;&lt;/li&gt;
+        &lt;li&gt;&lt;a href="#"&gt;Link 2&lt;/a&gt;&lt;/li&gt;
+        &lt;li class="dropdown"&gt;&lt;a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false"&gt;Link 3 &lt;span class="caret"&gt;&lt;/span&gt;&lt;/a&gt;
+          &lt;ul class="dropdown-menu"&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 1&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 2&lt;/a&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 3&lt;/a&gt;&lt;/li&gt;
+            &lt;li role="separator" class="divider"&gt;&lt;/li&gt;
+            &lt;li&gt;&lt;a href="#"&gt;Sub-link 4&lt;/a&gt;&lt;/li&gt;
+          &lt;/ul&gt;
+        &lt;/li&gt;
+      &lt;/ul&gt;
+    &lt;/div&gt;
+  &lt;/div&gt;
+&lt;/nav&gt;
+
 &lt;!-- This is where your body content goes... --&gt;
+&lt;div id="wrapper" class="container"&gt;
+  &lt;div class="row"&gt;
+    &lt;div class="col-sm-12"&gt;
+      &lt;h2&gt;Heading 2&lt;/h2&gt;
+      &lt;p&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit. Omnis, voluptate ducimus aliquid.&lt;/p&gt;
+    &lt;/div&gt;
+    &lt;!-- col-sm-12 --&gt;
+  &lt;/div&gt;
+  &lt;!-- row --&gt;
+&lt;/div&gt;
+&lt;!-- wrapper div.container --&gt;
 
 &lt;!-- jQuery Javascript Library (required by Bootstrap) --&gt;
-&lt;script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"&gt;&lt;/script&gt;
+&lt;script src="https://code.jquery.com/jquery-3.4.1.min.js"&gt;&lt;/script&gt;
 
-&lt;!-- Bootstrap Library --&gt;
-&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.5/js/bootstrap.min.js"&gt;&lt;/script&gt;
+&lt;!-- Bootstrap JS --&gt;
+&lt;script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js" integrity="sha384-Tc5IQib027qvyjSMfHjOMaLkfuWVxZxUPnCJA7l2mCWNIpG9mGCD8wGNIcPD7Txa" crossorigin="anonymous"&gt;&lt;/script&gt;
 
 &lt;/body&gt;
 &lt;/html&gt;
@@ -295,8 +330,9 @@
             <a class="close" data-dismiss="alert" aria-label="close">×</a>
             <strong>Required Libraries</strong>
             <br>
-            Bootstrap 3.4.1 framework requires the jQuery libraries. If you choose to serve Bootstrap from a <a href="https://www.fastly.com/blog/why-you-should-use-content-delivery-network" target="_blank">CDN</a>, these will be linked to in
-            the generated HTML. If you choose to serve the files locally, you will need to download both jQuery and Bootstrap libraries and place them somewhere sensible in your project directory.
+            Bootstrap 3 requires the jQuery libraries. If you choose to serve Bootstrap from a CDN, links will be included in the generated HTML. If you choose to serve the files locally, you will need to <a href="https://jquery.com/download/"
+              target="_blank">download jQuery</a> and <a href="https://getbootstrap.com/docs/3.3/getting-started/" target="_blank">download Bootstrap</a> and place them in your project directory. Note that both Bootstrap and jQuery are already
+            included for the LibGuides platform.
           </p>
         </div>
 
@@ -432,7 +468,7 @@
         } else if (navbar == "simple-full-width") {
           navWide = '<nav class="navbar ' + navbarType +
             '"><div class="container-fluid"><div class="navbar-header"><button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1" aria-expanded="false"><span class="sr-only">Toggle navigation</span><span class="icon-bar"></span><span class="icon-bar"></span><span class="icon-bar"></span></button><a class="navbar-brand" href="#">Brand</a></div><div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1"><ul class="nav navbar-nav navbar-right"><li><a href="#">Link 1</a></li><li><a href="#">Link 2</a></li><li class="dropdown"><a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">Link 3 <span class="caret"></span></a><ul class="dropdown-menu"><li><a href="#">Sub-link 1</a></li><li><a href="#">Sub-link 2</a></li><li><a href="#">Sub-link 3</a></li><li role="separator" class="divider"></li><li><a href="#">Sub-link 4</a></li></ul></li></ul></div></div></nav>';
-            navCentered = "";
+          navCentered = "";
         } else {
           navWide = "";
           navCentered = "";
