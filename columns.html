@@ -1,3 +1,6 @@
+Columns
+
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -134,6 +137,10 @@
       color: #027bdd;
       font-size: 30px;
       margin: 20px;
+    }
+
+    .fa-arrows-v {
+      margin-right: 1.2rem;
     }
 
     @-webkit-keyframes bounce {
@@ -280,7 +287,7 @@
 
     <div class="row">
 
-      <div class="col-sm-3">
+      <div class="col-sm-4">
 
 
 
@@ -338,7 +345,7 @@
       </div>
       <!-- .col-sm-3 -->
 
-      <div class="col-sm-9">
+      <div class="col-sm-8">
 
         <div class="example" id="simple-example">
 
@@ -530,37 +537,37 @@
 
           switch (newestRow) {
             case "1col-100":
-              addRow = "<li class='list-group-item ui-state-default'>1 Column | 100%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>1 Column | 100%</li>";
               break;
             case "2col-15-85":
-              addRow = "<li class='list-group-item ui-state-default'>2 columns | 15% - 85%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>2 columns | 15% - 85%</li>";
               break;
             case "2col-25-75":
-              addRow = "<li class='list-group-item ui-state-default'>2 columns | 25% - 75%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>2 columns | 25% - 75%</li>";
               break;
             case "2col-75-25":
-              addRow = "<li class='list-group-item ui-state-default'>2 columns | 75% - 25%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>2 columns | 75% - 25%</li>";
               break;
             case "2col-50-50":
-              addRow = "<li class='list-group-item ui-state-default'>2 columns | 50% - 50%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>2 columns | 50% - 50%</li>";
               break;
             case "3col-25-50-25":
-              addRow = "<li class='list-group-item ui-state-default'>3 columns | 25% - 50% - 25%</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>3 columns | 25% - 50% - 25%</li>";
               break;
             case "3col-equal":
-              addRow = "<li class='list-group-item ui-state-default'>3 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>3 columns | Equal Widths</li>";
               break;
             case "4col-equal":
-              addRow = "<li class='list-group-item ui-state-default'>4 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>4 columns | Equal Widths</li>";
               break;
             case "5col-equal":
               addRow = "<li class='list-group-item ui-state-default'>5 columns | Equal Widths</li>";
               break;
             case "6col-equal":
-              addRow = "<li class='list-group-item ui-state-default'>6 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>6 columns | Equal Widths</li>";
               break;
             case "12col-equal":
-              addRow = "<li class='list-group-item ui-state-default'>12 columns | Equal Widths</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>12 columns | Equal Widths</li>";
               break;
           }
 
@@ -579,7 +586,7 @@
 
         $("#column-list li").each(function() {
 
-          switch ($(this).text()) {
+          switch ( $(this).text() ) {
             case "1 Column | 100%":
               finalColumns += divOpener + "<div class='col-sm-12'>12 cols</div>" + divCloser;
               break;

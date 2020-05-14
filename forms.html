@@ -35,8 +35,8 @@
   <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
 
   <!-- Google web fonts -->
-    <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600" rel="stylesheet">
-    <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
 
   <!-- CSS Animations -->
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
@@ -100,6 +100,12 @@
     .lightgray {
       color: silver;
     }
+
+
+    .fa-arrows-v {
+      margin-right: 1.2rem;
+    }
+
 
     #component-list li:hover {
       background: #f2dede !important;
@@ -268,7 +274,7 @@
 
     <div class="row">
 
-      <div class="col-sm-3">
+      <div class="col-sm-4">
 
 
 
@@ -355,7 +361,7 @@
       </div>
       <!-- .col-sm-3 -->
 
-      <div class="col-sm-9">
+      <div class="col-sm-8">
 
         <div class="example" id="simple-example">
 
@@ -552,43 +558,43 @@
 
           switch (newestRow) {
             case "input-text":
-              addRow = "<li class='list-group-item ui-state-default'>Input | text</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | text</li>";
               break;
             case "icon-left":
-              addRow = "<li class='list-group-item ui-state-default'>Input | icon left</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | icon left</li>";
               break;
             case "icon-right":
-              addRow = "<li class='list-group-item ui-state-default'>Input | icon right</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | icon right</li>";
               break;
             case "icons-both":
-              addRow = "<li class='list-group-item ui-state-default'>Input | icons both</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | icons both</li>";
               break;
             case "input-email":
-              addRow = "<li class='list-group-item ui-state-default'>Input | email</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | email</li>";
               break;
             case "input-password":
-              addRow = "<li class='list-group-item ui-state-default'>Input | password</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Input | password</li>";
               break;
             case "textarea":
-              addRow = "<li class='list-group-item ui-state-default'>Textarea</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Textarea</li>";
               break;
             case "radio-buttons":
-              addRow = "<li class='list-group-item ui-state-default'>Radio buttons</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Radio buttons</li>";
               break;
             case "checkbox":
-              addRow = "<li class='list-group-item ui-state-default'>Checkbox</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Checkbox</li>";
               break;
             case "checkboxes":
-              addRow = "<li class='list-group-item ui-state-default'>Checkboxes</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Checkboxes</li>";
               break;
             case "select":
-              addRow = "<li class='list-group-item ui-state-default'>Select</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Select</li>";
               break;
             case "multiselect":
-              addRow = "<li class='list-group-item ui-state-default'>Multiselect</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Multiselect</li>";
               break;
             case "form-buttons":
-              addRow = "<li class='list-group-item ui-state-default'>Form buttons</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Form buttons</li>";
               break;
           }
 
