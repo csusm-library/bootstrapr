@@ -342,7 +342,6 @@ pre {
   }
 
 } */
-
 .bootstrap-logo {
   color: white;
   background-color: #0f2438;
@@ -412,10 +411,10 @@ pre {
     letter-spacing: normal;
   }
 
-#containers-dropdown .dropdown-toggle,
-#features-dropdown .dropdown-toggle {
-  color: black;
-}
+  #containers-dropdown .dropdown-toggle,
+  #features-dropdown .dropdown-toggle {
+    color: black;
+  }
 
   .navbar-nav,
   .navbar-inverse .navbar-nav .open .dropdown-menu {
@@ -589,7 +588,7 @@ pre {
   margin-bottom: 0 !important;
 }
 
-.bsr-card-icon + h5 {
+.bsr-card-icon+h5 {
   margin-top: 1rem;
   margin-bottom: 2rem;
 }
@@ -733,7 +732,7 @@ input[type="radio"] {
 }
 
 label {
-   font-weight: 600;
+  font-weight: 600;
 }
 
 .label-large {
@@ -860,7 +859,7 @@ label {
 
 .dropdown-menu .active i {
   color: aliceblue;
-  opacity:.9;
+  opacity: .9;
 }
 
 .dropdown-menu li a {
@@ -873,9 +872,7 @@ label {
   padding: .25rem 0 !important;
 }
 
-.dropdown-menu li:hover {
-
-}
+.dropdown-menu li:hover {}
 
 .dropdown-menu li a i {
   color: lightslategray;
@@ -1425,7 +1422,6 @@ caption .summary {
   background-position: center center;
 }
 
-
 .dropdown-menu>li:focus,
 .dropdown-menu>li:hover {
   color: darkslategray;
@@ -1441,4 +1437,10 @@ caption .summary {
 
 .clickable {
   cursor: pointer !important;
+}
+
+/* Darken the backdrop for the reset modal */
+.ui-widget-overlay {
+  background: #000000;
+  opacity: .6;
 }
