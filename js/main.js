@@ -178,8 +178,8 @@ $(document).ready(function() {
     // $('#build-button').contents().last().replaceWith(' Built');
 
     // Play the sound once -- not used currently
-    // $('#pop')[0].play();
-    // $('#pop')[0].currentTime = 0;
+    $('#pop')[0].play();
+    $('#pop')[0].currentTime = 0;
 
     // Hide the checkmark after .8 seconds
     setTimeout(function() {
