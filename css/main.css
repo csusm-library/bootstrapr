@@ -900,11 +900,17 @@ li.divider {
 
 /* fields with numbers */
 .number-control {
-  width: 100px !important;
+  width: 150px !important;
 }
 
 .long-number-control {
   width: 225px !important;
+}
+
+/* Size the percentage types on Progress Bar */
+.progress-bar-percentages {
+  font-size: .8rem;
+  margin: -.75rem 0 0 .5rem;
 }
 
 select {
@@ -1366,6 +1372,14 @@ caption .summary {
 #popover-panel-body {
   background-color: white;
   background-image: url("../img/card-backgrounds/popovers.png");
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center center;
+}
+
+#progress-bars-panel-body {
+  background-color: white;
+  background-image: url("../img/card-backgrounds/progress-bars.png");
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center center;
