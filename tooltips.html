@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Metadata for the Webpage -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrapr &middot; Tooltips</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- jQuery UI CSS (optional) -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- Bootstrap CSS files-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- Google web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
+
+  <!-- Font Awesome Web Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- CSS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Main local stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Prettify theme -->
+  <link rel="stylesheet" href="css/prettify-theme.css">
+
+  <style>
+    td button:last-of-type {
+      margin-top: .25rem;
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <!-- Navbar include -->
+  <div w3-include-html="navbar.html"></div>
+
+  <div class="container main-content">
+
+    <div class="row add-100">
+      <div class="col-sm-6">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Bootstrapr</a></li>
+          <li class="active">Tooltips</li>
+        </ol>
+      </div>
+      <!-- col-sm-6 -->
+      <div class="col-sm-6">
+        <p class="pull-right">
+          <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
+          <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a> | <a href="https://getbootstrap.com/docs/3.3/javascript/#tooltips" target="_blank"><span id="docs-link">Tooltips</span></a>
+        </p>
+      </div>
+      <!-- col-sm-4-->
+    </div>
+    <!-- .row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Tooltips</h1>
+        <p class="lead">Tooltips provide contextual information on mouse-over.</p>
+        <p>To add a tooltip to any element, add the attributes of <code>data-toggle="tooltip"</code>, <code>data-placement="[top|bottom|left|right]"</code>, and <code>title="Tooltip content here"</code>.</p>
+
+        <p>You will also need to add the jQuery <code>tooltip()</code> method (see below) to your page to activate the tooltips.</p>
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="row">
+
+      <div class="col-sm-3">
+
+        <form>
+
+          <div class="form-group">
+            <label for="tooltip-text">Text</label>
+            <input name="tooltip-text" type="text" class="form-control" id="tooltip-text">
+          </div>
+
+          <div class="form-group">
+            <label for="tooltip-type">Type</label>
+            <select role="menu" class="form-control" id="tooltip-type">
+              <option value="link" selected>Link</option>
+              <option value="text">Text</option>
+              <option value="button">Button</option>
+              <option value="icon">Info icon</option>
+            </select>
+            <small class="slategray"> <i class="fa fa-fw fa-info-circle" aria-hidden="true"></i> Info icon uses Font Awesome 4</small>
+          </div>
+
+
+          <div class="form-group">
+            <label for="tooltip-direction">Direction</label>
+            <select role="menu" class="form-control" id="tooltip-direction">
+              <option value="top" selected>Top</option>
+              <option value="bottom">Bottom</option>
+              <option value="left">Left</option>
+              <option value="right">Right</option>
+            </select>
+          </div>
+
+        </form>
+
+        <div class="push-down-2 button-box" id="action-buttons">
+
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
+          <button type="button" class="btn btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Reset</span></button>
+
+        </div>
+
+
+      </div>
+      <!-- .col-sm-3 -->
+
+      <div class="col-sm-9">
+
+        <div class="example" id="simple-example">
+          <p>
+            I'm a big fan of <strong data-toggle="tooltip" title="tooltip at right" data-placement="right">Neko Case!</strong>
+          </p>
+
+          <hr>
+          <p>I'm a big fan of <a href="https://www.youtube.com/watch?v=6zpqDgbUa1Y" target="_blank" data-toggle="tooltip" title="Tooltip at top" data-placement="top" style="font-size: inherit">Neko Case</a> &mdash; Have a listen and you will be too.
+          </p>
+
+          <hr>
+          <button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left">Watch Neko Case Videos</button>
+          <hr>
+          <p style="margin-top: 2rem;">Who is Neko Case? <i class="fa fa-fw fa-info-circle link-blue" aria-hidden="true" data-toggle="tooltip" title="Tooltip at bottom" data-placement="bottom"></i></p>
+
+        </div>
+        <div class="well">
+
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Beautifier -->
+          <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+          </button>
+
+          <!-- Update Example Panel-->
+          <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+            Update Example</button>
+
+          <hr class="well-separator">
+
+<pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;p&gt;
+  I'm a big fan of &lt;strong data-toggle="tooltip" title="tooltip at right" data-placement="right"&gt;Neko Case!&lt;/strong&gt;
+&lt;/p&gt;
+
+&lt;p&gt;
+  I'm a big fan of &lt;a href="https://www.youtube.com/watch?v=6zpqDgbUa1Y" data-toggle="tooltip" target="_blank" title="tooltip at top" data-placement="top"&gt;Neko Case&lt;/a&gt; &mdash; Have a listen and you will be too.
+&lt;/p&gt;
+
+&lt;button type="button" class="btn btn-primary" data-toggle="tooltip" data-placement="left" title="Tooltip on left"&gt;<a href="https://www.youtube.com/watch?v=a0vk5SGmw3w&list=RDEM9TShWtTTRnvUfN6uuh8smg&start_radio=1">Watch Neko Case Videos</a>&lt;/button&gt;
+
+&lt;p&gt;
+  Who is Neko Case? &lt;i class="fa fa-fw fa-info-circle link-blue" aria-hidden="true" data-toggle="tooltip" title="Tooltip at bottom" data-placement="bottom"&gt;&lt;/i&gt;
+&lt;/p&gt;
+
+</pre>
+
+        </div>
+        <!-- example closes -->
+
+        <h4 class="sub-header">Custom CSS</h4>
+
+        <p>Custom CSS is required to change the tooltip <code>background</code>, <code>font color</code>, <code>font size</code>, <code>margin</code> and <code>padding</code> of your tooltips.</p>
+
+
+        <div class="well">
+
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Update Example Panel-->
+          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
+              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all bootstrapr CSS</a>
+
+          <hr class="well-separator">
+
+<pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+.tooltip .tooltip-inner {
+  background-color: darkred ;
+  color: white;
+  font-size: 1.25rem;
+  margin-top: 10px;
+  padding: 8px;
+  }
+</pre>
+
+        </div>
+        <!-- .well -->
+
+        <h4 class="sub-header">Custom JS</h4>
+
+        <p>Custom javascript may be required to activate the tooltips in the page.</p>
+
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <hr class="well-separator">
+
+
+<pre class="prettyprint lang-js" contenteditable="true" id="custom-js-code">
+$('[data-toggle="tooltip"]').tooltip();
+</pre>
+
+        </div>
+        <!-- .well -->
+
+      </div>
+      <!-- .col-sm-9 -->
+
+    </div>
+    <!-- .row -->
+
+
+  </div>
+  <!-- .container -->
+
+
+  <!-- Navbar include -->
+  <div w3-include-html="footer.html"></div>
+
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+  <!-- jQuery Javascript Library (required by Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
+
+  <!-- jQuery UI Library (optional) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- Bootstrap Library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')
+  </script>
+  <script>
+    (function($) {
+      $(function() {
+        if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+          $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+          $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+        }
+      });
+    })(window.jQuery);
+  </script>
+
+  <!-- Main local script file -->
+  <script src="js/main.js"></script>
+
+  <!-- includes for Google's code highlighter 'prettyprint' -->
+  <link rel="stylesheet" type="text/css" href="css/prettify.css">
+  <script type="text/javascript" src="js/prettify.js"></script>
+  <script type="text/javascript" src="js/lang-css.js"></script>
+
+  <!-- html file include script | used for navbar -->
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+
+  <!-- Bootstrap Table -->
+  <script type="text/javascript" src="js/jquery.sortElements.js"></script>
+  <script type="text/javascript" src="js/jquery.bdt.js"></script>
+
+  <!-- clipboard.js include -->
+  <script src="js/clipboard.min.js"></script>
+
+  <!-- Confirmation modal -->
+  <div id="dialog-confirm" title="Reset Form">
+    <p>This will reset the form. Are you sure?</p>
+  </div>
+
+  <!-- Animations JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      // tooltips function
+      $('[data-toggle="tooltip"]').tooltip();
+
+      // Add active class to navmenu selection
+      $("li#tooltips").addClass("active");
+      $("#features-dropdown").addClass("activated");
+
+      $('#build-button').on("click", function() {
+
+        var tooltipText = $("#tooltip-text").val();
+        var tooltipType = $("#tooltip-type").val();
+        var tooltipDirection = $("#tooltip-direction").val();
+        var tooltipBody = "";
+
+        switch (tooltipType) {
+          case 'link':
+            tooltipBody = "<p>Lorem ipsum <a href='#' data-toggle='tooltip' title='" + tooltipText + "' data-placement='" + tooltipDirection + "'>dolor</a> sit amet.</p>";
+            break;
+          case 'text':
+            tooltipBody = "<p>Lorem ipsum <strong data-toggle='tooltip' title='" + tooltipText + "tooltip at right' data-placement='" + tooltipDirection + "'>dolor</strong> sit amet!</p>";
+            break;
+          case 'button':
+            tooltipBody = "<button type='button' class='btn btn-primary' data-toggle='tooltip' data-placement='" + tooltipDirection + "' title='" + tooltipText + "'>Simple Button</button>";
+            break;
+          case 'icon':
+            tooltipBody = "<p>Lorem ipsum dolor <i class='fa fa-fw fa-info-circle' aria-hidden='true' data-toggle='tooltip' title='" + tooltipText + "' data-placement='" + tooltipDirection + "'></i></p>";
+            break;
+
+        }
+
+        // Write the table
+        // var tooltipFinal = "";
+
+        $("#simple-example").html(tooltipBody);
+        $('#simple-code').text(tooltipBody);
+
+        // Add tooltips to the dynamically generated elements
+        $('[data-toggle="tooltip"]').tooltip();
+
+        $('pre').removeClass('prettyprinted');
+        prettyPrint();
+
+      });
+
+      // Select the icon from the modal
+      var iconValue = "";
+      $('.icon-selector').on('click', function() {
+        $('#standard-icons').prop('checked', false);
+        iconValue = $(this).data("well-target");
+        $("#alert-icon").val(iconValue);
+        iconValue = "";
+        $('#icons-modal').modal('hide');
+      });
+
+      // clipboard button
+      new Clipboard('.btn');
+
+    });
+    // document.ready
+  </script>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e46f4c0e8e8fb44"></script>
+
+</body>
+
+</html>
