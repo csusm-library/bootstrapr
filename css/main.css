@@ -1285,6 +1285,10 @@ caption .summary {
   background-image: url("../img/card-backgrounds/modals.png");
 }
 
+#multiple-choice-panel-body {
+  background-image: url("../img/card-backgrounds/multiple-choice.png");
+}
+
 #page-panel-body {
   background-image: url("../img/card-backgrounds/pages.png");
 }

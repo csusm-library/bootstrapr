@@ -1,0 +1,710 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+  <!-- Metadata for the Webpage -->
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Bootstrapr &middot; Multiple Choice</title>
+
+  <!-- Favicons -->
+  <link rel="apple-touch-icon" sizes="57x57" href="img/favicon/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="img/favicon/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="img/favicon/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
+
+  <!-- Bootstrap CSS files-->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+
+  <!-- jQuery UI CSS (optional) -->
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/themes/smoothness/jquery-ui.css">
+
+  <!-- Google web fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Montserrat:500,600" rel="stylesheet">
+  <link rel="stylesheet" href="https://use.typekit.net/cti7nio.css">
+
+  <!-- CSS Animations -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Font Awesome Web Icons -->
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+
+  <!-- Main local stylesheet -->
+  <link rel="stylesheet" href="css/main.css">
+
+  <!-- Prettify theme -->
+  <link rel="stylesheet" href="css/prettify-theme.css">
+
+  <style>
+    /* Adds a dotted border to the divs for clarity */
+    #simple-example>div>div {
+      border: 1px dotted #999999;
+    }
+
+    #simple-example>div>div {
+      margin-bottom: .5rem;
+      padding: .5rem;
+    }
+
+    #component-list {
+      margin-top: 0;
+      /* border: 1px solid silver; */
+      min-height: 10rem;
+      /* padding: .5rem; */
+      border-radius: 3px;
+    }
+
+    #component-list li {
+      padding: 5px 10px;
+      border: 1px solid lightblue;
+      margin-bottom: 2px;
+      background: white;
+      border-radius: 0 !important;
+    }
+
+    #add-question-component {
+      height: 2.5rem;
+    }
+
+    .example-component {
+      border: 1px dashed lightgray !important;
+      color: silver;
+    }
+
+    #row-stack {
+      border: 1px solid silver;
+      padding: .5rem;
+    }
+
+    #row-stack p {
+      border-bottom: 1px solid lightgray;
+      padding-bottom: .5rem;
+      color: gray;
+    }
+
+    .lightgray {
+      color: silver;
+    }
+
+
+    .fa-arrows-v {
+      margin-right: 1.2rem;
+    }
+
+
+    #component-list li:hover {
+      background: #f2dede !important;
+      color: #a94442;
+      border: 1px solid #a94442;
+    }
+
+    .delete-the-columns {
+      cursor: pointer;
+    }
+
+    .delete-the-columns:before {
+      content: "\f00d\00a0\00a0";
+      font-family: fontAwesome;
+      color: #a94442;
+    }
+
+    /* Bounding arrow icon -- thanks to https://codepen.io/dragoeco/pen/ZWpGqo */
+    .bounce {
+      display: inline-block;
+      position: relative;
+      -moz-animation: bounce 0.5s infinite linear;
+      -o-animation: bounce 0.5s infinite linear;
+      -webkit-animation: bounce 0.5s infinite linear;
+      animation: bounce 0.75s infinite linear;
+      color: 000;
+    }
+
+    @-webkit-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-moz-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-o-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @-ms-keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    @keyframes bounce {
+      0% {
+        top: 0;
+      }
+
+      50% {
+        top: -0.2em;
+      }
+
+      70% {
+        top: -0.3em;
+      }
+
+      100% {
+        top: 0;
+      }
+    }
+
+    #simple-example .btn-primary {
+      margin-left: .25rem;
+    }
+
+    /* understanding check */
+    .panel-understanding-check {
+      background: #f6f7fb;
+      padding: 1.5rem;
+
+    }
+  </style>
+
+</head>
+
+<body id="top">
+
+  <!-- Navbar include -->
+  <div w3-include-html="navbar.html"></div>
+
+  <div class="container main-content">
+
+    <div class="row add-100">
+      <div class="col-sm-6">
+        <ol class="breadcrumb">
+          <li><a href="index.html">Bootstrapr</a></li>
+          <li class="active">Multiple Choice</li>
+        </ol>
+      </div>
+      <!-- col-sm-6 -->
+      <div class="col-sm-6">
+        <p class="pull-right">
+          <i class="fa fa-fw fa-bookmark gray" aria-hidden="true"></i>
+          <a href="https://getbootstrap.com/docs/3.3/" target="_blank">Bootstrap 3.3.7</a>
+        </p>
+      </div>
+      <!-- col-sm-4-->
+    </div>
+    <!-- .row -->
+
+    <div class="row">
+      <div class="col-sm-12">
+        <h1>Multiple Choice</h1>
+        <p class="lead">Use single multiple choice questions to test understanding.</p>
+
+        <p class="alert alert-default push-down-2"><i class="fa fa-fw fa-list-ol" aria-hidden="true"></i> &nbsp;<strong>Instructions</strong><br>
+          <strong class="gray">Select</strong> right and wrong answer types to add them to the stack. <strong class="gray">Click + Drag</strong class="gray"> to reorder them. <strong class="gray">Click</strong> a form field to delete it from the
+          stack. <strong class="gray">Click Build</strong> to generate the code.
+        </p>
+
+      </div>
+    </div>
+
+    <hr class="divider">
+
+    <div class="row">
+
+      <div class="col-sm-4">
+
+
+
+        <form>
+          <!-- Select -->
+          <div class="form-group">
+            <label for="add-question-component">Add Answer Types</label>
+            <select class="form-control text-center" id="add-question-component" name="add-question-component">
+              <option value="select-something" selected="selected"> -- Select Answer Type -- </option>
+              <option value="correct-answer">Right answer</option>
+              <option value="incorrect-answer">Wrong answer</option>
+            </select>
+          </div>
+        </form>
+
+        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce"></i></p>
+
+        <!-- rows and columns added here -->
+
+        <div class="panel" id="row-stack">
+          <p class="text-center lightgray"><strong>Build Question Here</strong></p>
+
+          <ul id="component-list" class="list-group">
+            <li class="list-group-item example-component ui-state-default">Wrong answer</li>
+            <li class="list-group-item example-component ui-state-default">Wrong answer</li>
+            <li class="list-group-item example-component ui-state-default">Wrong answer</li>
+            <li class="list-group-item example-component ui-state-default">Right answer</li>
+          </ul>
+        </div>
+
+        <div class="push-down-3" id="action-buttons">
+
+          <button type="button" class="btn btn-primary pull-right" id="build-button"><i class="fa fa-fw fa-cogs" aria-hidden="true"></i> Build </button>
+          <button type="button" class="btn btn-default pull-right" id="clear-form"><i class="fa fa-refresh fa-fw" aria-hidden="true"></i> <span class="hidden-xs hidden-sm">Reset</span></button>
+
+        </div>
+
+      </div>
+      <!-- .col-sm-3 -->
+
+      <div class="col-sm-8">
+
+        <div class="example push-down-3" id="simple-example">
+
+          <div class="panel panel-understanding-check">
+            <form class="multipleChoice question-7158460">
+              <div class="form-group">
+                <label for="radio">What is your favorite color?</label>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="question-7158460" id="bsr-radios-1131002" data-alert-type="alert-danger" data-comment="<strong>Incorrect</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131002">
+                    Color 1
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="question-7158460" id="bsr-radios-1131003" data-alert-type="alert-danger" data-comment="<strong>Incorrect</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131003">
+                    Color 2
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="question-7158460" id="bsr-radios-1131004" data-alert-type="alert-danger" data-comment="<strong>Incorrect</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131004">
+                    Color 3
+                  </label>
+                </div>
+                <div class="radio">
+                  <label>
+                    <input type="radio" name="question-7158460" id="bsr-radios-1131005" data-alert-type="alert-success" data-comment="<strong>Correct</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131005">
+                    Color 4
+                  </label>
+                </div>
+              </div>
+            </form>
+            <div class="multiple-choice-alert alert hidden" id="answer-7158460" role="alert"></div>
+          </div>
+
+        </div>
+        <!-- .example -->
+
+        <div class="well">
+
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#simple-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Beautifier -->
+          <button id="beautify" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Indent code"><i class="fa fa-indent fa-fw" aria-hidden="true"></i> Prettify
+          </button>
+
+          <!-- Update Example Panel-->
+          <button id="update-preview" class="btn btn-code-well pull-left" type="button" data-clipboard-demo="" data-toggle="tooltip" data-placement="bottom" title="Update Example window"><i class="fa fa-fw fa-arrows-v" aria-hidden="true"></i>
+            Update Example</button>
+
+          <hr class="well-separator">
+
+          <pre class="prettyprint lang-html" id="simple-code" contenteditable="true">
+&lt;div class="panel panel-understanding-check"&gt;
+	&lt;form class="multipleChoice question-7158460"&gt;
+		&lt;div class="form-group"&gt;
+			&lt;label for="radio"&gt;What is your favorite color?&lt;/label&gt;
+			&lt;div class="radio"&gt;
+				&lt;label&gt;
+					&lt;input type="radio" name="question-7158460" id="bsr-radios-1131002" data-alert-type="alert-danger" data-comment="&lt;strong&gt;Incorrect&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131002"&gt;
+					Color 1
+				&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class="radio"&gt;
+				&lt;label&gt;
+					&lt;input type="radio" name="question-7158460" id="bsr-radios-1131003" data-alert-type="alert-danger" data-comment="&lt;strong&gt;Incorrect&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131003"&gt;
+					Color 2
+				&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class="radio"&gt;
+				&lt;label&gt;
+					&lt;input type="radio" name="question-7158460" id="bsr-radios-1131004" data-alert-type="alert-danger" data-comment="&lt;strong&gt;Incorrect&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131004"&gt;
+					Color 3
+				&lt;/label&gt;
+			&lt;/div&gt;
+			&lt;div class="radio"&gt;
+				&lt;label&gt;
+					&lt;input type="radio" name="question-7158460" id="bsr-radios-1131005" data-alert-type="alert-success" data-comment="&lt;strong&gt;Correct&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit." value="radio1131005"&gt;
+					Color 4
+				&lt;/label&gt;
+			&lt;/div&gt;
+		&lt;/div&gt;
+	&lt;/form&gt;
+	&lt;div class="multiple-choice-alert alert hidden" id="answer-7158460" role="alert"&gt;&lt;/div&gt;
+&lt;/div&gt;
+</pre>
+
+        </div>
+        <!-- well closes -->
+
+        <h4 class="sub-header">Custom CSS</h4>
+
+        <p>Custom CSS is required for styling the background of the enclosing panel.</p>
+
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-css-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <!-- Update Example Panel-->
+          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
+              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all bootstrapr CSS</a>
+
+          <hr class="well-separator">
+
+
+          <pre class="prettyprint lang-css" contenteditable="true" id="custom-css-code">
+/* understanding check */
+.panel-understanding-check {
+  background: #f6f7fb;
+  padding: 1.5rem;
+}
+</pre>
+
+        </div>
+        <!-- .well -->
+
+        <h4 class="sub-header">Custom JS</h4>
+
+        <p>Custom javascript is required to produce the comments for each radio button.</p>
+
+        <div class="well">
+          <!-- Copier-->
+          <button class="btn btn-code-well pull-right copier" type="button" data-clipboard-demo="" data-clipboard-target="#custom-js-code" data-toggle="tooltip" data-placement="bottom" title="Copy to Clipboard"><i class="fa fa-fw fa-clipboard"
+              aria-hidden="true"></i> Copy</button>
+
+          <hr class="well-separator">
+
+
+          <pre class="prettyprint lang-js" contenteditable="true" id="custom-js-code">
+// Show the proper div on radio button click
+$(document).delegate(".panel-understanding-check .radio input", "click", function() {
+
+// Show the comment div
+$(".multiple-choice-alert").removeClass("hidden");
+
+// Get the comment and alert type data attributes
+var alertContent = $(this).data("comment");
+var alertType = $(this).data("alert-type");
+
+// Write the comment and alert type to the div
+$(".multiple-choice-alert").html(alertContent);
+$(".multiple-choice-alert").removeClass("alert-danger").removeClass("alert-success").addClass(alertType);
+});
+</pre>
+
+        </div>
+        <!-- .well -->
+
+      </div>
+      <!-- .col-sm-9 -->
+
+    </div>
+    <!-- .row -->
+
+  </div>
+  <!-- .container-fluid -->
+
+
+  <!-- Navbar include -->
+  <div w3-include-html="footer.html"></div>
+
+  <!-- Back-to-top button -->
+  <a role="button" id="topper" class="btn scroll-link" href="#top"><i class="fa fa-fw fa-2x fa-caret-up" aria-hidden="true"></i></a>
+
+  <!-- Confirmation modal -->
+  <div id="dialog-confirm" title="Reset Form">
+    <p>This will reset the form. Are you sure?</p>
+  </div>
+
+
+  <!-- jQuery Javascript Library (required by Bootstrap) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+  <script>
+    window.jQuery || document.write('<script src="js/jquery.min.js"><\/script>')
+  </script>
+
+  <!-- jQuery UI Library (optional) -->
+  <script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+
+  <!-- Bootstrap Library -->
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+  <script>
+    window.jQuery.fn.modal || document.write('<script src="js/bootstrap.min.js"><\/script>')
+  </script>
+  <script>
+    (function($) {
+      $(function() {
+        if ($('body').css('color') !== 'rgb(246, 247, 251)') {
+          $('head').prepend('<link rel="stylesheet" href="css/bootstrap.min.css">');
+          $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
+        }
+      });
+    })(window.jQuery);
+  </script>
+
+  <!-- Main local script file -->
+  <script src="js/main.js"></script>
+
+  <!-- includes for Google's code highlighter 'prettyprint' -->
+  <link rel="stylesheet" type="text/css" href="css/prettify.css">
+  <script type="text/javascript" src="js/prettify.js"></script>
+  <script type="text/javascript" src="js/lang-css.js"></script>
+
+  <!-- html file include script | used for navbar -->
+  <script src="js/w3data.js"></script>
+  <script>
+    w3IncludeHTML();
+  </script>
+
+  <!-- Animations JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
+  <!-- clipboard.js include -->
+  <script src="js/clipboard.min.js"></script>
+
+  <script>
+    $(document).ready(function() {
+
+      // tooltips function
+      $(function() {
+        $('[data-toggle="tooltip"]').tooltip()
+      })
+
+      // The holder for all the rows
+      var allRows = [];
+
+      var divOpener = "";
+      var divCloser = ""
+
+      var inlineForm = "";
+      var horizontalForm = "";
+
+      // on change form is horizontal
+      $("#form-is-horizontal").on("change", function() {
+        if ($('#form-is-horizontal').is(":checked")) {
+          horizontalForm = " form-horizontal";
+        } else {
+          horizontalForm = "";
+        }
+      });
+
+      $("#add-question-component").on("change", function() {
+
+        // Remove the examples
+        $("#component-list .example-component").remove();
+
+        var addRow = "";
+        var newestRow = "";
+
+        if ($("#add-question-component").val() != "select-something") {
+          newestRow = $("#add-question-component").val();
+
+          switch (newestRow) {
+            case "correct-answer":
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Right answer</li>";
+              break;
+            case "incorrect-answer":
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li>";
+              break;
+          }
+
+          $("#component-list").append(addRow);
+        }
+
+        // reset the value of the dropdown
+        $("#add-question-component").val("select-something");
+
+      });
+
+      // Add active class to navmenu selection
+      $("li#multiple-choice").addClass("active");
+      $("#features-dropdown").addClass("activated");
+
+      // ------- Display the Columns --------------------------
+      $('#build-button').click(function() {
+
+        // Build the radio buttons here
+        var buildRadios = "";
+        var radiosRandom = Math.floor(Math.random() * Math.floor(10000000));
+        var questionRandom = Math.floor(Math.random() * Math.floor(10000000));
+        var numberRadios = $("#component-list li").length;
+        var buildRadiosOpen = "<div class='panel panel-understanding-check'><form class='multipleChoice question-" + radiosRandom + "'><div class='form-group'><label for='radio'>What is your favorite color?</label>";
+        var radiosMiddle = "";
+        var buildRadiosClose = "</div></form><div class='multiple-choice-alert alert hidden' id='answer-" + radiosRandom + "' role='alert'></div></div>";
+        var i = 1;
+
+        // Remove the examples
+        $("#component-list .example-component").remove();
+
+        $("#component-list li").each(function() {
+
+          switch ($(this).text()) {
+
+            case "Right answer":
+              radiosMiddle += "<div class='radio'><label><input type='radio' name='question-" + radiosRandom + "' id='bsr-radios-" + questionRandom +
+                "' data-alert-type='alert-success' data-comment='&lt;strong&gt;Correct&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.' value='radio" +
+                questionRandom + "'>Color " + i + "</label></div>";
+
+              i++;
+              questionRandom++;
+
+              break;
+
+            case "Wrong answer":
+              radiosMiddle += "<div class='radio'><label><input type='radio' name='question-" + radiosRandom + "' id='bsr-radios-" + questionRandom +
+                "'  data-alert-type='alert-danger' data-comment='<strong>Incorrect</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.' value='radio" +
+                questionRandom + "'>Color " + i + "</label></div>";
+
+              i++;
+              questionRandom++;
+
+              break;
+          }
+
+        });
+
+        buildRadios = buildRadiosOpen + radiosMiddle + buildRadiosClose;
+
+
+        // finalColumns = finalDivOpener + finalColumns + finalDivCloser;
+
+        // Write the question to html erxample
+        $("#simple-example").html(buildRadios);
+        $('#simple-code').text(buildRadios);
+
+        $('pre').removeClass('prettyprinted');
+        prettyPrint();
+
+        // Stop the form button from reloading the page
+        $(".bsr-form").submit(function(e) {
+          e.preventDefault(e);
+        });
+
+      });
+
+      // add the delete-the-columns icon on hover
+      $(document).on("mouseenter", "#component-list li", function(e) {
+        $(this).addClass("delete-the-columns");
+      }).on("mouseleave", "#component-list li", function(e) {
+        $(this).removeClass("delete-the-columns");
+      });
+
+      // Delete the component on click
+      $(document).on("click", "#component-list li", function() {
+        $(this).remove();
+      });
+
+      // clipboard button
+      new Clipboard('.btn');
+
+      $(function() {
+        $("#component-list").sortable({
+          placeholder: "ui-state-highlight"
+        });
+        $("#component-list").disableSelection();
+      });
+
+
+      // Show the proper div on radio button click
+      $(document).delegate(".panel-understanding-check .radio input", "click", function() {
+        // Show the comment div
+        $(".multiple-choice-alert").removeClass("hidden");
+        // Get the comment and alert type data attributes
+        var alertContent = $(this).data("comment");
+        var alertType = $(this).data("alert-type");
+        // Write the comment and alert type to the div
+        $(".multiple-choice-alert").html(alertContent);
+        $(".multiple-choice-alert").removeClass("alert-danger").removeClass("alert-success").addClass(alertType);
+      });
+
+
+
+    });
+  </script>
+
+  <!-- Go to www.addthis.com/dashboard to customize your tools -->
+  <script type="text/javascript" src="//s7.addthis.com/js/300/addthis_widget.js#pubid=ra-5e46f4c0e8e8fb44"></script>
+
+
+</body>
+
+</html>
