@@ -295,7 +295,7 @@
             </select>
           </div>
         </form>
-
+        <p id="fab-four" style="margin-top: -1rem; margin-left: .75rem;" class="link-blue pointer"><small><i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;Add the &lsquo;Fab Four&rsquo;</small></p>
         <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce"></i></p>
 
         <!-- rows and columns added here -->
@@ -587,6 +587,7 @@ $(".multiple-choice-alert").removeClass("alert-danger").removeClass("alert-succe
               break;
           }
 
+
           $("#component-list").append(addRow);
         }
 
@@ -696,6 +697,15 @@ $(".multiple-choice-alert").removeClass("alert-danger").removeClass("alert-succe
         $(".multiple-choice-alert").removeClass("alert-danger").removeClass("alert-success").addClass(alertType);
       });
 
+      // Build the 'fab four' -- the most common structure of 3 wrong, 1 right
+      $("#fab-four").on("click", function(){
+
+        // Remove the examples
+        $("#component-list .example-component").remove();
+
+        // Add the rows to the component list-group
+        $("#component-list").append("<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Right answer</li>");
+      });
 
 
     });

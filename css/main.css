@@ -1050,6 +1050,12 @@ ol.linenums li:before {
   opacity: .8;
 }
 
+/* pointer utility class */
+.pointer {
+  cursor: pointer;
+}
+
+
 /* example boxes */
 .example {
   position: relative;
