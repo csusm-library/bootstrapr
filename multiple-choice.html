@@ -101,12 +101,6 @@
       color: silver;
     }
 
-
-    .fa-arrows-v {
-      margin-right: 1.2rem;
-    }
-
-
     #component-list li:hover {
       background: #f2dede !important;
       color: #a94442;
@@ -290,13 +284,14 @@
             <label for="add-question-component">Add Answer Types</label>
             <select class="form-control text-center" id="add-question-component" name="add-question-component">
               <option value="select-something" selected="selected"> -- Select Answer Type -- </option>
-              <option value="correct-answer">Right answer</option>
-              <option value="incorrect-answer">Wrong answer</option>
+              <option value="correct-answer">Correct</option>
+              <option value="partially-correct-answer">Partially Correct</option>
+              <option value="incorrect-answer">Incorrect</option>
             </select>
           </div>
         </form>
-        <p id="fab-four" style="margin-top: -1rem; margin-left: .75rem;" class="link-blue pointer"><small><i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;Add the &lsquo;Fab Four&rsquo;</small></p>
-        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-down bounce"></i></p>
+        <p id="fab-four" style="margin-top: -1rem; margin-left: .75rem;" class="link-blue pointer"><small><i class="fa fa-plus-circle" aria-hidden="true"></i> &nbsp;Add the standard &lsquo;3-and-1&rsquo;</small></p>
+        <p class="text-center"><i class="fa fa-fw fa-lg fa-arrow-circle-o-up bounce"></i></p>
 
         <!-- rows and columns added here -->
 
@@ -429,8 +424,8 @@
               aria-hidden="true"></i> Copy</button>
 
           <!-- Update Example Panel-->
-          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="Get all bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
-              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> Get all bootstrapr CSS</a>
+          <a id="download-all-css" class="btn btn-code-well pull-left" type="button" data-toggle="tooltip" data-placement="bottom" title="View all Bootstrapr CSS" role="button" href="css/all-bootstrapr-css.css" target="_blank"><i
+              class="fa fa-fw fa-file-code-o" aria-hidden="true"></i> View all Bootstrapr CSS</a>
 
           <hr class="well-separator">
 
@@ -474,23 +469,24 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
 
   // Write the comment and alert type to the div
   $(dataQuestionNumber).html(alertContent);
-  $(dataQuestionNumber).removeClass("alert-danger").removeClass("alert-success").addClass(alertType);
+  $(dataQuestionNumber).removeClass("alert-danger").removeClass("alert-warning").removeClass("alert-success").addClass(alertType);
 });
 </pre>
 
         </div>
         <!-- .well -->
 
-<h4 class="sub-header">Notes</h4>
+        <h4 class="sub-header">Notes</h4>
         <div class="alert alert-danger" role="alert">
-                  <p>
-                    <i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
-                    <a class="close" data-dismiss="alert" aria-label="close">×</a>
-                    <strong>Keep Questions Unique</strong>
-                    <br>
-                    While you may place multiple questions on a page, <strong>DO NOT</strong> simply cut and paste the same question again and again. Make sure to generate each question anew, ensuring the random number assigned to each stays unique and does not conlflict with other questions on the page.
-                  </p>
-                </div>
+          <p>
+            <i class="fa fa-times-circle fa-fw" aria-hidden="true"></i>
+            <a class="close" data-dismiss="alert" aria-label="close">×</a>
+            <strong>Keep Questions Unique</strong>
+            <br>
+            While you may place multiple questions on a page, <strong>DO NOT</strong> simply cut and paste the same question again and again. Make sure to generate each question anew, ensuring the random number assigned to each stays unique and does
+            not conlflict with other questions on the page.
+          </p>
+        </div>
 
 
       </div>
@@ -599,10 +595,13 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
 
           switch (newestRow) {
             case "correct-answer":
-              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Right answer</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Correct</li>";
               break;
             case "incorrect-answer":
-              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li>";
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Incorrect</li>";
+              break;
+            case "partially-correct-answer":
+              addRow = "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Partially Correct</li>";
               break;
           }
 
@@ -639,7 +638,7 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
 
           switch ($(this).text()) {
 
-            case "Right answer":
+            case "Correct":
               radiosMiddle += "<div class='radio'><label><input type='radio' data-question-number='" + radiosRandom + "' name='question-" + radiosRandom + "' id='bsr-radios-" + questionRandom +
                 "' data-alert-type='alert-success' data-comment='&lt;strong&gt;Correct&lt;/strong&gt;&lt;br&gt;Lorem ipsum dolor sit amet, consectetur adipisicing elit.' value='radio" +
                 questionRandom + "'>Color " + i + "</label></div>";
@@ -649,9 +648,19 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
 
               break;
 
-            case "Wrong answer":
+            case "Incorrect":
               radiosMiddle += "<div class='radio'><label><input type='radio' data-question-number='" + radiosRandom + "' name='question-" + radiosRandom + "' id='bsr-radios-" + questionRandom +
                 "'  data-alert-type='alert-danger' data-comment='<strong>Incorrect</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.' value='radio" +
+                questionRandom + "'>Color " + i + "</label></div>";
+
+              i++;
+              questionRandom++;
+
+              break;
+
+            case "Partially Correct":
+              radiosMiddle += "<div class='radio'><label><input type='radio' data-question-number='" + radiosRandom + "' name='question-" + radiosRandom + "' id='bsr-radios-" + questionRandom +
+                "'  data-alert-type='alert-warning' data-comment='<strong>Partially Correct</strong><br>Lorem ipsum dolor sit amet, consectetur adipisicing elit.' value='radio" +
                 questionRandom + "'>Color " + i + "</label></div>";
 
               i++;
@@ -706,18 +715,20 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
 
       // Show the proper div on radio button click
       $(document).delegate(".panel-understanding-check .radio input", "click", function() {
+
         // Crete the ID for the answer div from the question number
         var dataQuestionNumber = "#" + $(this).data("question-number");
 
         // Show the comment div
         $(dataQuestionNumber).removeClass("hidden");
-        // Get the comment and alert type data attributes
 
+        // Get the comment and alert type data attributes
         var alertContent = $(this).data("comment");
         var alertType = $(this).data("alert-type");
+
         // Write the comment and alert type to the div
         $(dataQuestionNumber).html(alertContent);
-        $(dataQuestionNumber).removeClass("alert-danger").removeClass("alert-success").addClass(alertType);
+        $(dataQuestionNumber).removeClass("alert-danger").removeClass("alert-warning").removeClass("alert-success").addClass(alertType);
       });
 
       // Build the 'fab four' -- the most common structure of 3 wrong, 1 right
@@ -729,7 +740,7 @@ $(document).delegate(".panel-understanding-check .radio input", "click", functio
         // Add the rows to the component list-group
         $("#component-list").append(
           "<li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Wrong answer</li><li class='list-group-item ui-state-default'><i class='lightgray fa fa-fw fa-arrows-v'></i>Right answer</li>"
-          );
+        );
       });
 
 
