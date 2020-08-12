@@ -282,7 +282,7 @@ $('head').prepend('<link rel="stylesheet" href="css/fontawesome-local.css">');
         var printHeader = '';
 
         if ($('#print-link').is(":checked")) {
-          printHeader = "<p class='text-right'><a href='https://docs.google.com/" + googleType + "/d/" + theDocID + "/edit' target='_blank'><i class='fa fa-print fa-spacer-right' aria-hidden='true'></i>Print This</a></p>";
+          printHeader = "<p class='text-right'><a href='https://docs.google.com/" + googleType + "/d/" + theDocID + "/preview' target='_blank'><i class='fa fa-print fa-spacer-right' aria-hidden='true'></i>Print This</a></p>";
         }
 
         var printDoc = "<iframe width='100%' height='" + googleDocHeight + "' frameborder='0' scrolling='yes' class='embed-responsive-item'  src='https://docs.google.com/" + googleType + "/d/" + theDocID +
