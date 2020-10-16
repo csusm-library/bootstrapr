@@ -505,10 +505,8 @@
         // var bsPreview = navWide + fullWidthJumbotron + mainContentOpen + navCentered + centeredJumbotron + sample + mainContentClose + footer;
 
         // This is needed to be able to insert the script element
-        theCode = bsPage.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
-        // thePreview = bsPreview.replace(/&lt;/g, "<").replace(/&gt;/g, ">" );
-        bsPage = theCode;
-        // bsPreview = thePreview;
+        bsPage = bsPage.replace(/&lt;/g, "<").replace(/&gt;/g, ">");
+
 
         $('#simple-code').text(bsPage);
 
